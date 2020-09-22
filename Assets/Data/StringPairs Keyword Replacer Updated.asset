@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9343cb6351bfcd24e8a61c656290819f, type: 3}
+  m_Name: StringPairs Keyword Replacer Updated
+  m_EditorClassIdentifier: 
+  values:
+  - inputString: 'Play:'
+    replacedString: '<color=#F0CC70>Play:'
+  - inputString: Last Breath
+    replacedString: <sprite name="lastbreath"><color=#F0CC70>Last Breath
+  - inputString: 'Support:'
+    replacedString: '<color=#F0CC70>Support:'
+  - inputString: Drain
+    replacedString: <color=#F0CC70>Drain
+  - inputString: Nexus Strike
+    replacedString: <color=#F0CC70>Nexus Strike
+  - inputString: 'Strike:'
+    replacedString: '<color=#F0CC70>Strike:'
+  - inputString: 'strike '
+    replacedString: '<color=#F0CC70>strike '
+  - inputString: 'strikes '
+    replacedString: '<color=#F0CC70>strikes '
+  - inputString: struck
+    replacedString: <color=#F0CC70>struck
+  - inputString: striking
+    replacedString: <color=#F0CC70>striking
+  - inputString: Recall
+    replacedString: <color=#F0CC70>Recall
+  - inputString: Stun
+    replacedString: <sprite name="stun"><color=#F0CC70>Stun
+  - inputString: Allegiance
+    replacedString: <color=#F0CC70>Allegiance
+  - inputString: Obliterate
+    replacedString: <color=#F0CC70>Obliterate
+  - inputString: Strongest
+    replacedString: <color=#F0CC70>Strongest
+  - inputString: Enlightened
+    replacedString: <color=#F0CC70>Enlightened
+  - inputString: Capture
+    replacedString: <sprite name="capture"><color=#F0CC70>Capture
+  - inputString: Trap
+    replacedString: <color=#F0CC70>Trap
+  - inputString: Elusive
+    replacedString: <sprite name="elusive"><color=#F0CC70>Elusive
+  - inputString: Quick Attack
+    replacedString: <sprite name="quickattack"><color=#F0CC70>Quick Attack
+  - inputString: Barrier
+    replacedString: <sprite name="barrier"><color=#F0CC70>Barrier
+  - inputString: Challenge
+    replacedString: <sprite name="challenger"><color=#F0CC70>Challenge
+  - inputString: Challenging
+    replacedString: <sprite name="challenger"><color=#F0CC70>Challenging
+  - inputString: Double Attack
+    replacedString: <sprite name="doubleattack"><color=#F0CC70>Double Attack
+  - inputString: Ephemeral
+    replacedString: <sprite name="ephemeral><color=#F0CC70>Ephemeral
+  - inputString: Fearsome
+    replacedString: <sprite name="fearsome"><color=#F0CC70>Fearsome
+  - inputString: Fleeting
+    replacedString: <sprite name="fleeting"><color=#F0CC70>Fleeting
+  - inputString: Lifesteal
+    replacedString: <sprite name="lifesteal"><color=#F0CC70>Lifesteal
+  - inputString: Overwhelm
+    replacedString: <sprite name="overwhelm"><color=#F0CC70>Overwhelm
+  - inputString: Regeneration
+    replacedString: <sprite name="regeneration"><color=#F0CC70>Regeneration
+  - inputString: Tough
+    replacedString: <sprite name="tough"><color=#F0CC70>Tough
+  - inputString: Attune
+    replacedString: <sprite name="attune"><color=#F0CC70>Attune
+  - inputString: Frostbite
+    replacedString: <sprite name="frostbite"><color=#F0CC70>Frostbite
+  - inputString: Scout
+    replacedString: <sprite name="scout"><color=#F0CC70>Scout
+  - inputString: Vulnerable
+    replacedString: <sprite name="vulnerable"><color=#F0CC70>Vulnerable
+  - inputString: Deep
+    replacedString: <sprite name="deep"><color=#F0CC70>Deep
+  - inputString: '@!@'
+    replacedString: <sprite name="skill">
+  - inputString: 'Plunder:'
+    replacedString: '<color=#F0CC70>Plunder:'
+  - inputString: Weakest
+    replacedString: <color=#F0CC70>Weakest
+  - inputString: Round End
+    replacedString: <color=#F0CC70>Round End
+  - inputString: Round Start
+    replacedString: <color=#F0CC70>Round Start
+  - inputString: Fury
+    replacedString: <sprite name="fury"><color=#F0CC70>Fury
+  - inputString: SpellShield
+    replacedString: <sprite name="spellshield"><color=#F0CC70>SpellShield
+  - inputString: Daybreak
+    replacedString: <color=#F0CC70>Daybreak
+  - inputString: Nightfall
+    replacedString: <color=#F0CC70>Nightfall
+  - inputString: Behold
+    replacedString: <color=#F0CC70>Behold
+  - inputString: Invoke
+    replacedString: <color=#F0CC70>Invoke
+  - inputString: Nab
+    replacedString: <color=#F0CC70>Nab
+  - inputString: Can't Attack
+    replacedString: <sprite name="cantattack"><color=#F0CC70>Can't Attack
+  - inputString: Can't Block
+    replacedString: <sprite name="cantblock"><color=#F0CC70>Can't Block
+  - inputString: Immobile
+    replacedString: <sprite name="cantattack"><sprite name="cantblock"><color=#F0CC70>Immobile
+  - inputString: Slow
+    replacedString: <sprite name="slow"><color=#F0CC70>Slow
+  - inputString: Fast
+    replacedString: <sprite name="fast"><color=#F0CC70>Fast
+  - inputString: Burst
+    replacedString: <sprite name="burst"><color=#F0CC70>Burst
+  - inputString: everywhere
+    replacedString: <color=#F0CC70>everywhere
+  - inputString: 'Attack:'
+    replacedString: '<color=#F0CC70>Attack:'
+  - inputString: Toss
+    replacedString: <color=#F0CC70>Toss
+  - inputString: Rally
+    replacedString: <color=#F0CC70>Rally

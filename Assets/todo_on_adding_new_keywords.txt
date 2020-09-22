@@ -1,0 +1,19 @@
+- cut icon out in photoshop
+- create spritesheet in Aseprite
+
+- import spritesheet, slice multiple 
+- change sprite_asset to new spritesheet
+- add new x co-ordinates on sprite_asset glyphs
+- add new index on sprite_asset
+
+- create new prefabs for full and short keywords 
+- goto Effects_Bar in Cards_Main for both units and spells, add new prefabs in lists
+
+- change value in input > Dropdown_Effect_Keywords
+- add new keywords in dropdown options list
+- change value on int event listener under dropdown component
+- change value on  Button_Clear_Keywords
+
+- check if changing spell cards still add the correct keyword
+
+- check that card code read/write effects list is properly written
