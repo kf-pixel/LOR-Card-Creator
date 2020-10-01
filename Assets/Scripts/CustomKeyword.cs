@@ -9,11 +9,7 @@ public class CustomKeyword : MonoBehaviour
 {
 	[SerializeField] private RectTransform rect;
 	[SerializeField] private TextMeshProUGUI textfield;
-	[SerializeField] private StringVariable referenceString;
-	[SerializeField] private IntVariable referenceSpriteIndex;
-	[SerializeField] private FloatVariable referenceColourR;
-	[SerializeField] private FloatVariable referenceColourG;
-	[SerializeField] private FloatVariable referenceColourB;
+	[SerializeField] private CustomKeywordData KWData;
 	[SerializeField] private bool isFullLengthKeyword = true;
 
 	private void OnEnable()
@@ -23,33 +19,38 @@ public class CustomKeyword : MonoBehaviour
 
 	public void UpdateTextAndSize()
 	{
-		var rgbColour = new Color(referenceColourR.value, referenceColourG.value, referenceColourB.value);
+		var rgbColour = new Color(KWData.colorR, KWData.colorG, KWData.colorB);
 		var hexColour = ColorUtility.ToHtmlStringRGB(rgbColour);
 
-		if (isFullLengthKeyword) // add sprite and string
+		// Add the Sprite to the display if the index is higher than 0
+		if (KWData.spriteIndex > 0)
 		{
+			textfield.text = "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + KWData.spriteIndex + "\" tint></color>";
 
-			textfield.text = "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + referenceSpriteIndex.value + "\" tint></color>" + referenceString.value;
-			StartCoroutine(WaitForTextRender());
+			if (isFullLengthKeyword) // Adds the keyword name (for single added keywords)
+			{
+				textfield.text += (string.IsNullOrWhiteSpace(KWData.label)) ? "custom" : KWData.label;
+				StartCoroutine(WaitForTextRender());
+			}
 		}
-		else // only add the sprite
+		else // Rendering for no sprite keywords
 		{
-			textfield.text = "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + referenceSpriteIndex.value + "\" tint></color>";
+			if (isFullLengthKeyword)
+			{
+				textfield.text = (string.IsNullOrWhiteSpace(KWData.label)) ? "Custom" : KWData.label;
+				StartCoroutine(WaitForTextRender());
+			}
+			else
+			{
+				textfield.text = " ";
+			}
 		}
+
 	}
 
 	private IEnumerator WaitForTextRender()
 	{
-		yield return new WaitForSeconds(0.05f);
-
-		if (textfield.text != null)
-		{
-			rect.sizeDelta = new Vector2(textfield.renderedWidth + 40f, rect.sizeDelta.y);
-		}
-		else
-		{
-			textfield.text = "custom";
-			rect.sizeDelta = new Vector2(120f, rect.sizeDelta.y);
-		}
+		yield return new WaitForEndOfFrame();
+		rect.sizeDelta = new Vector2(Mathf.Clamp(textfield.renderedWidth + 25f, 50f, 900f), rect.sizeDelta.y);
 	}
 }

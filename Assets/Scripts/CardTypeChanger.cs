@@ -10,12 +10,14 @@ public class CardTypeChanger : MonoBehaviour
 	[SerializeField] private IntVariable cardTypeIndex;
 	[SerializeField] private IntVariable cardRarityIndex;
 	[SerializeField] private int defaultIndex = 1;
+	private int previousCardType;
 
 	[Header("Tribes")]
 	[SerializeField] private SpritesVariable tribeSprites;
 	[SerializeField] private Image currentTribeSprite;
 
 	[Header("Events")]
+	[SerializeField] private GameEvent clearKeywordsEvent;
 	[SerializeField] private UnityEvent cardChangeEvent;
 	[SerializeField] private UnityEvent championBaseCardEvent;
 	[SerializeField] private UnityEvent nonChampionBaseCardEvent;
@@ -32,12 +34,19 @@ public class CardTypeChanger : MonoBehaviour
 
 	private void Start()
 	{
+		previousCardType = defaultIndex;
 		cardTypeIndex.value = defaultIndex;
 		ParseType();
 	}
 
 	public void ParseType()
 	{
+		// clear keywords if going from unit > spell or vice versa
+		if (previousCardType <= 2 && cardTypeIndex.value > 2 || previousCardType > 2 && cardTypeIndex.value <= 2)
+		{
+			clearKeywordsEvent.Raise();
+		}
+
 		if (cardTypeIndex.value == 1)  // if Champion base card
 		{
 			championBaseCardEvent.Invoke();
@@ -103,5 +112,6 @@ public class CardTypeChanger : MonoBehaviour
 
 		// Invoke Change card event
 		cardChangeEvent.Invoke();
+		previousCardType = cardTypeIndex.value;
 	}
 }

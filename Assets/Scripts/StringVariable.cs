@@ -16,9 +16,14 @@ public class StringVariable : ScriptableObject
 		valueChangedEvent.Invoke();
 	}
 
+
 	public void FloatToString(float i)
 	{
 		value = i.ToString();
+		if (i == -1)
+		{
+			value = " ";
+		}
 		valueChangedEvent.Invoke();
 	}
 }

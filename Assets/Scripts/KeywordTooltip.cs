@@ -7,15 +7,12 @@ using TMPro;
 
 public class KeywordTooltip : MonoBehaviour
 {
-	[SerializeField] private BoolVariable disableSpriteTooltip;
 	[SerializeField] private TextMeshProUGUI titleTMP;
 	[SerializeField] private TextMeshProUGUI descriptionTMP;
 
 	[Header("Custom Keyword Data")]
-	[SerializeField] private StringVariable title;
-	[SerializeField] private StringVariable description;
-	[SerializeField] private StringVariable colour;
-	[SerializeField] private IntVariable spriteIndex;
+	[SerializeField] private CustomKeywordData[] KWData;
+	[SerializeField] private IntVariable KWTabIndex;
 
 	private void OnEnable()
 	{
@@ -29,7 +26,9 @@ public class KeywordTooltip : MonoBehaviour
 
 	public void TextUpdate()
 	{
-		string titleText = title.value;
+		CustomKeywordData kw = KWData[KWTabIndex.value];
+
+		string titleText = kw.label;
 		if (titleText == null)
 		{
 			titleText = "keyword";
@@ -39,7 +38,7 @@ public class KeywordTooltip : MonoBehaviour
 			titleText = "keyword";
 		}
 
-		string descriptionText = description.value;
+		string descriptionText = kw.description;
 		if (descriptionText == null)
 		{
 			descriptionText = "description";
@@ -50,14 +49,8 @@ public class KeywordTooltip : MonoBehaviour
 		}
 
 		// Update Title
-		//string newText = titleText + "|<voffset=20><size=75%><color=" + colour.value + "><sprite=" + spriteIndex.value + " tint>";
-		string newText = "<voffset=16><size=80%><color=" + colour.value + "><sprite name=\"Custom_" + spriteIndex.value + "\" tint></voffset></size></color>" + titleText;
-
-		// Disable custom sprite if checked
-		if (disableSpriteTooltip.value == true)
-		{
-			newText = titleText;
-		}
+		string newText = kw.spriteIndex > 0 ?
+			"<voffset=16><size=80%><color=" + kw.hexColor + "><sprite name=\"Custom_" + kw.spriteIndex + "\" tint></voffset></size></color>" + titleText : titleText;
 
 		titleTMP.text = newText;
 

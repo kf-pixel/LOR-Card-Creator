@@ -11,7 +11,7 @@ public class TextUpdater : MonoBehaviour
 
 	[Header("Text Formatting")]
 	[SerializeField] private float textHeight;
-	[SerializeField] private float checkTextHeightDelay = 0.2f;
+	//[SerializeField] private float checkTextHeightDelay = 0.2f;
 	[SerializeField] private UnityFloatEvent newTextHeightEvent;
 
 	private void Awake()
@@ -20,7 +20,7 @@ public class TextUpdater : MonoBehaviour
 		{
 			reference.value = tmp.text;
 		}
-		StartCoroutine(CheckTextHeight());
+		RefreshTextHeight();
 	}
 
 	private void OnEnable()
@@ -32,12 +32,18 @@ public class TextUpdater : MonoBehaviour
 	{
 		tmp.text = reference.value;
 		AddTags();
-		StartCoroutine(CheckTextHeight());
+		RefreshTextHeight();
 	}
 
-	private IEnumerator CheckTextHeight()
+	public void RefreshTextHeight()
 	{
-		yield return new WaitForSeconds(checkTextHeightDelay);
+		StartCoroutine(CoroutineTextHeight());
+	}
+
+	private IEnumerator CoroutineTextHeight()
+	{
+		//yield return new WaitForSeconds(checkTextHeightDelay);
+		yield return new WaitForEndOfFrame();
 
 		if (!System.String.IsNullOrEmpty(tmp.text))
 		{

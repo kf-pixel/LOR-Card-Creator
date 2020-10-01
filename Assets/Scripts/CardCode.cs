@@ -7,7 +7,10 @@ using TMPro;
 public class CardCode : MonoBehaviour
 {
 	[SerializeField] private TMP_InputField inputF;
+	[SerializeField] private FileUpload artworkUploader;
 	[SerializeField] private GameEvent changeCardTypeEvent;
+	[SerializeField] private GameEvent clearKeywordsEvent;
+	[SerializeField] private GameEvent cardReadEvent;
 	[SerializeField] private UnityEvent writeEvent;
 	[SerializeField] private List<string> keywordRecord = new List<string>();
 
@@ -19,6 +22,7 @@ public class CardCode : MonoBehaviour
 	[SerializeField] private TMP_InputField groupF;
 	[SerializeField] private TMP_InputField cardTextF;
 	[SerializeField] private TMP_InputField levelUpTextF;
+	[SerializeField] private TMP_InputField creditF;
 
 	[Header("Scriptable Object Data")]
 	[SerializeField] private IntVariable region;
@@ -32,6 +36,7 @@ public class CardCode : MonoBehaviour
 	[SerializeField] private StringVariable group;
 	[SerializeField] private StringVariable cardText;
 	[SerializeField] private StringVariable levelUp;
+	[SerializeField] private StringVariable credit;
 
 	[SerializeField] private IntEvent effectIntAdd;
 
@@ -102,7 +107,7 @@ public class CardCode : MonoBehaviour
 		}
 
 		// Level Up Text
-		if (cardType.value == 1 && levelUp.value.Length > 0)
+		if (cardType.value == 1)
 		{
 			code += "Level Up: " + levelUp.value;
 		}
@@ -112,26 +117,68 @@ public class CardCode : MonoBehaviour
 
 		// Artwork data
 		code += "*";
-		/*
+
+		bool addedArtworkPath = false;
+
+		// Read artwork path data on standalone
+#if UNITY_EDITOR
 		if (artworkPath.value != null)
 		{
-			if (artworkPath.value.Length > 1)
+			if (artworkPath.value.Length > 1 && addedArtworkPath == false)
 			{
-				code += artworkPath.value;
+				code += artworkPath.value.Replace(Application.persistentDataPath, "&local&");
+				addedArtworkPath = true;
 			}
 		}
-		*/
+#endif
+
+#if UNITY_STANDALONE
+		if (artworkPath.value != null)
+		{
+			if (artworkPath.value.Length > 1 && addedArtworkPath == false)
+			{
+				code += artworkPath.value.Replace(Application.persistentDataPath, "&local&");
+				addedArtworkPath = true;
+			}
+		}
+#endif
 
 		code += "*" + ((int)artworkX.value).ToString() + "*" + ((int)artworkY.value).ToString() + "*" + artworkScale.value.ToString() + "*";
 
+
+		// Artist Credit
+		if (!string.IsNullOrEmpty(credit.value))
+		{
+			code += " &@" + (credit.value);
+		}
+
 		// Apply
 		inputF.SetTextWithoutNotify(code);
+
+		// Raise Event
+		cardReadEvent.Raise();
 	}
 
 	public void WriteInput(string s)
 	{
 		string working = s;
-		//working = working.ToLower();
+
+		// Clear Existing Keywords
+		clearKeywordsEvent.Raise();
+
+		// Get Artist Credit
+		int creditIndex = working.IndexOf(" &@");
+		if (creditIndex > 0)
+		{
+			string creditString = working.Substring(creditIndex + 3);
+			creditF.text = creditString;
+
+			working = working.Remove(creditIndex);
+		}
+		else
+		{
+			creditF.text = "";
+		}
 
 		// Get Artwork Data
 		float scale = 300f;
@@ -159,14 +206,56 @@ public class CardCode : MonoBehaviour
 					rt.localPosition = new Vector3(x_pos, y_pos);
 				}
 
+				// Get Artwork Local Path
+				bool updateArtwork = false;
+#if UNITY_EDITOR
+				if (asterisk1 - asterisk0 > 2)
+				{
+					string foundArtwork = working.Substring(asterisk0 + 1, asterisk1 - asterisk0 - 1);
+					if (artworkPath.value != foundArtwork && updateArtwork == false)
+					{
+						artworkPath.value = foundArtwork;
+						updateArtwork = true;
+
+						// Check if the local path is the persistentDataPath
+						if (foundArtwork.Contains("&local&"))
+						{
+							foundArtwork = foundArtwork.Replace("&local&", Application.persistentDataPath);
+						}
+
+						// Get the file uploader
+						artworkUploader.FileSelected(foundArtwork);
+					}
+				}
+#endif
+
+#if UNITY_STANDALONE
+				if (asterisk1 - asterisk0 > 2)
+				{
+					string foundArtwork = working.Substring(asterisk0 + 1, asterisk1 - asterisk0 - 1);
+					if (artworkPath.value != foundArtwork && updateArtwork == false)
+					{
+						artworkPath.value = foundArtwork;
+						updateArtwork = true;
+						artworkUploader.FileSelected(foundArtwork);
+					}
+				}
+#endif
+				// Remove artwork data from working string
 				working = working.Remove(asterisk0, asterisk4 - asterisk0 + 1);
 			}
+
 		}
 
 
 		// Get Card Text
-		int cardTextStartIndex = working.IndexOf("\"", 0);
-		int cardTextEndIndex = working.LastIndexOf("\"", working.Length - 1);
+		int levelUpInd = working.IndexOf("Level Up:");
+		if (levelUpInd < 0)
+		{
+			levelUpInd = working.Length - 1;
+		}
+		int cardTextStartIndex = working.IndexOf("\"", 0, levelUpInd);
+		int cardTextEndIndex = working.LastIndexOf("\"", levelUpInd);
 
 		if (cardTextStartIndex > 0 && cardTextEndIndex > 0)
 		{
@@ -181,6 +270,8 @@ public class CardCode : MonoBehaviour
 		else
 		{
 			cardText.value = "";
+			cardText.value = "";
+			cardTextF.SetTextWithoutNotify("");
 		}
 
 		// Get Region
@@ -277,6 +368,7 @@ public class CardCode : MonoBehaviour
 		else
 		{
 			levelUp.value = "";
+			levelUpTextF.text = "";
 		}
 
 		// Get Title
@@ -337,14 +429,16 @@ public class CardCode : MonoBehaviour
 				mana.value = manaString;
 				working = working.Replace(manaString + "mana", "");
 
-				manaF.SetTextWithoutNotify(manaString);
+				//manaF.SetTextWithoutNotify(manaString);
+				manaF.text = manaString;
 			}
 			else
 			{
 				mana.value = 0.ToString();
 				working = working.Replace("mana", "");
 
-				manaF.SetTextWithoutNotify(0.ToString());
+				//manaF.SetTextWithoutNotify(0.ToString());
+				manaF.text = "0";
 			}
 		}
 
@@ -395,8 +489,10 @@ public class CardCode : MonoBehaviour
 				attack.value = attackString;
 				health.value = healthString;
 
-				attackF.SetTextWithoutNotify(attackString);
-				healthF.SetTextWithoutNotify(healthString);
+				//attackF.SetTextWithoutNotify(attackString);
+				//healthF.SetTextWithoutNotify(healthString);
+				attackF.text = attackString;
+				healthF.text = healthString;
 
 				// Remove
 				working = working.Replace(attackString + "/" + healthString, "");
@@ -419,28 +515,47 @@ public class CardCode : MonoBehaviour
 			ik++;
 		}
 
-		// Apply
-		writeEvent.Invoke();
+		
 
 		foreach(int ki in keywordIndexes)
 		{
 			effectIntAdd.Raise(ki);
 		}
-		
+
+		// Apply
+		writeEvent.Invoke();
 	}
 
 	public void KeywordRecorder(int i)
 	{
-		if (cardEffectsNames[i].ToLower() == "fast" || cardEffectsNames[i].ToLower() == "burst" || cardEffectsNames[i].ToLower() == "slow" || cardType.value == 6 && cardEffectsNames[i].ToLower() == "skill")
+		if (cardEffectsNames[i].ToLower() == "fast" || cardEffectsNames[i].ToLower() == "burst" || cardEffectsNames[i].ToLower() == "slow" || (cardType.value == 6 && cardEffectsNames[i].ToLower() == "skill"))
 		{
 			return;
 		}
 
 		keywordRecord.Add(cardEffectsNames[i]);
+		ReadInput();
 	}
 
 	public void ClearKeywordRecord()
 	{
 		keywordRecord.Clear();
+		ReadInput();
+
+	}
+
+	public void RemoveKeyword(int removeIndex)
+	{
+		string keywordName = cardEffectsNames[removeIndex];
+
+		for (int i = keywordRecord.Count - 1; i >= 0; i--)
+		{
+			if (keywordRecord[i] == keywordName)
+			{
+				keywordRecord.RemoveAt(i);
+			}
+		}
+		ReadInput();
+
 	}
 }

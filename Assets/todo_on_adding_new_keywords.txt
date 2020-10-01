@@ -7,7 +7,7 @@
 - add new index on sprite_asset
 
 - create new prefabs for full and short keywords 
-- goto Effects_Bar in Cards_Main for both units and spells, add new prefabs in lists
+- search scene for KeywordBarController, add new prefabs in keyword lists
 
 - change value in input > Dropdown_Effect_Keywords
 - add new keywords in dropdown options list

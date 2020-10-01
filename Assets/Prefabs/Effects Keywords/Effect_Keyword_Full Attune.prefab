@@ -7,6 +7,71 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 7504456831921337396, guid: 5c4db9f96f56579419f76d09e8e38147,
+        type: 2}
+    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 88f93eb83740846438fd696c9e7debdf,
+        type: 2}
+    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c4db9f96f56579419f76d09e8e38147,
+        type: 2}
+    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7504456831921337396, guid: 5c4db9f96f56579419f76d09e8e38147,
+        type: 2}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_text
+      value: <sprite name="attune">Attune
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -9101055750749113232, guid: 88f93eb83740846438fd696c9e7debdf,
+        type: 2}
     - target: {fileID: 4490734490705785986, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
         type: 3}
       propertyPath: m_Name
@@ -112,70 +177,5 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_text
-      value: <sprite name="attune">attune
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_textInfo.materialCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4490734490564726936, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -9101055750749113232, guid: 88f93eb83740846438fd696c9e7debdf,
-        type: 2}
-    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 7504456831921337396, guid: 5c4db9f96f56579419f76d09e8e38147,
-        type: 2}
-    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 88f93eb83740846438fd696c9e7debdf,
-        type: 2}
-    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_spriteAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c4db9f96f56579419f76d09e8e38147,
-        type: 2}
-    - target: {fileID: 4490734489607579935, guid: 7b8f9914bfd5c8742bca5d60ad3af33d,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 7504456831921337396, guid: 5c4db9f96f56579419f76d09e8e38147,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b8f9914bfd5c8742bca5d60ad3af33d, type: 3}

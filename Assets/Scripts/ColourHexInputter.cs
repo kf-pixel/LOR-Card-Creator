@@ -6,47 +6,43 @@ using TMPro;
 
 public class ColourHexInputter : MonoBehaviour
 {
+	[Header("Slider & UI References")]
 	[SerializeField] private TMP_InputField tmpi;
-	[SerializeField] private StringVariable hex;
-	[SerializeField] private FloatVariable referenceColourR;
-	[SerializeField] private FloatVariable referenceColourG;
-	[SerializeField] private FloatVariable referenceColourB;
-
-	[Header("Resetting custom properties on restart")]
+	[SerializeField] private TMP_InputField tmp_label_i;
+	[SerializeField] private TMP_Dropdown tmp_index_dd;
 	[SerializeField] private Slider sliderR;
 	[SerializeField] private Slider sliderG;
 	[SerializeField] private Slider sliderB;
-	[SerializeField] private StringVariable referenceLabel;
-	[SerializeField] private IntVariable referenceIndex;
-	[SerializeField] private TMP_Dropdown tmp_index_dd;
-	[SerializeField] private TMP_InputField tmp_label_i;
+
+	[Header("Custom Keyword Reference Data")]
+	[SerializeField] private CustomKeywordData KWData;
 
 	private void OnEnable()
 	{
-		if (referenceColourR.value == 0f && referenceColourG.value == 0f && referenceColourB.value == 0f)
+		if (KWData.colorR == 0f && KWData.colorG == 0f && KWData.colorB == 0f)
 		{
-			referenceColourR.value = 1f;
-			referenceColourG.value = 1f;
-			referenceColourB.value = 1f;
+			KWData.colorR = 1f;
+			KWData.colorG = 1f;
+			KWData.colorB = 1f;
 		}
 
-		sliderR.value = referenceColourR.value;
-		sliderG.value = referenceColourG.value;
-		sliderB.value = referenceColourB.value;
+		sliderR.value = KWData.colorR;
+		sliderG.value = KWData.colorG;
+		sliderB.value = KWData.colorB;
 
 		ChangeValue();
 
-		tmp_index_dd.SetValueWithoutNotify(referenceIndex.value);
-		tmp_label_i.SetTextWithoutNotify(referenceLabel.value);
+		tmp_index_dd.SetValueWithoutNotify(KWData.spriteIndex);
+		tmp_label_i.SetTextWithoutNotify(KWData.label);
 	}
 
 
 	public void ChangeValue()
 	{
-		var rgbColour = new Color(referenceColourR.value, referenceColourG.value, referenceColourB.value);
-		hex.value = "#" + ColorUtility.ToHtmlStringRGB(rgbColour);
+		var rgbColour = new Color(KWData.colorR, KWData.colorG, KWData.colorB);
+		KWData.hexColor = "#" + ColorUtility.ToHtmlStringRGB(rgbColour);
 
-		tmpi.SetTextWithoutNotify(hex.value);
+		tmpi.SetTextWithoutNotify(KWData.hexColor);
 	}
 
 	public void HexToRGB()
@@ -54,9 +50,25 @@ public class ColourHexInputter : MonoBehaviour
 		var c = new Color();
 		ColorUtility.TryParseHtmlString(tmpi.text, out c);
 
-		referenceColourR.value = c.r;
-		referenceColourG.value = c.g;
-		referenceColourB.value = c.b;
+		KWData.colorR = c.r;
+		KWData.colorG = c.g;
+		KWData.colorB = c.b;
+
+		sliderR.value = c.r;
+		sliderG.value = c.g;
+		sliderB.value = c.b;
+
+	}
+
+	// used in saving
+	public void HexDataToRGB()
+	{
+		var c = new Color();
+		ColorUtility.TryParseHtmlString(KWData.hexColor, out c);
+
+		KWData.colorR = c.r;
+		KWData.colorG = c.g;
+		KWData.colorB = c.b;
 
 		sliderR.value = c.r;
 		sliderG.value = c.g;
