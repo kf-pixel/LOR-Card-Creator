@@ -196,6 +196,8 @@ public class ListManager : MonoBehaviour
 			KWData[i].colorG = activeSaveData.customKeywordSaveData[i].colorG;
 			KWData[i].colorB = activeSaveData.customKeywordSaveData[i].colorB;
 
+			print(activeSaveData.customKeywordSaveData[i].label);
+
 			// Modify to UI Panels
 			KWLabels[i].SetTextWithoutNotify(KWData[i].label);
 			KWDescriptions[i].SetTextWithoutNotify(KWData[i].description);

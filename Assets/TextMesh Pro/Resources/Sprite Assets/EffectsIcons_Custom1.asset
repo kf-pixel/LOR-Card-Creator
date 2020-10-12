@@ -848,4 +848,5 @@ MonoBehaviour:
   spriteInfoList: []
   fallbackSpriteAssets:
   - {fileID: 11400000, guid: 5c4db9f96f56579419f76d09e8e38147, type: 2}
+  - {fileID: 11400000, guid: 699b98280841e6741909797f235d8192, type: 2}
   - {fileID: 11400000, guid: 89057204ca449b543b5602346681a332, type: 2}

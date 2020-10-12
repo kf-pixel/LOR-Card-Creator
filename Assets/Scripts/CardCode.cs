@@ -274,35 +274,22 @@ public class CardCode : MonoBehaviour
 			cardTextF.SetTextWithoutNotify("");
 		}
 
-		// Get Region
-		for (int i = 0; i < regionNames.Length; i++)
+		// Get Title
+		if (working.Contains(":"))
 		{
-			if (working.ToLower().Contains(regionNames[i].ToLower()))
-			{
-				region.value = i;
-				working = working.Replace(regionNames[i].ToLower(), "");
-				working = working.Replace(regionNames[i], "");
-				break;
-			}
+			int colonIndex = working.IndexOf(":");
+			string titleSubstring = working.Substring(0, colonIndex);
+
+			working = working.Remove(0, colonIndex + 1);
+			title.value = titleSubstring;
+			titleF.SetTextWithoutNotify(titleSubstring);
+		}
+		else
+		{
+			title.value = "Untitled";
+			titleF.SetTextWithoutNotify("Untitled");
 		}
 
-		// Get Rarity
-		bool foundRarity = false;
-		for (int i = 1; i < rarityNames.Length; i++)
-		{
-			if (working.ToLower().Contains(rarityNames[i].ToLower()))
-			{
-				rarity.value = i;
-				working = working.Replace(rarityNames[i].ToLower(), "");
-				working = working.Replace(rarityNames[i], "");
-				foundRarity = true;
-				break;
-			}
-		}
-		if (!working.ToLower().Contains("champion") && !foundRarity)
-		{
-			rarity.value = 0;
-		}
 
 		// Get Card Type
 		bool foundCardType = false;
@@ -345,6 +332,7 @@ public class CardCode : MonoBehaviour
 			cardType.value = 1;
 		}
 
+
 		// Get Level Up Text
 		if (cardType.value == 1)
 		{
@@ -371,21 +359,36 @@ public class CardCode : MonoBehaviour
 			levelUpTextF.text = "";
 		}
 
-		// Get Title
-		if (working.Contains(":"))
+		// Get Region
+		for (int i = 0; i < regionNames.Length; i++)
 		{
-			int colonIndex = working.IndexOf(":");
-			string titleSubstring = working.Substring(0, colonIndex);
+			if (working.ToLower().Contains(regionNames[i].ToLower()))
+			{
+				region.value = i;
+				working = working.Replace(regionNames[i].ToLower(), "");
+				working = working.Replace(regionNames[i], "");
+				break;
+			}
+		}
 
-			working = working.Remove(0, colonIndex + 1);
-			title.value = titleSubstring;
-			titleF.SetTextWithoutNotify(titleSubstring);
-		}
-		else
+		// Get Rarity
+		bool foundRarity = false;
+		for (int i = 1; i < rarityNames.Length; i++)
 		{
-			title.value = "Untitled";
-			titleF.SetTextWithoutNotify("Untitled");
+			if (working.ToLower().Contains(rarityNames[i].ToLower()))
+			{
+				rarity.value = i;
+				working = working.Replace(rarityNames[i].ToLower(), "");
+				working = working.Replace(rarityNames[i], "");
+				foundRarity = true;
+				break;
+			}
 		}
+		if (!working.ToLower().Contains("champion") && !foundRarity)
+		{
+			rarity.value = 0;
+		}
+
 
 		// Get Group
 		if (working.Contains("#"))
@@ -528,7 +531,8 @@ public class CardCode : MonoBehaviour
 
 	public void KeywordRecorder(int i)
 	{
-		if (cardEffectsNames[i].ToLower() == "fast" || cardEffectsNames[i].ToLower() == "burst" || cardEffectsNames[i].ToLower() == "slow" || (cardType.value == 6 && cardEffectsNames[i].ToLower() == "skill"))
+
+		if (cardEffectsNames[i] == "Fast" || cardEffectsNames[i] == "Burst" || cardEffectsNames[i] == "Slow" || (cardType.value == 6 && cardEffectsNames[i] == "Skill") || cardEffectsNames[i] == "Landmark")
 		{
 			return;
 		}

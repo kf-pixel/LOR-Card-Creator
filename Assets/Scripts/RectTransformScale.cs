@@ -5,6 +5,10 @@ public class RectTransformScale : MonoBehaviour
 	[SerializeField] private RectTransform rect;
 	[SerializeField] private Transform pivotPoint;
 
+	[Header("Size Setting")]
+	[SerializeField] private Vector2[] sizeValues;
+	[SerializeField] private Vector2[] positionValues;
+
 	public void SetScale(float f)
 	{
 		// Set Image width x height
@@ -15,7 +19,7 @@ public class RectTransformScale : MonoBehaviour
 
 	public void ResetPosition()
 	{
-		transform.localPosition = new Vector3(155, 0);
+		rect.anchoredPosition = new Vector3(0, 0);
 	}
 
 	public void ScaleAround(float newScale, float aspectRatio)
@@ -33,5 +37,14 @@ public class RectTransformScale : MonoBehaviour
 		// finally, actually perform the scale/translation
 		rect.sizeDelta = new Vector2(newScale, newScale * aspectRatio);
 		transform.position = FP;
+	}
+
+	public void SetSize(int i)
+	{
+		rect.sizeDelta = sizeValues[i];
+		if (positionValues[i] != Vector2.zero)
+		{
+			rect.anchoredPosition = positionValues[i];
+		}
 	}
 }

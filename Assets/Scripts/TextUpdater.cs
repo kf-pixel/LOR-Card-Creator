@@ -45,15 +45,7 @@ public class TextUpdater : MonoBehaviour
 		//yield return new WaitForSeconds(checkTextHeightDelay);
 		yield return new WaitForEndOfFrame();
 
-		if (!System.String.IsNullOrEmpty(tmp.text))
-		{
-			textHeight = tmp.renderedHeight;
-		}
-		else
-		{
-			textHeight = 0f;
-		}
-
+		textHeight = Mathf.Max(tmp.renderedHeight, 0f);
 		newTextHeightEvent.Invoke(textHeight);
 	}
 

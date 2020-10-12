@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
-  m_Name: EffectsIcons_4
+  m_Name: EffectsIcons1
   m_EditorClassIdentifier: 
   hashCode: -331462890
   material: {fileID: 7504456831921337396}
@@ -462,7 +462,7 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 50
       m_Height: 50
-      m_HorizontalBearingX: 4
+      m_HorizontalBearingX: 0
       m_HorizontalBearingY: 42
       m_HorizontalAdvance: 50
     m_GlyphRect:
@@ -638,6 +638,7 @@ MonoBehaviour:
   fallbackSpriteAssets:
   - {fileID: 11400000, guid: 9d138296041f067429e04862ac801dc5, type: 2}
   - {fileID: 11400000, guid: 89057204ca449b543b5602346681a332, type: 2}
+  - {fileID: 11400000, guid: 699b98280841e6741909797f235d8192, type: 2}
 --- !u!21 &7504456831921337396
 Material:
   serializedVersion: 6

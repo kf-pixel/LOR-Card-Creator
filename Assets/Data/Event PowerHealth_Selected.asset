@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0f4abf350ec3da4d9914e874946e887, type: 3}
-  m_Name: Event SpellCard_Selected
+  m_Name: Event PowerHealth_Selected
   m_EditorClassIdentifier: 

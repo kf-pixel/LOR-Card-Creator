@@ -32,11 +32,6 @@ public class CardDataObject
 		id = System.DateTime.Now.ToString() + suffix + randomIndex.ToString();
 	}
 
-	public string GetMana()
-	{
-		return null;
-	}
-
 	public string GetCardType(string[] cardNamesList)
 	{
 		string foundCardType = "Follower";
@@ -88,6 +83,22 @@ public class CardDataObject
 		}
 
 		return foundRegion;
+	}
+
+	public string GetMana()
+	{
+		// Get Mana
+		string manaString = "";
+		int manaIndex = cardCode.ToLower().IndexOf("mana");
+
+		// Find Numbers
+		if (manaIndex > 0)
+		{
+			manaString = cardCode.Substring(manaIndex - 3, 3).Replace(" ","");
+			return manaString;
+		}
+
+		return " ";
 	}
 
 	public void SetName()

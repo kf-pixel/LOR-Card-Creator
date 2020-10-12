@@ -9,6 +9,9 @@ public class ListItem : MonoBehaviour
 	public ListManager listManager;
 	public CardDataObject cardData;
 	public TextMeshProUGUI textLabel;
+	public TextMeshProUGUI subTextLabel;
+	public TextMeshProUGUI manaLabel;
+	public TextMeshProUGUI indexLabel;
 	public int listOrderIndex;
 
 	private void Start()
@@ -27,10 +30,21 @@ public class ListItem : MonoBehaviour
 		{
 			colorTypeAppend = "";
 		}
+		else if (cardTypeIndex == 7)
+		{
+			colorTypeAppend = "<color=#CCDBD7>";
+		}
 
-		textLabel.text = (listOrderIndex + 1) < 10 ?
-			"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + "  </mspace></color>" + colorTypeAppend + cardData.cardName + cardDataAppend :
-			"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + " </mspace></color>"  + colorTypeAppend + cardData.cardName + cardDataAppend ;
+		// Update Main Label
+		//textLabel.text = (listOrderIndex + 1) < 10 ?
+		//	"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + "  </mspace></color>" + colorTypeAppend + cardData.cardName:
+		//	"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + " </mspace></color>"  + colorTypeAppend + cardData.cardName;
+		textLabel.text = colorTypeAppend + cardData.cardName;
+
+		// Update Sub Text Labels
+		subTextLabel.text = colorTypeAppend + cardDataAppend;
+		indexLabel.text = (listOrderIndex + 1).ToString();
+		manaLabel.text = cardData.GetMana();
 	}
 
 	public void SetAsActiveItem()

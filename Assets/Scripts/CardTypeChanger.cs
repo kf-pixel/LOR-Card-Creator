@@ -32,6 +32,10 @@ public class CardTypeChanger : MonoBehaviour
 
 	[SerializeField] private UnityEvent skillEvent;
 
+	[SerializeField] private UnityEvent landmarkEvent;
+	[SerializeField] private UnityEvent nonLandmarkEvent;
+
+
 	private void Start()
 	{
 		previousCardType = defaultIndex;
@@ -42,7 +46,7 @@ public class CardTypeChanger : MonoBehaviour
 	public void ParseType()
 	{
 		// clear keywords if going from unit > spell or vice versa
-		if (previousCardType <= 2 && cardTypeIndex.value > 2 || previousCardType > 2 && cardTypeIndex.value <= 2)
+		if (previousCardType <= 2 && cardTypeIndex.value > 2 || previousCardType > 2 && cardTypeIndex.value <= 2 || cardTypeIndex.value == 7)
 		{
 			clearKeywordsEvent.Raise();
 		}
@@ -50,10 +54,17 @@ public class CardTypeChanger : MonoBehaviour
 		if (cardTypeIndex.value == 1)  // if Champion base card
 		{
 			championBaseCardEvent.Invoke();
+			nonLandmarkEvent.Invoke();
 		}
 		else if (cardTypeIndex.value == 0 || cardTypeIndex.value == 2) // if Follow or Champion Leveled card
 		{
 			nonChampionBaseCardEvent.Invoke();
+			nonLandmarkEvent.Invoke();
+		}
+		else if (cardTypeIndex.value == 7)
+		{
+			nonChampionBaseCardEvent.Invoke();
+			landmarkEvent.Invoke();
 		}
 		else // else is Spell Card
 		{

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 7
   m_fontSizeMax: 10
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_textAlignment: 513
   m_characterSpacing: -2
   m_wordSpacing: 0

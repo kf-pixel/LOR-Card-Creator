@@ -66,13 +66,8 @@ public class ColourHexInputter : MonoBehaviour
 		var c = new Color();
 		ColorUtility.TryParseHtmlString(KWData.hexColor, out c);
 
-		KWData.colorR = c.r;
-		KWData.colorG = c.g;
-		KWData.colorB = c.b;
-
-		sliderR.value = c.r;
-		sliderG.value = c.g;
-		sliderB.value = c.b;
-
+		sliderR.SetValueWithoutNotify(c.r);
+		sliderG.SetValueWithoutNotify(c.g);
+		sliderB.SetValueWithoutNotify(c.b);
 	}
 }
