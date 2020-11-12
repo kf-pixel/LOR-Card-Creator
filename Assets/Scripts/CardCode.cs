@@ -299,6 +299,7 @@ public class CardCode : MonoBehaviour
 			{
 				foundCardType = true;
 				cardType.value = i;
+				
 				working = working.Replace(cardTypeNames[i].ToLower(), "");
 				working = working.Replace(cardTypeNames[i], "");
 				break;

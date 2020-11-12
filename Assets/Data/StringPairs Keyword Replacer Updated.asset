@@ -129,3 +129,5 @@ MonoBehaviour:
     replacedString: <color=#F0CC70>Toss
   - inputString: Rally
     replacedString: <color=#F0CC70>Rally
+  - inputString: Silence
+    replacedString: <color=#F0CC70>Silence
