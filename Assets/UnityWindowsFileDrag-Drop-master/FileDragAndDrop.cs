@@ -24,7 +24,6 @@ public class FileDragAndDrop : MonoBehaviour
         // mouse position within the window where the files has been dropped.
         string str = "Dropped " + aFiles.Count + " files at: " + aPos + "\n\t" +
             aFiles.Aggregate((a, b) => a + "\n\t" + b);
-        Debug.Log(str);
         log.Add(str);
     }
 

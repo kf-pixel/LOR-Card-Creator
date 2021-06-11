@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -13,6 +14,7 @@ public class ListItem : MonoBehaviour
 	public TextMeshProUGUI manaLabel;
 	public TextMeshProUGUI indexLabel;
 	public int listOrderIndex;
+	[SerializeField] private UnityEvent highlightEvent, dehighlightEvent;
 
 	private void Start()
 	{
@@ -24,9 +26,22 @@ public class ListItem : MonoBehaviour
 		// Determine type of card
 		int cardTypeIndex = cardData.GetCardTypeIndex(listManager.cardTypeNames);
 		string cardTypeName = cardData.GetCardType(listManager.cardTypeNames);
+
 		string cardDataAppend = "   <alpha=#66><cspace=1><font=\"Univers 59 Ultra Condensed SDF\">[" + cardTypeName + "]";
-		string colorTypeAppend = cardTypeIndex == 1 || cardTypeIndex == 2 ? "<color=#F1D590>" : "<color=#88CDD4>";
-		if (cardTypeIndex == 0)
+		string colorTypeAppend = "<color=#88CDD4>";
+		if (cardTypeIndex == 1)
+		{
+			colorTypeAppend = "<color=#F1D590>";
+		}
+		else if (cardTypeIndex == 2)
+		{
+			colorTypeAppend = "<color=#f4d853>";
+		}
+		else if (cardTypeIndex == 8)
+		{
+			colorTypeAppend = "<color=#f9b50d>";
+		}
+		else if (cardTypeIndex == 0)
 		{
 			colorTypeAppend = "";
 		}
@@ -36,9 +51,6 @@ public class ListItem : MonoBehaviour
 		}
 
 		// Update Main Label
-		//textLabel.text = (listOrderIndex + 1) < 10 ?
-		//	"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + "  </mspace></color>" + colorTypeAppend + cardData.cardName:
-		//	"<alpha=#66><mspace=6>" + (listOrderIndex + 1) + " </mspace></color>"  + colorTypeAppend + cardData.cardName;
 		textLabel.text = colorTypeAppend + cardData.cardName;
 
 		// Update Sub Text Labels
@@ -77,5 +89,17 @@ public class ListItem : MonoBehaviour
 		{
 			listManager.SetActiveDragging(this);
 		}
+	}
+
+	// for multi select function
+
+	public void Highlight()
+	{
+		highlightEvent.Invoke();
+	}
+
+	public void Dehighlight()
+	{
+		dehighlightEvent.Invoke();
 	}
 }

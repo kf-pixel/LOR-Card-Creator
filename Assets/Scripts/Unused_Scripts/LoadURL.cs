@@ -9,21 +9,23 @@ using System.Threading.Tasks;
 
 public class LoadURL : MonoBehaviour
 {
-	[SerializeField] private string url;
 	[SerializeField] private Image img;
-	[SerializeField] private Sprite sprite;
+	[SerializeField] private Texture2D webImage;
 	[SerializeField] private float pixelsPerUnit = 100;
+	private string artworkPath = Application.persistentDataPath + "/artwork";
 
-	// Get Image URL
-	public async void LoadImageFromURL(string url)
+	public bool CheckIfWebImageDownloaded(string url)
 	{
-		Texture2D url_image = await GetURLImage(url);
 
-		// Create Sprite
-		if (sprite != null) Destroy(sprite);
-		sprite = Sprite.Create(url_image, new Rect(0.0f, 0.0f, url_image.width, url_image.height), new Vector2(url_image.width / 2, url_image.height / 2), pixelsPerUnit, 1, SpriteMeshType.FullRect);
-		sprite.name = "URL_IMAGE";
-		img.sprite = sprite;
+		return false;
+	}
+	public async void GetWebImage(string url)
+	{
+		if (webImage != null) Destroy(webImage);
+		webImage = await GetURLImage(url);
+
+		// Download into artwork folder, return directory
+		
 	}
 
 	public async Task<Texture2D> GetURLImage(string url)
@@ -43,7 +45,6 @@ public class LoadURL : MonoBehaviour
 			if (www.isNetworkError || www.isHttpError)
 			{
 				// Log Error:
-				Debug.Log($"{ www.error }, URL:{ www.url }");
 
 				// Exit
 				return null;

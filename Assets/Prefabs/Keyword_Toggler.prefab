@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rt: {fileID: 9110148836757732907}
-  canDrag: 1
+  canDrag: 0
   listItem: {fileID: 0}
   onEnter:
     m_PersistentCalls:
@@ -597,6 +597,8 @@ MonoBehaviour:
   onDragEnd:
     m_PersistentCalls:
       m_Calls: []
+  shiftInput: {fileID: 11400000, guid: ee70842103391f443bd51e1c0f87b963, type: 2}
+  ctrlInput: {fileID: 11400000, guid: 39e3055168d16e446b2e17c91152a565, type: 2}
 --- !u!114 &707099416008664326
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,17 +29,18 @@ public class BoolVariableToggler : MonoBehaviour
 		if (boolVariable.value == true)
 		{
 			onTrue.Invoke();
-			PlayerPrefs.SetInt(playerPrefKey, 1);
+			if (!string.IsNullOrEmpty(playerPrefKey)) PlayerPrefs.SetInt(playerPrefKey, 1);
 		}
 		else
 		{
 			onFalse.Invoke();
-			PlayerPrefs.SetInt(playerPrefKey, 0);
+			if (!string.IsNullOrEmpty(playerPrefKey)) PlayerPrefs.SetInt(playerPrefKey, 0);
 		}
 	}
 
 	private void LoadPlayerPrefsKey()
 	{
+		if (string.IsNullOrEmpty(playerPrefKey)) return;
 		boolVariable.value = PlayerPrefs.GetInt(playerPrefKey, 0) == 1 ? true : false;
 	}
 }

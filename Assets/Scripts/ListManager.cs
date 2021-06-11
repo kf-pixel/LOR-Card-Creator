@@ -9,11 +9,19 @@ using SFB;
 
 public class ListManager : MonoBehaviour
 {
+	[Header("Active Input")]
+	public List<ListItem> activeItem = new List<ListItem>();
+	[HideInInspector] public ListItem activeHovering;
+	[HideInInspector] public ListItem activeDragging;
+	[SerializeField] private BoolVariable shiftDown;
+	[SerializeField] private BoolVariable ctrlDown;
+
 	[Header("Prefab GameObjects")]
 	[SerializeField] private GameObject listItemPrefab;
 	[SerializeField] private GameObject folderPrefab;
 
 	[Header("Region/CardType data to add on newly created cards.")]
+	[SerializeField] private string initialPlaceHolderText;
 	[SerializeField] private IntVariable regionIndex;
 	public string[] regionNames;
 	public string[] cardTypeNames;
@@ -45,24 +53,31 @@ public class ListManager : MonoBehaviour
 	[Header("Saved Data")]
 	public string defaultSaveName = "Untitled Set";
 	public int maxCards = 50;
-	public ListItem activeItem;
-	public ListItem activeHovering;
-	public ListItem activeDragging;
 	public string activeSaveDataPath;
 	public SaveData activeSaveData;
+	[SerializeField] private TextMeshProUGUI tmpLastSave;
+	private float lastSaveTime;
+
+	[Header("Set Export")]
+	[SerializeField] private FileSave fileSaver;
 
 	[Header("Events")]
 	[SerializeField] private UnityEvent onLoad;
 	[SerializeField] private UnityEvent onSave;
 	[SerializeField] private UnityEvent restart;
 	[SerializeField] private UnityEvent noSaveEvent;
-
+	[SerializeField] private UnityEvent loadSetConfirmEvent;
+	[SerializeField] private UnityEvent cardLimitEvent;
+	[SerializeField] private UnityEvent nonCardLimitEvent;
+	[SerializeField] private UnityEvent multiCardExportEvent, nonMultiCardExportEvent;
 
 	private void Start()
 	{
 		if (activeSaveData.cardData.Count == 0)
 		{
 			AddCard();
+			listItemInstances[0].cardData.cardCode = initialPlaceHolderText;
+			cardCode.WriteInput(initialPlaceHolderText);
 		}
 		UpdateCustomKeywordSaveData();
 
@@ -78,73 +93,48 @@ public class ListManager : MonoBehaviour
 #if UNITY_STANDALONE
 	private void Update()
 	{
-		if (Application.isFocused)
-		{
-			if (currentAutoSaveTimer < autoSaveTime)
-			{
-				currentAutoSaveTimer += Time.deltaTime;
-				if (currentAutoSaveTimer > autoSaveTime)
-				{
-					currentAutoSaveCount++;
-					AutoSave();
+		if (!Application.isFocused) return;
 
-					currentAutoSaveTimer = 0f;
-					if (currentAutoSaveCount > 3)
-					{
-						currentAutoSaveCount = 0;
-					}
+		// Auto save countdown
+		if (currentAutoSaveTimer < autoSaveTime)
+		{
+			currentAutoSaveTimer += Time.deltaTime;
+			if (currentAutoSaveTimer > autoSaveTime)
+			{
+				currentAutoSaveCount++;
+				AutoSave();
+
+				currentAutoSaveTimer = 0f;
+				if (currentAutoSaveCount > 3)
+				{
+					currentAutoSaveCount = 0;
 				}
 			}
 		}
+
+		// Time since last save calculate
+		if (activeSaveData == null) return;
+		if (Time.timeSinceLevelLoad - lastSaveTime < 2f)
+		{
+			tmpLastSave.text = "just saved!";
+			return;
+		}
+		int minutesSinceLastSave = Mathf.FloorToInt((Time.timeSinceLevelLoad - lastSaveTime) / 60);
+		tmpLastSave.text = minutesSinceLastSave == 0 ? "saved <1 minute ago" : "saved " + minutesSinceLastSave.ToString() + " minutes ago";
 	}
 #endif
 
-	private void AutoSave()
-	{
-		if (activeSaveData != null)
-		{
-			// Create Autosave folder
-			if (!Directory.Exists(Application.persistentDataPath + "/autosaves"))
-			{
-				Directory.CreateDirectory(Application.persistentDataPath + "/autosaves");
-			}
-
-			string autoSaveName = "autosave" + currentAutoSaveCount + ".json";
-			SerializationManager.JSONSave(Application.persistentDataPath + "/autosaves/" + autoSaveName, activeSaveData);
-		}
-	}
-
-	public void QuickSave()
-	{
-		if (activeSaveDataPath != null)
-		{
-			if (File.Exists(activeSaveDataPath))
-			{
-				SerializationManager.JSONSave(activeSaveDataPath, activeSaveData);
-			}
-		}
-	}
-
-	public void SaveAndNew()
-	{
-		if (string.IsNullOrEmpty(activeSaveDataPath))
-		{
-			noSaveEvent.Invoke();
-			return;
-		}
-		else if (!File.Exists(activeSaveDataPath))
-		{
-			noSaveEvent.Invoke();
-			return;
-		}
-		StartCoroutine(SaveAndNewCoroutine());
-	}
-
-	public IEnumerator SaveAndNewCoroutine()
+	private void OnApplicationQuit()
 	{
 		QuickSave();
-		yield return new WaitForSeconds(0.4f);
-		restart.Invoke();
+	}
+
+	public void SetExport()
+	{
+		if (activeItem == null) return;
+		if (activeItem.Count < 2) return;
+
+		fileSaver.EncodeMultiple(activeItem);
 	}
 
 	private void InitializeKWList()
@@ -159,7 +149,6 @@ public class ListManager : MonoBehaviour
 			}
 		}
 	}
-
 	public void UpdateCustomKeywordSaveData()
 	{
 		InitializeKWList();
@@ -204,6 +193,60 @@ public class ListManager : MonoBehaviour
 		}
 	}
 
+	private void SerializationSave(string path)
+	{
+		SerializationManager.JSONSave(path, activeSaveData);
+		lastSaveTime = Time.timeSinceLevelLoad;
+	}
+
+	private void AutoSave()
+	{
+		if (activeSaveData != null)
+		{
+			// Create Autosave folder
+			if (!Directory.Exists(Application.persistentDataPath + "/autosaves"))
+			{
+				Directory.CreateDirectory(Application.persistentDataPath + "/autosaves");
+			}
+
+			string autoSaveName = "autosave" + currentAutoSaveCount + ".json";
+			SerializationSave(Application.persistentDataPath + "/autosaves/" + autoSaveName);
+		}
+	}
+
+	public void QuickSave()
+	{
+		if (activeSaveDataPath != null)
+		{
+			if (File.Exists(activeSaveDataPath))
+			{
+				SerializationSave(activeSaveDataPath);
+			}
+		}
+	}
+
+	public void OnSaveAndNew() // on new set button
+	{
+		if (string.IsNullOrEmpty(activeSaveDataPath))
+		{
+			noSaveEvent.Invoke();
+			return;
+		}
+		else if (!File.Exists(activeSaveDataPath))
+		{
+			noSaveEvent.Invoke();
+			return;
+		}
+		StartCoroutine(SaveAndNewCoroutine());
+	}
+
+	public IEnumerator SaveAndNewCoroutine()
+	{
+		QuickSave();
+		yield return new WaitForSeconds(0.4f);
+		restart.Invoke();
+	}
+
 	public void WriteSaveData()
 	{
 		var extensions = new[]
@@ -237,25 +280,37 @@ public class ListManager : MonoBehaviour
 			activeSaveData.saveName = defaultSaveName;
 		}
 
-		SerializationManager.JSONSave(path, activeSaveData);
+		SerializationSave(path);
 
 		// Update path
 		activeSaveDataPath = path;
 
 		// Update Set Name Display with path name
-		string saveSubfolder = "/saves/";
-		if (path.IndexOf(saveSubfolder) < 0)
+		int pathFileIndex = path.LastIndexOf("\\") + 1;
+		if (pathFileIndex > 0)
 		{
-			saveSubfolder = "\\saves\\";
+			activeSaveData.saveName = path.Substring(pathFileIndex).Replace(".json", "");
+			uiSaveNameDisplay.text = "- " + activeSaveData.saveName + " -";
 		}
-		activeSaveData.saveName = path.Substring(path.IndexOf(saveSubfolder) + 7).Replace(".json", "");
-		uiSaveNameDisplay.text = activeSaveData.saveName;
+		else uiSaveNameDisplay.text = "-";
 
 		// Event
 		onSave.Invoke();
 	}
 
-	public void LoadSaveData()
+	public void OnLoadSet(bool forceLoad)
+	{
+		if (string.IsNullOrEmpty(activeSaveDataPath) || forceLoad == true)
+		{
+			LoadSaveData();
+		}
+		else
+		{
+			loadSetConfirmEvent.Invoke();
+		}
+	}
+
+	private void LoadSaveData() // opens window on ^ 'load set' button
 	{
 		var extensions = new[]
 		{
@@ -281,7 +336,7 @@ public class ListManager : MonoBehaviour
 		}
 	}
 
-    public void LoadSaveData(string path)
+    private void LoadSaveData(string path)
 	{
 		// Clear Current GameObjects
 		foreach(ListItem oldInstance in listItemInstances)
@@ -296,6 +351,7 @@ public class ListManager : MonoBehaviour
 		// Call the Serialization Manager to load
 		SaveData loadedSave = (SaveData)SerializationManager.JSONLoad(path);
 		activeSaveDataPath = path;
+		lastSaveTime = Time.timeSinceLevelLoad;
 
 		if (loadedSave != null)
 		{
@@ -304,14 +360,14 @@ public class ListManager : MonoBehaviour
 			// Load Keyword data
 			LoadCustomKeywordSaveData();
 
-			// Load Set Name Display with path name
-			string saveSubfolder = "/saves/";
-			if (path.IndexOf(saveSubfolder) < 0)
+			// Update Set Name Display with path name
+			int pathFileIndex = path.LastIndexOf("\\") + 1;
+			if (pathFileIndex > 0)
 			{
-				saveSubfolder = "\\saves\\";
+				activeSaveData.saveName = path.Substring(pathFileIndex).Replace(".json", "");
+				uiSaveNameDisplay.text = "- " + activeSaveData.saveName + " -";
 			}
-			activeSaveData.saveName = path.Substring(path.IndexOf(saveSubfolder) + 7).Replace(".json", "");
-			uiSaveNameDisplay.text = activeSaveData.saveName;
+			else uiSaveNameDisplay.text = "-";
 
 			// Start loading and building the card list
 			activeItem = null;
@@ -356,7 +412,7 @@ public class ListManager : MonoBehaviour
 			if (setNewActive == false)
 			{
 				setNewActive = true;
-				StartCoroutine(SetFirstAsActiveOnLoad(it));
+				StartCoroutine(SetAsActive(it));
 			}
 			number++;
 		}
@@ -364,25 +420,134 @@ public class ListManager : MonoBehaviour
 		yield break;
 	}
 
-	private IEnumerator SetFirstAsActiveOnLoad(ListItem item)
+	private IEnumerator SetAsActive(ListItem item)
 	{
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForEndOfFrame();
 
-		Button bt = item.GetComponent<Button>();
-		if (bt != null)
+		PointerDownEvent pt = item.GetComponent<PointerDownEvent>();
+		if (pt != null)
 		{
-			bt.onClick.Invoke();
+			pt.onPointerDown.Invoke();
+		}
+		else
+		{
+			Debug.Log("cannot find pointer script!");
 		}
 	}
 
-	public void SetNewActiveItem(ListItem newItem)
+	public void SetNewActiveItem(ListItem newItem, bool captureInput = true)
 	{
-		if (activeItem == newItem) return;
+		// null checking
+		if (activeItem == null)
+		{
+			activeItem = new List<ListItem>();
+		}
+		if (activeItem.Count > 0)
+		{
+			if (activeItem[0] != null)
+			{
+				if (activeItem[0] == newItem && activeItem.Count == 0) return;
+			}
+		}
 
-		activeItem = newItem;
+		// Regular click; clear list then add the new item as active
+		if (!shiftDown.value && !ctrlDown.value || activeItem.Count == 0 || captureInput == false)
+		{
+			activeItem.Clear();
+			activeItem.Add(newItem);
+			cardCode.WriteInput(newItem.cardData.cardCode);
 
-		//inputFieldCardData.text = activeItem.cardData.cardCode;
-		cardCode.WriteInput(activeItem.cardData.cardCode);
+			// Dehighlight other items
+			foreach (ListItem item in listItemInstances)
+			{
+				if (item != newItem) item.Dehighlight();
+			}
+		}
+		// Multi-select cLICK, for export
+		else if (ctrlDown.value && !shiftDown.value) // CTRL input, add if not in list, remove if in list
+		{
+			activeItem[0].Highlight();
+			if (!activeItem.Contains(newItem))
+			{
+				activeItem.Insert(0, newItem);
+				newItem.Highlight();
+				cardCode.WriteInput(newItem.cardData.cardCode);
+			}
+			else if (activeItem.Count > 1)
+			{
+				// logic for to select last item if the removed item is the active item
+				if (activeItem[0] == newItem)
+				{
+					ListItem lastActive = activeItem[activeItem.Count - 2];
+					foreach (ListItem li in activeItem)
+					{
+						if (li.listOrderIndex > lastActive.listOrderIndex && li != newItem)
+						{
+							lastActive = li;
+						}
+					}
+
+					// add item
+					activeItem.Remove(lastActive);
+					activeItem.Insert(0, lastActive);
+					cardCode.WriteInput(lastActive.cardData.cardCode);
+				}
+
+				// remove item
+				newItem.Dehighlight();
+				activeItem.Remove(newItem);
+			}
+		}
+		else if (shiftDown.value) // SHIFT input, gather all in between orderIndex
+		{
+			int startIndex = Mathf.Min(activeItem[0].listOrderIndex, newItem.listOrderIndex);
+			int endIndex = Mathf.Max(activeItem[0].listOrderIndex, newItem.listOrderIndex);
+
+			if (startIndex != endIndex)
+			{
+				activeItem[0].Highlight();
+				for (int i = startIndex; i < endIndex; i++)
+				{
+					ListItem n = listItemInstances[i];
+					if (!activeItem.Contains(n))
+					{
+						activeItem.Insert(0, n);
+						n.Highlight();
+					}
+				}
+
+				// Set new active
+				activeItem.Remove(newItem);
+				activeItem.Insert(0, newItem);
+				newItem.Highlight();
+				cardCode.WriteInput(newItem.cardData.cardCode);
+			}
+		}
+
+		// Check if there are multiple cards selected
+		if (activeItem.Count > 1)
+		{
+			multiCardExportEvent.Invoke();
+		}
+		else
+		{
+			nonMultiCardExportEvent.Invoke();
+		}
+	}
+
+	public void UpdateActiveCardData()
+	{
+		if (activeItem == null)
+		{
+			activeItem = new List<ListItem>();
+			return;
+		}
+		if (activeItem.Count == 0) return;
+		if (activeItem[0] == null) return;
+
+		activeItem[0].cardData.cardCode = inputFieldCardData.text;
+		activeItem[0].cardData.SetName();
+		activeItem[0].UpdateLabel();
 	}
 
 	public void SetNewHoveringItem(ListItem newHoveringItem)
@@ -402,19 +567,19 @@ public class ListManager : MonoBehaviour
 		activeDragging = null;
 	}
 
-	public void UpdateActiveCardData()
-	{
-		if (activeItem == null) return;
-
-		activeItem.cardData.cardCode = inputFieldCardData.text;
-		activeItem.cardData.SetName();
-		activeItem.UpdateLabel();
-	}
-
 	public void AddCard()
 	{
 		// Check if we are at the max card limit
+		if (listItemInstances.Count >= maxCards - 1)
+		{
+			cardLimitEvent.Invoke();
+		}
+		else
+		{
+			nonCardLimitEvent.Invoke();
+		}
 		if (listItemInstances.Count >= maxCards) return;
+
 
 		// Spawn Prefab & set data
 		CardDataObject card = new CardDataObject(regionNames[regionIndex.value]);
@@ -436,8 +601,7 @@ public class ListManager : MonoBehaviour
 		activeHovering = null;
 
 		// Set as active item if none is active
-		StartCoroutine(SetFirstAsActiveOnLoad(it));
-
+		StartCoroutine(SetAsActive(it));
 		activeSaveData.cardData.Add(card);
 	}
 
@@ -470,9 +634,56 @@ public class ListManager : MonoBehaviour
 		// Reset to first active item
 		if (listItemInstances.Count > 0)
 		{
-			StartCoroutine(SetFirstAsActiveOnLoad(listItemInstances[0]));
+			StartCoroutine(SetAsActive(listItemInstances[0]));
 		}
 
+		// Check if we are at the max card limit
+		if (listItemInstances.Count >= maxCards)
+		{
+			cardLimitEvent.Invoke();
+		}
+		else
+		{
+			nonCardLimitEvent.Invoke();
+		}
+	}
+
+	public void DuplicateCard()
+	{
+		if (activeItem == null || listItemInstances.Count >= maxCards) return;
+
+		// Spawn Prefab & set data
+		CardDataObject card = new CardDataObject(activeItem[0].cardData);
+		card.SetName();
+		card.GenerateID();
+
+		GameObject newItem = Instantiate(listItemPrefab, content);
+		ListItem it = newItem.GetComponent<ListItem>();
+		it.cardData = card;
+		it.listManager = this;
+		it.listOrderIndex = activeSaveData.cardData.Count;
+
+		// Add to spawned instances
+		listItemInstances.Add(it);
+
+		// Clear actives
+		activeItem = null;
+		activeDragging = null;
+		activeHovering = null;
+
+		// Set as active item if none is active
+		StartCoroutine(SetAsActive(it));
+		activeSaveData.cardData.Add(card);
+
+		// Check if we are at the max card limit
+		if (listItemInstances.Count >= maxCards)
+		{
+			cardLimitEvent.Invoke();
+		}
+		else
+		{
+			nonCardLimitEvent.Invoke();
+		}
 	}
 
 	public void RepositionOnDrag(ListItem draggedItem, Vector3 mousePosition)
@@ -512,5 +723,10 @@ public class ListManager : MonoBehaviour
 			cd.UpdateLabel();
 			number++;
 		}
+	}
+
+	public void SetMaxCardsLimit(int count)
+	{
+		maxCards = count;
 	}
 }

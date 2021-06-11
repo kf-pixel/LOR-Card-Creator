@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59194810cdd8964ba53a73090da1598, type: 3}
+  m_Name: Sprites RegionFrames_Dual
+  m_EditorClassIdentifier: 
+  values:
+  - {fileID: 21300000, guid: e7e99fd6ea5b4a84a87dd634244a368e, type: 3}
+  - {fileID: 21300000, guid: 9f098d5306e40da4aa7e9b3fe4c3c09b, type: 3}
+  - {fileID: 21300000, guid: dfd848691e9e5934d93cc6b352adfe81, type: 3}
+  - {fileID: 21300000, guid: 490ef2608fd02a34e8841b99298f5089, type: 3}
+  - {fileID: 21300000, guid: 490ef2608fd02a34e8841b99298f5089, type: 3}
+  - {fileID: 21300000, guid: 490ef2608fd02a34e8841b99298f5089, type: 3}
+  - {fileID: 21300000, guid: 490ef2608fd02a34e8841b99298f5089, type: 3}
+  - {fileID: 21300000, guid: ef90f450a635d3b4f8d1c7dfced8ff56, type: 3}
+  - {fileID: 21300000, guid: ff3bd14c49706ce4d9193ad552adf783, type: 3}
+  - {fileID: 21300000, guid: 490ef2608fd02a34e8841b99298f5089, type: 3}

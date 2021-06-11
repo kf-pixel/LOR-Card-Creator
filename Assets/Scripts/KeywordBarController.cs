@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class KeywordBarController : MonoBehaviour
 {
@@ -23,55 +24,56 @@ public class KeywordBarController : MonoBehaviour
 		}
 	}
 
-	[SerializeField] private List<GameObjectInt> keywordObject = new List<GameObjectInt>();
-	public GameObject[] keywordsFull;
-	public GameObject[] keywordsShort;
+	[SerializeField] private bool autoShorten;
+	[SerializeField] private List<GameObjectInt> keywordInstances = new List<GameObjectInt>();
+	public GameObjectVariableList keywords;
 	private int maxNumberOfKeywords = 5;
 	[SerializeField] private IntVariable numberOfKeywords;
+	[SerializeField] private HorizontalLayoutGroup horizontalLayoutGroup;
 
 	[Header("Events")]
-	[SerializeField] private UnityEvent onEnableEvent;
-	[SerializeField] private UnityEvent onDisableEvent;
 	[SerializeField] private UnityEvent noKeywordsEvent;
 	[SerializeField] private UnityEvent someKeywordsEvent;
 	[SerializeField] private UnityEvent maxKeywordsEvent;
+	[SerializeField] private IntEvent keywordIntAddEvent, keywordIntRemoveEvent;
 
 	private void OnEnable()
 	{
-		onEnableEvent.Invoke();
 		CheckNumberOfKeywords();
 	}
 
 	private void OnDisable()
 	{
-		onDisableEvent.Invoke();
-
-		foreach (GameObjectInt go in keywordObject)
+		foreach (GameObjectInt go in keywordInstances)
 		{
 			Destroy(go.obj);
 		}
-		keywordObject.Clear();
+		keywordInstances.Clear();
 	}
 
 	public void AddKeyword(int index)
 	{
-		SolveNewKeyword(index);
+		if (index > keywords.value.Count - 1 || keywordInstances.Count >= maxNumberOfKeywords) return;
+
+		GameObject newKeyword = Instantiate(keywords.value[index], this.transform);
+		keywordInstances.Add(new GameObjectInt(newKeyword, index));
+
 		CheckNumberOfKeywords();
 		FormatKeywords();
 	}
 
 	public void RemoveKeyword(int indexRemove)
 	{
-		for (int i = keywordObject.Count - 1; i >= 0; i--)
+		for (int i = keywordInstances.Count - 1; i >= 0; i--)
 		{
-			if (keywordObject[i].index == indexRemove)
+			if (keywordInstances[i].index == indexRemove)
 			{
-				Destroy(keywordObject[i].obj);
-				keywordObject.Remove(keywordObject[i]);
+				Destroy(keywordInstances[i].obj);
+				keywordInstances.Remove(keywordInstances[i]);
 
-				if (keywordObject.Count == 1)
+				if (keywordInstances.Count == 1)
 				{
-					int ind = keywordObject[0].index;
+					int ind = keywordInstances[0].index;
 					ClearKeywords();
 					AddKeyword(ind);
 					return;
@@ -81,24 +83,61 @@ public class KeywordBarController : MonoBehaviour
 		CheckNumberOfKeywords();
 		FormatKeywords();
 	}
+	public void AddKeyword(string keywordName)
+	{
+		int i = 0;
+		foreach (GameObject k in keywords.value)
+		{
+			if (k.name == keywordName)
+			{
+				keywordIntAddEvent.Raise(i);
+				return;
+			}
+			i++;
+		}
+	}
+
+	public void RemoveKeyword(string keywordName)
+	{
+		int i = 0;
+		foreach (GameObject k in keywords.value)
+		{
+			if (k.name == keywordName)
+			{
+				keywordIntRemoveEvent.Raise(i);
+				return;
+			}
+			i++;
+		}
+	}
+
+	public void RemoveCardTypeKeywords()
+	{
+		string[] cardTypeNames = new string[6] { "Burst", "Fast", "Slow", "Skill", "Focus", "Landmark" };
+
+		foreach (string cn in cardTypeNames)
+		{
+			RemoveKeyword(cn);
+		}
+	}
 
 	public void ClearKeywords()
 	{
-		foreach (GameObjectInt go in keywordObject)
+		foreach (GameObjectInt go in keywordInstances)
 		{
 			Destroy(go.obj);
 		}
-		keywordObject.Clear();
+		keywordInstances.Clear();
 		CheckNumberOfKeywords();
 	}
 
 	private void CheckNumberOfKeywords()
 	{
-		if (keywordObject.Count >= 5)
+		if (keywordInstances.Count >= 5)
 		{
 			maxKeywordsEvent.Invoke();
 		}
-		else if (keywordObject.Count > 0)
+		else if (keywordInstances.Count > 0)
 		{
 			someKeywordsEvent.Invoke();
 		}
@@ -106,102 +145,48 @@ public class KeywordBarController : MonoBehaviour
 		{
 			noKeywordsEvent.Invoke();
 		}
-		numberOfKeywords.value = keywordObject.Count;
+		numberOfKeywords.value = keywordInstances.Count;
 
 	}
 
-	private void FormatKeywords()
+	public void FormatKeywords()
 	{
-		int i = keywordObject.Count;
+		int i = keywordInstances.Count;
 
 		// Rearrange spell speed & skill icons to the left
-		for (int inx = keywordObject.Count - 1; inx >= 0; inx--)
+		for (int inx = keywordInstances.Count - 1; inx >= 0; inx--)
 		{
-			if (keywordObject[inx].index == 2 || keywordObject[inx].index == 10 || keywordObject[inx].index == 20 || keywordObject[inx].index == 21)
+			if (keywordInstances[inx].obj.name.StartsWith("Burst") || keywordInstances[inx].obj.name.StartsWith("Fast") || keywordInstances[inx].obj.name.StartsWith("Slow") 
+			|| keywordInstances[inx].obj.name.StartsWith("Skill") || keywordInstances[inx].obj.name.StartsWith("Focus"))
 			{
-				GameObjectInt spellObject = keywordObject[inx];
-				keywordObject.Remove(spellObject);
-				keywordObject.Insert(0, spellObject);
+				GameObjectInt spellObject = keywordInstances[inx];
+				keywordInstances.Remove(spellObject);
+				keywordInstances.Insert(0, spellObject);
+				spellObject.obj.transform.SetSiblingIndex(0);
 			}
 		}
 
-		// 2 keywords
-		if (i == 2)
+		// Check total lengths of full sized keywords
+		float totalWidth = 0f;
+		foreach (GameObjectInt kwi in keywordInstances)
 		{
-			keywordObject[0].obj.transform.localPosition = new Vector3(-40, 0);
-			keywordObject[1].obj.transform.localPosition = new Vector3(40, 0);
-			return;
+			totalWidth += kwi.obj.GetComponent<KeywordFormat>().GetWidth() + 20f;
 		}
 
-		// 3 keywords
-		if (i == 3)
+		// Format based on total length
+		if (totalWidth > 300f || (autoShorten && keywordInstances.Count > 1))
 		{
-			keywordObject[0].obj.transform.localPosition = new Vector3(-60, 0);
-			keywordObject[1].obj.transform.localPosition = new Vector3(0, 0);
-			keywordObject[2].obj.transform.localPosition = new Vector3(60, 0);
-			return;
+			foreach (GameObjectInt kwi in keywordInstances)
+			{
+				kwi.obj.GetComponent<KeywordFormat>().SetToShort();
+			}
+		}
+		else foreach (GameObjectInt kwi in keywordInstances)
+		{
+			kwi.obj.GetComponent<KeywordFormat>().SetToFull();
 		}
 
-		// 4 keywords
-		if (i == 4)
-		{
-			keywordObject[0].obj.transform.localPosition = new Vector3(-90, 0);
-			keywordObject[1].obj.transform.localPosition = new Vector3(-30, 0);
-			keywordObject[2].obj.transform.localPosition = new Vector3(30, 0);
-			keywordObject[3].obj.transform.localPosition = new Vector3(90, 0);
-			return;
-		}
-
-		// 5 keywords
-		if (i == 5)
-		{
-			keywordObject[0].obj.transform.localPosition = new Vector3(-110, 0);
-			keywordObject[1].obj.transform.localPosition = new Vector3(-55, 0);
-			keywordObject[2].obj.transform.localPosition = new Vector3(0, 0);
-			keywordObject[3].obj.transform.localPosition = new Vector3(55, 0);
-			keywordObject[4].obj.transform.localPosition = new Vector3(110, 0);
-			return;
-		}
-	}
-
-	private void SolveNewKeyword(int index)
-	{
-		if (index > keywordsFull.Length - 1)
-		{
-			return;
-		}
-
-		// If this is the first keyword
-		if (keywordObject.Count == 0)
-		{
-			GameObject newKeyword = Instantiate(keywordsFull[index], this.transform);
-			keywordObject.Add(new GameObjectInt(newKeyword, index));
-			return;
-		}
-
-		// Max keywords
-		if (keywordObject.Count >= maxNumberOfKeywords)
-		{
-			return;
-		}
-
-		// Replace full length keyword on the second addition
-		if (keywordObject.Count == 1)
-		{
-			// Get index from name
-			int ind = keywordObject[0].index;
-
-			// Remove
-			Destroy(keywordObject[0].obj);
-			keywordObject.Clear();
-
-			// Add new
-			GameObject newShortKey = Instantiate(keywordsShort[ind], this.transform);
-			keywordObject.Add(new GameObjectInt(newShortKey, ind));
-		}
-
-		// Otherwise add short keywords
-		GameObject newShort = Instantiate(keywordsShort[index], this.transform);
-		keywordObject.Add(new GameObjectInt(newShort, index));
+		// adjust spacing
+		horizontalLayoutGroup.spacing = keywordInstances.Count > 4 ? 5f : 20f;
 	}
 }

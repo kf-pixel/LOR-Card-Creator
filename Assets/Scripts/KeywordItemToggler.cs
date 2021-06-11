@@ -10,6 +10,7 @@ public class KeywordItemToggler : MonoBehaviour
 {
 	public TextMeshProUGUI tmp;
 	public IntVariable numberOfKeywords;
+	public string keywordName;
 	public int keywordIndex;
 	public IntEvent keywordAdd;
 	public IntEvent keywordRemove;

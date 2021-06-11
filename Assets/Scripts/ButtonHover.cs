@@ -8,11 +8,14 @@ namespace UnityEngine.UI
 	{
 		[SerializeField] private RectTransform rt;
 		[SerializeField] private bool canDrag = true;
+		[SerializeField] private BoolVariable shiftInput, ctrlInput;
+
 		[SerializeField] private ListItem listItem;
 		[SerializeField] private UnityEvent onEnter;
 		[SerializeField] private UnityEvent onExit;
 		[SerializeField] private UnityEvent onDragBegin;
 		[SerializeField] private UnityEvent onDragEnd;
+
 		private Vector3 position;
 		private bool dragging;
 		private Vector3 mousePositionOnDragEnd;
@@ -46,7 +49,6 @@ namespace UnityEngine.UI
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			if (dragging) return;
 			onExit.Invoke();
 		}
 
@@ -54,7 +56,7 @@ namespace UnityEngine.UI
 
 		public void OnBeginDrag(PointerEventData eventData)
 		{
-			if (!canDrag) return;
+			if (!canDrag || shiftInput.value || ctrlInput.value) return;
 			dragging = true;
 			onDragBegin.Invoke();
 			position = transform.position;

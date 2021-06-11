@@ -6,14 +6,12 @@
 - add new x co-ordinates on sprite_asset glyphs
 - add new index on sprite_asset
 
+- add new entry in keywordsReplacer
+
 - create new prefabs for full and short keywords 
 - search scene for KeywordBarController, add new prefabs in keyword lists
-
-- change value in input > Dropdown_Effect_Keywords
-- add new keywords in dropdown options list
-- change value on int event listener under dropdown component
-- change value on  Button_Clear_Keywords
+- check that the keywords scrollable list is long enough
 
 - check if changing spell cards still add the correct keyword
-
-- check that card code read/write effects list is properly written
+- check if spells are removing the correct keywords
+- check that CardCode Effects list is properly written

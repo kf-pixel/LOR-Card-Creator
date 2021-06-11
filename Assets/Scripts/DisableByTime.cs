@@ -22,7 +22,7 @@ public class DisableByTime : MonoBehaviour
 
 	public void StartDisable()
 	{
-		StartCoroutine(Disable());
+		if (gameObject.activeInHierarchy) StartCoroutine(Disable());
 	}
 
 	private void Start()

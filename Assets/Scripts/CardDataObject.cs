@@ -22,7 +22,15 @@ public class CardDataObject
 	{
 		id = "";
 		cardName = "";
-		cardCode = "Untitled: 1 Mana 1/1 " + regionName + " Follower *&local&/placeholder.png*155*0*640*";
+		cardCode = "Untitled: 1 Mana 1/1 " + regionName + " Common Follower *&local&/placeholder.png*155*0*640*";
+		folder = "";
+	}
+
+	public CardDataObject(CardDataObject card)
+	{
+		id = "";
+		cardName = "";
+		cardCode = card.cardCode;
 		folder = "";
 	}
 
@@ -36,6 +44,7 @@ public class CardDataObject
 	{
 		string foundCardType = "Follower";
 		int foundIndex = 99;
+		/*
 		foreach (string r in cardNamesList)
 		{
 			int i = cardCode.IndexOf(r);
@@ -45,10 +54,18 @@ public class CardDataObject
 				foundIndex = i;
 			}
 		}
-		if (foundCardType == "Champion" && !cardCode.Contains("Level Up:"))
+		*/
+
+		for (int i = cardNamesList.Length - 1; i >= 0 ; i--)
 		{
-			foundCardType = "Champion LVLUP";
+			int stringIndex = cardCode.IndexOf(cardNamesList[i]);
+			if (stringIndex < foundIndex && stringIndex > 0)
+			{
+				foundCardType = cardNamesList[i];
+				foundIndex = stringIndex;
+			}
 		}
+
 		return foundCardType;
 	}
 
@@ -56,7 +73,7 @@ public class CardDataObject
 	{
 		int foundIndex = 99;
 		int cardIndex = 0;
-		for (int i = 0; i < cardNamesList.Length; i++)
+		for (int i = cardNamesList.Length - 1; i >= 0; i--)
 		{
 			int ind = cardCode.IndexOf(cardNamesList[i]);
 			if (ind < foundIndex && ind > 0)
@@ -89,10 +106,11 @@ public class CardDataObject
 	{
 		// Get Mana
 		string manaString = "";
-		int manaIndex = cardCode.ToLower().IndexOf("mana");
+		int titleColon = cardCode.IndexOf(":");
+		int manaIndex = cardCode.ToLower().IndexOf("mana", titleColon);
 
 		// Find Numbers
-		if (manaIndex > 0)
+		if (manaIndex > 2)
 		{
 			manaString = cardCode.Substring(manaIndex - 3, 3).Replace(" ","");
 			return manaString;
@@ -105,10 +123,17 @@ public class CardDataObject
 	{
 		if (!string.IsNullOrEmpty(cardCode))
 		{
-			int colonIndex = cardCode.IndexOf(":");
+			int manaIndex = cardCode.IndexOf("Mana");
+			int colonIndex = manaIndex > 0 ? cardCode.Substring(0, manaIndex).LastIndexOf(":") : cardCode.IndexOf(":");
+			if (colonIndex < 0)
+			{
+				colonIndex = cardCode.IndexOf(":");
+			}
+			string titleSubstring = cardCode.Substring(0, colonIndex);
+
 			if (colonIndex > 0)
 			{
-				cardName = cardCode.Substring(0, colonIndex);
+				cardName = titleSubstring;
 			}
 			else
 			{

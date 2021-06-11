@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class MouseClickInput : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-	[SerializeField] private Slider inputSlider;
 	[SerializeField] private TMP_InputField inputF;
 	private bool inside;
 
@@ -27,28 +27,30 @@ public class MouseClickInput : MonoBehaviour, IPointerEnterHandler, IPointerExit
 		inside = false;
 	}
 
-	private void Update()
+	public void Increment(InputAction.CallbackContext ctx)
 	{
-		if (Input.GetMouseButtonDown(0) && inside)
+		if (ctx.performed && inside)
 		{
-			//inputSlider.value++;
 			int stringInt = 0;
 			if (int.TryParse(inputF.text, out stringInt) == true)
 			{
-				inputF.text = (stringInt+1).ToString();
+				inputF.text = (stringInt + 1).ToString();
 			}
 			else
 			{
 				return;
 			}
 		}
-		if (Input.GetMouseButtonDown(1) && inside)
+	}
+
+	public void Decrement(InputAction.CallbackContext ctx)
+	{
+		if (ctx.performed && inside)
 		{
-			//inputSlider.value--;
 			int stringInt = 0;
 			if (int.TryParse(inputF.text, out stringInt) == true)
 			{
-				inputF.text = (stringInt-1).ToString();
+				inputF.text = (stringInt - 1).ToString();
 			}
 			else
 			{

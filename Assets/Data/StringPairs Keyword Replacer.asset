@@ -14,126 +14,227 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   values:
   - inputString: 'Play:'
-    replacedString: '<color=#F0CC70>Play</color>:'
+    replacedString: 'Play:'
+    matchCase: 0
   - inputString: Last Breath
-    replacedString: <sprite name="lastbreath"><color=#F0CC70>Last Breath</color>
+    replacedString: <sprite name="lastbreath">Last Breath
+    matchCase: 0
+  - inputString: lastbreath
+    replacedString: <sprite name="lastbreath">Last Breath
+    matchCase: 0
   - inputString: 'Support:'
-    replacedString: '<color=#F0CC70>Support</color>:'
+    replacedString: 'Support:'
+    matchCase: 0
   - inputString: Drain
-    replacedString: <color=#F0CC70>Drain</color>
+    replacedString: Drain
+    matchCase: 0
   - inputString: Nexus Strike
-    replacedString: <color=#F0CC70>Nexus Strike</color>
+    replacedString: Nexus Strike
+    matchCase: 0
   - inputString: 'Strike:'
-    replacedString: '<color=#F0CC70>Strike</color>:'
+    replacedString: 'Strike:'
+    matchCase: 0
   - inputString: 'strike '
-    replacedString: '<color=#F0CC70>strike</color> '
-  - inputString: 'strikes '
-    replacedString: '<color=#F0CC70>strikes</color> '
+    replacedString: 'strike '
+    matchCase: 1
+  - inputString: strikes
+    replacedString: strikes
+    matchCase: 1
   - inputString: struck
-    replacedString: <color=#F0CC70>struck</color>
+    replacedString: struck
+    matchCase: 1
   - inputString: striking
-    replacedString: <color=#F0CC70>striking</color>
+    replacedString: striking
+    matchCase: 1
   - inputString: Recall
-    replacedString: <color=#F0CC70>Recall</color>
+    replacedString: Recall
+    matchCase: 0
   - inputString: Stun
-    replacedString: <sprite name="stun"><color=#F0CC70>Stun</color>
+    replacedString: <sprite name="stun">Stun
+    matchCase: 0
   - inputString: Allegiance
-    replacedString: <color=#F0CC70>Allegiance</color>
+    replacedString: Allegiance
+    matchCase: 0
   - inputString: Obliterate
-    replacedString: <color=#F0CC70>Obliterate</color>
+    replacedString: Obliterate
+    matchCase: 0
   - inputString: Strongest
-    replacedString: <color=#F0CC70>Strongest</color>
+    replacedString: Strongest
+    matchCase: 1
   - inputString: Enlightened
-    replacedString: <color=#F0CC70>Enlightened</color>
-  - inputString: 'Captures '
-    replacedString: '<sprite name="capture"><color=#F0CC70>Captures</color> '
-  - inputString: Captured
-    replacedString: <sprite name="capture"><color=#F0CC70>Captured</color>
-  - inputString: 'Capture '
-    replacedString: '<sprite name="capture"><color=#F0CC70>Capture</color> '
-  - inputString: Trap
-    replacedString: <color=#F0CC70>Trap</color>
+    replacedString: Enlightened
+    matchCase: 0
+  - inputString: Capture
+    replacedString: <sprite name="capture">Capture
+    matchCase: 0
   - inputString: Elusive
-    replacedString: <sprite name="elusive"><color=#F0CC70>Elusive</color>
+    replacedString: <sprite name="elusive">Elusive
+    matchCase: 0
   - inputString: Quick Attack
-    replacedString: <sprite name="quickattack"><color=#F0CC70>Quick Attack</color>
+    replacedString: <sprite name="quickattack">Quick Attack
+    matchCase: 0
   - inputString: Barrier
-    replacedString: <sprite name="barrier"><color=#F0CC70>Barrier</color>
-  - inputString: Challenger
-    replacedString: <sprite name="challenger"><color=#F0CC70>Challenger</color>
-  - inputString: 'Challenge '
-    replacedString: '<sprite name="challenger"><color=#F0CC70>Challenge</color> '
-  - inputString: 'Challenges '
-    replacedString: '<sprite name="challenger"><color=#F0CC70>Challenges</color> '
-  - inputString: 'Challenged '
-    replacedString: '<sprite name="challenger"><color=#F0CC70>Challenged</color> '
+    replacedString: <sprite name="barrier">Barrier
+    matchCase: 0
+  - inputString: Challenge
+    replacedString: <sprite name="challenger">Challenge
+    matchCase: 0
+  - inputString: Challenging
+    replacedString: <sprite name="challenger">Challenging
+    matchCase: 0
   - inputString: Double Attack
-    replacedString: <sprite name="doubleattack"><color=#F0CC70>Double Attack</color>
+    replacedString: <sprite name="doubleattack">Double Attack
+    matchCase: 0
   - inputString: Ephemeral
-    replacedString: <sprite name="ephemeral><color=#F0CC70>Ephemeral</color>
+    replacedString: <sprite name="ephemeral>Ephemeral
+    matchCase: 0
   - inputString: Fearsome
-    replacedString: <sprite name="fearsome"><color=#F0CC70>Fearsome</color>
+    replacedString: <sprite name="fearsome">Fearsome
+    matchCase: 0
   - inputString: Fleeting
-    replacedString: <sprite name="fleeting"><color=#F0CC70>Fleeting</color>
+    replacedString: <sprite name="fleeting">Fleeting
+    matchCase: 0
   - inputString: Lifesteal
-    replacedString: <sprite name="lifesteal"><color=#F0CC70>Lifesteal</color>
+    replacedString: <sprite name="lifesteal">Lifesteal
+    matchCase: 0
   - inputString: Overwhelm
-    replacedString: <sprite name="overwhelm"><color=#F0CC70>Overwhelm</color>
+    replacedString: <sprite name="overwhelm">Overwhelm
+    matchCase: 0
   - inputString: Regeneration
-    replacedString: <sprite name="regeneration"><color=#F0CC70>Regeneration</color>
+    replacedString: <sprite name="regeneration">Regeneration
+    matchCase: 0
   - inputString: Tough
-    replacedString: <sprite name="tough"><color=#F0CC70>Tough</color>
+    replacedString: <sprite name="tough">Tough
+    matchCase: 0
   - inputString: Attune
-    replacedString: <sprite name="attune"><color=#F0CC70>Attune</color>
+    replacedString: <sprite name="attune">Attune
+    matchCase: 0
   - inputString: Frostbite
-    replacedString: <sprite name="frostbite"><color=#F0CC70>Frostbite</color>
+    replacedString: <sprite name="frostbite">Frostbite
+    matchCase: 0
   - inputString: Scout
-    replacedString: <sprite name="scout"><color=#F0CC70>Scout</color>
+    replacedString: <sprite name="scout">Scout
+    matchCase: 0
   - inputString: Vulnerable
-    replacedString: <sprite name="vulnerable"><color=#F0CC70>Vulnerable</color>
+    replacedString: <sprite name="vulnerable">Vulnerable
+    matchCase: 0
   - inputString: Deep
-    replacedString: <sprite name="deep"><color=#F0CC70>Deep</color>
-  - inputString: '@!@'
-    replacedString: <sprite name="skill">
-  - inputString: 'Plunder:'
-    replacedString: '<color=#F0CC70>Plunder</color>:'
+    replacedString: <sprite name="deep">Deep
+    matchCase: 0
+  - inputString: Plunder
+    replacedString: Plunder
+    matchCase: 0
   - inputString: Weakest
-    replacedString: <color=#F0CC70>Weakest</color>
+    replacedString: Weakest
+    matchCase: 1
   - inputString: Round End
-    replacedString: <color=#F0CC70>Round End</color>
+    replacedString: Round End
+    matchCase: 0
   - inputString: Round Start
-    replacedString: <color=#F0CC70>Round Start</color>
+    replacedString: Round Start
+    matchCase: 0
   - inputString: Fury
-    replacedString: <sprite name="fury"><color=#F0CC70>Fury</color>
+    replacedString: <sprite name="fury">Fury
+    matchCase: 0
   - inputString: SpellShield
-    replacedString: <sprite name="spellshield"><color=#F0CC70>SpellShield</color>
+    replacedString: <sprite name="spellshield">SpellShield
+    matchCase: 0
   - inputString: Daybreak
-    replacedString: <color=#F0CC70>Daybreak</color>
+    replacedString: Daybreak
+    matchCase: 0
   - inputString: Nightfall
-    replacedString: <color=#F0CC70>Nightfall</color>
+    replacedString: Nightfall
+    matchCase: 0
   - inputString: Behold
-    replacedString: <color=#F0CC70>Behold</color>
+    replacedString: Behold
+    matchCase: 0
   - inputString: Invoke
-    replacedString: <color=#F0CC70>Invoke</color>
+    replacedString: Invoke
+    matchCase: 0
   - inputString: Nab
-    replacedString: <color=#F0CC70>Nab</color>
+    replacedString: Nab
+    matchCase: 0
   - inputString: Can't Attack
-    replacedString: <sprite name="cantattack"><color=#F0CC70>Can't Attack</color>
+    replacedString: <sprite name="cantattack">Can't Attack
+    matchCase: 0
   - inputString: Can't Block
-    replacedString: <sprite name="cantblock"><color=#F0CC70>Can't Block</color>
+    replacedString: <sprite name="cantblock">Can't Block
+    matchCase: 0
   - inputString: Immobile
-    replacedString: <sprite name="cantattack"><sprite name="cantblock"><color=#F0CC70>Immobile</color>
+    replacedString: <sprite name="cantattack"><sprite name="cantblock">Immobile
+    matchCase: 0
   - inputString: Slow
-    replacedString: <sprite name="slow"><color=#F0CC70>Slow</color>
+    replacedString: <sprite name="slow">Slow
+    matchCase: 0
   - inputString: Fast
-    replacedString: <sprite name="fast"><color=#F0CC70>Fast</color>
+    replacedString: <sprite name="fast">Fast
+    matchCase: 0
   - inputString: Burst
-    replacedString: <sprite name="burst"><color=#F0CC70>Burst</color>
+    replacedString: <sprite name="burst">Burst
+    matchCase: 0
+  - inputString: Skill
+    replacedString: <sprite name="skill">Skill
+    matchCase: 0
+  - inputString: Focus
+    replacedString: <sprite name="focus">Focus
+    matchCase: 0
   - inputString: everywhere
-    replacedString: <color=#F0CC70>everywhere</color>
+    replacedString: everywhere
+    matchCase: 1
   - inputString: 'Attack:'
-    replacedString: '<color=#F0CC70>Attack</color>:'
+    replacedString: 'Attack:'
+    matchCase: 0
   - inputString: Toss
-    replacedString: <color=#F0CC70>Toss</color>
+    replacedString: Toss
+    matchCase: 0
   - inputString: Rally
-    replacedString: <color=#F0CC70>Rally</color>
+    replacedString: Rally
+    matchCase: 0
+  - inputString: Silence
+    replacedString: Silence
+    matchCase: 0
+  - inputString: Reforge
+    replacedString: Reforge
+    matchCase: 0
+  - inputString: Augment
+    replacedString: <sprite name="augment">Augment
+    matchCase: 0
+  - inputString: Play or
+    replacedString: Play</color> or
+    matchCase: 0
+  - inputString: Play and
+    replacedString: Play</color> and
+    matchCase: 0
+  - inputString: Phase
+    replacedString: Phase
+    matchCase: 0
+  - inputString: Countdown
+    replacedString: Countdown
+    matchCase: 0
+  - inputString: advance
+    replacedString: advance
+    matchCase: 1
+  - inputString: Predict
+    replacedString: Predict
+    matchCase: 0
+  - inputString: slay
+    replacedString: slay
+    matchCase: 1
+  - inputString: slain
+    replacedString: slain
+    matchCase: 1
+  - inputString: 'reputation:'
+    replacedString: 'Reputation:'
+    matchCase: 0
+  - inputString: Imbue
+    replacedString: <sprite name=imbue>Imbue
+    matchCase: 0
+  - inputString: Aura
+    replacedString: <sprite name=aura>Aura
+    matchCase: 0
+  - inputString: Blade Dance
+    replacedString: Blade Dance
+    matchCase: 0
+  - inputString: unseal
+    replacedString: Unseal
+    matchCase: 0

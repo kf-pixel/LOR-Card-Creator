@@ -38,6 +38,7 @@ public class KeywordTooltip : MonoBehaviour
 			titleText = "keyword";
 		}
 
+		// Keyword Description, add tags
 		string descriptionText = kw.description;
 		if (descriptionText == null)
 		{
@@ -47,6 +48,25 @@ public class KeywordTooltip : MonoBehaviour
 		{
 			descriptionText = "description";
 		}
+
+		// [] and {} tags
+		if (descriptionText.Contains("[") && descriptionText.Contains("]"))
+		{
+			descriptionText = descriptionText.Replace("[", "<style=Keyword>");
+			descriptionText = descriptionText.Replace("]", "</style>");
+		}
+
+		if (descriptionText.Contains("{") && descriptionText.Contains("}"))
+		{
+			descriptionText = descriptionText.Replace("{", "<style=Keyword>");
+			descriptionText = descriptionText.Replace("}", "</style>");
+		}
+
+		// New line tag
+		descriptionText = descriptionText.Replace("`", "<br>");
+
+		// Skill Sprite
+		descriptionText = descriptionText.Replace("@", "<sprite name=skill>");
 
 		// Update Title
 		string newText = kw.spriteIndex > 0 ?

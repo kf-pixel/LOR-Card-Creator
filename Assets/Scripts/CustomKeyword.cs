@@ -7,10 +7,11 @@ using TMPro;
 
 public class CustomKeyword : MonoBehaviour
 {
+	[System.Serializable]	private class UnityStringEvent : UnityEvent<string> { }
 	[SerializeField] private RectTransform rect;
 	[SerializeField] private TextMeshProUGUI textfield;
 	[SerializeField] private CustomKeywordData KWData;
-	[SerializeField] private bool isFullLengthKeyword = true;
+	[SerializeField] private UnityStringEvent textUpdate;
 
 	private void OnEnable()
 	{
@@ -23,34 +24,10 @@ public class CustomKeyword : MonoBehaviour
 		var hexColour = ColorUtility.ToHtmlStringRGB(rgbColour);
 
 		// Add the Sprite to the display if the index is higher than 0
-		if (KWData.spriteIndex > 0)
-		{
-			textfield.text = "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + KWData.spriteIndex + "\" tint></color>";
+		textfield.text = KWData.spriteIndex > 0 ? "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + KWData.spriteIndex + "\" tint></color>" : "";
+		textfield.text += (string.IsNullOrWhiteSpace(KWData.label)) ? "custom" : KWData.label;
 
-			if (isFullLengthKeyword) // Adds the keyword name (for single added keywords)
-			{
-				textfield.text += (string.IsNullOrWhiteSpace(KWData.label)) ? "custom" : KWData.label;
-				StartCoroutine(WaitForTextRender());
-			}
-		}
-		else // Rendering for no sprite keywords
-		{
-			if (isFullLengthKeyword)
-			{
-				textfield.text = (string.IsNullOrWhiteSpace(KWData.label)) ? "Custom" : KWData.label;
-				StartCoroutine(WaitForTextRender());
-			}
-			else
-			{
-				textfield.text = " ";
-			}
-		}
-
-	}
-
-	private IEnumerator WaitForTextRender()
-	{
-		yield return new WaitForEndOfFrame();
-		rect.sizeDelta = new Vector2(Mathf.Clamp(textfield.renderedWidth + 25f, 50f, 900f), rect.sizeDelta.y);
+		// Update keyword format full text 
+		textUpdate.Invoke(textfield.text);
 	}
 }

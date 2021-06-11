@@ -8,12 +8,18 @@ using UnityEngine.Events;
 public class IntVariable : ScriptableObject
 {
 	[System.NonSerialized] public int value;
+	public int defaultValue;
 	public UnityEvent valueChangedEvent;
 
 	public void NewInt(int i)
 	{
 		value = i;
 		valueChangedEvent.Invoke();
+	}
+
+	private void OnEnable()
+	{
+		if (defaultValue != 0) value = defaultValue;
 	}
 }
 

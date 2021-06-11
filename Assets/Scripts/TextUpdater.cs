@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Text.RegularExpressions;
 
 public class TextUpdater : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class TextUpdater : MonoBehaviour
 	[SerializeField] private bool updateOnAwake = true;
 
 	[Header("Text Formatting")]
+	[SerializeField] private string prefix;
 	[SerializeField] private float textHeight;
-	//[SerializeField] private float checkTextHeightDelay = 0.2f;
 	[SerializeField] private UnityFloatEvent newTextHeightEvent;
+
+	[Header("Special Cases")]
+	[SerializeField] private string countdownPattern;
 
 	private void Awake()
 	{
@@ -30,7 +34,8 @@ public class TextUpdater : MonoBehaviour
 
 	public void UpdateText()
 	{
-		tmp.text = reference.value;
+		tmp.text = !string.IsNullOrEmpty(reference.value) ? prefix + reference.value : "";
+
 		AddTags();
 		RefreshTextHeight();
 	}
@@ -42,7 +47,6 @@ public class TextUpdater : MonoBehaviour
 
 	private IEnumerator CoroutineTextHeight()
 	{
-		//yield return new WaitForSeconds(checkTextHeightDelay);
 		yield return new WaitForEndOfFrame();
 
 		textHeight = Mathf.Max(tmp.renderedHeight, 0f);
@@ -51,45 +55,46 @@ public class TextUpdater : MonoBehaviour
 
 	private void AddTags()
 	{
-		if (tmp.text == null)
+		if (string.IsNullOrEmpty(tmp.text))
 		{
 			return;
-		}
-
-		if (tmp.text.Contains("[k]") && tmp.text.Contains("[/k]"))
-		{
-			tmp.text = tmp.text.Replace("[k]", "<color=#F0CC70>");
-			tmp.text = tmp.text.Replace("[/k]", "</color>");
-		}
-
-		if (tmp.text.Contains("[c]") && tmp.text.Contains("[/c]"))
-		{
-			tmp.text = tmp.text.Replace("[c]", "<color=#4699ED>");
-			tmp.text = tmp.text.Replace("[/c]", "</color>");
 		}
 
 		// [] and {} tags
 		if (tmp.text.Contains("[") && tmp.text.Contains("]"))
 		{
-			tmp.text = tmp.text.Replace("[", "<color=#4699ED>");
-			tmp.text = tmp.text.Replace("]", "</color>");
+			tmp.text = tmp.text.Replace("[", "<style=Card>");
+			tmp.text = tmp.text.Replace("]", "</style>");
 		}
 
 		if (tmp.text.Contains("{") && tmp.text.Contains("}"))
 		{
-			tmp.text = tmp.text.Replace("{", "<color=#F0CC70>");
+			tmp.text = tmp.text.Replace("{", "<style=Keyword>");
 			tmp.text = tmp.text.Replace("}", "</color>");
 		}
+
+		// double slash break
+		tmp.text = tmp.text.Replace("//", "<b></b>");
 
 		// New line tag
 		tmp.text = tmp.text.Replace("`", "<br>");
 
 		// Skill Sprite
-		tmp.text = tmp.text.Replace("@", "<sprite name=\"skill\">");
+		tmp.text = tmp.text.Replace("@", "<sprite name=skill>");
 
 		// Italics
 		tmp.text = tmp.text.Replace("(", "<i>(");
 		tmp.text = tmp.text.Replace(")", ")</i>");
+
+		// Countdown
+		if (string.IsNullOrEmpty(countdownPattern)) return;
+
+		Regex rgx = new Regex(countdownPattern, RegexOptions.IgnoreCase);
+		MatchCollection matches = rgx.Matches(tmp.text);
+		foreach (Match match in matches)
+		{
+			tmp.text = tmp.text.Replace(match.Value,"<style=Keyword>" + match.Value.TrimEnd(":".ToCharArray()) + "</style>:");
+		}
 	}
 }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections;
 
 public class IntVariableToggler : MonoBehaviour
 {
@@ -10,12 +11,10 @@ public class IntVariableToggler : MonoBehaviour
 	[SerializeField] private UnityEvent onTrue;
 	[SerializeField] private UnityEvent onFalse;
 
-	private void Start()
+	private void OnEnable()
 	{
-		if (currentIntValue.value == thisIntValue)
-		{
-			toggleUI.isOn = true;
-		}
+		Parse();
+		Invoke("Parse", 0.1f);
 	}
 
 	public void Parse(bool b)

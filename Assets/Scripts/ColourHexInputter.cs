@@ -60,6 +60,20 @@ public class ColourHexInputter : MonoBehaviour
 
 	}
 
+	public void HexToRGB(string hexs)
+	{
+		var c = new Color();
+		ColorUtility.TryParseHtmlString(hexs, out c);
+
+		KWData.colorR = c.r;
+		KWData.colorG = c.g;
+		KWData.colorB = c.b;
+
+		sliderR.value = c.r;
+		sliderG.value = c.g;
+		sliderB.value = c.b;
+	}
+
 	// used in saving
 	public void HexDataToRGB()
 	{

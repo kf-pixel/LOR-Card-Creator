@@ -14,6 +14,10 @@ public class SpriteUpdater : MonoBehaviour
 	// Rarity Updater
 	[SerializeField] private IntVariable cardIndex;
 
+	[Header("Region Updater")]
+	[SerializeField] private Image regionFrameImg;
+	[SerializeField] private SpritesVariable singleRegionFrames, dualRegionFrames;
+
 	public void UpdateSprite()
 	{
 		img.sprite = spritesList.values[intSelectionIndex.value];
@@ -33,6 +37,15 @@ public class SpriteUpdater : MonoBehaviour
 		else
 		{
 			UpdateSprite();
+		}
+	}
+
+	public void UpdateRegionSprite()
+	{
+		img.sprite = spritesList.values[intSelectionIndex.value];
+		if (regionFrameImg != null)
+		{
+			regionFrameImg.sprite = intSelectionIndex.value == 13 ? singleRegionFrames.values[cardIndex.value] : dualRegionFrames.values[cardIndex.value];
 		}
 	}
 }

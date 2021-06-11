@@ -9,19 +9,20 @@ public class KeywordAddManager : MonoBehaviour
 {
 	[SerializeField] private Transform content;
 	[SerializeField] private GameObject keywordItemPrefab;
-	[SerializeField] private KeywordBarController keywordBarController;
+	[SerializeField] private GameObjectVariableList keywords;
 
 	private void Start()
 	{
 		// Spawn Prefabs
-		for (int i = 0; i < keywordBarController.keywordsFull.Length; i++)
+		for (int i = 0; i < keywords.value.Count; i++)
 		{
 			GameObject item = Instantiate(keywordItemPrefab, content);
 			KeywordItemToggler tog = item.GetComponent<KeywordItemToggler>();
 			if (tog != null)
 			{
 				tog.keywordIndex = i;
-				tog.tmp.text = keywordBarController.keywordsFull[i].GetComponentInChildren<TextMeshProUGUI>().text;
+				tog.tmp.text = keywords.value[i].GetComponentInChildren<TextMeshProUGUI>().text;
+				tog.keywordName = keywords.value[i].name;
 			}
 		}
 	}
