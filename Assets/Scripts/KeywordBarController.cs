@@ -161,8 +161,8 @@ public class KeywordBarController : MonoBehaviour
 			{
 				GameObjectInt spellObject = keywordInstances[inx];
 				keywordInstances.Remove(spellObject);
-				keywordInstances.Insert(0, spellObject);
-				spellObject.obj.transform.SetSiblingIndex(0);
+				keywordInstances.Add(spellObject);
+				spellObject.obj.transform.SetAsLastSibling();
 			}
 		}
 

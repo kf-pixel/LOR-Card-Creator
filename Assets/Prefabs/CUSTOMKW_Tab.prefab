@@ -130,6 +130,17 @@ MonoBehaviour:
           m_StringArgument: '#DD5F30'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1240922341648351174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1848,6 +1859,7 @@ RectTransform:
   m_Children:
   - {fileID: 554938419166422290}
   - {fileID: 5014518740670619776}
+  - {fileID: 4732310348375792024}
   m_Father: {fileID: 554938419713788125}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1995,7 +2007,6 @@ GameObject:
   - component: {fileID: 554938419166422302}
   - component: {fileID: 554938419166422303}
   - component: {fileID: 554938419166422300}
-  - component: {fileID: 703425126832189177}
   m_Layer: 5
   m_Name: CustomKW_SpriteIcon_0
   m_TagString: Untagged
@@ -2111,143 +2122,143 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: <size=12>No Sprite
+    - m_Text: <color=white><size=12>No Sprite
       m_Image: {fileID: 0}
-    - m_Text: <sprite=1>1
+    - m_Text: <sprite=1 tint><color=white>1
       m_Image: {fileID: 0}
-    - m_Text: <sprite=2>2
+    - m_Text: <sprite=2 tint><color=white>2
       m_Image: {fileID: 0}
-    - m_Text: <sprite=3>3
+    - m_Text: <sprite=3 tint><color=white>3
       m_Image: {fileID: 0}
-    - m_Text: <sprite=4>4
+    - m_Text: <sprite=4 tint><color=white>4
       m_Image: {fileID: 0}
-    - m_Text: <sprite=5>5
+    - m_Text: <sprite=5 tint><color=white>5
       m_Image: {fileID: 0}
-    - m_Text: <sprite=6>6
+    - m_Text: <sprite=6 tint><color=white>6
       m_Image: {fileID: 0}
-    - m_Text: <sprite=7>7
+    - m_Text: <sprite=7 tint><color=white>7
       m_Image: {fileID: 0}
-    - m_Text: <sprite=8>8
+    - m_Text: <sprite=8 tint><color=white>8
       m_Image: {fileID: 0}
-    - m_Text: <sprite=9>9
+    - m_Text: <sprite=9 tint><color=white>9
       m_Image: {fileID: 0}
-    - m_Text: <sprite=10>10
+    - m_Text: <sprite=10 tint><color=white>10
       m_Image: {fileID: 0}
-    - m_Text: <sprite=11>11
+    - m_Text: <sprite=11 tint><color=white>11
       m_Image: {fileID: 0}
-    - m_Text: <sprite=12>12
+    - m_Text: <sprite=12 tint><color=white>12
       m_Image: {fileID: 0}
-    - m_Text: <sprite=13>13
+    - m_Text: <sprite=13 tint><color=white>13
       m_Image: {fileID: 0}
-    - m_Text: <sprite=14>14
+    - m_Text: <sprite=14 tint><color=white>14
       m_Image: {fileID: 0}
-    - m_Text: <sprite=15>15
+    - m_Text: <sprite=15 tint><color=white>15
       m_Image: {fileID: 0}
-    - m_Text: <sprite=16>16
+    - m_Text: <sprite=16 tint><color=white>16
       m_Image: {fileID: 0}
-    - m_Text: <sprite=17>17
+    - m_Text: <sprite=17 tint><color=white>17
       m_Image: {fileID: 0}
-    - m_Text: <sprite=18>18
+    - m_Text: <sprite=18 tint><color=white>18
       m_Image: {fileID: 0}
-    - m_Text: <sprite=19>19
+    - m_Text: <sprite=19 tint><color=white>19
       m_Image: {fileID: 0}
-    - m_Text: <sprite=20>20
+    - m_Text: <sprite=20 tint><color=white>20
       m_Image: {fileID: 0}
-    - m_Text: <sprite=21>21
+    - m_Text: <sprite=21 tint><color=white>21
       m_Image: {fileID: 0}
-    - m_Text: <sprite=22>22
+    - m_Text: <sprite=22 tint><color=white>22
       m_Image: {fileID: 0}
-    - m_Text: <sprite=23>23
+    - m_Text: <sprite=23 tint><color=white>23
       m_Image: {fileID: 0}
-    - m_Text: <sprite=24>24
+    - m_Text: <sprite=24 tint><color=white>24
       m_Image: {fileID: 0}
-    - m_Text: <sprite=25>25
+    - m_Text: <sprite=25 tint><color=white>25
       m_Image: {fileID: 0}
-    - m_Text: <sprite=26>26
+    - m_Text: <sprite=26 tint><color=white>26
       m_Image: {fileID: 0}
-    - m_Text: <sprite=27>27
+    - m_Text: <sprite=27 tint><color=white>27
       m_Image: {fileID: 0}
-    - m_Text: <sprite=28>28
+    - m_Text: <sprite=28 tint><color=white>28
       m_Image: {fileID: 0}
-    - m_Text: <sprite=29>29
+    - m_Text: <sprite=29 tint><color=white>29
       m_Image: {fileID: 0}
-    - m_Text: <sprite=30>30
+    - m_Text: <sprite=30 tint><color=white>30
       m_Image: {fileID: 0}
-    - m_Text: <sprite=31>31
+    - m_Text: <sprite=31 tint><color=white>31
       m_Image: {fileID: 0}
-    - m_Text: <sprite=32>32
+    - m_Text: <sprite=32 tint><color=white>32
       m_Image: {fileID: 0}
-    - m_Text: <sprite=33>33
+    - m_Text: <sprite=33 tint><color=white>33
       m_Image: {fileID: 0}
-    - m_Text: <sprite=34>34
+    - m_Text: <sprite=34 tint><color=white>34
       m_Image: {fileID: 0}
-    - m_Text: <sprite=35>35
+    - m_Text: <sprite=35 tint><color=white>35
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_36">36
+    - m_Text: <sprite name="Custom_36" tint><color=white>36
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_37">37
+    - m_Text: <sprite name="Custom_37" tint><color=white>37
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_38">38
+    - m_Text: <sprite name="Custom_38" tint><color=white>38
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_39">39
+    - m_Text: <sprite name="Custom_39" tint><color=white>39
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_40">40
+    - m_Text: <sprite name="Custom_40" tint><color=white>40
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_41">41
+    - m_Text: <sprite name="Custom_41" tint><color=white>41
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_42">42
+    - m_Text: <sprite name="Custom_42" tint><color=white>42
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_43">43
+    - m_Text: <sprite name="Custom_43" tint><color=white>43
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_44">44
+    - m_Text: <sprite name="Custom_44" tint><color=white>44
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_45">45
+    - m_Text: <sprite name="Custom_45" tint><color=white>45
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_46">46
+    - m_Text: <sprite name="Custom_46" tint><color=white>46
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_47">47
+    - m_Text: <sprite name="Custom_47" tint><color=white>47
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_48">48
+    - m_Text: <sprite name="Custom_48" tint><color=white>48
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_49">49
+    - m_Text: <sprite name="Custom_49" tint><color=white>49
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_50">50
+    - m_Text: <sprite name="Custom_50" tint><color=white>50
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_51">51
+    - m_Text: <sprite name="Custom_51" tint><color=white>51
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_52">52
+    - m_Text: <sprite name="Custom_52" tint><color=white>52
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_53">53
+    - m_Text: <sprite name="Custom_53" tint><color=white>53
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_54">54
+    - m_Text: <sprite name="Custom_54" tint><color=white>54
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_55">55
+    - m_Text: <sprite name="Custom_55" tint><color=white>55
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_56">56
+    - m_Text: <sprite name="Custom_56" tint><color=white>56
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_57">57
+    - m_Text: <sprite name="Custom_57" tint><color=white>57
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_58">58
+    - m_Text: <sprite name="Custom_58" tint><color=white>58
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_59">59
+    - m_Text: <sprite name="Custom_59" tint><color=white>59
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_60">60
+    - m_Text: <sprite name="Custom_60" tint><color=white>60
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_61">61
+    - m_Text: <sprite name="Custom_61" tint><color=white>61
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_62">62
+    - m_Text: <sprite name="Custom_62" tint><color=white>62
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_63">63
+    - m_Text: <sprite name="Custom_63" tint><color=white>63
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_64"">64
+    - m_Text: <sprite name="Custom_64"" tint><color=white>64
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_65">65
+    - m_Text: <sprite name="Custom_65" tint><color=white>65
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_66">66
+    - m_Text: <sprite name="Custom_66" tint><color=white>66
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_67">67
+    - m_Text: <sprite name="Custom_67" tint><color=white>67
       m_Image: {fileID: 0}
-    - m_Text: <sprite name="Custom_68">68
+    - m_Text: <sprite name="Custom_68" tint><color=white>68
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2285,27 +2296,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
---- !u!114 &703425126832189177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554938419166422291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a5a2772319e3b4e8033029c9fa44b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: Which Keywords use sprites?
-  content: '<margin-right=10%><size=90%>Static function Keywords such as <style=Keyword><sprite
-    name=challenger>Challenger</style> or <sprite name="frostbite"><style=Keyword>Frostbite</style>
-    always use a sprite.<br> <i><size=75%>(hover the colors for type examples)</i><size=90%><br><br>Action,
-    Condition, or Trigger Keywords that appear in card text like <style=Keyword>Drain</style>,
-    <style=Keyword>Behold</style>, or <style=Keyword>Play</style>: usually (but not
-    always) lack a sprite.'
-  delay: 0.5
 --- !u!1 &554938419190829654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <size=12>No Sprite
+  m_text: <color=white><size=12>No Sprite
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88f93eb83740846438fd696c9e7debdf, type: 2}
   m_sharedMaterial: {fileID: -9101055750749113232, guid: 88f93eb83740846438fd696c9e7debdf,
@@ -3178,6 +3180,7 @@ GameObject:
   - component: {fileID: 554938419713788126}
   - component: {fileID: 3658831392680432660}
   - component: {fileID: 8660802253962636932}
+  - component: {fileID: 3542767649923356826}
   m_Layer: 5
   m_Name: CUSTOMKW_Tab
   m_TagString: Untagged
@@ -3285,24 +3288,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keywordData: {fileID: 0}
+  dropdownLabel: {fileID: 554938419526604582}
+  dropdownItemLabel: {fileID: 554938418110804638}
   swatches:
   - {fileID: 1298001938578147130}
   - {fileID: 2168013379827044097}
   - {fileID: 2065160475847973384}
-  - {fileID: 8069716100053390360}
   - {fileID: 9020499219530445136}
   - {fileID: 4901865546844134484}
-  - {fileID: 1530296348292614915}
   - {fileID: 6965633860848854734}
   - {fileID: 3086692442860227562}
   tooltips:
   - {fileID: 1240922341648351174}
   - {fileID: 6256004002237870728}
   - {fileID: 6773841989905298671}
-  - {fileID: 6644107106785881610}
   - {fileID: 9216181688396840501}
   - {fileID: 8284255396496136334}
-  - {fileID: 7262824986014436770}
   - {fileID: 8300759560424233367}
   - {fileID: 8367337997216008047}
 --- !u!114 &8660802253962636932
@@ -3323,6 +3324,55 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3658831392680432660}
         m_MethodName: DisableSwatches
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3542767649923356826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554938419713788114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6165a9395a1f2a4597a7d118a81dbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a00ddcdacf5f1b146951ff838c730657, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: DisableSwatches
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3827,6 +3877,17 @@ MonoBehaviour:
           m_StringArgument: '#FFFB42'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6773841989905298671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3875,7 +3936,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3973,6 +4034,17 @@ MonoBehaviour:
           m_StringArgument: '#FFFFFF'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8367337997216008047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3988,151 +4060,6 @@ MonoBehaviour:
   header: sprite color tip!
   content: White has been used for<br><sprite name=cantblock><style=Keyword>Can't
     Block</style> and <sprite name=cantblock><sprite name=cantattack><style=Keyword>Immobile</style>.
-  delay: 0.5
---- !u!1 &1619493048715254963
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7107307830857832041}
-  - component: {fileID: 4450657720666778642}
-  - component: {fileID: 4230774915807114047}
-  - component: {fileID: 8069716100053390360}
-  - component: {fileID: 6644107106785881610}
-  m_Layer: 5
-  m_Name: ColorSwatch (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7107307830857832041
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619493048715254963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4450657720666778642
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619493048715254963}
-  m_CullTransparentMesh: 0
---- !u!114 &4230774915807114047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619493048715254963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.26817268, g: 0.7924528, b: 0.1719473, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &8069716100053390360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619493048715254963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
-    m_PressedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 4230774915807114047}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 554938418172419585}
-        m_MethodName: HexToRGB
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: '#44CA2C'
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6644107106785881610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619493048715254963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a5a2772319e3b4e8033029c9fa44b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: sprite color tip!
-  content: No Keywords of this color currently exist.
   delay: 0.5
 --- !u!1 &1637202670114891606
 GameObject:
@@ -4363,7 +4290,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4459,6 +4386,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: '#6CE2F4'
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &8284255396496136334
@@ -4682,6 +4620,17 @@ MonoBehaviour:
           m_StringArgument: '#E79300'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6256004002237870728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4774,6 +4723,102 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4246657461894459413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4732310348375792024}
+  - component: {fileID: 2465475938854356614}
+  - component: {fileID: 7241542495493615942}
+  - component: {fileID: 6803969247858457414}
+  m_Layer: 5
+  m_Name: Sprite_Tooltip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4732310348375792024
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246657461894459413}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.72778, y: 0.72778, z: 0.72778}
+  m_Children:
+  - {fileID: 6108352125080795889}
+  m_Father: {fileID: 554938419014172323}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 18.8, y: 16}
+  m_SizeDelta: {x: 50, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2465475938854356614
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246657461894459413}
+  m_CullTransparentMesh: 0
+--- !u!114 &7241542495493615942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246657461894459413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.04705883, g: 0.058823533, b: 0.078431375, a: 0.24705882}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6803969247858457414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246657461894459413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5a2772319e3b4e8033029c9fa44b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Which Keywords use sprites?
+  content: '<size=90%>Static function Keywords such as <style=Keyword><sprite name=challenger>Challenger</style>
+    or <sprite name="frostbite"><style=Keyword>Frostbite</style> always use a sprite.<br>
+    <i><size=75%>(hover the colors for type examples)</i><size=90%><br><br>Action,
+    Condition, or Trigger Keywords that appear in card text like <style=Keyword>Drain</style>,
+    <style=Keyword>Behold</style>, or <style=Keyword>Play</style>: usually lack a
+    sprite.'
+  delay: 0.5
 --- !u!1 &5014518740670619777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5518,7 +5563,7 @@ MonoBehaviour:
   m_enableKerning: 1
   m_enableExtraPadding: 1
   checkPaddingRequired: 0
-  m_isRichText: 1
+  m_isRichText: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -5549,8 +5594,6 @@ GameObject:
   - component: {fileID: 5014518741739385704}
   - component: {fileID: 5014518741739385705}
   - component: {fileID: 3280929832352530474}
-  - component: {fileID: 5575856793551129163}
-  - component: {fileID: 4031402264303473938}
   m_Layer: 5
   m_Name: CustomKW_Description_0
   m_TagString: Untagged
@@ -5749,7 +5792,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
-  m_RichText: 1
+  m_RichText: 0
   m_GlobalFontAsset: {fileID: 0}
   m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
@@ -5771,116 +5814,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showHtmlElement: 0
   addToFocus: 0
---- !u!114 &5575856793551129163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5014518741739385707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 40eee906123d39747a86a4ae8a9a279c,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 995a330a-78a6-4c23-9525-55ffe1b6080b
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 243a8379-f352-442f-8ac2-a8c5ccb3c001
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ef9031b4-fdcc-4882-aa0b-559c4ca5ff45
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e2436911-3895-4acd-a9af-5638c039e2b7
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a6feb814-abf4-4de5-b7c8-9c5d2d934c0b
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 302bb6f0-ec12-4c4e-8389-f16e12bdd10d
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 39988404-8f4d-4301-83f4-20ae944bceab
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 21a0511d-1945-41ff-8d5b-c3af643aeb89
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8551c8dc-1544-43e2-ac5c-0e0c1d233674
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c4680ea0-4b91-4514-b440-c1977d3da3bd
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 01a18593-0844-486a-8155-4168a3dfa588
-    m_ActionName: UI/Shift[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: cc6369eb-cdf3-4a36-be78-581da4c5f4e3
-    m_ActionName: UI/Ctrl[/Keyboard/ctrl]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4031402264303473938}
-        m_MethodName: ShiftEnterField
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 26bbfc05-3b7c-437b-83e1-115d0cd57d78
-    m_ActionName: UI/ShiftEnter[/Keyboard/shift,/Keyboard/enter,/Keyboard/minus]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 40d33193-7249-42d9-b47e-d30d664d1f6c
-    m_ActionName: UI/ClickRelease[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &4031402264303473938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5014518741739385707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42fd7fa4b15a40142bade5a2a0f24fad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5014518741816151553
 GameObject:
   m_ObjectHideFlags: 0
@@ -6670,7 +6603,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6768,6 +6701,17 @@ MonoBehaviour:
           m_StringArgument: '#D026F1'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8300759560424233367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6821,151 +6765,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &6927259196342976648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9152654907619806150}
-  - component: {fileID: 4373124550707634693}
-  - component: {fileID: 3653274327716921358}
-  - component: {fileID: 1530296348292614915}
-  - component: {fileID: 7262824986014436770}
-  m_Layer: 5
-  m_Name: ColorSwatch (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &9152654907619806150
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927259196342976648}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4373124550707634693
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927259196342976648}
-  m_CullTransparentMesh: 0
---- !u!114 &3653274327716921358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927259196342976648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.28627452, g: 0.627451, b: 0.9725491, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &1530296348292614915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927259196342976648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
-    m_PressedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 3653274327716921358}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 554938418172419585}
-        m_MethodName: HexToRGB
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: '#49A0F8'
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &7262824986014436770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927259196342976648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a5a2772319e3b4e8033029c9fa44b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: sprite color tip!
-  content: No Keywords of this color currently exist.
-  delay: 0.5
 --- !u!1 &8507092362622363562
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,10 +6796,8 @@ RectTransform:
   - {fileID: 3529256799376545478}
   - {fileID: 9201530762219838656}
   - {fileID: 4948114491112313887}
-  - {fileID: 7107307830857832041}
   - {fileID: 9004324447516684387}
   - {fileID: 1222803069533128377}
-  - {fileID: 9152654907619806150}
   - {fileID: 1417465105908297017}
   - {fileID: 7609483429663636922}
   m_Father: {fileID: 554938419713788125}
@@ -7068,7 +6865,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3519983886471703476}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7166,6 +6963,17 @@ MonoBehaviour:
           m_StringArgument: '#52E061'
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3658831392680432660}
+        m_MethodName: SetDropdownLabelColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9216181688396840501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7181,3 +6989,137 @@ MonoBehaviour:
   header: sprite color tip!
   content: <color=#52E061>Green</color> has been used once for <style=Keyword>Enlightened</style>.
   delay: 0.5
+--- !u!1 &8948349576050139781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6108352125080795889}
+  - component: {fileID: 8732755570950784773}
+  - component: {fileID: 658328614034317125}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6108352125080795889
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948349576050139781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4732310348375792024}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8732755570950784773
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948349576050139781}
+  m_CullTransparentMesh: 0
+--- !u!114 &658328614034317125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948349576050139781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: '?'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 97276ebba0bd5454c91b0a3ad519e70d, type: 2}
+  m_sharedMaterial: {fileID: 2027373560277667107, guid: 97276ebba0bd5454c91b0a3ad519e70d,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 1761607679
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.40784314}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}

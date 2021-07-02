@@ -64,7 +64,7 @@ public class TextUpdater : MonoBehaviour
 		if (tmp.text.Contains("[") && tmp.text.Contains("]"))
 		{
 			tmp.text = tmp.text.Replace("[", "<style=Card>");
-			tmp.text = tmp.text.Replace("]", "</style>");
+			tmp.text = tmp.text.Replace("]", "</STYLE>");
 		}
 
 		if (tmp.text.Contains("{") && tmp.text.Contains("}"))
@@ -76,15 +76,8 @@ public class TextUpdater : MonoBehaviour
 		// double slash break
 		tmp.text = tmp.text.Replace("//", "<b></b>");
 
-		// New line tag
-		tmp.text = tmp.text.Replace("`", "<br>");
-
 		// Skill Sprite
 		tmp.text = tmp.text.Replace("@", "<sprite name=skill>");
-
-		// Italics
-		tmp.text = tmp.text.Replace("(", "<i>(");
-		tmp.text = tmp.text.Replace(")", ")</i>");
 
 		// Countdown
 		if (string.IsNullOrEmpty(countdownPattern)) return;

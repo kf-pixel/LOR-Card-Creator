@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class MouseWheelZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -18,17 +19,15 @@ public class MouseWheelZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		hovering = false;
 	}
 
-	private void Update()
+	public void InputMouseWheel(InputAction.CallbackContext ctx)
 	{
-		if (!hovering)
+		if (ctx.performed && hovering)
 		{
-			return;
-		}
-
-		float scrollY = Input.mouseScrollDelta.y;
-		if (scrollY != 0f)
-		{
-			slider.value = Mathf.Clamp(slider.value + (scrollY * sensitivity), slider.minValue, slider.maxValue);
+			float scrollY = ctx.ReadValue<Vector2>().y;
+			if (scrollY != 0f)
+			{
+				slider.value = Mathf.Clamp(slider.value + (scrollY * sensitivity), slider.minValue, slider.maxValue);
+			}
 		}
 	}
 }

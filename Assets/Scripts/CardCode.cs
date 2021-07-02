@@ -333,13 +333,18 @@ public class CardCode : MonoBehaviour
 		bool foundCardType = false;
 		for (int i = cardTypeNames.Length - 1; i >= 0; i--)
 		{
-			if (working.ToLower().Contains(cardTypeNames[i].ToLower()))
+			int levelUpIndex = working.ToLower().IndexOf("level up:");
+			if (levelUpIndex == -1)
+			{
+				levelUpIndex = working.Length;
+			}
+			if (working.Substring(0, levelUpIndex).ToLower().Contains(cardTypeNames[i].ToLower()))
 			{
 				foundCardType = true;
 				cardType.value = i;
-				
-				working = working.Replace(cardTypeNames[i].ToLower(), "");
-				working = working.Replace(cardTypeNames[i], "");
+
+				int cardTypeIndex = working.IndexOf(cardTypeNames[i]);
+				working = working.Remove(cardTypeIndex, cardTypeNames[i].Length);
 				break;
 			}
 		}

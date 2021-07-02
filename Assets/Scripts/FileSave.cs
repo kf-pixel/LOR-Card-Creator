@@ -10,8 +10,7 @@ using SFB;
 
 public class FileSave : MonoBehaviour
 {
-	[SerializeField] private Canvas canvas;
-	[SerializeField] private CanvasScaler canvasScaler;
+	[SerializeField] private Canvas rootCanvas;
 	[SerializeField] private Vector2 resolution;
 	[SerializeField] private string disallowedFileNameChars;
 	[SerializeField] private Texture2D tex;
@@ -141,11 +140,11 @@ public class FileSave : MonoBehaviour
 		if (tex != null) Destroy(tex);
 
 		// Read Source Template
-		float canvasLocalScale = canvas.transform.localScale.x;
+		float canvasLocalScale = rootCanvas.transform.localScale.x;
 		Vector2 sourceScreen = source.position;
 		Vector2 sourceSizeScreen = source.rect.size * canvasLocalScale;
 
-		// Create a texture the size of the screen, RGB24 format
+		// Create a texture the size of the screen
 		int width = (int)(sourceSizeScreen.x);
 		int height = (int)(sourceSizeScreen.y);
 
@@ -387,7 +386,7 @@ public class FileSave : MonoBehaviour
 		if (texTooltip != null) Destroy(texTooltip);
 
 		// Read Source Template
-		float canvasLocalScale = canvas.transform.localScale.x;
+		float canvasLocalScale = rootCanvas.transform.localScale.x;
 		Vector2 sourceScreen = tooltipSource.position;
 		Vector2 sourceSizeScreen = tooltipSource.rect.size * canvasLocalScale;
 

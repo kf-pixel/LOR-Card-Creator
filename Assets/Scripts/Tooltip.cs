@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 	[SerializeField] [TextArea] private string header;
 	[SerializeField] [TextArea] private string content;
@@ -27,18 +27,37 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		isHovering = true;
-		if (tooltipManager == null) return;
 
-		// Set tooltip values
+#if UNITY_ANDROID
+		return;
+#endif
+
 		tooltipManager.ChangeActive(true, content, header, delay);
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		isHovering = false;
-		if (tooltipManager == null) return;
 
+#if UNITY_ANDROID
+		return;
+#endif
 		tooltipManager.ChangeActive(false, content, header);
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+#if UNITY_ANDROID
+		if (isHovering) tooltipManager.ChangeActive(true, content, header, delay);
+#endif
+	}
+
+	public void OnPointerUp(PointerEventData eventData)
+	{
+#if UNITY_ANDROID
+		tooltipManager.ChangeActive(false, content, header);
+		isHovering = false;
+#endif
 	}
 
 	private void OnDisable()

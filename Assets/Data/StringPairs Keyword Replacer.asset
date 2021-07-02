@@ -16,225 +16,316 @@ MonoBehaviour:
   - inputString: 'Play:'
     replacedString: 'Play:'
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Last Breath
     replacedString: <sprite name="lastbreath">Last Breath
     matchCase: 0
+    matchExactOnly: 0
   - inputString: lastbreath
     replacedString: <sprite name="lastbreath">Last Breath
     matchCase: 0
+    matchExactOnly: 0
   - inputString: 'Support:'
     replacedString: 'Support:'
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Drain
     replacedString: Drain
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Nexus Strike
     replacedString: Nexus Strike
     matchCase: 0
+    matchExactOnly: 0
   - inputString: 'Strike:'
     replacedString: 'Strike:'
     matchCase: 0
+    matchExactOnly: 0
   - inputString: 'strike '
     replacedString: 'strike '
     matchCase: 1
+    matchExactOnly: 0
   - inputString: strikes
     replacedString: strikes
     matchCase: 1
+    matchExactOnly: 0
   - inputString: struck
     replacedString: struck
     matchCase: 1
+    matchExactOnly: 0
   - inputString: striking
     replacedString: striking
     matchCase: 1
+    matchExactOnly: 0
   - inputString: Recall
     replacedString: Recall
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Stun
     replacedString: <sprite name="stun">Stun
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Allegiance
     replacedString: Allegiance
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Obliterate
     replacedString: Obliterate
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Strongest
     replacedString: Strongest
     matchCase: 1
+    matchExactOnly: 0
   - inputString: Enlightened
     replacedString: Enlightened
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Capture
     replacedString: <sprite name="capture">Capture
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Elusive
     replacedString: <sprite name="elusive">Elusive
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Quick Attack
     replacedString: <sprite name="quickattack">Quick Attack
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Barrier
     replacedString: <sprite name="barrier">Barrier
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Challenge
     replacedString: <sprite name="challenger">Challenge
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Challenging
     replacedString: <sprite name="challenger">Challenging
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Double Attack
     replacedString: <sprite name="doubleattack">Double Attack
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Ephemeral
     replacedString: <sprite name="ephemeral>Ephemeral
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Fearsome
     replacedString: <sprite name="fearsome">Fearsome
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Fleeting
     replacedString: <sprite name="fleeting">Fleeting
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Lifesteal
     replacedString: <sprite name="lifesteal">Lifesteal
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Overwhelm
     replacedString: <sprite name="overwhelm">Overwhelm
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Regeneration
     replacedString: <sprite name="regeneration">Regeneration
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Tough
     replacedString: <sprite name="tough">Tough
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Attune
     replacedString: <sprite name="attune">Attune
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Frostbite
     replacedString: <sprite name="frostbite">Frostbite
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Scout
     replacedString: <sprite name="scout">Scout
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Vulnerable
     replacedString: <sprite name="vulnerable">Vulnerable
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Deep
     replacedString: <sprite name="deep">Deep
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Plunder
     replacedString: Plunder
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Weakest
     replacedString: Weakest
     matchCase: 1
+    matchExactOnly: 0
   - inputString: Round End
     replacedString: Round End
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Round Start
     replacedString: Round Start
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Fury
     replacedString: <sprite name="fury">Fury
     matchCase: 0
+    matchExactOnly: 0
   - inputString: SpellShield
     replacedString: <sprite name="spellshield">SpellShield
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Daybreak
     replacedString: Daybreak
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Nightfall
     replacedString: Nightfall
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Behold
     replacedString: Behold
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Invoke
     replacedString: Invoke
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Nab
     replacedString: Nab
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Can't Attack
     replacedString: <sprite name="cantattack">Can't Attack
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Can't Block
     replacedString: <sprite name="cantblock">Can't Block
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Immobile
     replacedString: <sprite name="cantattack"><sprite name="cantblock">Immobile
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Slow
     replacedString: <sprite name="slow">Slow
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Fast
     replacedString: <sprite name="fast">Fast
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Burst
     replacedString: <sprite name="burst">Burst
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Skill
     replacedString: <sprite name="skill">Skill
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Focus
     replacedString: <sprite name="focus">Focus
     matchCase: 0
+    matchExactOnly: 0
   - inputString: everywhere
     replacedString: everywhere
     matchCase: 1
+    matchExactOnly: 0
   - inputString: 'Attack:'
     replacedString: 'Attack:'
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Toss
     replacedString: Toss
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Rally
     replacedString: Rally
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Silence
     replacedString: Silence
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Reforge
     replacedString: Reforge
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Augment
     replacedString: <sprite name="augment">Augment
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Play or
     replacedString: Play</color> or
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Play and
     replacedString: Play</color> and
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Phase
     replacedString: Phase
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Countdown
     replacedString: Countdown
     matchCase: 0
+    matchExactOnly: 0
   - inputString: advance
     replacedString: advance
     matchCase: 1
+    matchExactOnly: 0
   - inputString: Predict
     replacedString: Predict
     matchCase: 0
+    matchExactOnly: 0
   - inputString: slay
     replacedString: slay
     matchCase: 1
+    matchExactOnly: 0
+  - inputString: slays
+    replacedString: slays
+    matchCase: 1
+    matchExactOnly: 0
   - inputString: slain
     replacedString: slain
     matchCase: 1
+    matchExactOnly: 0
   - inputString: 'reputation:'
     replacedString: 'Reputation:'
     matchCase: 0
+    matchExactOnly: 0
   - inputString: Imbue
     replacedString: <sprite name=imbue>Imbue
-    matchCase: 0
+    matchCase: 1
+    matchExactOnly: 0
   - inputString: Aura
     replacedString: <sprite name=aura>Aura
-    matchCase: 0
+    matchCase: 1
+    matchExactOnly: 0
   - inputString: Blade Dance
     replacedString: Blade Dance
     matchCase: 0
+    matchExactOnly: 0
   - inputString: unseal
     replacedString: Unseal
     matchCase: 0
+    matchExactOnly: 0
+  - inputString: lurk
+    replacedString: <sprite name="lurk">Lurk
+    matchCase: 0
+    matchExactOnly: 1
+  - inputString: lurks
+    replacedString: <sprite name="lurk">Lurks
+    matchCase: 0
+    matchExactOnly: 1
+  - inputString: lurking
+    replacedString: <sprite name="lurk">Lurking
+    matchCase: 0
+    matchExactOnly: 1

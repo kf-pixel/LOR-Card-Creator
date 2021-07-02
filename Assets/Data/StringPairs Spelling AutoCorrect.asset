@@ -16,15 +16,28 @@ MonoBehaviour:
   - inputString: power
     replacedString: Power
     matchCase: 0
+    matchExactOnly: 0
   - inputString: health
     replacedString: Health
     matchCase: 0
+    matchExactOnly: 0
   - inputString: nexus
     replacedString: Nexus
     matchCase: 0
+    matchExactOnly: 0
   - inputString: i
     replacedString: I
     matchCase: 0
+    matchExactOnly: 0
   - inputString: i'm
     replacedString: I'm
     matchCase: 0
+    matchExactOnly: 0
+  - inputString: u
+    replacedString: you
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: ur
+    replacedString: your
+    matchCase: 0
+    matchExactOnly: 0

@@ -66,6 +66,9 @@ public class TooltipManager : MonoBehaviour
 		// Add delay if turning on tooltip
 		if (Time.time - lastActiveTime > 0.5f)
 		{
+#if UNITY_ANDROID
+			delay = 0f;
+#endif
 			yield return new WaitForSeconds(delay);
 		}
 

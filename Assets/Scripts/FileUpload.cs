@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -78,21 +78,27 @@ public class FileUpload : MonoBehaviour
 	}
 #endif
 
-	public void OnButtonPointerDown()
+	public void OnButtonPointerDown() // UPLOAD BUTTON, BRANCHING PATH DEPENDING ON PLATFORM
 	{
 
 #if UNITY_EDITOR
-		FileOpenDialog();
+		StandaloneOpenDialog();
 		return;
 #endif
 
 #if UNITY_STANDALONE
-		FileOpenDialog();
+		StandaloneOpenDialog();
 		return;
 #endif
 
 #if UNITY_WEBGL
 		ImageUploaderCaptureClick();
+		return;
+#endif
+
+#if UNITY_ANDROID
+		//if (NativeGallery.IsMediaPickerBusy()) return;
+		AndroidOpenDialog();
 		return;
 #endif
 
@@ -115,8 +121,24 @@ public class FileUpload : MonoBehaviour
 		Application.OpenURL(Application.persistentDataPath);
 	}
 
+	// Native Gallery dialog
+
+#if UNITY_ANDROID
+	private void AndroidOpenDialog()
+	{
+		/*(NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
+		{
+			if (path != null)
+			{
+				FileSelected(path);
+			}
+		}, "Select a PNG image", "image/png");
+		*/
+	}
+#endif
+
 	// Standalone file dialog
-	public void FileOpenDialog()
+	private void StandaloneOpenDialog()
 	{
 		var extensions = new[]
 		{
@@ -188,12 +210,20 @@ public class FileUpload : MonoBehaviour
 
 	IEnumerator LoadNewTexture(string url)
 	{
-		WWW image = new WWW(url);
-		yield return image;
+#if UNITY_STANDALONE || UNITY_WEBGL
+			WWW image = new WWW(url);
+			yield return image;
 
-		// Create Texture
-		texture = new Texture2D(1, 1);
-		image.LoadImageIntoTexture(texture);
+			// Create Texture
+			texture = new Texture2D(1, 1);
+			image.LoadImageIntoTexture(texture);
+#endif
+
+#if UNITY_ANDROID
+			//texture = NativeGallery.LoadImageAtPath(url);
+			yield return new WaitForEndOfFrame();
+#endif
+
 
 		// Texture settings
 		texture.filterMode = FilterMode.Trilinear;

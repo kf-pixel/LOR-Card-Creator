@@ -86,22 +86,23 @@ MonoBehaviour:
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 11400000, guid: 5c4db9f96f56579419f76d09e8e38147, type: 2}
   m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_outlineColor:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 7
   m_fontSizeMax: 10
   m_fontStyle: 16
-  m_textAlignment: 513
-  m_characterSpacing: -2
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: -3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -110,10 +111,8 @@ MonoBehaviour:
   m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 1
-  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
-  m_isLinkedTextComponent: 0
-  m_isTextTruncated: 1
+  parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -121,40 +120,18 @@ MonoBehaviour:
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
-  m_ignoreRectMaskCulling: 0
-  m_ignoreCulling: 1
   m_horizontalMapping: 0
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
   m_VertexBufferAutoSizeReduction: 1
-  m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 5, y: 0, z: 0, w: 0}
-  m_textInfo:
-    textComponent: {fileID: 9110148835632821319}
-    characterCount: 1
-    spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
-    linkCount: 0
-    lineCount: 1
-    pageCount: 1
-    materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_spriteAnimator: {fileID: 0}
   m_hasFontAssetChanged: 0
-  m_subTextObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &9110148836653274324
@@ -249,6 +226,8 @@ GameObject:
   - component: {fileID: 707099416008664326}
   - component: {fileID: 8398564821954113373}
   - component: {fileID: 2278713260747724930}
+  - component: {fileID: 5751877127942023636}
+  - component: {fileID: 2111154058199954406}
   m_Layer: 5
   m_Name: Keyword_Toggler
   m_TagString: Untagged
@@ -275,7 +254,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 18}
+  m_SizeDelta: {x: 0, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9110148836757732905
 CanvasRenderer:
@@ -386,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tmp: {fileID: 9110148835632821319}
   numberOfKeywords: {fileID: 11400000, guid: fb88834ce50d0c84da17c20840ed902d, type: 2}
+  keywordName: 
   keywordIndex: 0
   keywordAdd: {fileID: 11400000, guid: d5dfb7e683d7bfb4198bbaf946e4e614, type: 2}
   keywordRemove: {fileID: 11400000, guid: 77df204ad5f215142b7bc927df1ad503, type: 2}
@@ -562,6 +542,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt: {fileID: 9110148836757732907}
   canDrag: 0
+  shiftInput: {fileID: 11400000, guid: ee70842103391f443bd51e1c0f87b963, type: 2}
+  ctrlInput: {fileID: 11400000, guid: 39e3055168d16e446b2e17c91152a565, type: 2}
   listItem: {fileID: 0}
   onEnter:
     m_PersistentCalls:
@@ -597,8 +579,6 @@ MonoBehaviour:
   onDragEnd:
     m_PersistentCalls:
       m_Calls: []
-  shiftInput: {fileID: 11400000, guid: ee70842103391f443bd51e1c0f87b963, type: 2}
-  ctrlInput: {fileID: 11400000, guid: 39e3055168d16e446b2e17c91152a565, type: 2}
 --- !u!114 &707099416008664326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,3 +682,75 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5751877127942023636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110148836757732906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9984b19a38df144a907e8e78c5c861b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorStandaloneEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  webGLEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  mobileEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9110148836757732885}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2111154058199954406}
+        m_MethodName: SetSize
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9110148835632821319}
+        m_MethodName: set_fontSize
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 14
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2111154058199954406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110148836757732906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27764ccf420184f48bb822c7b4984586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rect: {fileID: 9110148836757732907}
+  pivotPoint: {fileID: 0}
+  sizeValues:
+  - {x: 0, y: 35}
+  positionValues:
+  - {x: 0, y: 0}

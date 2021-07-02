@@ -25,7 +25,7 @@ public class AutoTextReplacer : MonoBehaviour
 			tmpUGUIField.text = tmpUGUIField.text.Insert(spaces[i].Index + 1, " ");
 		}
 		// Capitalize letters
-		MatchCollection capitals = Regex.Matches(tmpUGUIField.text, "(?<=(: |\\. ?)|^|<br>)\\w");
+		MatchCollection capitals = Regex.Matches(tmpUGUIField.text, "(?<=(: |\\. ?)|^)\\w");
 		foreach (Match c in capitals)
 		{
 			tmpUGUIField.text = tmpUGUIField.text.Remove(c.Index, 1);
@@ -43,14 +43,27 @@ public class AutoTextReplacer : MonoBehaviour
 					tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b" + m.Value, "<style=Keyword>" + m.Value + "</style>");
 				}
 			}
+			else if (p.matchExactOnly == true)
+			{
+				MatchCollection matches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b" + p.inputString + "\\b", RegexOptions.IgnoreCase);
+				for (int i = matches.Count - 1; i >= 0 ; i--)
+				{
+					Match m = matches[i];
+					if (ValidateStyle(m.Index) == false) continue;
+					tmpUGUIField.text = tmpUGUIField.text.Remove(m.Index, m.Length);
+					tmpUGUIField.text = tmpUGUIField.text.Insert(m.Index, "<style=Keyword>" + p.replacedString + "</style>");
+				}
+			}
 			else
 			{
 				MatchCollection matches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b(" + p.inputString + ")\\w*", RegexOptions.IgnoreCase);
-				foreach (Match m in matches)
+				for (int i = matches.Count - 1; i >= 0 ; i--)
 				{
+					Match m = matches[i];
 					if (ValidateStyle(m.Index) == false) continue;
 					string suffix = Regex.Replace(m.Value, p.inputString, "", RegexOptions.IgnoreCase);
-					tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b(?<!\"\\>)" + m.Value, "<style=Keyword>" + p.replacedString + suffix + "</style>");
+					tmpUGUIField.text = tmpUGUIField.text.Remove(m.Index, m.Length);
+					tmpUGUIField.text = tmpUGUIField.text.Insert(m.Index, "<style=Keyword>" + p.replacedString + suffix + "</style>");
 				}
 			}
 		}
@@ -64,12 +77,27 @@ public class AutoTextReplacer : MonoBehaviour
 			// Run the custom keyword name thru regex
 			string regexLabel = k.label;
 			regexLabel = Regex.Replace(regexLabel, "[\\[\\]{}]", "");
+			MatchCollection kwCapitals = Regex.Matches(k.label, "(?<=(: |\\. ?)|^)\\w");
+			foreach (Match c in kwCapitals)
+			{
+				regexLabel = regexLabel.Remove(c.Index, 1);
+				regexLabel = regexLabel.Insert(c.Index, c.Value.ToUpper());
+			}
 
 			string ks = k.spriteIndex > 0 ?
 				"<color=" + k.hexColor + "><sprite name=\"Custom_" + k.spriteIndex + "\" tint>" + "</color><style=Keyword>" + regexLabel + "</style>" :
-				"<style=Keyword>" + regexLabel + "</style>";
+				"<style=Keyword>" + regexLabel;
 
-			tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\b", ks, RegexOptions.IgnoreCase);
+			//tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\b", ks, RegexOptions.IgnoreCase);
+			MatchCollection kwMatches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\w*", RegexOptions.IgnoreCase);
+			for (int kwi = kwMatches.Count - 1; kwi >= 0; kwi--)
+			{
+				Match m = kwMatches[kwi];
+				if (ValidateStyle(m.Index) == false) continue;
+				string suffix = Regex.Replace(m.Value, regexLabel, "", RegexOptions.IgnoreCase);
+				tmpUGUIField.text = tmpUGUIField.text.Remove(m.Index, m.Length);
+				tmpUGUIField.text = tmpUGUIField.text.Insert(m.Index, "<style=Keyword>" + ks + suffix + "</style>");
+			}
 		}
 
 		// Regular spellcheck auto-correct
@@ -81,8 +109,14 @@ public class AutoTextReplacer : MonoBehaviour
 		// Fix colon colour tag
 		tmpUGUIField.text = tmpUGUIField.text.Replace(":</style>", "</style>:");
 
-		// Fix slashes
+		// Fix slashes into pipes
 		tmpUGUIField.text = tmpUGUIField.text.Replace("/+", "|+");
+		tmpUGUIField.text = tmpUGUIField.text.Replace("/-", "|+");
+		MatchCollection slashMatches = Regex.Matches(tmpUGUIField.text, "(\\d+\\/\\d+)");
+		foreach (Match sm in slashMatches)
+		{
+			tmpUGUIField.text = tmpUGUIField.text.Replace(sm.Value, sm.Value.Replace("/", "|"));
+		}
 	}
 
 	private bool ValidateStyle(int i)
@@ -91,7 +125,7 @@ public class AutoTextReplacer : MonoBehaviour
 		List<int> cardClosingTagList = new List<int>();
 
 		MatchCollection openMatches = Regex.Matches(tmpUGUIField.text, "<style=Card>");
-		MatchCollection closeMatches = Regex.Matches(tmpUGUIField.text, "</style>");
+		MatchCollection closeMatches = Regex.Matches(tmpUGUIField.text, "</STYLE>");
 
 		if (openMatches.Count < 1) return true;
 
@@ -107,6 +141,7 @@ public class AutoTextReplacer : MonoBehaviour
 				else
 				{
 					cardTagRange.Add(new Vector2(oi, ci));
+					break;
 				}
 			}
 		}

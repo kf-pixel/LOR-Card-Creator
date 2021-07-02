@@ -16,11 +16,17 @@ public class EventTriggerHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
+#if UNITY_ANDROID
+		return;
+#endif
 		onEnter.Invoke();
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
+#if UNITY_ANDROID
+		return;
+#endif
 		onExit.Invoke();
 	}
 }

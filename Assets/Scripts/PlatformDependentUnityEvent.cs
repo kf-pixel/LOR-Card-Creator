@@ -5,11 +5,15 @@ using UnityEngine.Events;
 
 public class PlatformDependentUnityEvent : MonoBehaviour
 {
-	[SerializeField] private UnityEvent editorStandaloneEvent;
-	[SerializeField] private UnityEvent webGLEvent;
+	[SerializeField] private UnityEvent editorStandaloneEvent, webGLEvent, mobileEvent;
 
 	private void Awake()
 	{
+#if UNITY_ANDROID
+		mobileEvent.Invoke();
+		return;
+#endif
+
 #if UNITY_EDITOR
 		editorStandaloneEvent.Invoke();
 		return;

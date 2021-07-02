@@ -24,4 +24,5 @@ public class StringPair
 	public string inputString;
 	public string replacedString;
 	public bool matchCase = false;
+	public bool matchExactOnly = false;
 }

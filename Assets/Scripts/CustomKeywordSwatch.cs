@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CustomKeywordSwatch : MonoBehaviour
 {
 	[SerializeField] private CustomKeywordData keywordData;
+	[SerializeField] private TextMeshProUGUI dropdownLabel, dropdownItemLabel;
 	[SerializeField] private Button[] swatches;
 	[SerializeField] private Tooltip[] tooltips;
 
@@ -21,8 +23,17 @@ public class CustomKeywordSwatch : MonoBehaviour
 		}
 	}
 
-    private void OnEnable()
+	public void SetDropdownLabelColor()
+	{
+		var c = new Color();
+		ColorUtility.TryParseHtmlString(keywordData.hexColor, out c);
+		dropdownLabel.color = c;
+		dropdownItemLabel.color = c;
+	}
+
+	private void OnEnable()
     {
 		DisableSwatches();
+		SetDropdownLabelColor();
 	}
 }

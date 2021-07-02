@@ -50,6 +50,26 @@ MonoBehaviour:
   material: {fileID: -5952066858274641786}
   materialHashCode: 0
   m_Version: 1.1.0
+  m_FaceInfo:
+    m_FamilyName: 
+    m_StyleName: 
+    m_PointSize: 0
+    m_Scale: 0
+    m_LineHeight: 0
+    m_AscentLine: 0
+    m_CapLine: 0
+    m_MeanLine: 0
+    m_Baseline: 0
+    m_DescentLine: 0
+    m_SuperscriptOffset: 0
+    m_SuperscriptSize: 0
+    m_SubscriptOffset: 0
+    m_SubscriptSize: 0
+    m_UnderlineOffset: 0
+    m_UnderlineThickness: 0
+    m_StrikethroughOffset: 0
+    m_StrikethroughThickness: 0
+    m_TabWidth: 0
   spriteSheet: {fileID: 2800000, guid: 2cdb1c57a91c117418697868256cabbc, type: 3}
   m_SpriteCharacterTable:
   - m_ElementType: 2
@@ -88,6 +108,12 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: aura
     m_HashCode: 3607463
+  - m_ElementType: 2
+    m_Unicode: 0
+    m_GlyphIndex: 6
+    m_Scale: 1
+    m_Name: lurk
+    m_HashCode: 3791424
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -183,6 +209,22 @@ MonoBehaviour:
       m_Height: 100
     m_Scale: 1.2
     m_AtlasIndex: 5
+    sprite: {fileID: -8624688530713432925, guid: 2c26f995dc4195c44b9863828f778f00,
+      type: 3}
+  - m_Index: 6
+    m_Metrics:
+      m_Width: 50
+      m_Height: 50
+      m_HorizontalBearingX: -2
+      m_HorizontalBearingY: 42
+      m_HorizontalAdvance: 50
+    m_GlyphRect:
+      m_X: 600
+      m_Y: 0
+      m_Width: 100
+      m_Height: 100
+    m_Scale: 1.2
+    m_AtlasIndex: 6
     sprite: {fileID: -8624688530713432925, guid: 2c26f995dc4195c44b9863828f778f00,
       type: 3}
   spriteInfoList: []
