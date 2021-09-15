@@ -14,7 +14,7 @@ public class CardDataObject
 	{
 		id = "";
 		cardName = "";
-		cardCode = "Untitled: 1 Mana 1/1 Runeterra Follower *&local&/placeholder.png*155*0*640*";
+		cardCode = "Untitled: 1 Mana 1/1 Runeterra Follower *&local&/placeholder.png*155*0*640* &~-400";
 		folder = "";
 	}
 
@@ -22,7 +22,7 @@ public class CardDataObject
 	{
 		id = "";
 		cardName = "";
-		cardCode = "Untitled: 1 Mana 1/1 " + regionName + " Common Follower *&local&/placeholder.png*155*0*640*";
+		cardCode = "Untitled: 1 Mana 1/1 " + regionName + " Common Follower *&local&/placeholder.png*155*0*640* &~-400";
 		folder = "";
 	}
 
@@ -36,8 +36,7 @@ public class CardDataObject
 
 	public void GenerateID(string suffix = "")
 	{
-		int randomIndex = Random.Range(100, 999);
-		id = System.DateTime.Now.ToString() + suffix + randomIndex.ToString();
+		id = System.DateTime.Now.ToString() + suffix;
 	}
 
 	public string GetCardType(string[] cardNamesList)

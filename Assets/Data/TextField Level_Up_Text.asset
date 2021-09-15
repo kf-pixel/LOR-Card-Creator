@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134c2ddb79b620141837b4eb0a0c6909, type: 3}
   m_Name: TextField Level_Up_Text
   m_EditorClassIdentifier: 
+  value: 
+  setEmptyValue: 0
+  emptyValue: 
   valueChangedEvent:
     m_PersistentCalls:
       m_Calls:

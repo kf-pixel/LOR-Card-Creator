@@ -27,7 +27,7 @@ public class KeywordFormat : MonoBehaviour
 	private void InitializePanel()
 	{
 		textField.ForceMeshUpdate();
-		fullWidth = textField.renderedWidth + 18f;
+		fullWidth = textField.renderedWidth + 20f;
 		panel.sizeDelta = new Vector2(fullWidth, panel.sizeDelta.y);
 		fullText = textField.text;
 	}

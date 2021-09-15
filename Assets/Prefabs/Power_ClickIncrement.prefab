@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ed5298e46b4f1488fe971f1bd57762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSlider: {fileID: 0}
+  inputF: {fileID: 0}
 --- !u!114 &6778468434577152215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

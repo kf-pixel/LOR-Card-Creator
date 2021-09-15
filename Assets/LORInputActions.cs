@@ -60,7 +60,7 @@ public class @LORInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Shift"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""01a18593-0844-486a-8155-4168a3dfa588"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -68,8 +68,16 @@ public class @LORInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Ctrl"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""cc6369eb-cdf3-4a36-be78-581da4c5f4e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""04c60dff-ef41-4359-a61a-d8b8316144a8"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -308,6 +316,17 @@ public class @LORInputActions : IInputActionCollection, IDisposable
                     ""action"": ""TouchPosition1Contact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""621c3b45-71b7-4834-8f75-7d20c4b9995c"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -384,6 +403,7 @@ public class @LORInputActions : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_Shift = m_UI.FindAction("Shift", throwIfNotFound: true);
         m_UI_Ctrl = m_UI.FindAction("Ctrl", throwIfNotFound: true);
+        m_UI_Enter = m_UI.FindAction("Enter", throwIfNotFound: true);
         m_UI_TouchPosition0 = m_UI.FindAction("TouchPosition0", throwIfNotFound: true);
         m_UI_TouchPosition1 = m_UI.FindAction("TouchPosition1", throwIfNotFound: true);
         m_UI_TouchPosition1Contact = m_UI.FindAction("TouchPosition1Contact", throwIfNotFound: true);
@@ -443,6 +463,7 @@ public class @LORInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_Shift;
     private readonly InputAction m_UI_Ctrl;
+    private readonly InputAction m_UI_Enter;
     private readonly InputAction m_UI_TouchPosition0;
     private readonly InputAction m_UI_TouchPosition1;
     private readonly InputAction m_UI_TouchPosition1Contact;
@@ -457,6 +478,7 @@ public class @LORInputActions : IInputActionCollection, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @Shift => m_Wrapper.m_UI_Shift;
         public InputAction @Ctrl => m_Wrapper.m_UI_Ctrl;
+        public InputAction @Enter => m_Wrapper.m_UI_Enter;
         public InputAction @TouchPosition0 => m_Wrapper.m_UI_TouchPosition0;
         public InputAction @TouchPosition1 => m_Wrapper.m_UI_TouchPosition1;
         public InputAction @TouchPosition1Contact => m_Wrapper.m_UI_TouchPosition1Contact;
@@ -490,6 +512,9 @@ public class @LORInputActions : IInputActionCollection, IDisposable
                 @Ctrl.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCtrl;
                 @Ctrl.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCtrl;
                 @Ctrl.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCtrl;
+                @Enter.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEnter;
                 @TouchPosition0.started -= m_Wrapper.m_UIActionsCallbackInterface.OnTouchPosition0;
                 @TouchPosition0.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnTouchPosition0;
                 @TouchPosition0.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnTouchPosition0;
@@ -524,6 +549,9 @@ public class @LORInputActions : IInputActionCollection, IDisposable
                 @Ctrl.started += instance.OnCtrl;
                 @Ctrl.performed += instance.OnCtrl;
                 @Ctrl.canceled += instance.OnCtrl;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
                 @TouchPosition0.started += instance.OnTouchPosition0;
                 @TouchPosition0.performed += instance.OnTouchPosition0;
                 @TouchPosition0.canceled += instance.OnTouchPosition0;
@@ -591,6 +619,7 @@ public class @LORInputActions : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnShift(InputAction.CallbackContext context);
         void OnCtrl(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
         void OnTouchPosition0(InputAction.CallbackContext context);
         void OnTouchPosition1(InputAction.CallbackContext context);
         void OnTouchPosition1Contact(InputAction.CallbackContext context);

@@ -14,6 +14,8 @@ public class GradientColourGrab : MonoBehaviour
 
 	private IEnumerator GradientCoroutine;
 
+	private bool instantGrab;
+
 	private void SetGradient()
 	{
 		// Read Source Template
@@ -38,6 +40,7 @@ public class GradientColourGrab : MonoBehaviour
 
 	public void GetGradient(bool wait)
 	{
+		if (instantGrab && wait) return;
 		if (GradientCoroutine != null)
 		{
 			StopCoroutine(GradientCoroutine);
@@ -48,10 +51,18 @@ public class GradientColourGrab : MonoBehaviour
 
 	private IEnumerator GetGradientIE(bool wait)
 	{
-		if (wait) yield return new WaitForSeconds(0.1f);
+		if (wait)
+		{
+			yield return new WaitForSeconds(0.1f);
+		}
+		else
+		{
+			instantGrab = true;
+		}
 		yield return new WaitForEndOfFrame();
 		SetGradient();
 		GradientCoroutine = null;
+		instantGrab = false;
 	}
 	private Color ColorBlend(Texture2D tex)
 	{

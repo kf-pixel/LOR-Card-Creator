@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "Shift",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "01a18593-0844-486a-8155-4168a3dfa588",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -55,8 +55,16 @@
                 },
                 {
                     "name": "Ctrl",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "cc6369eb-cdf3-4a36-be78-581da4c5f4e3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Enter",
+                    "type": "Button",
+                    "id": "04c60dff-ef41-4359-a61a-d8b8316144a8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -293,6 +301,17 @@
                     "processors": "",
                     "groups": "Touch",
                     "action": "TouchPosition1Contact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "621c3b45-71b7-4834-8f75-7d20c4b9995c",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Enter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

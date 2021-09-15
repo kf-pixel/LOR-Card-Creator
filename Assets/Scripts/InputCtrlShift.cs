@@ -9,14 +9,29 @@ namespace OneOfs
 	{
 		public BoolVariable shiftInput;
 		public BoolVariable ctrlInput;
-		public void ShiftInput(InputAction.CallbackContext context)
+		public BoolVariable enterInput;
+		private void Update()
 		{
-			shiftInput.value = context.ReadValueAsButton();
+			shiftInput.value = Input.GetKey(KeyCode.LeftShift);
+			ctrlInput.value = Input.GetKey(KeyCode.LeftControl);
+			enterInput.value = Input.GetKeyDown(KeyCode.Return);
 		}
 
-		public void CtrlInput(InputAction.CallbackContext context)
-		{
-			ctrlInput.value = context.ReadValueAsButton();
-		}
+		/*
+				public void ShiftInput(InputAction.CallbackContext context)
+				{
+					shiftInput.value = context.ReadValueAsButton();
+				}
+
+				public void CtrlInput(InputAction.CallbackContext context)
+				{
+					ctrlInput.value = context.ReadValueAsButton();
+				}
+
+				public void EnterInput(InputAction.CallbackContext context)
+				{
+					enterInput.value = context.ReadValueAsButton();
+				}
+		*/
 	}
 }

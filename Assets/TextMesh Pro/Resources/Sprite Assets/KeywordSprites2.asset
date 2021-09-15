@@ -51,6 +51,7 @@ MonoBehaviour:
   materialHashCode: 0
   m_Version: 1.1.0
   m_FaceInfo:
+    m_FaceIndex: 0
     m_FamilyName: 
     m_StyleName: 
     m_PointSize: 0
@@ -114,6 +115,12 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: lurk
     m_HashCode: 3791424
+  - m_ElementType: 2
+    m_Unicode: 0
+    m_GlyphIndex: 7
+    m_Scale: 1
+    m_Name: impact
+    m_HashCode: -80598334
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -224,6 +231,22 @@ MonoBehaviour:
       m_Width: 100
       m_Height: 100
     m_Scale: 1.2
+    m_AtlasIndex: 6
+    sprite: {fileID: -8624688530713432925, guid: 2c26f995dc4195c44b9863828f778f00,
+      type: 3}
+  - m_Index: 7
+    m_Metrics:
+      m_Width: 50
+      m_Height: 50
+      m_HorizontalBearingX: -5
+      m_HorizontalBearingY: 40
+      m_HorizontalAdvance: 43
+    m_GlyphRect:
+      m_X: 700
+      m_Y: 0
+      m_Width: 100
+      m_Height: 100
+    m_Scale: 1.5
     m_AtlasIndex: 6
     sprite: {fileID: -8624688530713432925, guid: 2c26f995dc4195c44b9863828f778f00,
       type: 3}

@@ -174,7 +174,7 @@ public class KeywordBarController : MonoBehaviour
 		}
 
 		// Format based on total length
-		if (totalWidth > 300f || (autoShorten && keywordInstances.Count > 1))
+		if (totalWidth > 275f || (autoShorten && keywordInstances.Count > 1))
 		{
 			foreach (GameObjectInt kwi in keywordInstances)
 			{

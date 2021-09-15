@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: ce4056fff3a6dee4994caa61915163f6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - region1: {fileID: 11400000, guid: 0fe900a172a1b544f8a18e11a2361cd1, type: 2}
+  - region2: {fileID: 11400000, guid: 9e2a6998df6052349bc9c5ed0d2e64ce, type: 2}
+  - updateRegionEvent: {fileID: 11400000, guid: 66d2b124374ac9e42bec84d5c45b7c61,
+      type: 2}
+  - label: {instanceID: 0}
+  - checkmark: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

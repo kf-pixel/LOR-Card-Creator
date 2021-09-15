@@ -34,7 +34,6 @@ public class LOLApiHandler : MonoBehaviour
 	private string spellURL = "http://ddragon.leagueoflegends.com/cdn/11.4.1/img/spell/";
 
 	[Header("Events")]
-	[SerializeField] private UnityStringEvent titlePushEvent;
 	[SerializeField] private UnityEvent spellImageEvent, blankChampPushEvent, blankSpellPushEvent;
 
 	public void LoadChampionAsset(TextAsset asset)
@@ -121,7 +120,6 @@ public class LOLApiHandler : MonoBehaviour
 		uploader.GetWebImage(splashURL + defaultSkin, defaultSkin);
 
 		// Push champ into title
-		titlePushEvent.Invoke(activeChampion);
 		if (blankCard) blankChampPushEvent.Invoke();
 	}
 

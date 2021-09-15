@@ -19,15 +19,17 @@ public class MouseWheelZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 		hovering = false;
 	}
 
-	public void InputMouseWheel(InputAction.CallbackContext ctx)
+	private void Update()
 	{
-		if (ctx.performed && hovering)
+		if (!hovering)
 		{
-			float scrollY = ctx.ReadValue<Vector2>().y;
-			if (scrollY != 0f)
-			{
-				slider.value = Mathf.Clamp(slider.value + (scrollY * sensitivity), slider.minValue, slider.maxValue);
-			}
+			return;
+		}
+
+		float scrollY = Input.mouseScrollDelta.y;
+		if (scrollY != 0f)
+		{
+			slider.value = Mathf.Clamp(slider.value + (scrollY * sensitivity), slider.minValue, slider.maxValue);
 		}
 	}
 }

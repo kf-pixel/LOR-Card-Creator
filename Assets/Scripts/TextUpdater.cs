@@ -24,7 +24,7 @@ public class TextUpdater : MonoBehaviour
 		{
 			reference.value = tmp.text;
 		}
-		RefreshTextHeight();
+		UpdateText();
 	}
 
 	private void OnEnable()
@@ -35,17 +35,10 @@ public class TextUpdater : MonoBehaviour
 	public void UpdateText()
 	{
 		tmp.text = !string.IsNullOrEmpty(reference.value) ? prefix + reference.value : "";
-
 		AddTags();
-		RefreshTextHeight();
+		StartCoroutine(TextUpdateIE());
 	}
-
-	public void RefreshTextHeight()
-	{
-		StartCoroutine(CoroutineTextHeight());
-	}
-
-	private IEnumerator CoroutineTextHeight()
+	private IEnumerator TextUpdateIE()
 	{
 		yield return new WaitForEndOfFrame();
 
@@ -59,6 +52,8 @@ public class TextUpdater : MonoBehaviour
 		{
 			return;
 		}
+
+		tmp.text = tmp.text.Replace("`", "<br>");
 
 		// [] and {} tags
 		if (tmp.text.Contains("[") && tmp.text.Contains("]"))

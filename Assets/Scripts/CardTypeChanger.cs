@@ -100,7 +100,7 @@ public class CardTypeChanger : MonoBehaviour
 		}
 
 		// Show rarity dropdown
-		if (cardTypeIndex.value == 1 || cardTypeIndex.value == 2)
+		if (cardTypeIndex.value == 1 || cardTypeIndex.value == 2 || cardTypeIndex.value == 8)
 		{
 			hideRarityEvent.Invoke();
 		}

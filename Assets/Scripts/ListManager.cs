@@ -22,7 +22,7 @@ public class ListManager : MonoBehaviour
 
 	[Header("Region/CardType data to add on newly created cards.")]
 	[SerializeField] private string initialPlaceHolderText;
-	[SerializeField] private IntVariable regionIndex;
+	[SerializeField] private IntVariable regionIndex, regionIndex2;
 	public string[] regionNames;
 	public string[] cardTypeNames;
 
@@ -583,6 +583,10 @@ public class ListManager : MonoBehaviour
 
 		// Spawn Prefab & set data
 		CardDataObject card = new CardDataObject(regionNames[regionIndex.value]);
+		if (regionIndex2.value != 13)
+		{
+			card.cardCode += " ++" + regionNames[regionIndex2.value];
+		}
 		card.SetName();
 		card.GenerateID();
 

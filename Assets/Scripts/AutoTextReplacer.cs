@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 public class AutoTextReplacer : MonoBehaviour
@@ -85,10 +86,8 @@ public class AutoTextReplacer : MonoBehaviour
 			}
 
 			string ks = k.spriteIndex > 0 ?
-				"<color=" + k.hexColor + "><sprite name=\"Custom_" + k.spriteIndex + "\" tint>" + "</color><style=Keyword>" + regexLabel + "</style>" :
-				"<style=Keyword>" + regexLabel;
+				"<color=" + k.hexColor + "><sprite name=\"Custom_" + k.spriteIndex + "\" tint>" + "</color>" : "";
 
-			//tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\b", ks, RegexOptions.IgnoreCase);
 			MatchCollection kwMatches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\w*", RegexOptions.IgnoreCase);
 			for (int kwi = kwMatches.Count - 1; kwi >= 0; kwi--)
 			{
@@ -96,7 +95,7 @@ public class AutoTextReplacer : MonoBehaviour
 				if (ValidateStyle(m.Index) == false) continue;
 				string suffix = Regex.Replace(m.Value, regexLabel, "", RegexOptions.IgnoreCase);
 				tmpUGUIField.text = tmpUGUIField.text.Remove(m.Index, m.Length);
-				tmpUGUIField.text = tmpUGUIField.text.Insert(m.Index, "<style=Keyword>" + ks + suffix + "</style>");
+				tmpUGUIField.text = tmpUGUIField.text.Insert(m.Index, ks + "<style=Keyword>" + regexLabel + suffix + "</style>");
 			}
 		}
 
@@ -111,12 +110,14 @@ public class AutoTextReplacer : MonoBehaviour
 
 		// Fix slashes into pipes
 		tmpUGUIField.text = tmpUGUIField.text.Replace("/+", "|+");
-		tmpUGUIField.text = tmpUGUIField.text.Replace("/-", "|+");
+		tmpUGUIField.text = tmpUGUIField.text.Replace("/-", "|-");
 		MatchCollection slashMatches = Regex.Matches(tmpUGUIField.text, "(\\d+\\/\\d+)");
 		foreach (Match sm in slashMatches)
 		{
 			tmpUGUIField.text = tmpUGUIField.text.Replace(sm.Value, sm.Value.Replace("/", "|"));
 		}
+
+		Capitalize();
 	}
 
 	private bool ValidateStyle(int i)
@@ -154,5 +155,44 @@ public class AutoTextReplacer : MonoBehaviour
 			}
 		}
 		return true;
+	}
+
+	private void Capitalize()
+	{
+		TextInfo cultInfo = new CultureInfo("en-US", false).TextInfo;
+
+		List<int> cardOpenTagList = new List<int>();
+		List<int> cardClosingTagList = new List<int>();
+
+		MatchCollection openMatches = Regex.Matches(tmpUGUIField.text, "<style=Card>");
+		MatchCollection closeMatches = Regex.Matches(tmpUGUIField.text, "</STYLE>");
+
+		if (openMatches.Count < 1) return;
+
+		foreach (Match om in openMatches) cardOpenTagList.Add(om.Index + 12);
+		foreach (Match cm in closeMatches) cardClosingTagList.Add(cm.Index);
+
+		List<Vector2> cardTagRange = new List<Vector2>();
+		foreach (int oi in cardOpenTagList)
+		{
+			foreach (int ci in cardClosingTagList)
+			{
+				if (ci < oi) continue;
+				else
+				{
+					cardTagRange.Add(new Vector2(oi, ci));
+					break;
+				}
+			}
+		}
+
+		foreach (Vector2 v in cardTagRange)
+		{
+			string tagged = tmpUGUIField.text.Substring((int)v.x, (int)v.y - (int)v.x);
+			tagged = cultInfo.ToTitleCase(tagged);
+
+			tmpUGUIField.text = tmpUGUIField.text.Remove((int)v.x, (int)v.y - (int)v.x);
+			tmpUGUIField.text = tmpUGUIField.text.Insert((int)v.x, tagged);
+		}
 	}
 }
