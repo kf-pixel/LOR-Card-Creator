@@ -8,8 +8,11 @@ public class UserContentLoader : MonoBehaviour
 {
 	[Header("User Keyword Sprites")]
 	[SerializeField] private TMP_SpriteAsset spriteAsset;
+	[SerializeField] private Texture2D placeholderFileSprite;
 	[SerializeField] private Texture2D placeholderUserSprites;
 	[SerializeField] private Texture2D stex;
+	[SerializeField] private TMP_Dropdown[] dropdowns;
+	private int maxUserSprites = 10;
 
 	[Header("User Regions")]
 	[SerializeField] private Sprite placeholderRegion;
@@ -19,20 +22,20 @@ public class UserContentLoader : MonoBehaviour
 
 	private void Start()
     {
-		//StartCoroutine(LoadUserSpritesIE());
+		StartCoroutine(LoadUserSpritesIE());
 		StartCoroutine(LoadUserRegions());
 	}
 
 	private IEnumerator LoadUserRegions()
 	{
+		yield return new WaitForSeconds(0.2f);
+
 		// create placeholder
 		if (!File.Exists(Application.persistentDataPath + "/user_region1.png"))
 		{
 			byte[] pfile = placeholderRegion.texture.EncodeToPNG();
 			File.WriteAllBytes(Application.persistentDataPath + "/user_region1.png", pfile);
 		}
-
-		yield return new WaitForEndOfFrame();
 
 		// loop through user region names
 		for (int i = 0; i < maxUserRegions; i++)
@@ -64,38 +67,90 @@ public class UserContentLoader : MonoBehaviour
 				//Debug.Log("Region " + (i + 1) + " doesn't exist.");
 				regions.values[i + 14] = placeholderRegion;
 			}
+			FrameRateManager.Instance.RequestFullFrameRate();
+			yield return new WaitForEndOfFrame();
 		}
 	}
 
 	private IEnumerator LoadUserSpritesIE()
 	{
-		if (!File.Exists(Application.persistentDataPath + "/user_sprites.png"))
+		yield return new WaitForSeconds(0.4f);
+
+		if (!File.Exists(Application.persistentDataPath + "/user_sprite1.png"))
 		{
-			byte[] bits = placeholderUserSprites.EncodeToPNG();
-			File.WriteAllBytes(Application.persistentDataPath + "/user_sprites.png", bits);
+			byte[] pfile = placeholderFileSprite.EncodeToPNG();
+			File.WriteAllBytes(Application.persistentDataPath + "/user_sprite1.png", pfile);
 		}
 
-		yield return new WaitForEndOfFrame();
-		if (!File.Exists(Application.persistentDataPath + "/user_sprites.png")) yield break;
+		Texture2D blankTexture = new Texture2D(150, 150);
+		List<Texture2D> userSprites = new List<Texture2D>();
 
-		WWW image = new WWW(Application.persistentDataPath + "/user_sprites.png");
-		yield return image;
+		// loop through user sprite names
+		for (int i = 0; i < maxUserSprites; i++)
+		{
+			if (File.Exists(Application.persistentDataPath + "/user_sprite" + (i + 1) + ".png"))
+			{
+				WWW image = new WWW(Application.persistentDataPath + "/user_sprite" + (i + 1) + ".png");
+				yield return image;
 
-		// Create Texture
-		stex = new Texture2D(1, 1);
-		image.LoadImageIntoTexture(stex);
+				// Create Texture
+				Texture2D spriteTex = new Texture2D(1, 1);
+				image.LoadImageIntoTexture(spriteTex);
 
-		// adjust texture settings
-		stex.name = "loaded_sprites";
+				// adjust texture settings
+				if (spriteTex.width != 150 || spriteTex.height != 150) spriteTex = ScaleTexture(spriteTex, 150, 150);
+				spriteTex.name = "user_region" + (i + 1);
+
+				userSprites.Add(spriteTex);
+
+				// Add to dropdowns
+				TMP_Dropdown.OptionData newDropdownOption = new TMP_Dropdown.OptionData($"<sprite name=\"user{i + 1}\" tint><color=white>U{i + 1}", null);
+				foreach (TMP_Dropdown drop in dropdowns)
+				{
+					drop.options.Add(newDropdownOption);
+				}
+			}
+			else
+			{
+				userSprites.Add(blankTexture);
+			}
+			FrameRateManager.Instance.RequestFullFrameRate();
+			yield return new WaitForEndOfFrame();
+		}
+
+		// Pack sprites together
+		for (int i = 0; i < userSprites.Count; i++)
+		{
+			stex.SetPixels(i * 150, 0, 150, 150, userSprites[i].GetPixels());
+		}
 		stex.Apply();
-
-		// Apply to sprite asset
-		spriteAsset.spriteSheet = stex;
 		spriteAsset.UpdateLookupTables();
+
+	
 	}
 
     private void OnDisable()
     {
-		//spriteAsset.spriteSheet = placeholderUserSprites;
+#if UNITY_EDITOR
+		stex.Resize(placeholderUserSprites.width, placeholderUserSprites.height);
+		stex.SetPixels(placeholderUserSprites.GetPixels());
+		stex.Apply();
+#endif
+	}
+
+	// jon martin
+	private Texture2D ScaleTexture(Texture2D source, int targetWidth, int targetHeight)
+	{
+		Texture2D result = new Texture2D(targetWidth, targetHeight, source.format, true);
+		Color[] rpixels = result.GetPixels(0);
+		float incX = (1.0f / (float)targetWidth);
+		float incY = (1.0f / (float)targetHeight);
+		for (int px = 0; px < rpixels.Length; px++)
+		{
+			rpixels[px] = source.GetPixelBilinear(incX * ((float)px % targetWidth), incY * ((float)Mathf.Floor(px / targetWidth)));
+		}
+		result.SetPixels(rpixels, 0);
+		result.Apply();
+		return result;
 	}
 }

@@ -16,6 +16,7 @@ public class SpriteUpdater : MonoBehaviour
 
 	[Header("Region Updater")]
 	[SerializeField] private Image regionFrameImg;
+	[SerializeField] private IntVariable dualRegionIndex;
 	[SerializeField] private SpritesVariable singleRegionFrames, dualRegionFrames;
 
 	public void UpdateSprite()
@@ -46,6 +47,7 @@ public class SpriteUpdater : MonoBehaviour
 		if (regionFrameImg != null)
 		{
 			regionFrameImg.sprite = intSelectionIndex.value == 13 ? singleRegionFrames.values[cardIndex.value] : dualRegionFrames.values[cardIndex.value];
+			regionFrameImg.enabled = intSelectionIndex.value == 13 && dualRegionIndex.value == 13 ? false : true;
 		}
 	}
 }

@@ -27,6 +27,11 @@ public class StringVariable : ScriptableObject
 		value = "";
 	}
 
+	public void ResetValue()
+	{
+		value = "";
+	}
+
 	public void FloatToString(float i)
 	{
 		value = i.ToString();

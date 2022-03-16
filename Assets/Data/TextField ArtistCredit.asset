@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TextField ArtistCredit
   m_EditorClassIdentifier: 
   value: 
-  setEmptyValue: 0
+  setEmptyValue: 1
   emptyValue: 
   valueChangedEvent:
     m_PersistentCalls:

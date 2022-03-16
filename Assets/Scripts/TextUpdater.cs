@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 public class TextUpdater : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI tmp;
+	[SerializeField] private TMP_InputField inputTMP;
 	[SerializeField] private StringVariable reference;
 	[SerializeField] private bool updateOnAwake = true;
 
@@ -36,6 +37,13 @@ public class TextUpdater : MonoBehaviour
 	{
 		tmp.text = !string.IsNullOrEmpty(reference.value) ? prefix + reference.value : "";
 		AddTags();
+
+		if (inputTMP != null)
+		{
+			inputTMP.text = !string.IsNullOrEmpty(reference.value) ? prefix + reference.value : "";
+			AddInputTMPTags();
+		}
+		
 		StartCoroutine(TextUpdateIE());
 	}
 	private IEnumerator TextUpdateIE()
@@ -44,6 +52,45 @@ public class TextUpdater : MonoBehaviour
 
 		textHeight = Mathf.Max(tmp.renderedHeight, 0f);
 		newTextHeightEvent.Invoke(textHeight);
+	}
+
+	private void AddInputTMPTags()
+	{
+		if (string.IsNullOrEmpty(inputTMP.text))
+		{
+			return;
+		}
+
+		inputTMP.text = inputTMP.text.Replace("`", "<br>");
+
+		// [] and {} tags
+		if (inputTMP.text.Contains("[") && inputTMP.text.Contains("]"))
+		{
+			inputTMP.text = inputTMP.text.Replace("[", "<style=Card>");
+			inputTMP.text = inputTMP.text.Replace("]", "</STYLE>");
+		}
+
+		if (inputTMP.text.Contains("{") && inputTMP.text.Contains("}"))
+		{
+			inputTMP.text = inputTMP.text.Replace("{", "<style=Keyword>");
+			inputTMP.text = inputTMP.text.Replace("}", "</color>");
+		}
+
+		// double slash break
+		inputTMP.text = inputTMP.text.Replace("//", "<b></b>");
+
+		// Skill Sprite
+		inputTMP.text = inputTMP.text.Replace("@", "<sprite name=skill>");
+
+		// Countdown
+		if (string.IsNullOrEmpty(countdownPattern)) return;
+
+		Regex rgx = new Regex(countdownPattern, RegexOptions.IgnoreCase);
+		MatchCollection matches = rgx.Matches(inputTMP.text);
+		foreach (Match match in matches)
+		{
+			inputTMP.text = inputTMP.text.Replace(match.Value, "<style=Keyword>" + match.Value.TrimEnd(":".ToCharArray()) + "</style>:");
+		}
 	}
 
 	private void AddTags()

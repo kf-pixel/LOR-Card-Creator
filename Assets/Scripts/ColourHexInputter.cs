@@ -10,9 +10,6 @@ public class ColourHexInputter : MonoBehaviour
 	[SerializeField] private TMP_InputField tmpi;
 	[SerializeField] private TMP_InputField tmp_label_i;
 	[SerializeField] private TMP_Dropdown tmp_index_dd;
-	[SerializeField] private Slider sliderR;
-	[SerializeField] private Slider sliderG;
-	[SerializeField] private Slider sliderB;
 
 	[Header("Custom Keyword Reference Data")]
 	[SerializeField] private CustomKeywordData KWData;
@@ -25,10 +22,6 @@ public class ColourHexInputter : MonoBehaviour
 			KWData.colorG = 1f;
 			KWData.colorB = 1f;
 		}
-
-		sliderR.value = KWData.colorR;
-		sliderG.value = KWData.colorG;
-		sliderB.value = KWData.colorB;
 
 		ChangeValue();
 
@@ -53,11 +46,6 @@ public class ColourHexInputter : MonoBehaviour
 		KWData.colorR = c.r;
 		KWData.colorG = c.g;
 		KWData.colorB = c.b;
-
-		sliderR.value = c.r;
-		sliderG.value = c.g;
-		sliderB.value = c.b;
-
 	}
 
 	public void HexToRGB(string hexs)
@@ -68,10 +56,6 @@ public class ColourHexInputter : MonoBehaviour
 		KWData.colorR = c.r;
 		KWData.colorG = c.g;
 		KWData.colorB = c.b;
-
-		sliderR.value = c.r;
-		sliderG.value = c.g;
-		sliderB.value = c.b;
 	}
 
 	// used in saving
@@ -79,9 +63,5 @@ public class ColourHexInputter : MonoBehaviour
 	{
 		var c = new Color();
 		ColorUtility.TryParseHtmlString(KWData.hexColor, out c);
-
-		sliderR.SetValueWithoutNotify(c.r);
-		sliderG.SetValueWithoutNotify(c.g);
-		sliderB.SetValueWithoutNotify(c.b);
 	}
 }

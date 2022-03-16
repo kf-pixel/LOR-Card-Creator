@@ -5,23 +5,28 @@ using UnityEngine.EventSystems;
 
 public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
-	[SerializeField] [TextArea] private string header;
-	[SerializeField] [TextArea] private string content;
-
+	[SerializeField] [TextArea(2,10)] private string header;
+	[SerializeField] [TextArea(8,12)] private string content;
 	private TooltipManager tooltipManager;
 	[SerializeField] private float delay = 0.5f;
-
 	private bool isHovering = false;
+	private string initialContent;
 
 	private void Awake()
 	{
 		tooltipManager = FindObjectOfType<TooltipManager>();
+		initialContent = content;
 	}
 
 	public void NewTooltipText(string newContentText, string newHeaderText = "")
 	{
 		content = newContentText;
 		header = newHeaderText;
+	}
+
+	public void NewContentAppend(string newContent)
+	{
+		content = initialContent + newContent;
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)

@@ -13,6 +13,7 @@ public class ListItem : MonoBehaviour
 	public TextMeshProUGUI subTextLabel;
 	public TextMeshProUGUI manaLabel;
 	public TextMeshProUGUI indexLabel;
+	public GameObject duplicateGameObject;
 	public int listOrderIndex;
 	[SerializeField] private UnityEvent highlightEvent, dehighlightEvent;
 
@@ -27,7 +28,7 @@ public class ListItem : MonoBehaviour
 		int cardTypeIndex = cardData.GetCardTypeIndex(listManager.cardTypeNames);
 		string cardTypeName = cardData.GetCardType(listManager.cardTypeNames);
 
-		string cardDataAppend = "   <alpha=#66><cspace=1><font=\"Univers 59 Ultra Condensed SDF\">[" + cardTypeName + "]";
+		string cardDataAppend = $"   {cardTypeName}";
 		string colorTypeAppend = "<color=#88CDD4>";
 		if (cardTypeIndex == 1)
 		{
@@ -57,6 +58,11 @@ public class ListItem : MonoBehaviour
 		subTextLabel.text = colorTypeAppend + cardDataAppend;
 		indexLabel.text = (listOrderIndex + 1).ToString();
 		manaLabel.text = cardData.GetMana();
+	}
+
+	public void UpdateOrderIndexOnly()
+	{
+		indexLabel.text = (listOrderIndex + 1).ToString();
 	}
 
 	public void SetAsActiveItem()
@@ -101,5 +107,15 @@ public class ListItem : MonoBehaviour
 	public void Dehighlight()
 	{
 		dehighlightEvent.Invoke();
+	}
+
+	public void DisableDuplicateGameObject()
+	{
+		duplicateGameObject.SetActive(false);
+	}
+
+	public void EnableDuplicateGameObject()
+	{
+		duplicateGameObject.SetActive(true);
 	}
 }

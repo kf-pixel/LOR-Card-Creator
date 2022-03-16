@@ -18,11 +18,11 @@ MonoBehaviour:
     matchCase: 0
     matchExactOnly: 0
   - inputString: Last Breath
-    replacedString: <sprite name="lastbreath">Last Breath
+    replacedString: <nobr><sprite name="lastbreath">Last Breath</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: lastbreath
-    replacedString: <sprite name="lastbreath">Last Breath
+    replacedString: <nobr><sprite name="lastbreath">Last Breath</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: 'Support:'
@@ -34,7 +34,7 @@ MonoBehaviour:
     matchCase: 1
     matchExactOnly: 0
   - inputString: Nexus Strike
-    replacedString: Nexus Strike
+    replacedString: <nobr>Nexus Strike</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: 'Strike:'
@@ -55,6 +55,10 @@ MonoBehaviour:
     matchExactOnly: 0
   - inputString: striking
     replacedString: striking
+    matchCase: 1
+    matchExactOnly: 0
+  - inputString: attack strike
+    replacedString: <nobr>attack strike</nobr>
     matchCase: 1
     matchExactOnly: 0
   - inputString: Recall
@@ -85,12 +89,16 @@ MonoBehaviour:
     replacedString: <sprite name="capture">Capture
     matchCase: 0
     matchExactOnly: 0
+  - inputString: Capturing
+    replacedString: <sprite name="capture">Capturing
+    matchCase: 0
+    matchExactOnly: 0
   - inputString: Elusive
     replacedString: <sprite name="elusive">Elusive
     matchCase: 0
     matchExactOnly: 0
   - inputString: Quick Attack
-    replacedString: <sprite name="quickattack">Quick Attack
+    replacedString: <nobr><sprite name="quickattack">Quick Attack</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Barrier
@@ -106,7 +114,7 @@ MonoBehaviour:
     matchCase: 0
     matchExactOnly: 0
   - inputString: Double Attack
-    replacedString: <sprite name="doubleattack">Double Attack
+    replacedString: <nobr><sprite name="doubleattack">Double Attack</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Ephemeral
@@ -141,8 +149,8 @@ MonoBehaviour:
     replacedString: <sprite name="attune">Attune
     matchCase: 0
     matchExactOnly: 0
-  - inputString: Frostbite
-    replacedString: <sprite name="frostbite">Frostbite
+  - inputString: Frostbit
+    replacedString: <sprite name="frostbite">Frostbit
     matchCase: 0
     matchExactOnly: 0
   - inputString: Scout
@@ -166,11 +174,11 @@ MonoBehaviour:
     matchCase: 1
     matchExactOnly: 0
   - inputString: Round End
-    replacedString: Round End
+    replacedString: <nobr>Round End</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Round Start
-    replacedString: Round Start
+    replacedString: <nobr>Round Start</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Fury
@@ -202,11 +210,11 @@ MonoBehaviour:
     matchCase: 0
     matchExactOnly: 0
   - inputString: Can't Attack
-    replacedString: <sprite name="cantattack">Can't Attack
+    replacedString: <nobr><sprite name="cantattack">Can't Attack</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Can't Block
-    replacedString: <sprite name="cantblock">Can't Block
+    replacedString: <nobr><sprite name="cantblock">Can't Block</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: Immobile
@@ -223,10 +231,6 @@ MonoBehaviour:
     matchExactOnly: 0
   - inputString: Burst
     replacedString: <sprite name="burst">Burst
-    matchCase: 0
-    matchExactOnly: 0
-  - inputString: Skill
-    replacedString: <sprite name="skill">Skill
     matchCase: 0
     matchExactOnly: 0
   - inputString: Focus
@@ -310,7 +314,7 @@ MonoBehaviour:
     matchCase: 1
     matchExactOnly: 0
   - inputString: Blade Dance
-    replacedString: Blade Dance
+    replacedString: <nobr>Blade Dance</nobr>
     matchCase: 0
     matchExactOnly: 0
   - inputString: unseal
@@ -335,5 +339,21 @@ MonoBehaviour:
     matchExactOnly: 0
   - inputString: Impact
     replacedString: <sprite name="impact">Impact
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: fated
+    replacedString: <sprite name="fated">Fated
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: attach
+    replacedString: <sprite name="attach">Attach
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: formidable
+    replacedString: <sprite name="formidable">Formidable
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: fermiderber
+    replacedString: <sprite name="fermiderber">Fermiderber
     matchCase: 0
     matchExactOnly: 0

@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EditorUtils</name>
+    </assembly>
+    <members>
+        <member name="T:DTT.Utils.EditorUtilities.AnimatedFoldout">
+            <summary>
+            Provides a simple fade group layout implementation for giving your foldouts
+            a nice foldout animation.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.AnimatedFoldout.target">
+            <summary>
+            The target for which this foldout element is drawn.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.AnimatedFoldout._animation">
+            <summary>
+            The foldout animation.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedFoldout.#ctor(UnityEditor.Editor)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="editor">The editor to draw the foldout for.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedFoldout.#ctor(UnityEditor.EditorWindow)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="window">The editor window to draw the foldout for.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedFoldout.OnGUI(System.String,System.Action)">
+            <summary>
+            Draws the foldout with inside it the GUI based
+            on the given draw action.
+            </summary>
+            <param name="headerName">The name of the foldout header.</param>
+            <param name="drawAction">The method drawing the GUI inside the foldout.</param>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.AnimatedToggleFoldout">
+            <summary>
+            Provides a simple fade group layout implementation for giving your
+            conditional toggle drawers a nice foldout animation.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.AnimatedToggleFoldout.target">
+            <summary>
+            The target for which this foldout element is drawn.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.AnimatedToggleFoldout._animation">
+            <summary>
+            The foldout animation.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedToggleFoldout.#ctor(UnityEditor.Editor)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="editor">The editor to draw the foldout for.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedToggleFoldout.#ctor(UnityEditor.EditorWindow)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="window">The editor window to draw the foldout for.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AnimatedToggleFoldout.OnGUI(System.String,System.Boolean,System.Action)">
+            <summary>
+            Draws the toggle foldout with inside it the GUI based
+            on the given draw action.
+            </summary>
+            <param name="headerName">The name of the foldout header.</param>
+            <param name="toggle">The toggle value.</param>
+            <returns>Whether the toggle has been pressed.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException">
+            <summary>
+            Thrown when an Asset databaseInteraction went wrong.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException.PREFIX">
+            <summary>
+            The prefixed message in front of any
+            <see cref="T:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException"/>
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException.#ctor(System.String)">
+            <summary>
+            Create a <see cref="T:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException"/> with the given message
+            to be preceded by the prefix.
+            </summary>
+            <param name="message">The message to show.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a <see cref="T:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException"/> with the given message
+            to be preceded by the prefix and inner exception.
+            </summary>
+            <param name="message">The message to show.</param>
+            <param name="innerException">The inner exception thrown.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException.Format(System.String)">
+            <summary>
+            Returns a formatted version of the given message using the <see cref="F:DTT.Utils.EditorUtilities.Exceptions.AssetDatabaseException.PREFIX"/>.
+            </summary>
+            <param name="message">The message to be formatted.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException">
+            <summary>
+            The core exception class for EditorUtility exceptions used in the package.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException.PREFIX">
+            <summary>
+            The prefixed message in front of any
+            <see cref="T:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException"/>
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException.#ctor(System.String)" -->
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a <see cref="T:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException"/> with the given message
+            to be preceded by the prefix and inner exception.
+            </summary>
+            <param name="message">The message to show.</param>
+            <param name="innerException">The inner exception thrown.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException.Format(System.String)">
+            <summary>
+            Returns a formatted version of the given message using the <see cref="F:DTT.Utils.EditorUtilities.Exceptions.EditorUtilityException.PREFIX"/>.
+            </summary>
+            <param name="message">The message to be formatted.</param>
+            <returns>The formatted message</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException">
+            <summary>
+            Thrown when an internaction with a gui caching object went wrong.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException.PREFIX">
+            <summary>
+            The prefixed message in front of any
+            <see cref="T:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException"/>
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException.#ctor(System.String)">
+            <summary>
+            Create a <see cref="T:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException"/> with the given message
+            to be preceded by the prefix.
+            </summary>
+            <param name="message">The message to show.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a <see cref="T:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException"/> with the given message
+            to be preceded by the prefix and inner exception.
+            </summary>
+            <param name="message">The message to show.</param>
+            <param name="innerException">The inner exception thrown.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException.Format(System.String)">
+            <summary>
+            Returns a formatted version of the given message using the <see cref="F:DTT.Utils.EditorUtilities.Exceptions.TypeSafeCacheException.PREFIX"/>.
+            </summary>
+            <param name="message">The message to be formatted.</param>
+            <returns>The formatted message.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.AssetDatabaseUtility">
+            <summary>
+            A static utility class for retrieving data from the Unity Asset Database.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.LoadAssets``1(System.String,System.String[])">
+            <summary>
+            Returns an array of assets loaded of <typeparamref name="T"/> from the 
+            asset database using given filter argument.
+            </summary>
+            <param name="filter">The filter to use for finding the assets.</param>
+            <param name="searchFolders">The folders to look in when searching.</param>
+            <returns>The array of assets retrieved from the asset database.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.LoadAssets``1(System.String[])">
+            <summary>
+            Returns an array of assets loaded of <typeparamref name="T"/> from the 
+            asset database.
+            </summary>
+            <param name="searchFolders">The folders to look in when searching.</param>
+            <returns>The array of assets retrieved from the asset database.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.LoadAsset``1">
+            <summary>
+            Returns an asset of <typeparamref name="T"/> from the 
+            asset database.
+            <para>If there are multiple it will return the first one found.</para>
+            </summary>
+            <param name="filter">The filter to use for finding the asset</param>
+            <param name="searchFolders">The folder to look in when searching.</param>
+            <returns>The asset retrieved from the asset database.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.LoadAsset``1(System.String)">
+            <summary>
+            Returns a loaded asset of <typeparamref name="T"/> from the 
+            asset database using given filter argument.
+            <para>If there are multiple it will return the first one found.</para>
+            </summary>
+            <param name="filter">The filter to use for finding the asset</param>
+            <param name="searchFolders">The folder to look in when searching.</param>
+            <returns>The asset retrieved from the asset database.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.LoadAsset``1(System.String,System.String)">
+            <summary>
+            Returns a loaded asset of <typeparamref name="T"/> from the 
+            asset database using given filter argument.
+            <para>If there are multiple it will return the first one found.</para>
+            </summary>
+            <param name="filter">The filter to use for finding the asset</param>
+            <param name="searchFolders">The folder to look in when searching.</param>
+            <returns>The asset retrieved from the asset database.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.GetComponentInPrefab``1(System.String)">
+            <summary>
+            Returns a component attached to a prefab at given path.
+            </summary>
+            <typeparam name="T">The type of component.</typeparam>
+            <param name="prefabPath">The path the prefab can be found.</param>
+            <returns>The component attached to the prefab.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.GetOrCreateScriptableObjectAsset``1(System.String)">
+            <summary>
+            Tries returning a loaded scriptable object asset at given path but creates it if
+            it didn't exist.
+            <para>This operation will not save the asset if it has been created.</para>
+            </summary>
+            <typeparam name="T">The type of scriptable object asset.</typeparam>
+            <param name="path">The path at which to load or create.</param>
+            <returns>The loaded or created scriptable object asset reference.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.AssetDatabaseUtility.CreatePrefabAtPath(System.String,UnityEngine.GameObject)">
+            <summary>
+            Creates a prefab asset at given path using given GameObject instance.
+            Will destroy the instance if the creation was succesful.
+            <para>
+            This function doesn't return a prefab reference since there
+            is no certainty it can be created instantly.
+            </para>
+            </summary>
+            <param name="path">The path at which to create the prefab.</param>
+            <param name="instanceRoot">
+            The GameObject instance to use for creating the prefab.
+            </param>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.ConstructableCache`1">
+            <summary>
+            A type safe cache version that allows for constructors to be added for 
+            the initial creation of the item value.
+            </summary>
+            <typeparam name="T">The type of the cached item.</typeparam>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.ConstructableCache`1.Container">
+            <summary>
+            Wraps the item value and its constructor, providing
+            a one time initialization upon retrieval.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.ConstructableCache`1.Container._value">
+            <summary>
+            The cached item value.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.ConstructableCache`1.Container._constructor">
+            <summary>
+            The constructor with which to initialize the value.
+            </summary>
+        </member>
+        <member name="P:DTT.Utils.EditorUtilities.ConstructableCache`1.Container.Value">
+            <summary>
+            The accesor to the cached item value.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.ConstructableCache`1.Container.#ctor(System.Func{`0})">
+            <summary>
+            Creates a new instance, storing the given constructor.
+            </summary>
+            <param name="constructor">The constructor with which to initialize the value.</param>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.ConstructableCache`1._values">
+            <summary>
+            Contains the cached values in their respective containers.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.ConstructableCache`1.Add(System.String,System.Func{`0})">
+            <summary>
+            Adds a new cached item to the cache with its respective constructor. The name of property 
+            argument should always be the name of the property, using the 'nameof' keyword.
+            </summary>
+            <param name="nameOfProperty">
+            The name of the property retrieving
+            the cached item value.</param>
+            <param name="constructor">
+            The constructor with which to initialize the value.
+            </param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.ConstructableCache`1.GetCachedItem(System.String)">
+            <summary>
+            Returns the cached item value of the property with given property name.
+            </summary>
+            <param name="nameOfProperty">
+            The name of the property retrieving
+            the cached item value.</param>
+            <returns>The cached item value.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.DTTGUIExtensions">
+            <summary>
+            A static class containing extension methods usable for creating GUI content.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.DTTGUIExtensions.GetGUISize(System.String,UnityEngine.GUIStyle)">
+            <summary>
+            Returns the size in the GUI when drawn with given style.
+            </summary>
+            <param name="content">The content to be drawn.</param>
+            <param name="style">The style the content is to be drawn with.</param>
+            <returns>The size in the GUI.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.DTTGUIExtensions.GetGUISize(UnityEngine.GUIContent,UnityEngine.GUIStyle)">
+            <summary>
+            Returns the size in the GUI when drawn with given style.
+            </summary>
+            <param name="content">The content to be drawn.</param>
+            <param name="style">The style the content is to be drawn with.</param>
+            <returns>The size in the GUI.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.EditorAnimationExtensions">
+            <summary>
+            Provides animated GUI functionalities. 
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.EditorAnimationExtensions._animatedFoldouts">
+            <summary>
+            The animated foldout instances used for providing the
+            global animated foldout functionality. 
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.EditorAnimationExtensions._animatedToggleFoldouts">
+            <summary>
+            The animated toggle foldout instances used for providing the
+            global animated toggle foldout functionality. 
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.#cctor">
+            <summary>
+            Listens for a selection change event to reset its state.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.DrawAnimatedFoldout(UnityEditor.Editor,System.String,System.Action)">
+            <summary>
+            Draws a toggle foldout with inside it the GUI based.
+            on the given draw action.
+            </summary>
+            <param name="editor">The editor to draw this foldout for.</param>
+            <param name="headerName">The header name to display</param>
+            <param name="drawAction">The method drawing the GUI inside the foldout.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.DrawAnimatedToggleFoldout(UnityEditor.Editor,System.String,System.Boolean,System.Action)">
+            <summary>
+            Draws a toggle foldout with inside it the GUI based.
+            on the given draw action.
+            </summary>
+            <param name="editor">The editor to draw this foldout for.</param>
+            <param name="headerName">The header name to display</param>
+            <param name="toggle">The toggle value.</param>
+            <param name="drawAction">The method drawing the GUI inside the foldout.</param>
+            <returns>Whether the toggle has been pressed.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.DrawAnimatedFoldout(UnityEditor.EditorWindow,System.String,System.Action)">
+            <summary>
+            Draws a toggle foldout with inside it the GUI based.
+            on the given draw action.
+            </summary>
+            <param name="window">The editor window to draw this foldout for.</param>
+            <param name="headerName">The header name to display</param>
+            <param name="drawAction">The method drawing the GUI inside the foldout.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.DrawAnimatedToggleFoldout(UnityEditor.EditorWindow,System.String,System.Boolean,System.Action)">
+            <summary>
+            Draws a toggle foldout with inside it the GUI based.
+            on the given draw action.
+            </summary>
+            <param name="window">The editor window to draw this foldout for.</param>
+            <param name="headerName">The header name to display</param>
+            <param name="toggle">The toggle value.</param>
+            <param name="drawAction">The method drawing the GUI inside the foldout.</param>
+            <returns>Whether the toggle has been pressed.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorAnimationExtensions.RefreshState">
+            <summary>
+            Resets the static state by removing animated foldouts with an invalid target.
+            </summary>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.EditorStringExtensions">
+            <summary>
+            A static class providing extension methods for handling strings.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorStringExtensions.AddSpacesBeforeCapitals(System.String)">
+            <summary>
+            Returns the string with spaces before capitals.
+            </summary>
+            <param name="content">The string to base the new string on.</param>
+            <returns>The string with spaces before capitals.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorStringExtensions.FromAllCapsToReadableFormat(System.String)">
+            <summary>
+            Converst a string of constant styling (MY_CONST) to a 
+            readable format (My Const).
+            </summary>
+            <param name="content">The content to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.EditorStringExtensions.FromReadableFormatToAllCaps(System.String)">
+            <summary>
+            Converst a string of readable format (My Const) to a 
+            constant styling (MY_CONST).
+            </summary>
+            <param name="content">The content to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.GUIContentCache">
+            <summary>
+            Stores your GUI content data in an effective way.
+            </summary>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.GUIStyleCache">
+            <summary>
+            Stores your GUI style data in an effective way.
+            </summary>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.PathUtility">
+            <summary>
+            Provides path related utility methods.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PathUtility.InDTTDirectory(System.String)">
+            <summary>
+            Returns whether the given asset path is inside a DTT directory.
+            </summary>
+            <param name="assetPath">The asset path to check.</param>
+            <returns>Whether the given asset path is inside a DTT directory.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PathUtility.IsAssetJson(System.String)">
+            <summary>
+            Returns whether the given asset path is corresponding with a dtt asset.json file.
+            </summary>
+            <param name="assetPath">The asset path to check.</param>
+            <returns>Whether the given asset path is corresponding with a dtt asset.json file.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PathUtility.GetDirectoryName(System.String,System.Int32)">
+            <summary>
+            Returns the name of the directory of given path depending on the given
+            index when split using the directory separation character.
+            </summary>
+            <param name="path">The path of which to get the directory name.</param>
+            <param name="index">The index of the split directory names.</param>
+            <returns>The name of the directory.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PathUtility.ContainsDirectory(System.String,System.String)">
+            <summary>
+            Returns whether the given directory name is part of the given path.
+            </summary>
+            <param name="path">The path to check.</param>
+            <param name="directoryName">The directory name to look for.</param>
+            <returns>Whether the given directory name is part of the given path.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.PlayerSettingsUtility">
+            <summary>
+            Provides player settings related utility methods.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PlayerSettingsUtility.AddScriptingDefineSymbol(System.String)">
+            <summary>
+            Adds a define symbol to the selected build target group its defined symbols.
+            </summary>
+            <param name="symbol">The symbol to add.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.PlayerSettingsUtility.RemoveScriptingDefineSymbol(System.String)">
+            <summary>
+            Removes the define symbol from the selected build target group its defined symbols.
+            </summary>
+            <param name="symbol">The symbol to remove.</param>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.RelativePropertyCache">
+            <summary>
+            Provides storage of <see cref="T:UnityEditor.SerializedProperty"/>'s and access
+            to them in a type save way.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.RelativePropertyCache.p_serializedProperty">
+            <summary>
+            The property used for initializing relative property values the first time.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.RelativePropertyCache._relativeProperties">
+            <summary>
+            The stored properties, accessable by name.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.RelativePropertyCache.PRIVATE_PREFIX">
+            <summary>
+            The prefix used for private variables.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.RelativePropertyCache.#ctor(UnityEditor.SerializedProperty)">
+            <summary>
+            Creates a new instance, initializing the stored properties
+            of the given <see cref="T:UnityEditor.SerializedObject"/>.
+            </summary>
+            <param name="serializedObject">The object of which to store the properties.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.RelativePropertyCache.UpdateObjectRepresentation">
+            <summary>
+            Updates the serialized object representation. Call this before drawing
+            your properties and eventuall changes.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.RelativePropertyCache.ApplyChangesToObject">
+            <summary>
+            Applies modified changes of properties to the serialized object.
+            Call this after a <see cref="M:UnityEditor.EditorGUI.EndChangeCheck"/> has returned true.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.RelativePropertyCache.GetCachedItem(System.String)">
+            <summary>
+            Tries retrieving a relative property value from the cache based on given name.
+            </summary>
+            <param name="nameOfProperty">The property name.</param>
+            <returns>The property value.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.SerializedPropertyCache">
+            <summary>
+            Provides storage of <see cref="T:UnityEditor.SerializedProperty"/>'s and access
+            to them in a type save way.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.SerializedPropertyCache.p_serializedObject">
+            <summary>
+            The object used for initializing property values the first time.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.SerializedPropertyCache._properties">
+            <summary>
+            The stored properties, accessable by name.
+            </summary>
+        </member>
+        <member name="F:DTT.Utils.EditorUtilities.SerializedPropertyCache.PRIVATE_PREFIX">
+            <summary>
+            The prefix used for private variables.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.SerializedPropertyCache.#ctor(UnityEditor.SerializedObject)">
+            <summary>
+            Creates a new instance, initializing the stored properties
+            of the given <see cref="T:UnityEditor.SerializedObject"/>.
+            </summary>
+            <param name="serializedObject">The object of which to store the properties.</param>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.SerializedPropertyCache.UpdateRepresentation">
+            <summary>
+            Updates the serialized object representation. Call this before drawing
+            your properties and eventuall changes.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.SerializedPropertyCache.ApplyChanges">
+            <summary>
+            Applies modified changes of properties to the serialized object.
+            Call this after a <see cref="M:UnityEditor.EditorGUI.EndChangeCheck"/> has returned true.
+            </summary>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.SerializedPropertyCache.GetCachedItem(System.String)">
+            <summary>
+            Tries retrieving a property value from the cache based on given name.
+            </summary>
+            <param name="nameOfProperty">The property name.</param>
+            <returns>The property value.</returns>
+        </member>
+        <member name="T:DTT.Utils.EditorUtilities.TypeSafeCache`1">
+            <summary>
+            Provides an abstract implementation of a class that can 
+            store and provide acces to cached items in a type safe way.
+            </summary>
+            <typeparam name="T">The type of the cached item.</typeparam>
+        </member>
+        <member name="P:DTT.Utils.EditorUtilities.TypeSafeCache`1.Item(System.String)">
+            <summary>
+            The accesor to the cache. The argument should always be the name
+            of the property, using the 'nameof' keyword.
+            </summary>
+            <param name="nameOfProperty">
+            The name of the property retrieving
+            the cached item value.</param>
+            <returns>The cached item value.</returns>
+        </member>
+        <member name="M:DTT.Utils.EditorUtilities.TypeSafeCache`1.GetCachedItem(System.String)">
+            <summary>
+            Should return the cached item based on the given name of the property.
+            </summary>
+            <param name="nameOfProperty">
+            The name of the property retrieving
+            the cached item value.</param>
+            <returns>The cached item value.</returns>
+        </member>
+    </members>
+</doc>

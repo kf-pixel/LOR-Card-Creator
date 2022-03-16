@@ -26,7 +26,7 @@ public class FileUpload : MonoBehaviour
 	[SerializeField] private UnityEvent lowResEvent;
 	[SerializeField] private UnityEvent highResEvent;
 	[SerializeField] private UnityEvent cardArtLoadedEvent;
-	[SerializeField] private UnityEvent onLeagueImageEvent, onWebImageEvent;
+	[SerializeField] private UnityEvent onWebImageEvent;
 	[SerializeField] private UnityEvent webImageLoading, webImageComplete, webImageFailed, invalidWebURL;
 
 	[Header("Artwork RawImages")]
@@ -56,6 +56,10 @@ public class FileUpload : MonoBehaviour
 	private void OnDisable()
 	{
 		B83.Win32.UnityDragAndDropHook.UninstallHook();
+	}
+
+	private void OnDestroy()
+	{
 		ClearTexturesFromMemory();
 	}
 
@@ -365,10 +369,27 @@ public class FileUpload : MonoBehaviour
 
 	public async void GetWebImage(string url, string fileName) // league images
 	{
+		if (IsValidURL(url) == false)
+		{
+			invalidWebURL.Invoke();
+			return;
+		}
+
 		if (CheckIfWebImageDownloaded(fileName) == true)
 		{
 			FileSelected(artworkFilePath + "/" + fileName);
-			onLeagueImageEvent.Invoke();
+			return;
+		}
+
+		if (CheckIfWebImageDownloaded(fileName + ".jpg") == true)
+		{
+			FileSelected(artworkFilePath + "/" + fileName + ".jpg");
+			return;
+		}
+
+		if (CheckIfWebImageDownloaded(fileName + ".png") == true)
+		{
+			FileSelected(artworkFilePath + "/" + fileName + ".png");
 			return;
 		}
 
@@ -379,9 +400,8 @@ public class FileUpload : MonoBehaviour
 		if (webImage == null) return;
 
 		// Download into artwork folder, return directory
-		SaveTextureAsPNG(webImage, artworkFilePath, fileName);
-		FileSelected(artworkFilePath + "/" + fileName);
-		onLeagueImageEvent.Invoke();
+		string location = SaveTextureAsPNG(webImage, artworkFilePath, fileName);
+		FileSelected(location);
 
 		webImageComplete.Invoke();
 	}
@@ -405,6 +425,14 @@ public class FileUpload : MonoBehaviour
 			return;
 		}
 
+		if (CheckIfWebImageDownloaded(fileName + ".png") == true)
+		{
+			FileSelected(artworkFilePath + "/" + fileName + ".png");
+			onWebImageEvent.Invoke();
+			// successfully found art in folder
+			return;
+		}
+
 		webImageLoading.Invoke();
 
 		if (webImage != null) Destroy(webImage);
@@ -412,8 +440,8 @@ public class FileUpload : MonoBehaviour
 		if (webImage == null) return;
 
 		// Download into artwork folder, return directory
-		SaveTextureAsPNG(webImage, artworkFilePath, fileName);
-		FileSelected(artworkFilePath + "/" + fileName + ".jpg");
+		string location = SaveTextureAsPNG(webImage, artworkFilePath, fileName);
+		FileSelected(location);
 		onWebImageEvent.Invoke();
 
 		webImageComplete.Invoke();
@@ -462,15 +490,16 @@ public class FileUpload : MonoBehaviour
 		return false;
 	}
 
-	public void SaveTextureAsPNG(Texture2D _texture, string _fullPath, string _fileName)
+	public string SaveTextureAsPNG(Texture2D _texture, string _fullPath, string _fileName)
 	{
 #if UNITY_WEBGL
 		Debug.Log("Can't save web images on WEBGL! Returning");
-		return;
+		return null;
 #endif
 
 		byte[] _bytes = _texture.EncodeToJPG(85);
 		string extension = (_fileName.EndsWith(".jpg") || _fileName.EndsWith(".png") || _fileName.EndsWith(".jpeg"))  ? "" : ".jpg";
 		System.IO.File.WriteAllBytes(_fullPath + "/" + _fileName + extension, _bytes);
+		return _fullPath + "/" + _fileName + extension;
 	}
 }

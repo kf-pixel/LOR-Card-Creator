@@ -8,6 +8,7 @@ public class GameEvent : ScriptableObject
 {
 	private List<GameEventListener> eventListeners = new List<GameEventListener>();
 
+	[ContextMenu("Test Raise")]
 	public void Raise()
 	{
 		for (int i = eventListeners.Count - 1; i >= 0; i--)
@@ -26,6 +27,7 @@ public class GameEvent : ScriptableObject
 			eventListeners.Remove(listener);
 	}
 
+	[ContextMenu("Print Listeners")]
 	public void PrintListeners()
 	{
 		foreach(GameEventListener listener in eventListeners)

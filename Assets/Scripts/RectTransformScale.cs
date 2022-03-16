@@ -11,6 +11,8 @@ public class RectTransformScale : MonoBehaviour
 
 	public void SetScale(float f)
 	{
+		FrameRateManager.Instance.RequestFullFrameRate();
+
 		// Set Image width x height
 		float yAspectRatio = (float)rect.sizeDelta.y / (float)rect.sizeDelta.x;
 		//rect.sizeDelta = new Vector2(f, f * yAspectRatio);
@@ -19,11 +21,15 @@ public class RectTransformScale : MonoBehaviour
 
 	public void ResetPosition()
 	{
+		FrameRateManager.Instance.RequestFullFrameRate();
+
 		rect.anchoredPosition = new Vector3(0, 0);
 	}
 
 	public void ScaleAround(float newScale, float aspectRatio)
 	{
+		FrameRateManager.Instance.RequestFullFrameRate();
+
 		Vector3 A = transform.position;
 		Vector3 B = pivotPoint.transform.position;
 
@@ -41,6 +47,8 @@ public class RectTransformScale : MonoBehaviour
 
 	public void SetSize(int i)
 	{
+		FrameRateManager.Instance.RequestFullFrameRate();
+
 		rect.sizeDelta = sizeValues[i];
 		if (positionValues[i] != Vector2.zero)
 		{

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [CreateAssetMenu(fileName = "New Custom Keyword Data", menuName = "Custom Keyword Data")]
 public class CustomKeywordData : ScriptableObject
@@ -31,6 +32,21 @@ public class CustomKeywordData : ScriptableObject
 	public void SetSpriteIndex(int i)
 	{
 		spriteIndex = i;
+	}
+
+	// Used to translate the user sprite index from the dropdown option (for sprites >68) 
+	public void SetUserSpriteIndex(TMP_Dropdown dropdown)
+	{
+		if (dropdown.value <= 68) return;
+
+		string activeOptionText = dropdown.options[dropdown.value].text;
+		int userIndex = activeOptionText.IndexOf("user");
+		if (userIndex > 0)
+		{
+			int parsedIndex = 1;
+			int.TryParse(activeOptionText[userIndex + 4].ToString(), out parsedIndex);
+			spriteIndex = 68 + parsedIndex;
+		}
 	}
 
 	public void SetColorR(float f)

@@ -200,16 +200,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 493f4a9b9bb5a6247a4a11be6d6ce124, type: 2}
-  m_sharedMaterial: {fileID: -1260180669926928125, guid: 493f4a9b9bb5a6247a4a11be6d6ce124,
+  m_fontAsset: {fileID: 11400000, guid: 8cffec9222e799945961e6c69b769de6, type: 2}
+  m_sharedMaterial: {fileID: 3800437516680586232, guid: 8cffec9222e799945961e6c69b769de6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 520093695
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.11764706}
+    rgba: 1392508927
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.32156864}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -302,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 75, y: 0}
-  m_SizeDelta: {x: -150, y: 0}
+  m_AnchoredPosition: {x: 87.5, y: 0}
+  m_SizeDelta: {x: -175, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6938597450528968010
 CanvasRenderer:
@@ -334,16 +334,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[Follower]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88f93eb83740846438fd696c9e7debdf, type: 2}
-  m_sharedMaterial: {fileID: -9101055750749113232, guid: 88f93eb83740846438fd696c9e7debdf,
+  m_fontAsset: {fileID: 11400000, guid: 8cffec9222e799945961e6c69b769de6, type: 2}
+  m_sharedMaterial: {fileID: 3800437516680586232, guid: 8cffec9222e799945961e6c69b769de6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 1728053247
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.4}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -366,11 +366,11 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 11
   m_fontSizeMax: 13
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -606,8 +606,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4293119691
+  m_fontColor: {r: 0.7960785, g: 0.8078432, b: 0.89019614, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -624,8 +624,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 11
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 5, y: 0, z: 0, w: 0}
+  m_margin: {x: 2, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -700,8 +700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -70, y: 0}
-  m_SizeDelta: {x: -180, y: 0}
+  m_AnchoredPosition: {x: -67.5, y: 0}
+  m_SizeDelta: {x: -175, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9110148835632821316
 CanvasRenderer:
@@ -732,8 +732,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: card namecard namecard namecard namecard namecard name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 493f4a9b9bb5a6247a4a11be6d6ce124, type: 2}
-  m_sharedMaterial: {fileID: -1260180669926928125, guid: 493f4a9b9bb5a6247a4a11be6d6ce124,
+  m_fontAsset: {fileID: 11400000, guid: 97276ebba0bd5454c91b0a3ad519e70d, type: 2}
+  m_sharedMaterial: {fileID: 2027373560277667107, guid: 97276ebba0bd5454c91b0a3ad519e70d,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -758,17 +758,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 10
+  m_fontSizeBase: 12
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 11
-  m_fontSizeMax: 13
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
+  m_fontSizeMax: 12
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -2
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 0.7960785, g: 0.8078432, b: 0.89019614, a: 0.1882353}
   m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -974,28 +974,6 @@ MonoBehaviour:
   onPointerDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9110148836757732904}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 8095365363933607391}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 9110148836757732884}
         m_MethodName: SetAsActiveItem
         m_Mode: 1
@@ -1029,6 +1007,7 @@ MonoBehaviour:
   subTextLabel: {fileID: 4161656710191013354}
   manaLabel: {fileID: 9065866607804887038}
   indexLabel: {fileID: 3823276905027676899}
+  duplicateGameObject: {fileID: 8095365363933607391}
   listOrderIndex: 0
   highlightEvent:
     m_PersistentCalls:
@@ -1053,7 +1032,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   dehighlightEvent:
     m_PersistentCalls:

@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using RiotAPI;
 using System.Text.RegularExpressions;
+using UnityEngine.Networking;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine.UI;
+using System.Globalization;
 
 [System.Serializable] public class UnityStringEvent : UnityEvent<string> { }
 
 public class LOLApiHandler : MonoBehaviour
 {
-	public LOLChampionNamesAssets champList;
+	[SerializeField] private StringPairVariable championNameReplacer;
+	[SerializeField] private TextAsset championJSONAsset;
 	[SerializeField] string activeChampion;
 	public string p, q, w, e, r;
 	public List<string> skins;
@@ -25,148 +28,142 @@ public class LOLApiHandler : MonoBehaviour
 	[SerializeField] private Transform skinContent;
 	[SerializeField] private GameObject skinButtonPrefab, spellButtonPrefab;
 	[SerializeField] private List<GameObject> skinButtons = new List<GameObject>();
+	private bool apiEnabled = false;
 
 	// RIOT API URLs
 	[Header("Image Push")]
 	public FileUpload uploader;
+	private string lolapiversionurl = "https://raw.githubusercontent.com/kf-pixel/LOR-Card-Creator/master/lolapiversion.txt";
+	private string patchVersion = "11.4.1";
+	private string champURL = "http://ddragon.leagueoflegends.com/cdn/PATCH_VERSION/data/en_US/champion/";
 	private string splashURL = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
-	private string passiveURL = "http://ddragon.leagueoflegends.com/cdn/11.4.1/img/passive/";
-	private string spellURL = "http://ddragon.leagueoflegends.com/cdn/11.4.1/img/spell/";
+	private string passiveURL = "http://ddragon.leagueoflegends.com/cdn/PATCH_VERSION/img/passive/";
+	private string spellURL = "http://ddragon.leagueoflegends.com/cdn/PATCH_VERSION/img/spell/";
 
 	[Header("Events")]
-	[SerializeField] private UnityEvent spellImageEvent, blankChampPushEvent, blankSpellPushEvent;
+	[SerializeField] private UnityEvent spellImageEvent;
 
-	public void LoadChampionAsset(TextAsset asset)
+	public void EnableAPI()
 	{
-	    StartCoroutine(GetChampionImageData(asset));
+		apiEnabled = true;
+	}
+
+	public async void CheckLOLAPIVersion()
+	{
+		string versionWeb = await GetWebText(lolapiversionurl);
+
+		if (versionWeb != null)
+		{
+			patchVersion = versionWeb.Replace(" ", "").Replace("\n","");
+		}
+	}
+
+	public async Task<string> GetWebText(string url)
+	{
+		using (UnityWebRequest www = UnityWebRequest.Get(url))
+		{
+			// Send URL Request
+			var asyncOp = www.SendWebRequest();
+
+			// Await until it's done: 
+			while (asyncOp.isDone == false)
+			{
+				await Task.Delay(1000 / 60);
+			}
+
+			// Read Results:
+			if (www.isNetworkError || www.isHttpError)
+			{
+				// Log Error:
+
+				// Exit
+				return null;
+			}
+			else
+			{
+				// Else Return if Valid:
+				return www.downloadHandler.text;
+			}
+		}
 	}
 
 	public void LoadChampionAsset(string input)
 	{
-		foreach (ListNamesAssets champ in champList.championNamesAssets)
+		// return if the api isnt enabled via github flag
+		if (!apiEnabled)
 		{
-			foreach (string s in champ.names)
+			return;
+		}
+
+		// replace string and get champ
+		foreach (StringPair sp in championNameReplacer.values)
+		{
+			if (input.ToLower() == sp.inputString.ToLower())
 			{
-				if (Regex.IsMatch(input, "(^" + s + " |" + s + "$|" + s + " Prestige Edition$)", RegexOptions.IgnoreCase) == true)
-				{
-					skins.Clear();
-					skinID.Clear();
-					
-					LoadChampionAsset(champ.asset);
-					FindImageQuery(input, champ);
-
-					ClearButtons();
-					GenerateSkinButtons();
-					GenerateSpellButtons();
-
-					return;
-				}
-			}
-		}
-	}
-
-	private void FindImageQuery(string input, ListNamesAssets champ)
-	{
-		string inputlower = input.ToLower();
-		bool blankCard = cardCodeText.text.StartsWith(cardCodeDefaultText);
-
-		// Passive IMG
-		if (inputlower.EndsWith(" p") || inputlower.EndsWith("passive"))
-		{
-			UploadSpell(p, passiveURL);
-			return;
-		}
-
-        // Spell IMGs
-		if (inputlower.EndsWith(" q"))
-		{
-			UploadSpell(q, spellURL);
-			return;
-		}
-		if (inputlower.EndsWith(" w"))
-		{
-			UploadSpell(w, spellURL);
-			return;
-		}
-		if (inputlower.EndsWith(" e"))
-		{
-			UploadSpell(e, spellURL);
-			return;
-		}
-		if (inputlower.EndsWith(" r"))
-		{
-			UploadSpell(r, spellURL);
-			return;
-		}
-
-		// Skin Images
-		for (int i = skins.Count - 1; i >= 1 ; i--)
-		{
-			string skinName = skins[i];
-			foreach (string s in champ.names)
-			{
-				skinName = skinName.Replace(" " + s, "");
-				skinName = skinName.Replace(s + " ", "");
-			}
-
-			if (inputlower.Replace(" ", "").Contains(skinName.ToLower().Replace(" ", "")))
-			{
-				UploadSkin(i);
+				FindChampionJSON(sp.replacedString);
 				return;
 			}
 		}
-		// Else load default skin
-		string defaultSkin = activeChampion + "_0.jpg";
-		uploader.GetWebImage(splashURL + defaultSkin, defaultSkin);
 
-		// Push champ into title
-		if (blankCard) blankChampPushEvent.Invoke();
+		// or clean up string and get champ
+		TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+		input = textInfo.ToTitleCase(input).Replace(" ", "");
+
+		FindChampionJSON(input);
 	}
 
-	public void UploadSpell(string s, string urlType)
+	private async void FindChampionJSON(string directChampName)
 	{
-		bool blankCard = cardCodeText.text.StartsWith(cardCodeDefaultText);
+		string url = champURL.Replace("PATCH_VERSION", patchVersion) + directChampName + ".json";
+		string champJSON = await GetWebText(url);
 
-		uploader.GetWebImage(urlType + s, s);
-		if (blankCard) blankSpellPushEvent.Invoke();
-		spellImageEvent.Invoke();
-		return;
+		if (champJSON != null)
+		{
+			skins.Clear();
+			skinID.Clear();
+
+			championJSONAsset = new TextAsset(champJSON);
+			championJSONAsset.name = directChampName;
+			GetChampionJSON(championJSONAsset);
+			
+			GenerateSkinButtons();
+			GenerateSpellButtons();
+		}
 	}
 
-	public void UploadSkin(int i)
+	private void GetChampionJSON(TextAsset asset)
 	{
-		string skinFileName = activeChampion + "_" + skinID[i] + ".jpg";
-		uploader.GetWebImage(splashURL + skinFileName, skinFileName);
+		StartCoroutine(GetChampionURLs(asset));
 	}
 
-	private IEnumerator GetChampionImageData(TextAsset champ)
+	private IEnumerator GetChampionURLs(TextAsset json)
 	{
-		activeChampion = champ.name;
+		activeChampion = json.name;
 
 		// add default skin
 		skinID.Add(0);
 
 		// Get List of Skin Names
-		int i = champ.text.IndexOf("\"skins\"");
-		int lorei = champ.text.IndexOf("\"lore\"");
+		int i = json.text.IndexOf("\"skins\"");
+		int lorei = json.text.IndexOf("\"lore\"");
 
 		int loops = 0;
 		while (i < lorei && loops < 30)
 		{
-			i = champ.text.IndexOf("\"name\"", i) + 8;
+			i = json.text.IndexOf("\"name\"", i) + 8;
 			if (i > lorei) break;
-            
-			int commai = champ.text.IndexOf(",", i);
-			skins.Add(champ.text.Substring(i, commai - i - 1));
 
-		
-            // Add skins
-			int numi = champ.text.IndexOf("\"num\":", i - 11);
+			int commai = json.text.IndexOf(",", i);
+			skins.Add(json.text.Substring(i, commai - i - 1));
+
+
+			// Add skins
+			int numi = json.text.IndexOf("\"num\":", i - 11);
 			if (numi > -1)
 			{
-				int numcommai = champ.text.IndexOf(",", numi);
+				int numcommai = json.text.IndexOf(",", numi);
 				int skini = 0;
-				string num = (champ.text.Substring(numi + 6, numcommai - numi - 6));
+				string num = (json.text.Substring(numi + 6, numcommai - numi - 6));
 				int.TryParse(num, out skini);
 				skinID.Add(skini);
 			}
@@ -175,46 +172,57 @@ public class LOLApiHandler : MonoBehaviour
 		}
 
 		// Passives & Spells
-		i = champ.text.IndexOf("\"passive\"");
+		i = json.text.IndexOf("\"passive\"");
 		int pngi = 0;
 
-		i = champ.text.IndexOf("\"full\"", i);
-		pngi = champ.text.IndexOf(".png", i);
-		p = champ.text.Substring(i + 8, pngi - i - 4);
+		i = json.text.IndexOf("\"full\"", i);
+		pngi = json.text.IndexOf(".png", i);
+		p = json.text.Substring(i + 8, pngi - i - 4);
 
-		i = champ.text.IndexOf("\"spells\"");
-		i = champ.text.IndexOf("\"full\"", i);
-		pngi = champ.text.IndexOf(".png", i);
-		q = champ.text.Substring(i + 8, pngi - i - 4);
+		i = json.text.IndexOf("\"spells\"");
+		i = json.text.IndexOf("\"full\"", i);
+		pngi = json.text.IndexOf(".png", i);
+		q = json.text.Substring(i + 8, pngi - i - 4);
 
-		i = champ.text.IndexOf("\"full\"", i + 10);
-		pngi = champ.text.IndexOf(".png", i);
-		w = champ.text.Substring(i + 8, pngi - i - 4);
+		i = json.text.IndexOf("\"full\"", i + 10);
+		pngi = json.text.IndexOf(".png", i);
+		w = json.text.Substring(i + 8, pngi - i - 4);
 
-		i = champ.text.IndexOf("\"full\"", i + 10);
-		pngi = champ.text.IndexOf(".png", i);
-		e = champ.text.Substring(i + 8, pngi - i - 4);
+		i = json.text.IndexOf("\"full\"", i + 10);
+		pngi = json.text.IndexOf(".png", i);
+		e = json.text.Substring(i + 8, pngi - i - 4);
 
-		i = champ.text.IndexOf("\"full\"", i + 10);
-		pngi = champ.text.IndexOf(".png", i);
-		r = champ.text.Substring(i + 8, pngi - i - 4);
+		i = json.text.IndexOf("\"full\"", i + 10);
+		pngi = json.text.IndexOf(".png", i);
+		r = json.text.Substring(i + 8, pngi - i - 4);
 
 		yield break;
 	}
 
-
-	public void ClearButtons()
+	public void GetWebSpell(string s, string urlType)
 	{
-		for (int i = skinButtons.Count - 1; i >= 0 ; i--)
+		uploader.GetWebImage(urlType + s, s);
+		spellImageEvent.Invoke();
+		return;
+	}
+
+	public void GetWebSkin(int i)
+	{
+		string skinFileName = activeChampion + "_" + skinID[i] + ".jpg";
+		uploader.GetWebImage(splashURL + skinFileName, skinFileName);
+	}
+
+	private void GenerateSkinButtons()
+	{
+		// Clear buttons
+		for (int i = skinButtons.Count - 1; i >= 0; i--)
 		{
 			GameObject g = skinButtons[i];
 			skinButtons.Remove(g);
 			Destroy(g);
 		}
-	}
 
-	public void GenerateSkinButtons()
-	{
+		// Generate buttons
 		for (int i = 0; i < skins.Count; i++)
 		{
 			GameObject b = Instantiate(skinButtonPrefab, skinContent);
@@ -225,20 +233,20 @@ public class LOLApiHandler : MonoBehaviour
 
 			int locali = i;
 			Button btn = b.GetComponentInChildren<Button>();
-			btn.onClick.AddListener(() => UploadSkin(locali));
+			btn.onClick.AddListener(() => GetWebSkin(locali));
 		}
 	}
 
-	public void GenerateSpellButtons()
+	private void GenerateSpellButtons()
 	{
-		InstantiateSpellButton(p, "'s Passive Icon", passiveURL);
-		InstantiateSpellButton(q, "'s Q Icon", spellURL);
-		InstantiateSpellButton(w, "'s W Icon", spellURL);
-		InstantiateSpellButton(e, "'s E Icon", spellURL);
-		InstantiateSpellButton(r, "'s R Icon", spellURL);
+		GenerateSpellButton(p, "'s Passive Icon", passiveURL.Replace("PATCH_VERSION", patchVersion));
+		GenerateSpellButton(q, "'s Q Icon", spellURL.Replace("PATCH_VERSION", patchVersion));
+		GenerateSpellButton(w, "'s W Icon", spellURL.Replace("PATCH_VERSION", patchVersion));
+		GenerateSpellButton(e, "'s E Icon", spellURL.Replace("PATCH_VERSION", patchVersion));
+		GenerateSpellButton(r, "'s R Icon", spellURL.Replace("PATCH_VERSION", patchVersion));
 	}
 
-	public void InstantiateSpellButton(string s, string desc, string urlType)
+	private void GenerateSpellButton(string s, string desc, string urlType)
 	{
 		GameObject g = Instantiate(spellButtonPrefab, skinContent);
 		skinButtons.Add(g);
@@ -247,6 +255,6 @@ public class LOLApiHandler : MonoBehaviour
 		tmpP.text = activeChampion + desc;
 
 		Button btnP = g.GetComponentInChildren<Button>();
-		btnP.onClick.AddListener(() => UploadSpell(s, urlType));
+		btnP.onClick.AddListener(() => GetWebSpell(s, urlType));
 	}
 }

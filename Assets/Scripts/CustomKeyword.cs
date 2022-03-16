@@ -24,7 +24,14 @@ public class CustomKeyword : MonoBehaviour
 		var hexColour = ColorUtility.ToHtmlStringRGB(rgbColour);
 
 		// Add the Sprite to the display if the index is higher than 0
-		textfield.text = KWData.spriteIndex > 0 ? "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + KWData.spriteIndex + "\" tint></color>" : "";
+		if (KWData.spriteIndex <= 68)
+		{
+			textfield.text = KWData.spriteIndex > 0 ? "<color=#" + hexColour + ">" + "<sprite name=\"Custom_" + KWData.spriteIndex + "\" tint></color>" : "";
+		}
+		else // custom user sprites
+		{
+			textfield.text = $"<color=#{hexColour}><sprite name=\"user{KWData.spriteIndex - 68}\" tint></color>";
+		}
 		textfield.text += (string.IsNullOrWhiteSpace(KWData.label)) ? "custom" : KWData.label;
 
 		// Update keyword format full text 

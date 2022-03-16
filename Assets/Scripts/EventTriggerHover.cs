@@ -19,6 +19,7 @@ public class EventTriggerHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
 #if UNITY_ANDROID
 		return;
 #endif
+		FrameRateManager.Instance.RequestFullFrameRate();
 		onEnter.Invoke();
 	}
 
@@ -27,6 +28,7 @@ public class EventTriggerHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
 #if UNITY_ANDROID
 		return;
 #endif
+		FrameRateManager.Instance.RequestFullFrameRate();
 		onExit.Invoke();
 	}
 }

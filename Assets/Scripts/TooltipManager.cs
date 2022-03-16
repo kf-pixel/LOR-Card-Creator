@@ -23,16 +23,24 @@ public class TooltipManager : MonoBehaviour
 
 	public void MovePosition(InputAction.CallbackContext ctx)
 	{
-		//SetAnchor(ctx.ReadValue<Vector2>());
-		tooltipRect.transform.position = ctx.ReadValue<Vector2>();
+		if (ctx.performed && tooltipActive)
+		{
+			Vector3 mousePos = Camera.main.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
+			if (tooltipRect.transform.position != mousePos)
+			{
+				SetAnchor(ctx.ReadValue<Vector2>());
+				tooltipRect.transform.position = mousePos;
+				FrameRateManager.Instance.RequestFullFrameRate();
+			}
+		}
 	}
 
 	public void SetAnchor(Vector2 mousePosition)
 	{
-		float pivotXW = (mousePosition.x - Screen.width / 2) >= 0 ? 1 : 0;
+		//float pivotXW = (mousePosition.x - Screen.width / 2) >= 0 ? 1 : 0;
 		float pivotYH = (mousePosition.y - Screen.height / 2) >= 0 ? 1 : 0;
 
-		tooltipRect.pivot = new Vector2(pivotXW, pivotYH);
+		tooltipRect.pivot = new Vector2(0, pivotYH);
 	}
 
 	public void ChangeActive(bool b, string content, string header = "", float delay = 0.1f)

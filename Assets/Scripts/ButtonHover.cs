@@ -44,11 +44,13 @@ namespace UnityEngine.UI
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
+			FrameRateManager.Instance.RequestFullFrameRate();
 			onEnter.Invoke();
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
+			FrameRateManager.Instance.RequestFullFrameRate();
 			onExit.Invoke();
 		}
 
@@ -57,6 +59,7 @@ namespace UnityEngine.UI
 		public void OnBeginDrag(PointerEventData eventData)
 		{
 			if (!canDrag || shiftInput.value || ctrlInput.value) return;
+			FrameRateManager.Instance.RequestFullFrameRate();
 			dragging = true;
 			onDragBegin.Invoke();
 			position = transform.position;
@@ -64,7 +67,8 @@ namespace UnityEngine.UI
 
 		public void OnDrag(PointerEventData eventData)
 		{
-			if (!canDrag) return;
+			if (!canDrag || !dragging) return;
+			FrameRateManager.Instance.RequestFullFrameRate();
 			Vector3 globalMousePos;
 			if (RectTransformUtility.ScreenPointToWorldPointInRectangle(rt, eventData.position, eventData.pressEventCamera, out globalMousePos))
 			{
@@ -74,7 +78,8 @@ namespace UnityEngine.UI
 
 		public void OnEndDrag(PointerEventData eventData)
 		{
-			if (!canDrag) return;
+			if (!dragging || !canDrag) return;
+			FrameRateManager.Instance.RequestFullFrameRate();
 			dragging = false;
 			onDragEnd.Invoke();
 			transform.position = position;

@@ -10,7 +10,7 @@ public class LevelUpFrameControl : MonoBehaviour
 
 	public void LevelUpFrameEnabler()
 	{
-        if (cardType.value != 2) return;
+        //if (cardType.value != 2 || cardType.value != 1) return;
 		bool empty = !string.IsNullOrEmpty(levelUpString.value);
 		levelUpFrame.SetActive(empty);
 		levelUpText.SetActive(empty);

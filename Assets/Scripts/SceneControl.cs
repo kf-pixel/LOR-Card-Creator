@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
 	public bool restartOnStart = true;
-	public IntVariable restarts;
 
 	public void RestartScene()
 	{
@@ -26,14 +25,5 @@ public class SceneControl : MonoBehaviour
 	public void NextScene()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
-
-	private void Start()
-	{
-		if (restarts.value == 0 && restartOnStart)
-		{
-			restarts.value++;
-			RestartScene();
-		}
 	}
 }

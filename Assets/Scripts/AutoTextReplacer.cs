@@ -10,7 +10,7 @@ public class AutoTextReplacer : MonoBehaviour
 	[SerializeField] private BoolVariable disableAutoReplace;
 	[SerializeField] private TextMeshProUGUI tmpUGUIField;
 	[SerializeField] private StringPairVariable stringReplacer, regularTextReplacer;
-	[SerializeField] private StringVariable cardTitle;
+	private TextInfo capitalTextInfo = new CultureInfo("en-US", false).TextInfo;
 
 	[Header("Custom Keyword Data")]
 	[SerializeField] private CustomKeywordData[] KWData;
@@ -41,6 +41,7 @@ public class AutoTextReplacer : MonoBehaviour
 				MatchCollection mcMatches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b" + p.inputString, RegexOptions.IgnoreCase);
 				foreach (Match m in mcMatches)
 				{
+					if (ValidateStyle(m.Index) == false) continue;
 					tmpUGUIField.text = Regex.Replace(tmpUGUIField.text, "(?<!(=|=\"))\\b" + m.Value, "<style=Keyword>" + m.Value + "</style>");
 				}
 			}
@@ -78,15 +79,17 @@ public class AutoTextReplacer : MonoBehaviour
 			// Run the custom keyword name thru regex
 			string regexLabel = k.label;
 			regexLabel = Regex.Replace(regexLabel, "[\\[\\]{}]", "");
-			MatchCollection kwCapitals = Regex.Matches(k.label, "(?<=(: |\\. ?)|^)\\w");
-			foreach (Match c in kwCapitals)
-			{
-				regexLabel = regexLabel.Remove(c.Index, 1);
-				regexLabel = regexLabel.Insert(c.Index, c.Value.ToUpper());
-			}
+			regexLabel = capitalTextInfo.ToTitleCase(regexLabel);
 
-			string ks = k.spriteIndex > 0 ?
-				"<color=" + k.hexColor + "><sprite name=\"Custom_" + k.spriteIndex + "\" tint>" + "</color>" : "";
+			string ks = "";
+			if (k.spriteIndex <= 68 && k.spriteIndex > 0)
+			{
+				ks = $"<color={k.hexColor}><sprite name=\"Custom_{k.spriteIndex}\" tint>" + "</color>";
+			}
+			else if (k.spriteIndex >= 68) // user sprites
+			{
+				ks = $"<color={k.hexColor}><sprite name=\"user{k.spriteIndex - 68}\" tint>" + "</color>";
+			}
 
 			MatchCollection kwMatches = Regex.Matches(tmpUGUIField.text, "(?<!(=|=\"))\\b" + regexLabel + "\\w*", RegexOptions.IgnoreCase);
 			for (int kwi = kwMatches.Count - 1; kwi >= 0; kwi--)
@@ -159,8 +162,6 @@ public class AutoTextReplacer : MonoBehaviour
 
 	private void Capitalize()
 	{
-		TextInfo cultInfo = new CultureInfo("en-US", false).TextInfo;
-
 		List<int> cardOpenTagList = new List<int>();
 		List<int> cardClosingTagList = new List<int>();
 
@@ -189,7 +190,7 @@ public class AutoTextReplacer : MonoBehaviour
 		foreach (Vector2 v in cardTagRange)
 		{
 			string tagged = tmpUGUIField.text.Substring((int)v.x, (int)v.y - (int)v.x);
-			tagged = cultInfo.ToTitleCase(tagged);
+			tagged = capitalTextInfo.ToTitleCase(tagged);
 
 			tmpUGUIField.text = tmpUGUIField.text.Remove((int)v.x, (int)v.y - (int)v.x);
 			tmpUGUIField.text = tmpUGUIField.text.Insert((int)v.x, tagged);

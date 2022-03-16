@@ -11,7 +11,8 @@
                     "id": "e2436911-3895-4acd-a9af-5638c039e2b7",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Click",
@@ -19,7 +20,8 @@
                     "id": "a6feb814-abf4-4de5-b7c8-9c5d2d934c0b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ClickRelease",
@@ -27,7 +29,8 @@
                     "id": "40d33193-7249-42d9-b47e-d30d664d1f6c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=1)"
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ScrollWheel",
@@ -35,7 +38,8 @@
                     "id": "302bb6f0-ec12-4c4e-8389-f16e12bdd10d",
                     "expectedControlType": "Vector2",
                     "processors": "NormalizeVector2",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightClick",
@@ -43,7 +47,8 @@
                     "id": "21a0511d-1945-41ff-8d5b-c3af643aeb89",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Shift",
@@ -51,7 +56,8 @@
                     "id": "01a18593-0844-486a-8155-4168a3dfa588",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Ctrl",
@@ -59,7 +65,8 @@
                     "id": "cc6369eb-cdf3-4a36-be78-581da4c5f4e3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Enter",
@@ -67,7 +74,8 @@
                     "id": "04c60dff-ef41-4359-a61a-d8b8316144a8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "TouchPosition0",
@@ -75,7 +83,8 @@
                     "id": "3a1234f3-b811-4664-b9ac-2941f6f63732",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "TouchPosition1",
@@ -83,7 +92,8 @@
                     "id": "983494fd-d52d-4e24-80f1-678313d1b098",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "TouchPosition1Contact",
@@ -91,7 +101,17 @@
                     "id": "33485cae-b9c5-489f-be50-da898268f914",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AnyKey",
+                    "type": "Button",
+                    "id": "282cbfb4-fe62-40a5-97f2-dabd4a4648c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -312,6 +332,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc3db040-05d4-41d5-b68a-f2a778fc75b8",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "action": "AnyKey",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -48,4 +48,12 @@ public class KeywordItemToggler : MonoBehaviour
 			onFalse.Invoke();
 		}
 	}
+
+	public void KeywordValueAddedCheck(string s)
+	{
+		if (s.StartsWith(keywordName))
+		{
+			onTrue.Invoke();
+		}
+	}
 }

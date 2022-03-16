@@ -13,6 +13,15 @@ public class TextHeightFormatter : MonoBehaviour
 	[SerializeField] private float spacerDistance = 10f;
 	[SerializeField] private UnityFloatEvent yTransformEvent;
 
+	[Header("TMP Margin Adjusting")]
+	[SerializeField] private TextMeshProUGUI tmpField;
+	private RectTransform thisRect;
+
+	private void Awake()
+	{
+		thisRect = thisRect = GetComponent<RectTransform>();
+	}
+
 	public void SetYPosition(float height)
 	{
 		float yp = y_reference;
@@ -32,8 +41,6 @@ public class TextHeightFormatter : MonoBehaviour
 
 	public void SetYHeight(float height)
 	{
-		RectTransform thisRect = GetComponent<RectTransform>();
-
 		if (!inverse)
 		{
 			thisRect.sizeDelta = new Vector2(thisRect.sizeDelta.x, spacerDistance + height);
@@ -42,6 +49,11 @@ public class TextHeightFormatter : MonoBehaviour
 		{
 			thisRect.sizeDelta = new Vector2(thisRect.sizeDelta.x, spacerDistance - height);
 		}
+	}
+
+	public void SetTMPMarginTop(float topMargin)
+	{
+		tmpField.margin = new Vector4(tmpField.margin.x, topMargin, tmpField.margin.z, tmpField.margin.w);
 	}
 
 	public void NewYReference(float f)

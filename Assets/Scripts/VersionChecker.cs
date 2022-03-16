@@ -2,17 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using TMPro;
 public class VersionChecker : MonoBehaviour
 {
-	[SerializeField] private string url = "https://raw.githubusercontent.com/kf-pixel/LOR-Card-Creator/master/version.txt";
-	[SerializeField] private TextMeshProUGUI textField;
+	private string url = "https://raw.githubusercontent.com/kf-pixel/LOR-Card-Creator/master/version.txt";
+	private string api_url = "https://raw.githubusercontent.com/kf-pixel/LOR-Card-Creator/master/apienabled";
+	[SerializeField] private Tooltip tooltip;
+	[SerializeField] private Outline outline;
+	[SerializeField] private TextMeshProUGUI textfield;
+	[SerializeField] private UnityEvent apiEventEnabled, apiEventDisabled;
 
-    private void Start()
+	private void Start()
     {
 		CheckVersion();
+		CheckAPIEnabled();
+	}
+
+	public async void CheckAPIEnabled()
+	{
+		string api_value = await GetWebText(api_url);
+
+		if (api_value != null)
+		{
+			if (api_value.Contains("true"))
+			{
+				apiEventEnabled.Invoke();
+			}
+			else
+			{
+				apiEventDisabled.Invoke();
+			}
+		}
 	}
 
 	public async void CheckVersion()
@@ -22,8 +45,6 @@ public class VersionChecker : MonoBehaviour
 
 		if (versionWeb != null)
 		{
-            textField.text = versionWeb;
-
             // Convert to floats
 			float versionWebFloat = 0f;
             float.TryParse(versionWeb, out versionWebFloat);
@@ -34,11 +55,17 @@ public class VersionChecker : MonoBehaviour
             // Set Text Prompts
 			if (versionApplicationFloat > 0 && versionWebFloat > 0)
 			{
-				string displayText = versionApplicationFloat < versionWebFloat ?
-					"Current version: " + versionApplicationFloat + "; Latest version: " + versionWebFloat + "\nNew version available!  Download latest on kf-pixel.itch.io/lor-card-creator" :
-					"<alpha=#44>Current version: " + versionApplicationFloat + ". Up to date.";
-
-				textField.text = displayText;
+				bool isLatestVersion = versionApplicationFloat < versionWebFloat ? false : true;
+				if (isLatestVersion)
+				{
+					tooltip.NewContentAppend($"Current version: <b><style=Keyword>v{versionApplicationFloat}</b></style>\nUp to date.");
+				}
+				else // oudated
+				{
+					tooltip.NewContentAppend($"Current version: <b><style=Keyword>v{versionApplicationFloat}</b></style>\nLatest version: <b><style=Keyword>v{versionWebFloat}</b></style>\nDownload latest at\n<b><style=Keyword>kf-pixel.itch.io/lor-card");
+					outline.enabled = true;
+					textfield.color = outline.effectColor;
+				}
 			}
 		}
 	}

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System.Text.RegularExpressions;
 
 public class CardCode : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CardCode : MonoBehaviour
 	[SerializeField] private FileUpload artworkUploader;
 	[SerializeField] private GameEvent changeCardTypeEvent;
 	[SerializeField] private GameEvent clearKeywordsEvent;
+	[SerializeField] private GameEvent updateNullSpeedEvent;
 	[SerializeField] private GameEvent cardReadEvent;
 	[SerializeField] private UnityEvent writeEvent;
 	[SerializeField] private List<string> keywordRecord = new List<string>();
@@ -23,11 +25,13 @@ public class CardCode : MonoBehaviour
 	[SerializeField] private TMP_InputField cardTextF;
 	[SerializeField] private TMP_InputField levelUpTextF;
 	[SerializeField] private TMP_InputField creditF;
+	[SerializeField] private SpellSpeedToggler nullSpeedToggler;
 
 	[Header("Scriptable Object Data")]
 	[SerializeField] private IntVariable cardType;
 	[SerializeField] private IntVariable region, region2;
 	[SerializeField] private IntVariable rarity;
+	[SerializeField] private IntVariable nullSpeed;
 
 	[SerializeField] private StringVariable mana;
 	[SerializeField] private StringVariable attack;
@@ -38,7 +42,8 @@ public class CardCode : MonoBehaviour
 	[SerializeField] private StringVariable levelUp;
 	[SerializeField] private StringVariable credit;
 
-	[SerializeField] private IntEvent effectIntAdd;
+	[Header("Events")]
+	[SerializeField] private StringEvent keywordValueAddEvent;
 
 	[Header("Scriptable Object Data Translation")]
 	[SerializeField] private string[] regionNames;
@@ -59,6 +64,7 @@ public class CardCode : MonoBehaviour
 
 	// Internal
 	private bool readInputThisFrame;
+	private string integerRegexPattern = "[^a-z ]\\ *([.0-9])*\\d";
 
 	private void Start()
 	{
@@ -100,18 +106,28 @@ public class CardCode : MonoBehaviour
 		}
 
 		// Attack & Health
-		if ((cardType.value < 3 || cardType.value == 8) && attack.value.Length > 0 && health.value.Length > 0)
+		if (CardType.IsUnit(cardType.value))
 		{
-			code += attack.value + "/" + health.value + " ";
+			code += $"{attack.value}/{health.value} ";
 		}
 
 		// Region
 		code += regionNames[region.value] + " ";
 
 		// Rarity
-		if (cardType.value != 1 && rarity.value != 0)
+		if (CardType.HasRarity(cardType.value))
 		{
-			code += rarityNames[rarity.value] + " ";
+			if (CardType.IsChampion(cardType.value))
+			{
+				if (rarity.value == 4)
+				{
+					code += "NonCollectable ";
+				}
+			}
+			else if (rarity.value != 0)
+			{
+				code += rarityNames[rarity.value] + " ";
+			}
 		}
 
 		// Card Type
@@ -136,7 +152,7 @@ public class CardCode : MonoBehaviour
 		}
 
 		// Level Up Text
-		if (cardType.value == 1 || cardType.value == 2)
+		if (!CardType.IsSpell(cardType.value) && !string.IsNullOrEmpty(levelUp.value))
 		{
 			code += "Level Up: " + levelUp.value;
 		}
@@ -165,12 +181,18 @@ public class CardCode : MonoBehaviour
 		}
 
 		// Shadow Scale
-		code += " &~" + artworkShadowScale.value;
+		code += $" &~{artworkShadowScale.value} ";
 
 		// Region 2
 		if (region2.value != 13)
 		{
-			code += " ++" + regionNames[region2.value];
+			code += $"++{regionNames[region2.value]} ";
+		}
+
+		// NullSpellSpeed
+		if (nullSpeed.value == 1)
+		{
+			code += "//NULLSPELLSPEED//";
 		}
 
 		// Apply
@@ -180,12 +202,26 @@ public class CardCode : MonoBehaviour
 		cardReadEvent.Raise();
 	}
 
-	public void WriteInput(string s)
+	public void WriteInput(string originalInputString)
 	{
-		string working = s;
+		KeywordClear();
+		string working = originalInputString;
 
 		// Clear Existing Keywords
 		clearKeywordsEvent.Raise();
+
+		// Get NullSpeedSpeed
+		if (working.Contains("//NULLSPELLSPEED//"))
+		{
+			nullSpeed.value = 1;
+			nullSpeedToggler.SetTrue();
+			working = working.Replace("//NULLSPELLSPEED//", "");
+		}
+		else
+		{
+			nullSpeed.value = 0;
+			nullSpeedToggler.SetFalse();
+		}
 
 		// Get Region 2
 		int region2Index = working.IndexOf(" ++", 0);
@@ -196,32 +232,39 @@ public class CardCode : MonoBehaviour
 			{
 				if (region2String.Contains(regionNames[i]))
 				{
-					working.Remove(region2Index);
+					working = working.Remove(region2Index);
 					region2.value = i;
 					break;
 				}
 			}
-			/*
-			region2String = region2String.Replace(" ++", "");
-			int region2Int = -1;
-			int.TryParse(region2String, out region2Int);
-			if (region2Int != -1) region2.value = region2Int;
-			else region2.value = 13;
-			working.Remove(region2Index);
-			*/
 		}
-		else region2.value = 13;
+		else
+		{
+			region2.value = 13;
+		}
 
 		// Get Shadow Scale
-		int shadowStringIndex = working.IndexOf(" &~", 0);
-		if (shadowStringIndex > 1)
+		int shadowStartIndex = working.IndexOf("&~", 0);
+		if (shadowStartIndex > 1)
 		{
-			string shadowString = working.Substring(shadowStringIndex);
-			shadowString = shadowString.Replace(" &~", "");
-			int shadowValue = 0;
-			int.TryParse(shadowString, out shadowValue);
-			artworkShadowScale.value = shadowValue;
-			working = working.Remove(shadowStringIndex);
+			string shadowString = working.Substring(shadowStartIndex);
+			int shadowEndIndex = shadowString.IndexOf(" ") + shadowStartIndex;
+			if (shadowString.IndexOf(" ") < 0)
+			{
+				shadowEndIndex = working.Length;
+			}
+
+			Match shadowIntegersMatch = Regex.Match(shadowString, integerRegexPattern);
+			if (shadowIntegersMatch.Success)
+			{
+				int.TryParse(shadowIntegersMatch.Value, out int shadowvalueInt);
+				artworkShadowScale.value = shadowvalueInt;
+				working = working.Remove(shadowStartIndex, shadowEndIndex - shadowStartIndex);
+			}
+			else
+			{
+				artworkShadowScale.value = -400;
+			}
 		}
 		else
 		{
@@ -283,30 +326,6 @@ public class CardCode : MonoBehaviour
 
 		}
 
-
-		// Get Card Text
-		int levelUpInd = working.IndexOf("Level Up:");
-		levelUpInd = Mathf.Max(working.Length - 1, 0);
-		int cardTextStartIndex = working.IndexOf("\"", 0, levelUpInd);
-		int cardTextEndIndex = working.LastIndexOf("\"", levelUpInd);
-
-		if (cardTextStartIndex > 0 && cardTextEndIndex > 0)
-		{
-			string cardTextString = s.Substring(cardTextStartIndex, cardTextEndIndex - cardTextStartIndex + 1);
-
-			working = working.Replace(cardTextString, "");
-
-			cardTextString = cardTextString.Substring(1, cardTextString.Length - 2);
-			cardText.value = cardTextString;
-			cardTextF.SetTextWithoutNotify(cardTextString);
-		}
-		else
-		{
-			cardText.value = "";
-			cardText.value = "";
-			cardTextF.SetTextWithoutNotify("");
-		}
-
 		// Get Title
 		if (working.Contains(":"))
 		{
@@ -326,6 +345,31 @@ public class CardCode : MonoBehaviour
 		{
 			title.value = "Untitled";
 			titleF.SetTextWithoutNotify("Untitled");
+		}
+
+		// Get Card Text
+		int levelUpInd = working.IndexOf("Level Up:");
+		if (levelUpInd < 0)
+		{
+			levelUpInd = working.Length;
+		}
+		int cardTextStartIndex = working.IndexOf("\"", 0, levelUpInd);
+		int cardTextEndIndex = working.LastIndexOf("\"", levelUpInd);
+
+		if (cardTextStartIndex > 0 && cardTextEndIndex > 0)
+		{
+			string cardTextString = working.Substring(cardTextStartIndex, cardTextEndIndex - cardTextStartIndex + 1);
+
+			working = working.Replace(cardTextString, "");
+
+			cardTextString = cardTextString.Substring(1, cardTextString.Length - 2);
+			cardText.value = cardTextString;
+			cardTextF.SetTextWithoutNotify(cardTextString);
+		}
+		else
+		{
+			cardText.value = "";
+			cardTextF.SetTextWithoutNotify("");
 		}
 
 
@@ -362,24 +406,8 @@ public class CardCode : MonoBehaviour
 			}
 		}
 
-		/* Determine whether Base or Leveled Champion
-		if (cardType.value == 1)
-		{
-			if (!working.ToLower().Contains("level up:"))
-			{
-				cardType.value = 2;
-			}
-		}
-
-		if (cardType.value == 0 && working.ToLower().Contains("level up:"))
-		{
-			cardType.value = 1;
-		}
-		*/
-
-
 		// Get Level Up Text
-		if (cardType.value == 1 || cardType.value == 2)
+		if (!CardType.IsSpell(cardType.value))
 		{
 			int levelUpIndex = working.ToLower().IndexOf("level up:");
 			if (levelUpIndex > 0)
@@ -397,6 +425,11 @@ public class CardCode : MonoBehaviour
 				levelUp.value = levelUpSubstring;
 				levelUpTextF.SetTextWithoutNotify(levelUpSubstring);
 			}
+			else
+			{
+				levelUp.value = "";
+				levelUpTextF.text = "";
+			}
 		}
 		else
 		{
@@ -404,38 +437,7 @@ public class CardCode : MonoBehaviour
 			levelUpTextF.text = "";
 		}
 
-		// Get Region
-		for (int i = 0; i < regionNames.Length; i++)
-		{
-			if (working.ToLower().Contains(regionNames[i].ToLower()))
-			{
-				region.value = i;
-				working = working.Replace(regionNames[i].ToLower(), "");
-				working = working.Replace(regionNames[i], "");
-				break;
-			}
-		}
-
-		// Get Rarity
-		bool foundRarity = false;
-		for (int i = 1; i < rarityNames.Length; i++)
-		{
-			if (working.ToLower().Contains(rarityNames[i].ToLower()))
-			{
-				rarity.value = i;
-				working = working.Replace(rarityNames[i].ToLower(), "");
-				working = working.Replace(rarityNames[i], "");
-				foundRarity = true;
-				break;
-			}
-		}
-		if (!working.ToLower().Contains("champion") && !foundRarity)
-		{
-			rarity.value = 0;
-		}
-
-
-		// Get Group
+		// Get Subtype
 		if (working.Contains("#"))
 		{
 			int groupIndex = working.IndexOf("#");
@@ -451,85 +453,128 @@ public class CardCode : MonoBehaviour
 			groupF.SetTextWithoutNotify("");
 		}
 
-		// Remove Spaces
+		// Get Region
+		for (int i = 0; i < regionNames.Length; i++)
+		{
+			if (working.ToLower().Contains(regionNames[i].ToLower()))
+			{
+				region.value = i;
+				working = working.Replace(regionNames[i].ToLower(), "");
+				working = working.Replace(regionNames[i], "");
+				break;
+			}
+		}
+
+		// Get Rarity
+		if (CardType.HasRarity(cardType.value))
+		{
+			if (!CardType.IsChampion(cardType.value))
+			{
+				bool foundRarity = false;
+				for (int i = 1; i < rarityNames.Length; i++)
+				{
+					if (working.ToLower().Contains(rarityNames[i].ToLower()))
+					{
+						rarity.value = i;
+						working = working.Replace(rarityNames[i].ToLower(), "");
+						working = working.Replace(rarityNames[i], "");
+						foundRarity = true;
+						break;
+					}
+				}
+				if (!working.ToLower().Contains("champion") && !foundRarity)
+				{
+					rarity.value = 0;
+				}
+			}
+			else // champion rarity
+			{
+				if (working.ToLower().Contains("noncollectable"))
+				{
+					rarity.value = 4;
+					working = working.Replace("noncollectable", "");
+					working = working.Replace("NonCollectable", "");
+				}
+				else
+				{
+					rarity.value = 0;
+				}
+			}
+		}
+		else
+		{
+			rarity.value = 0;
+		}
+
+
+	
+
+		// Remove Spaces, get Keywords, Mana, then stats
 		working = working.ToLower();
 		working = working.Replace(" ", "");
 
+		// Change card type before keywords reset
+		changeCardTypeEvent.Raise();
+
+		// Find && add Keywords
+		for (int i = 0; i < keywordNames.Count; i++)
+		{
+			string key = keywordNames[i].ToLower().Replace(" ", "");
+
+			Match match = Regex.Match(working, $"{key}\\d?\\d?");
+			if (match.Success)
+			{
+				int valueDigits = match.Length - key.Length;
+				if (valueDigits == 0)
+				{
+					keywordValueAddEvent.Raise($"{keywordNames[i]},0");
+					keywordRecord.Add(($"{keywordNames[i]}0"));
+				}
+				else
+				{
+					keywordValueAddEvent.Raise($"{keywordNames[i]},{match.Value.Substring(key.Length)}");
+					keywordRecord.Add(($"{keywordNames[i]}{match.Value.Substring(key.Length)}"));
+				}
+
+				working = working.Replace(match.Value, "");
+			}
+		}
+		
 		// Get Mana
 		if (working.ToLower().Contains("mana"))
 		{
-			string manaString = "";
-			int manaIndex = working.ToLower().IndexOf("mana");
-
-			// Find Numbers
-			if (manaIndex > 0)
-			{
-				manaString += working[manaIndex - 1];
-			}
-			if (manaIndex > 1)
-			{
-				manaString = working[manaIndex - 2] + manaString;
-			}
+			int manaIndex = working.ToLower().LastIndexOf("mana");
+			string manaString = working.Substring(0, manaIndex);
 
 			// Apply
 			if (manaString.Length > 0)
 			{
 				mana.value = manaString;
 				working = working.Replace(manaString + "mana", "");
-
 				manaF.text = manaString;
 			}
 			else
 			{
 				mana.value = 0.ToString();
 				working = working.Replace("mana", "");
-
 				manaF.text = "0";
 			}
 		}
+		else
+		{
+			mana.value = "";
+			manaF.text = "";
+			manaF.SetTextWithoutNotify("");
+		}
 
 		// Get Attack/Health
-		if (cardType.value < 3 || cardType.value == 8)
+		if (CardType.IsUnit(cardType.value))
 		{
 			int slashIndex = working.IndexOf("/");
-			if (slashIndex > 0)
+			if (slashIndex >= 0)
 			{
-				string attackString = "";
-				string healthString = "";
-
-				// Get Attack
-				if (slashIndex > 0)
-				{
-					attackString = working[slashIndex - 1].ToString();
-				}
-				if (slashIndex > 1)
-				{
-					attackString = working[slashIndex - 2].ToString() + attackString;
-				}
-
-				// Get Health
-				int healthIndex1 = -1;
-				int healthIndex2 = -1;
-				bool success1 = false;
-				bool success2 = false;
-
-				if (slashIndex + 1 < working.Length)
-				{
-					success1 = int.TryParse(working[slashIndex + 1].ToString(), out healthIndex1);
-				}
-				if (slashIndex + 2 < working.Length)
-				{
-					success2 = int.TryParse(working[slashIndex + 2].ToString(), out healthIndex2);
-				}
-
-				if (healthIndex1 > -1 && success1)
-				{
-					healthString += healthIndex1;
-				}
-				if (healthIndex2 > -1 && success2)
-				{
-					healthString += healthIndex2;
-				}
+				string attackString = working.Substring(0, slashIndex);
+				string healthString = working.Substring(slashIndex + 1);
 
 				// Apply
 				attack.value = attackString;
@@ -537,42 +582,51 @@ public class CardCode : MonoBehaviour
 
 				attackF.text = attackString;
 				healthF.text = healthString;
-
-				// Remove
-				working = working.Replace(attackString + "/" + healthString, "");
+			}
+			else
+			{
+				attack.value = "";
+				health.value = "";
+				attackF.SetTextWithoutNotify("");
+				healthF.SetTextWithoutNotify("");
 			}
 		}
-
-		// Find Keywords
-		List<int> keywordIndexes = new List<int>();
-
-		changeCardTypeEvent.Raise();
-
-		int ik = 0;
-		foreach (string key in keywordNames)
+		else
 		{
-			if (working.ToLower().Contains(key.ToLower().Replace(" ", "")))
-			{				
-				keywordIndexes.Add(ik);
-				working = working.Replace(key.ToLower().Replace(" ", ""), "");
-			}
-			ik++;
+			attack.value = "";
+			health.value = "";
+			attackF.SetTextWithoutNotify("");
+			healthF.SetTextWithoutNotify("");
 		}
 
 		
-
-		foreach(int ki in keywordIndexes)
-		{
-			effectIntAdd.Raise(ki);
-		}
-
-		// Apply
+		// Invoke Finishing Events
 		writeEvent.Invoke();
+	}
+
+	public void KeywordValueRecorder(string keyvalue)
+	{
+		string[] keypair = keyvalue.Split(',');
+
+		for (int i = 0; i < keywordRecord.Count; i++)
+		{
+			if (keywordRecord[i].StartsWith(keypair[0]))
+			{
+				if (keypair[1] == "0")
+				{
+					keywordRecord[i] = keypair[0];
+				}
+				else
+				{
+					keywordRecord[i] = keypair[0] + keypair[1];
+				}
+				ReadInput();
+			}
+		}
 	}
 
 	public void KeywordRecorder(int i)
 	{
-
 		if (keywordNames[i] == "Fast" || keywordNames[i] == "Burst" || keywordNames[i] == "Slow" || (cardType.value == 6 && keywordNames[i] == "Skill") || keywordNames[i] == "Landmark" || keywordNames[i] == "Focus")
 		{
 			return;
@@ -582,12 +636,6 @@ public class CardCode : MonoBehaviour
 		ReadInput();
 	}
 
-	public void ClearKeywordRecord()
-	{
-		keywordRecord.Clear();
-		ReadInput();
-
-	}
 
 	public void RemoveKeyword(int removeIndex)
 	{
@@ -595,12 +643,22 @@ public class CardCode : MonoBehaviour
 
 		for (int i = keywordRecord.Count - 1; i >= 0; i--)
 		{
-			if (keywordRecord[i] == keywordName)
+			if (keywordRecord[i].StartsWith(keywordName))
 			{
 				keywordRecord.RemoveAt(i);
 			}
 		}
 		ReadInput();
+	}
 
+	public void KeywordClear()
+	{
+		keywordRecord.Clear();
+	}
+
+	public void ClearKeywordRecord()
+	{
+		keywordRecord.Clear();
+		ReadInput();
 	}
 }

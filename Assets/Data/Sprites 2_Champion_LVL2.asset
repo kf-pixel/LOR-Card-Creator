@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sprites 2_Champion_LVL2
   m_EditorClassIdentifier: 
   values:
-  - {fileID: 21300000, guid: 30354493a87879b4a8065c5e692a7c10, type: 3}
-  - {fileID: 21300000, guid: 30354493a87879b4a8065c5e692a7c10, type: 3}
-  - {fileID: 21300000, guid: 30354493a87879b4a8065c5e692a7c10, type: 3}
-  - {fileID: 21300000, guid: 30354493a87879b4a8065c5e692a7c10, type: 3}
+  - {fileID: 21300000, guid: f6be25e76ad142e4aa4eaa2e6790732c, type: 3}
+  - {fileID: 21300000, guid: f6be25e76ad142e4aa4eaa2e6790732c, type: 3}
+  - {fileID: 21300000, guid: f6be25e76ad142e4aa4eaa2e6790732c, type: 3}
+  - {fileID: 21300000, guid: f6be25e76ad142e4aa4eaa2e6790732c, type: 3}

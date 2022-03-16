@@ -9,6 +9,7 @@ public class KeywordTooltip : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI titleTMP;
 	[SerializeField] private TextMeshProUGUI descriptionTMP;
+	[SerializeField] private AutoTextReplacer autoTextReplacer;
 
 	[Header("Custom Keyword Data")]
 	[SerializeField] private CustomKeywordData[] KWData;
@@ -17,11 +18,7 @@ public class KeywordTooltip : MonoBehaviour
 	private void OnEnable()
 	{
 		TextUpdate();
-	}
-
-	private void OnDisable()
-	{
-		TextUpdate();
+		autoTextReplacer.ReplaceTMPUGUI();
 	}
 
 	public void TextUpdate()
@@ -52,7 +49,7 @@ public class KeywordTooltip : MonoBehaviour
 		// [] and {} tags
 		if (descriptionText.Contains("[") && descriptionText.Contains("]"))
 		{
-			descriptionText = descriptionText.Replace("[", "<style=Keyword>");
+			descriptionText = descriptionText.Replace("[", "<style=Card>");
 			descriptionText = descriptionText.Replace("]", "</style>");
 		}
 
@@ -68,9 +65,23 @@ public class KeywordTooltip : MonoBehaviour
 		// Skill Sprite
 		descriptionText = descriptionText.Replace("@", "<sprite name=skill>");
 
+		// break
+		descriptionText = descriptionText.Replace("//", "<b></b>");
+
 		// Update Title
-		string newText = kw.spriteIndex > 0 ?
-			"<voffset=16><size=80%><color=" + kw.hexColor + "><sprite name=\"Custom_" + kw.spriteIndex + "\" tint></voffset></size></color>" + titleText : titleText;
+		string newText = titleText;
+		if (kw.spriteIndex <= 0)
+		{
+			newText = $"{titleText}";
+		}
+		else if (kw.spriteIndex <= 68)
+		{
+			newText = $"<voffset=14><size=80%><color={kw.hexColor}><sprite name=\"Custom_{kw.spriteIndex}\" tint></voffset></size></color>{titleText}";
+		}
+		else // user sprites
+		{
+			newText = $"<voffset=14><size=80%><color={kw.hexColor}><sprite name=\"user{kw.spriteIndex - 68}\" tint></voffset></size></color>{titleText}";
+		}
 
 		titleTMP.text = newText;
 

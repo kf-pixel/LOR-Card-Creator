@@ -14,7 +14,7 @@ public class CardDataObject
 	{
 		id = "";
 		cardName = "";
-		cardCode = "Untitled: 1 Mana 1/1 Runeterra Follower *&local&/placeholder.png*155*0*640* &~-400";
+		cardCode = "Untitled: 1 Mana 1/1 Runeterra Follower *&local&/placeholder.png*155*0*640*";
 		folder = "";
 	}
 
@@ -22,7 +22,7 @@ public class CardDataObject
 	{
 		id = "";
 		cardName = "";
-		cardCode = "Untitled: 1 Mana 1/1 " + regionName + " Common Follower *&local&/placeholder.png*155*0*640* &~-400";
+		cardCode = $"Untitled: 1 Mana 1/1 {regionName} Common Follower *&local&/placeholder.png*155*0*640*";
 		folder = "";
 	}
 
@@ -34,26 +34,15 @@ public class CardDataObject
 		folder = "";
 	}
 
-	public void GenerateID(string suffix = "")
+	public void GenerateID()
 	{
-		id = System.DateTime.Now.ToString() + suffix;
+		id = System.DateTime.Now.ToString();
 	}
 
 	public string GetCardType(string[] cardNamesList)
 	{
 		string foundCardType = "Follower";
 		int foundIndex = 99;
-		/*
-		foreach (string r in cardNamesList)
-		{
-			int i = cardCode.IndexOf(r);
-			if (i < foundIndex && i > 0)
-			{
-				foundCardType = r;
-				foundIndex = i;
-			}
-		}
-		*/
 
 		for (int i = cardNamesList.Length - 1; i >= 0 ; i--)
 		{
@@ -104,15 +93,17 @@ public class CardDataObject
 	public string GetMana()
 	{
 		// Get Mana
-		string manaString = "";
 		int titleColon = cardCode.IndexOf(":");
 		int manaIndex = cardCode.ToLower().IndexOf("mana", titleColon);
 
 		// Find Numbers
 		if (manaIndex > 2)
 		{
-			manaString = cardCode.Substring(manaIndex - 3, 3).Replace(" ","");
-			return manaString;
+			string manaString = cardCode.Substring(manaIndex - 3, 3).Replace(" ","");
+			if (int.TryParse(manaString, out int parsed))
+			{
+				return manaString;
+			}
 		}
 
 		return " ";

@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9343cb6351bfcd24e8a61c656290819f, type: 3}
+  m_Name: StringPairs ChampionNames Replacer
+  m_EditorClassIdentifier: 
+  values:
+  - inputString: aurelionsol
+    replacedString: AurelionSol
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: asol
+    replacedString: AurelionSol
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: cassio
+    replacedString: Cassiopeia
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: Cho gath
+    replacedString: Chogath
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: Cho'gath
+    replacedString: Chogath
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: chogath
+    replacedString: Chogath
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: drmundo
+    replacedString: DrMundo
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: fiddle
+    replacedString: Fiddlesticks
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: heimer
+    replacedString: Heimerdinger
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: jarvan
+    replacedString: JarvanIV
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: jarvan 4
+    replacedString: JarvanIV
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kaisa
+    replacedString: Kaisa
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kai'sa
+    replacedString: Kaisa
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kai sa
+    replacedString: Kaisa
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: khazix
+    replacedString: Khazix
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kha zix
+    replacedString: Khazix
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kha'zix
+    replacedString: Khazix
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kogmaw
+    replacedString: KogMaw
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: kog'maw
+    replacedString: KogMaw
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: leblanc
+    replacedString: Leblanc
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: le blanc
+    replacedString: Leblanc
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: leesin
+    replacedString: LeeSin
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: leesin
+    replacedString: LeeSin
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: missfortune
+    replacedString: MissFortune
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: masteryi
+    replacedString: MasterYi
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: reksai
+    replacedString: RekSai
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: rek'sai
+    replacedString: RekSai
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: TahmKench
+    replacedString: TahmKench
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: Tahm
+    replacedString: TahmKench
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: TwistedFate
+    replacedString: TwistedFate
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: VelKoz
+    replacedString: Velkoz
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: vel koz
+    replacedString: Velkoz
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: vel'koz
+    replacedString: Velkoz
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: xinzhao
+    replacedString: XinZhao
+    matchCase: 0
+    matchExactOnly: 0

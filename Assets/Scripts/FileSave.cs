@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,25 +6,46 @@ using UnityEngine.Events;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using TMPro;
 using SFB;
+using System.Linq;
 
 public class FileSave : MonoBehaviour
 {
+	[Header("Components")]
 	[SerializeField] private Canvas rootCanvas;
-	[SerializeField] private Vector2 resolution;
-	[SerializeField] private string disallowedFileNameChars;
-	[SerializeField] private Texture2D tex;
-	[SerializeField] private Texture2D loadedTex2d;
-	[SerializeField] private Texture2D placeholderTexture;
 	[SerializeField] private RectTransform source;
-	[SerializeField] private StringVariable titleName;
-	[SerializeField] private IntVariable cardType;
-	[SerializeField] private ListManager setManager;
-
-	[Header("Tooltip Saving")]
-	[SerializeField] private Texture2D texTooltip;
 	[SerializeField] private GameObject tooltipCanvas;
 	[SerializeField] private RectTransform tooltipSource;
+	[SerializeField] private ListManager setManager;
+	[SerializeField] private TMP_InputField creditField;
+
+	[SerializeField] private GradientColourGrab gradientSpell;
+
+	[Header("Data")]
+	[SerializeField] private Texture2D placeholderTexture;
+	[SerializeField] private StringVariable titleName;
+	[SerializeField] private IntVariable cardType;
+	[SerializeField] private IntVariable cardResolution;
+	[SerializeField] private string disallowedFileNameChars;
+	[SerializeField] private RenderTexture[] screenRTs;
+	public Vector2Int[] compLayouts;
+	private Texture2D tex;
+	private Texture2D texTooltip;
+	private Texture2D comp;
+	private bool artLoaded = true;
+	private List<Texture2D> compImages = new List<Texture2D>();
+
+	// Resolution Data
+	private RenderTexture currentScreenRT;
+	private Vector2Int cardSize = new Vector2Int(340, 512);
+	private Vector2Int tooltipSize = new Vector2Int(240, 512);
+	private Vector2Int screenSize = new Vector2Int(1280, 720);
+	private float sizeMultiplier = 1f;
+	private bool limitlessLayoutSize = false;
+	private Color bgColor = new Color(0.06666667f, 0.08235294f, 0.1098039f, 0f);
+
+	[Header("Tooltip Data")]
 	[SerializeField] private CustomKeywordData[] KWData;
 	[SerializeField] private IntVariable KWTabIndex;
 	[SerializeField] private BoolVariable tooltipTransparent;
@@ -35,12 +56,8 @@ public class FileSave : MonoBehaviour
 	[SerializeField] private UnityEvent clipboardEvent;
 	[SerializeField] private UnityEvent tooltipSetupEvent;
 	[SerializeField] private UnityEvent tooltipFinishEvent;
-	[SerializeField] private UnityEvent exportSetSetupEvent, exportSetFinisheEvent;
+	[SerializeField] private UnityEvent multipleExportSetupEvent, multipleExportFinishedEvent;
 
-	private int currentResolutionWidth = Screen.width;
-	private int currentResolutionHeight = Screen.height;
-
-	private bool artLoaded = true;
 
 	[DllImport("__Internal")]
 	private static extern void ImageDownloader(string str, string fn);
@@ -88,212 +105,137 @@ public class FileSave : MonoBehaviour
 #endif
 		s.Close();
 		s.Dispose();
+		Destroy(texture);
+		bits = null;
 	}
 
-	private void FileCopyToClipboard(Texture2D texture)
+	private void PlatformDependentDialog(string fileName, byte[] bytes)
 	{
-		byte[] bits = texture.EncodeToPNG();
-		if (!Directory.Exists(Application.persistentDataPath))
-		{
-			Directory.CreateDirectory(Application.persistentDataPath);
-		}
-		string path = Application.persistentDataPath + "/clipboard.png";
-		File.WriteAllBytes(path, bits);
-
-#if UNITY_STANDALONE
-		System.Drawing.Image drawingImag = System.Drawing.Image.FromFile(path);
-		System.Windows.Forms.Clipboard.SetImage(drawingImag);
-		clipboardEvent.Invoke();
+#if UNITY_EDITOR
+		SaveDialog(fileName, bytes);
+		return;
 #endif
 
-	}
-
-	private bool ResolutionSetup()
-	{
-		bool resolutionChanged = false;
 #if UNITY_STANDALONE
-		currentResolutionWidth = Screen.width;
-		currentResolutionHeight = Screen.height;
-
-		// Set Resolution to 1920x1080 if it's below it
-		if (Screen.resolutions.Length > 0)
-		{
-			// Check if the monitor supports it & is currently below it
-			if (Screen.resolutions[Screen.resolutions.Length - 1].width > 1900 && Screen.resolutions[Screen.resolutions.Length - 1].height > 1050 && (Screen.width < 1900 || Screen.height < 1050))
-			{
-				Screen.SetResolution(1920, 1080, Screen.fullScreen);
-				resolutionChanged = true;
-			}
-		}
+		SaveDialog(fileName, bytes);
+		return;
 #endif
-		return resolutionChanged;
-	}
-
-	private void ResolutionReturn()
-	{
-		Screen.SetResolution(currentResolutionWidth, currentResolutionHeight, Screen.fullScreen);
-	}
-
-	private void EncodeSetup(bool fixTransparency)
-	{
-		// Destroy existing image
-		if (tex != null) Destroy(tex);
-
-		// Read Source Template
-		float canvasLocalScale = rootCanvas.transform.localScale.x;
-		Vector2 sourceScreen = source.position;
-		Vector2 sourceSizeScreen = source.rect.size * canvasLocalScale;
-
-		// Create a texture the size of the screen
-		int width = (int)(sourceSizeScreen.x);
-		int height = (int)(sourceSizeScreen.y);
-
-		tex = new Texture2D(width, height, TextureFormat.ARGB32, false, true);
-
-		// Read screen contents into the texture
-		tex.ReadPixels(new Rect(sourceScreen.x, sourceScreen.y, sourceSizeScreen.x, sourceSizeScreen.y), 0, 0);
-
-		if (fixTransparency)
-		{
-			if (cardType.value < 3)
-			{
-				for (int y = 0; y < tex.height; y++)
-				{
-					for (int x = 0; x < tex.width; x++)
-					{
-						if (y > (int)(30f * canvasLocalScale) && y < tex.height - (int)(23f * canvasLocalScale) && x > (int)(15f * canvasLocalScale) && x < tex.width - (int)(16f * canvasLocalScale))
-						{
-							Color color = new Color(tex.GetPixel(x, y).r, tex.GetPixel(x, y).g, tex.GetPixel(x, y).b, 1);
-							tex.SetPixel(x, y, color);
-
-						}
-					}
-				}
-			}
-			else
-			{
-				for (int y = 0; y < tex.height; y++)
-				{
-					for (int x = 0; x < tex.width; x++)
-					{
-						if (tex.GetPixel(x, y).a > 0.3f)
-						{
-							Color color = new Color(tex.GetPixel(x, y).r, tex.GetPixel(x, y).g, tex.GetPixel(x, y).b, 1);
-							tex.SetPixel(x, y, color);
-						}
-					}
-				}
-			}
-		}
-
-		// Apply to texture
-		tex.Apply();
-	}
-
-	public void EncodeMultiple(List<ListItem> listItemSet)
-	{
-		StartCoroutine(EncodeMultiplePNG(listItemSet));
-	}
-	private IEnumerator EncodeMultiplePNG(List<ListItem> set)
-	{
-		// make a copy of the set
-		List<ListItem> setCopy = new List<ListItem>(set);
-
-		// Get the folder path via dialog
-		string exportPath = "";
-#if UNITY_STANDALONE
-		exportPath = GetExportSetPath() + "/";
-		if (exportPath == null)
-		{
-			Debug.Log("Cancelled");
-			yield break;
-		}
-		if (exportPath.Length < 5)
-		{
-			Debug.Log("Cancelled, too short?");
-			yield break;
-		}
-#endif
-
-		exportSetSetupEvent.Invoke();
-
-		setupSaveEvent.Invoke();
-
-		bool resChanged = ResolutionSetup();
-
-		// Loop through each card, wait for the art to load, then encode
-		for (int i = setCopy.Count - 1; i >= 0 ; i--)
-		{
-			artLoaded = false;
-
-			// Change the card data
-			setManager.SetNewActiveItem(setCopy[i], false);
-
-			// Wait for art to load via game event
-			yield return new WaitUntil(() => artLoaded == true);
-			yield return new WaitForEndOfFrame();
-			yield return new WaitForEndOfFrame();
-
-			// Reads the screen pixels and adds to texture
-			EncodeSetup(true);
-
-			// Encode texture into PNG
-			byte[] bytes = tex.EncodeToPNG();
-
-			// DETERMINE NAME
-			string fileName = (setCopy.Count - i) + " " + setCopy[i].cardData.cardName;
-			fileName = FixFileName(fileName);
 
 #if UNITY_WEBGL
-			DownloadScreenshot(bytes, fileName + ".png");
-			continue;
+		DownloadScreenshot(bytes, fileName + ".png");
+		return;
 #endif
-			// Write file
-			File.WriteAllBytes(exportPath + fileName + ".png", bytes);
-		}
-
-		// Return Res
-		if (resChanged)
+	}
+	private void GetResolution()
+	{
+		if (cardResolution.value == 2)
 		{
-			yield return new WaitForEndOfFrame();
-			ResolutionReturn();
+			sizeMultiplier = 2f;
+			cardSize = new Vector2Int(680, 1024);
+			tooltipSize = new Vector2Int(1360, 832);
+			screenSize = new Vector2Int(2560, 1440);
 		}
-
-		exportSetFinisheEvent.Invoke();
-		finishedSaveEvent.Invoke();
+		else if (cardResolution.value == 1)
+		{
+			sizeMultiplier = 1.5f;
+			cardSize = new Vector2Int(510, 768);
+			tooltipSize = new Vector2Int(1024, 624);
+			screenSize = new Vector2Int(1920, 1080);
+		}
+		else
+		{
+			sizeMultiplier = 1f;
+			cardSize = new Vector2Int(340, 512);
+			tooltipSize = new Vector2Int(680, 416);
+			screenSize = new Vector2Int(1280, 720);
+		}
 	}
 
-	private IEnumerator EncodePNG(bool asClipBoard = false)
+	private void RenderTextureSetup()
+	{
+		GetResolution();
+		//if (screenRenderTexture != null) Destroy(screenRenderTexture);
+		//screenRenderTexture = new RenderTexture(screenSize.x, screenSize.y, 24, UnityEngine.Experimental.Rendering.GraphicsFormat.R32G32B32A32_SFloat);
+		currentScreenRT = screenRTs[cardResolution.value];
+		Camera.main.targetTexture = currentScreenRT;
+	}
+
+	private Texture2D ScreenGrab()
+	{
+		Texture2D screenTexture = new Texture2D(currentScreenRT.width, currentScreenRT.height, TextureFormat.ARGB32, false);
+		RenderTexture.active = currentScreenRT;
+		screenTexture.ReadPixels(new Rect(0, 0, currentScreenRT.width, currentScreenRT.height), 0, 0);
+		screenTexture.Apply();
+
+		Destroy(screenTexture);
+		Camera.main.targetTexture = null;
+		RenderTexture.active = null;
+
+		return screenTexture;
+	}
+
+	private void EncodeSetup(bool clipboard)
+	{
+		// Clear Memory
+		Destroy(tex);
+
+		// grab screen
+		Texture2D screenRender = ScreenGrab();
+
+		// get pixels from screen rendertexture
+		tex = new Texture2D(cardSize.x, cardSize.y, TextureFormat.ARGB32, false, true);
+		tex.SetPixels(0, 0, cardSize.x, cardSize.y, screenRender.GetPixels((int)(source.anchoredPosition.x * sizeMultiplier), (int)(source.anchoredPosition.y * sizeMultiplier), cardSize.x, cardSize.y));
+
+		// fix transparency
+		if (!clipboard)
+		{
+			for (int tx = 0; tx < tex.width; tx++)
+			{
+				for (int ty = 0; ty < tex.height; ty++)
+				{
+					if (tex.GetPixel(tx, ty).a > 0.1f)
+					{
+						tex.SetPixel(tx, ty, new Color(tex.GetPixel(tx, ty).r, tex.GetPixel(tx, ty).g, tex.GetPixel(tx, ty).b));
+					}
+				}
+			}
+		}
+		tex.Apply();
+
+		// Clean up
+		Destroy(screenRender);
+
+		// Reenable the credit field
+		creditField.gameObject.SetActive(true);
+	}
+
+	private IEnumerator EncodePNG(bool clipboard = false)
 	{
 		setupSaveEvent.Invoke();
+		RenderTextureSetup();
 
-		bool resChanged = ResolutionSetup();
+		// Disable the credit field if it has a dd URL
+		ClearCreditField();
 
 		// We should only read the screen buffer after rendering is complete
 		yield return new WaitForEndOfFrame();
 
 		// Reads the screen pixels and adds to texture
-		EncodeSetup(!asClipBoard);
-
-		// Return Res
-		if (resChanged)
-		{
-			yield return new WaitForEndOfFrame();
-			ResolutionReturn();
-		}
-
-		// Add to Clipboard and return if stated
-		if (asClipBoard == true)
-		{
-			finishedSaveEvent.Invoke();
-			MemoryStreamToClipboard(tex);
-			yield break;
-		}
+		EncodeSetup(clipboard);
 
 		finishedSaveEvent.Invoke();
 
+		// Add to Clipboard and return if stated
+		if (clipboard == true)
+		{
+			MemoryStreamToClipboard(tex);
+			Destroy(tex);
+			yield break;
+		}
+
 		// Encode texture into PNG
 		byte[] bytes = tex.EncodeToPNG();
+		Destroy(tex);
 
 		// DETERMINE NAME
 		string fileName = "card_download";
@@ -304,36 +246,310 @@ public class FileSave : MonoBehaviour
 				fileName = titleName.value;
 				if (cardType.value == 2)
 				{
-					fileName = titleName.value + " levelUp";
+					fileName = $"{titleName.value} LVL2";
+				}
+				else if (cardType.value == 8)
+				{
+					fileName = $"{titleName.value} LVL3";
 				}
 			}
 		}
+		fileName = GetUseableFileName(fileName);
 
-		fileName = FixFileName(fileName);
-
-		// Platform dependent file writing
-#if UNITY_EDITOR
-		SaveDialog(fileName, bytes);
-		yield break;
-#endif
-
-#if UNITY_STANDALONE
-		SaveDialog(fileName, bytes);
-		yield break;
-#endif
-
-#if UNITY_WEBGL
-		DownloadScreenshot(bytes, fileName + ".png");
-		yield break;
-#endif
+		// Save to file
+		PlatformDependentDialog(fileName, bytes);
 	}
 
-	public string GetExportSetPath(string fileName = "Set")
+	private IEnumerator EncodeTooltipPNG(bool asClipboard = false)
+	{
+		// Clear Memory
+		if (texTooltip != null) Destroy(texTooltip);
+
+		// Set-up scene, turn off unneeded canvases
+		tooltipCanvas.SetActive(true);
+		tooltipSetupEvent.Invoke();
+		RenderTextureSetup();
+
+		// We should only read the screen buffer after rendering is complete
+		yield return new WaitForEndOfFrame();
+
+		// grab screen
+		Texture2D screenRender = ScreenGrab();
+
+		// get pixels from screen rendertexture
+		texTooltip = new Texture2D(tooltipSize.x, tooltipSize.y, TextureFormat.ARGB32, false, true);
+		texTooltip.SetPixels(0, 0, tooltipSize.x, tooltipSize.y, screenRender.GetPixels((int)(tooltipSource.anchoredPosition.x * sizeMultiplier), (int)(tooltipSource.anchoredPosition.y * sizeMultiplier), tooltipSize.x, tooltipSize.y));
+
+		/* fix tooltip transparency
+		if (tooltipTransparent.value == false && !asClipboard)
+		{
+			for (int y = 4; y < texTooltip.height - 4; y++)
+			{
+				for (int x = 3; x < texTooltip.width - 3; x++)
+				{
+					Color color = new Color(texTooltip.GetPixel(x, y).r, texTooltip.GetPixel(x, y).g, texTooltip.GetPixel(x, y).b, 1);
+					texTooltip.SetPixel(x, y, color);
+				}
+			}
+		}
+		*/
+
+		// fix transparency
+		//if (!tooltipTransparent.value && !asClipboard)
+		{
+			for (int tx = 0; tx < texTooltip.width; tx++)
+			{
+				for (int ty = 0; ty < texTooltip.height; ty++)
+				{
+					if (texTooltip.GetPixel(tx, ty).a > 0.1f)
+					{
+						texTooltip.SetPixel(tx, ty, new Color(texTooltip.GetPixel(tx, ty).r, texTooltip.GetPixel(tx, ty).g, texTooltip.GetPixel(tx, ty).b));
+					}
+				}
+			}
+		}
+		texTooltip.Apply();
+
+		// Reset Canvases
+		tooltipCanvas.SetActive(false);
+		tooltipFinishEvent.Invoke();
+
+		// Clean up
+		Destroy(screenRender);
+
+		// Copy and return if clipboard
+		if (asClipboard)
+		{
+			MemoryStreamToClipboard(texTooltip);
+			Destroy(texTooltip);
+			yield break;
+		}
+
+		// Encode texture into PNG
+		byte[] bytes = texTooltip.EncodeToPNG();
+		Destroy(texTooltip);
+
+		// DETERMINE NAME
+		CustomKeywordData kw = KWData[KWTabIndex.value];
+		string fileName = "tooltip_download";
+		if (!string.IsNullOrEmpty(kw.label))
+		{
+			fileName = $"Keyword Tooltip {kw.label}";
+		}
+		fileName = GetUseableFileName(fileName);
+
+		// Save to file
+		PlatformDependentDialog(fileName, bytes);
+	}
+
+
+	public void EncodeMultiple()
+	{
+		StartCoroutine(EncodeMultipleIE(setManager.activeItem));
+	}
+	private IEnumerator EncodeMultipleIE(List<ListItem> set)
+	{
+		FrameRateManager.Instance.DisableFRManager();
+
+		// make a copy
+		List<ListItem> setCopy = new List<ListItem>(set);
+
+		// Get the folder path via dialog
+		string exportPath = "";
+
+#if UNITY_STANDALONE
+		exportPath = GetExportSetPath() + "/";
+		if (exportPath == null)
+		{
+			//Debug.Log("Cancelled");
+			yield break;
+		}
+		if (exportPath.Length < 5)
+		{
+			//Debug.Log("Cancelled, too short?");
+			yield break;
+		}
+#endif
+
+		multipleExportSetupEvent.Invoke();
+		setupSaveEvent.Invoke();
+		RenderTextureSetup();
+		yield return new WaitForEndOfFrame();
+
+		// Loop through each card, wait for the art to load, then encode
+		for (int i = setCopy.Count - 1; i >= 0 ; i--)
+		{
+			artLoaded = false;
+
+			// Change the card data
+			setManager.SetNewActiveItem(setCopy[i], false);
+
+			// Disable the credit field if it has a dd URL
+			ClearCreditField();
+
+			// Wait for art to load via game event
+			yield return new WaitUntil(() => artLoaded == true);
+			yield return new WaitForEndOfFrame();
+
+			Camera.main.targetTexture = currentScreenRT;
+			yield return new WaitForEndOfFrame();
+
+			// Reads the screen pixels and adds to texture
+			EncodeSetup(false);
+
+			// Reenable the credit field
+			creditField.gameObject.SetActive(true);
+
+			// Encode texture into PNG
+			byte[] bytes = tex.EncodeToPNG();
+			Destroy(tex);
+
+			// DETERMINE NAME
+			string fileName = (setCopy.Count - i) + " " + setCopy[i].cardData.cardName;
+			fileName = GetUseableFileName(fileName);
+
+#if UNITY_WEBGL
+			DownloadScreenshot(bytes, fileName + ".png");
+			continue;
+#endif
+			// Write file
+			File.WriteAllBytes(exportPath + fileName + ".png", bytes);
+		}
+
+		multipleExportFinishedEvent.Invoke();
+		finishedSaveEvent.Invoke();
+		FrameRateManager.Instance.EnableFRManager();
+	}
+
+	public void EncodeCompImages(bool clipboard)
+	{
+		StartCoroutine(EncodeCompImagesIE(setManager.activeItem, clipboard));
+	}
+
+	private IEnumerator EncodeCompImagesIE(List<ListItem> set, bool clipboard = false)
+	{
+		FrameRateManager.Instance.DisableFRManager();
+
+		// make a copy
+		List<ListItem> setCopy = set.OrderBy(x => x.listOrderIndex).ToList();
+
+		multipleExportSetupEvent.Invoke();
+		setupSaveEvent.Invoke();
+
+		// Create a composite texture size according to the number of images
+		RenderTextureSetup();
+		Vector2Int gridLayout = EncodeCompLayout(setCopy.Count);
+
+		// Fill texture with bg color
+		Destroy(comp);
+		comp = new Texture2D(cardSize.x * gridLayout.x, cardSize.y * gridLayout.y, TextureFormat.ARGB32, false);
+		comp.name = "comp";
+		for (int compx = 0; compx < comp.width; compx++)
+		{
+			for (int compy = 0; compy < comp.height; compy++)
+			{
+				comp.SetPixel(compx, compy, bgColor);
+			}
+		}
+
+		// Calculate last row position offsets
+		int emptyCardSlots = gridLayout.x * gridLayout.y - setCopy.Count;
+		int x_offset = (int)emptyCardSlots * (cardSize.x / 2);
+
+		// Loop through each card, wait for the art to load, then encode
+		for (int i = 0; i < setCopy.Count && i < compLayouts.Length - 1; i++)
+		{
+			artLoaded = false;
+
+			// Change the card data
+			setManager.SetNewActiveItem(setCopy[i], false);
+
+			// Disable the credit field if it has a dd URL
+			ClearCreditField();
+
+			// Wait for art to load via game event
+			yield return new WaitUntil(() => artLoaded == true);
+			yield return new WaitForEndOfFrame();
+
+			Camera.main.targetTexture = currentScreenRT;
+			yield return new WaitForEndOfFrame();
+
+			// Reads the screen pixels and adds to texture
+			EncodeSetup(false);
+
+			// Reenable the credit field
+			creditField.gameObject.SetActive(true);
+
+			// Encode texture into PNG
+			int rowInverse = gridLayout.y - 1 - (Mathf.FloorToInt(i / gridLayout.x));
+			int column = i - ((Mathf.FloorToInt(i / gridLayout.x) * gridLayout.x));
+			//Debug.Log($"{rowInverse}, {column}");
+
+			// Set pixels onto comp, add x pos offset if last row
+			if (rowInverse == 0)
+			{
+				comp.SetPixels(column * cardSize.x + x_offset, rowInverse * cardSize.y, cardSize.x, cardSize.y, tex.GetPixels(0, 0, cardSize.x, cardSize.y));
+			}
+			else
+			{
+				comp.SetPixels(column * cardSize.x, rowInverse * cardSize.y, cardSize.x, cardSize.y, tex.GetPixels(0, 0, cardSize.x, cardSize.y));
+			}
+			Destroy(tex);
+		}
+
+		multipleExportFinishedEvent.Invoke();
+		finishedSaveEvent.Invoke();
+		FrameRateManager.Instance.EnableFRManager();
+
+		// clipboard route
+		if (clipboard)
+		{
+			MemoryStreamToClipboard(comp);
+			Destroy(comp);
+
+			yield break;
+		}
+
+		// Encode texture into PNG
+		byte[] bytes = comp.EncodeToPNG();
+		Destroy(comp);
+
+		// Save dialog
+		string fileName = $"{setCopy[0].cardData.cardName} Comp";
+		PlatformDependentDialog(fileName, bytes);
+		bytes = null;
+	}
+
+	public Vector2Int EncodeCompLayout(int count)
+	{
+		if (count < compLayouts.Length)
+		{
+			return compLayouts[count];
+		}
+
+		if (limitlessLayoutSize == true)
+		{
+			float fourcount = count / 4f;
+			float fourcountfloor = Mathf.Floor(fourcount);
+			bool hangingfour = fourcount - fourcountfloor == 0.25f ? true : false;
+
+			if ((float)count / 5 == Mathf.Floor(count / 5) || hangingfour == true) // 5 column
+			{
+				return new Vector2Int(5, Mathf.CeilToInt((float)count / 5));
+			}
+			else // 4 column
+			{
+				return new Vector2Int(4, Mathf.CeilToInt((float)count / 4));
+			}
+		}
+		else return compLayouts[compLayouts.Length - 1];
+	}
+
+
+	public string GetExportSetPath()
 	{
 		// Open Save as Panel
 		var path = StandaloneFileBrowser.OpenFolderPanel("Set Folder for Export", Application.persistentDataPath, false);
-
-		// Save
 		if (path.Length > 0)
 		{
 			return path[0];
@@ -370,102 +586,7 @@ public class FileSave : MonoBehaviour
 		StartCoroutine(EncodeTooltipPNG(asClipBoard));
 	}
 
-	private IEnumerator EncodeTooltipPNG(bool asClipboard = false)
-	{
-		// Set up res change
-		bool resChanged = ResolutionSetup();
-
-		// Set-up scene, turn off unneeded canvases
-		tooltipCanvas.SetActive(true);
-		tooltipSetupEvent.Invoke();
-
-		// We should only read the screen buffer after rendering is complete
-		yield return new WaitForEndOfFrame();
-
-		// Destroy existing image
-		if (texTooltip != null) Destroy(texTooltip);
-
-		// Read Source Template
-		float canvasLocalScale = rootCanvas.transform.localScale.x;
-		Vector2 sourceScreen = tooltipSource.position;
-		Vector2 sourceSizeScreen = tooltipSource.rect.size * canvasLocalScale;
-
-		// Create a texture the size of the screen, RGB24 format
-		int width = (int)(sourceSizeScreen.x);
-		int height = (int)(sourceSizeScreen.y);
-		texTooltip = tooltipTransparent.value ?
-			new Texture2D(width, height, TextureFormat.ARGB32, false, true) :
-			new Texture2D(width, height, TextureFormat.ARGB32, false, true);
-
-		// Read screen contents into the texture
-		texTooltip.ReadPixels(new Rect(sourceScreen.x, sourceScreen.y, sourceSizeScreen.x, sourceSizeScreen.y), 0, 0);
-		texTooltip.Apply();
-
-		// fix tooltip transparency
-		if (tooltipTransparent.value == false)
-		{
-			for (int y = 15; y < texTooltip.height - 15; y++)
-			{
-				for (int x = 15; x < texTooltip.width - 15; x++)
-				{
-					Color color = new Color(texTooltip.GetPixel(x, y).r, texTooltip.GetPixel(x, y).g, texTooltip.GetPixel(x, y).b, 1);
-					texTooltip.SetPixel(x, y, color);
-				}
-			}
-			texTooltip.Apply();
-		}
-
-		// Return Res
-		if (resChanged)
-		{
-			yield return new WaitForEndOfFrame();
-			ResolutionReturn();
-		}
-
-		// Reset Canvases
-		tooltipCanvas.SetActive(false);
-		tooltipFinishEvent.Invoke();
-
-		// Copy into clipboard and return if stated
-		if (asClipboard)
-		{
-			MemoryStreamToClipboard(texTooltip);
-			yield break;
-		}
-
-		// Encode texture into PNG
-		byte[] bytes = texTooltip.EncodeToPNG();
-
-		// Get Active KW Data
-		CustomKeywordData kw = KWData[KWTabIndex.value];
-
-		// DETERMINE NAME
-		string fileName = "tooltip_download";
-		if (!string.IsNullOrEmpty(kw.label))
-		{
-			fileName = "tooltip_" + kw.label;
-		}
-
-		fileName = FixFileName(fileName);
-
-		// Platform dependent file saving
-#if UNITY_EDITOR
-		SaveDialog(fileName, bytes);
-		yield break;
-#endif
-
-#if UNITY_STANDALONE
-		SaveDialog(fileName, bytes);
-		yield break;
-#endif
-
-#if UNITY_WEBGL
-		DownloadScreenshot(bytes, fileName + ".png");
-		yield break;
-#endif
-	}
-
-	private string FixFileName(string file)
+	private string GetUseableFileName(string file)
 	{
 		string fixedFileName = file;
 		char[] disallowd = disallowedFileNameChars.ToCharArray();
@@ -474,5 +595,17 @@ public class FileSave : MonoBehaviour
 			fixedFileName = fixedFileName.Replace(c.ToString(), "");
 		}
 		return fixedFileName;
+	}
+
+	private void ClearCreditField()
+	{
+		if (creditField.text.StartsWith("http://dd.b.pvp.net"))
+		{
+			creditField.gameObject.SetActive(false);
+		}
+		else
+		{
+			creditField.gameObject.SetActive(true);
+		}
 	}
 }

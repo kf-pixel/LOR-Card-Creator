@@ -13,6 +13,7 @@ public class RegionToggle : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 	[SerializeField] private GameEvent refreshEvent;
 	[SerializeField] private GameObject label, checkmark;
 	[SerializeField] private Image backgroundImg, checkmarkImg;
+	[SerializeField] private UnityEvent onActive, onInactive;
 	private bool entered;
 
 	private void OnEnable()
@@ -36,7 +37,7 @@ public class RegionToggle : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
-				Activate(Input.GetKey(KeyCode.LeftShift));
+				Activate(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));
 			}
 			else if (Input.GetMouseButtonDown(1))
 			{
@@ -51,15 +52,18 @@ public class RegionToggle : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 		{
 			label.SetActive(true);
 			checkmark.SetActive(true);
+			onActive?.Invoke();
 		}
         else if (regionID == region2.value && regionID != 13)
 		{
 			label.SetActive(true);
 			checkmark.SetActive(true);
+			onActive?.Invoke();
 		}
 		else
 		{
 			Deactivate();
+			onInactive?.Invoke();
 		}
 	}
 

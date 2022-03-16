@@ -34,6 +34,7 @@ public class ListManager : MonoBehaviour
 	[SerializeField] private TMP_InputField inputFieldCardData;
 	[SerializeField] private CardCode cardCode;
 	[SerializeField] private Transform content;
+	[SerializeField] private Tooltip quickCompTooltip;
 
 	[Header("CustomKeyword UI")]
 	[SerializeField] private TMP_InputField[] KWLabels;
@@ -52,7 +53,8 @@ public class ListManager : MonoBehaviour
 
 	[Header("Saved Data")]
 	public string defaultSaveName = "Untitled Set";
-	public int maxCards = 50;
+	private int softMaxCards = 100;
+	public int maxCards = 300;
 	public string activeSaveDataPath;
 	public SaveData activeSaveData;
 	[SerializeField] private TextMeshProUGUI tmpLastSave;
@@ -69,6 +71,7 @@ public class ListManager : MonoBehaviour
 	[SerializeField] private UnityEvent loadSetConfirmEvent;
 	[SerializeField] private UnityEvent cardLimitEvent;
 	[SerializeField] private UnityEvent nonCardLimitEvent;
+	[SerializeField] private UnityEvent softCardLimitEvent;
 	[SerializeField] private UnityEvent multiCardExportEvent, nonMultiCardExportEvent;
 
 	private void Start()
@@ -77,7 +80,7 @@ public class ListManager : MonoBehaviour
 		{
 			AddCard();
 			listItemInstances[0].cardData.cardCode = initialPlaceHolderText;
-			cardCode.WriteInput(initialPlaceHolderText);
+			//cardCode.WriteInput(initialPlaceHolderText);
 		}
 		UpdateCustomKeywordSaveData();
 
@@ -129,12 +132,12 @@ public class ListManager : MonoBehaviour
 		QuickSave();
 	}
 
-	public void SetExport()
+	public bool HasMultipleItems()
 	{
-		if (activeItem == null) return;
-		if (activeItem.Count < 2) return;
+		if (activeItem == null) return false;
+		if (activeItem.Count < 2) return false;
 
-		fileSaver.EncodeMultiple(activeItem);
+		return true;
 	}
 
 	private void InitializeKWList()
@@ -370,14 +373,12 @@ public class ListManager : MonoBehaviour
 			else uiSaveNameDisplay.text = "-";
 
 			// Start loading and building the card list
-			activeItem = null;
+			ClearActiveCards();
 			StartCoroutine(LoadAllCards());
 		}
 
 		// Clear Actives
-		activeItem = null;
-		activeHovering = null;
-		activeDragging = null;
+		
 	}
 
 	private IEnumerator LoadAllCards()
@@ -395,7 +396,7 @@ public class ListManager : MonoBehaviour
 			// Set Card ID if empty
 			if (string.IsNullOrEmpty(card.id))
 			{
-				card.GenerateID(number.ToString());
+				card.GenerateID();
 			}
 
 			// Spawn Prefab & set data
@@ -442,60 +443,35 @@ public class ListManager : MonoBehaviour
 		{
 			activeItem = new List<ListItem>();
 		}
-		if (activeItem.Count > 0)
-		{
-			if (activeItem[0] != null)
-			{
-				if (activeItem[0] == newItem && activeItem.Count == 0) return;
-			}
-		}
 
 		// Regular click; clear list then add the new item as active
 		if (!shiftDown.value && !ctrlDown.value || activeItem.Count == 0 || captureInput == false)
 		{
+			foreach (ListItem item in activeItem)
+			{
+				item.Dehighlight();
+			}
+
+			// Set new active
 			activeItem.Clear();
 			activeItem.Add(newItem);
 			cardCode.WriteInput(newItem.cardData.cardCode);
-
-			// Dehighlight other items
-			foreach (ListItem item in listItemInstances)
-			{
-				if (item != newItem) item.Dehighlight();
-			}
+			newItem.Highlight();
 		}
-		// Multi-select cLICK, for export
+		// Ctrl click, for multi export and quickcomp
 		else if (ctrlDown.value && !shiftDown.value) // CTRL input, add if not in list, remove if in list
 		{
-			activeItem[0].Highlight();
-			if (!activeItem.Contains(newItem))
+			if (!activeItem.Contains(newItem)) // add item 
 			{
 				activeItem.Insert(0, newItem);
 				newItem.Highlight();
 				cardCode.WriteInput(newItem.cardData.cardCode);
 			}
-			else if (activeItem.Count > 1)
+			else if (activeItem.Count > 1) // remove item
 			{
-				// logic for to select last item if the removed item is the active item
-				if (activeItem[0] == newItem)
-				{
-					ListItem lastActive = activeItem[activeItem.Count - 2];
-					foreach (ListItem li in activeItem)
-					{
-						if (li.listOrderIndex > lastActive.listOrderIndex && li != newItem)
-						{
-							lastActive = li;
-						}
-					}
-
-					// add item
-					activeItem.Remove(lastActive);
-					activeItem.Insert(0, lastActive);
-					cardCode.WriteInput(lastActive.cardData.cardCode);
-				}
-
-				// remove item
 				newItem.Dehighlight();
 				activeItem.Remove(newItem);
+				cardCode.WriteInput(activeItem[0].cardData.cardCode);
 			}
 		}
 		else if (shiftDown.value) // SHIFT input, gather all in between orderIndex
@@ -528,10 +504,21 @@ public class ListManager : MonoBehaviour
 		if (activeItem.Count > 1)
 		{
 			multiCardExportEvent.Invoke();
+			int quickCompLayoutCount = Mathf.Min(activeItem.Count, fileSaver.compLayouts.Length - 1);
+			quickCompTooltip.NewContentAppend($"<br><b>{quickCompLayoutCount}</b> cards in a <b>[{fileSaver.compLayouts[quickCompLayoutCount].x},{fileSaver.compLayouts[quickCompLayoutCount].y}]</b> grid.");
+
+			foreach (ListItem item in activeItem)
+			{
+				item.DisableDuplicateGameObject();
+			}
 		}
 		else
 		{
 			nonMultiCardExportEvent.Invoke();
+			foreach (ListItem item in activeItem)
+			{
+				item.EnableDuplicateGameObject();
+			}
 		}
 	}
 
@@ -574,6 +561,10 @@ public class ListManager : MonoBehaviour
 		{
 			cardLimitEvent.Invoke();
 		}
+		else if (listItemInstances.Count >= softMaxCards)
+		{
+			softCardLimitEvent.Invoke();
+		}
 		else
 		{
 			nonCardLimitEvent.Invoke();
@@ -600,9 +591,7 @@ public class ListManager : MonoBehaviour
 		listItemInstances.Add(it);
 
 		// Clear actives
-		activeItem = null;
-		activeDragging = null;
-		activeHovering = null;
+		ClearActiveCards();
 
 		// Set as active item if none is active
 		StartCoroutine(SetAsActive(it));
@@ -616,6 +605,9 @@ public class ListManager : MonoBehaviour
 		// Return if only 1 listItems are left
 		if (listItemInstances.Count < 2) return;
 
+		int newIndex = 0;
+		if (activeDragging != null) newIndex = activeDragging.listOrderIndex;
+
 		ListItem toBeRemoved = activeDragging;
 		activeSaveData.cardData.Remove(toBeRemoved.cardData);
 		listItemInstances.Remove(toBeRemoved);
@@ -623,28 +615,70 @@ public class ListManager : MonoBehaviour
 		Destroy(toBeRemoved.gameObject);
 
 		// Update their ListItem indexes
-		int number = 0;
-		foreach (ListItem cd in listItemInstances)
-		{
-			cd.listOrderIndex = number;
-			number++;
-		}
+		UpdateIndexOrders();
 
 		// Clear actives
-		activeItem = null;
-		activeDragging = null;
-		activeHovering = null;
+		ClearActiveCards();
 
-		// Reset to first active item
+		// Set new active
 		if (listItemInstances.Count > 0)
 		{
-			StartCoroutine(SetAsActive(listItemInstances[0]));
+			StartCoroutine(SetAsActive(listItemInstances[Mathf.Clamp(newIndex - 1, 0, listItemInstances.Count - 1)]));
 		}
+
+		// Update index orders
+		UpdateIndexOrders();
 
 		// Check if we are at the max card limit
 		if (listItemInstances.Count >= maxCards)
 		{
 			cardLimitEvent.Invoke();
+		}
+		else if (listItemInstances.Count >= softMaxCards)
+		{
+			softCardLimitEvent.Invoke();
+		}
+		else
+		{
+			nonCardLimitEvent.Invoke();
+		}
+	}
+
+	public void RemoveAllSelected()
+	{
+		for (int i = activeItem.Count - 1; i >= 0 ; i--)
+		{
+			activeSaveData.cardData.Remove(activeItem[i].cardData);
+			listItemInstances.Remove(activeItem[i]);
+			Destroy(activeItem[i].gameObject);
+			activeItem.RemoveAt(i);
+
+			if (listItemInstances.Count < 2) break;
+		}
+
+		// Update their ListItem indexes
+		UpdateIndexOrders();
+
+		// Clear actives
+		ClearActiveCards();
+
+		// Set new active
+		if (listItemInstances.Count > 0)
+		{
+			StartCoroutine(SetAsActive(listItemInstances[0]));
+		}
+
+		// Update index orders
+		UpdateIndexOrders();
+
+		// Check if we are at the max card limit
+		if (listItemInstances.Count >= maxCards)
+		{
+			cardLimitEvent.Invoke();
+		}
+		else if (listItemInstances.Count >= softMaxCards)
+		{
+			softCardLimitEvent.Invoke();
 		}
 		else
 		{
@@ -655,6 +689,7 @@ public class ListManager : MonoBehaviour
 	public void DuplicateCard()
 	{
 		if (activeItem == null || listItemInstances.Count >= maxCards) return;
+		if (activeItem.Count < 1) return;
 
 		// Spawn Prefab & set data
 		CardDataObject card = new CardDataObject(activeItem[0].cardData);
@@ -665,24 +700,31 @@ public class ListManager : MonoBehaviour
 		ListItem it = newItem.GetComponent<ListItem>();
 		it.cardData = card;
 		it.listManager = this;
-		it.listOrderIndex = activeSaveData.cardData.Count;
 
 		// Add to spawned instances
 		listItemInstances.Add(it);
 
+		// Position duplicate item
+		RepositionItemIndex(it, activeItem[0].listOrderIndex);
+
 		// Clear actives
-		activeItem = null;
-		activeDragging = null;
-		activeHovering = null;
+		ClearActiveCards();
 
 		// Set as active item if none is active
 		StartCoroutine(SetAsActive(it));
-		activeSaveData.cardData.Add(card);
+		//activeSaveData.cardData.Add(card);
+
+		// Update index orders
+		UpdateIndexOrders();
 
 		// Check if we are at the max card limit
 		if (listItemInstances.Count >= maxCards)
 		{
 			cardLimitEvent.Invoke();
+		}
+		else if (listItemInstances.Count >= softMaxCards)
+		{
+			softCardLimitEvent.Invoke();
 		}
 		else
 		{
@@ -703,34 +745,62 @@ public class ListManager : MonoBehaviour
 		{
 			positionAboveHovering = true;
 		}
-		int newDraggedIndex = positionAboveHovering ? activeHovering.listOrderIndex - 1 : activeHovering.listOrderIndex;
-		if (newDraggedIndex < 0)
+		int newItemIndex = positionAboveHovering ? activeHovering.listOrderIndex - 1 : activeHovering.listOrderIndex;
+		if (newItemIndex < 0)
 		{
-			newDraggedIndex = 0;
+			newItemIndex = 0;
 		}
 
+		RepositionItemIndex(draggedItem, newItemIndex);
+	}
+
+	private void RepositionItemIndex(ListItem draggedItem, int newItemIndex)
+	{
 		// Remove and Insert at dragged position in the data list
 		activeSaveData.cardData.Remove(draggedItem.cardData);
-		activeSaveData.cardData.Insert(newDraggedIndex, draggedItem.cardData);
+		activeSaveData.cardData.Insert(Mathf.Min(newItemIndex, listItemInstances.Count), draggedItem.cardData);
 
 		listItemInstances.Remove(draggedItem);
-		listItemInstances.Insert(newDraggedIndex, draggedItem);
+		listItemInstances.Insert(Mathf.Min(newItemIndex, listItemInstances.Count), draggedItem);
 
 		// Reorder transforms
-		draggedItem.transform.SetSiblingIndex(Mathf.Clamp(newDraggedIndex, 0, listItemInstances.Count));
+		draggedItem.transform.SetSiblingIndex(Mathf.Clamp(newItemIndex, 0, listItemInstances.Count));
 
-		// Update their ListItem indexes
-		int number = 0;
-		foreach(ListItem cd in listItemInstances)
-		{
-			cd.listOrderIndex = number;
-			cd.UpdateLabel();
-			number++;
-		}
+		// Update index orders
+		UpdateIndexOrders();
 	}
+
+	private void UpdateIndexOrders()
+	{
+		// Update their ListItem indexes
+		for (int i = 0; i < listItemInstances.Count; i++)
+		{
+			listItemInstances[i].listOrderIndex = i;
+			listItemInstances[i].UpdateOrderIndexOnly();
+		}
+
+	}
+
+
+
+
+
+
 
 	public void SetMaxCardsLimit(int count)
 	{
 		maxCards = count;
+	}
+
+	private void ClearActiveCards()
+	{
+		foreach (ListItem item in activeItem)
+		{
+			item?.Dehighlight();
+		}
+
+		activeItem.Clear();
+		activeDragging = null;
+		activeHovering = null;
 	}
 }

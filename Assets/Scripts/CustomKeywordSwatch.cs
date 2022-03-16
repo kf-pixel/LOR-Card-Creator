@@ -13,13 +13,14 @@ public class CustomKeywordSwatch : MonoBehaviour
 
 	public void DisableSwatches()
 	{
+		bool isEnabled = keywordData.spriteIndex > 0 ? true : false;
 		foreach (Button b in swatches)
 		{
-		    b.interactable = (keywordData.spriteIndex > 0) ? true : false;
+		    b.interactable = isEnabled;
 		}
 		foreach (Tooltip t in tooltips)
 		{
-			t.enabled = (keywordData.spriteIndex > 0) ? true : false;
+			t.enabled = isEnabled;
 		}
 	}
 
@@ -29,6 +30,13 @@ public class CustomKeywordSwatch : MonoBehaviour
 		ColorUtility.TryParseHtmlString(keywordData.hexColor, out c);
 		dropdownLabel.color = c;
 		dropdownItemLabel.color = c;
+		StartCoroutine(SetDropdownColorIE());
+	}
+
+	private IEnumerator SetDropdownColorIE()
+	{
+		yield return new WaitForEndOfFrame();
+		
 	}
 
 	private void OnEnable()

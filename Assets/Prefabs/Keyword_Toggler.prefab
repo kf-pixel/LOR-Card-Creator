@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
+  m_Color: {r: 0.7960785, g: 0.8078432, b: 0.89019614, a: 0.1882353}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 9110148836757732885}
   - component: {fileID: 707099416008664326}
   - component: {fileID: 8398564821954113373}
+  - component: {fileID: 1535793697535392560}
   - component: {fileID: 2278713260747724930}
   - component: {fileID: 5751877127942023636}
   - component: {fileID: 2111154058199954406}
@@ -624,6 +625,33 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8471220700557168009}
         m_MethodName: KeywordRemovedCheck
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1535793697535392560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9110148836757732906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d40f327ef853640b76afa5d33749b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4250168570e00b44895d3001c7657806, type: 2}
+  StringResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8471220700557168009}
+        m_MethodName: KeywordValueAddedCheck
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

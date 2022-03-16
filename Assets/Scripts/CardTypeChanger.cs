@@ -7,13 +7,13 @@ public class CardTypeChanger : MonoBehaviour
 {
 	[SerializeField] private Image img;
 	[SerializeField] private Image spellCardFrame;
-	[SerializeField] private Image focusImage;
 	[SerializeField] private Image[] rarityImages;
 	[SerializeField] private SpritesVariable[] spritesPerCardType;
 	[SerializeField] private IntVariable cardTypeIndex;
 	[SerializeField] private IntVariable cardRarityIndex;
 	[SerializeField] private int defaultIndex = 1;
-	private int previousCardType;
+	[SerializeField] private IntVariable nullSpellSpeed;
+	private int prior_i;
 
 	[Header("Tribes")]
 	[SerializeField] private SpritesVariable tribeSprites;
@@ -24,8 +24,7 @@ public class CardTypeChanger : MonoBehaviour
 	[SerializeField] private UnityEvent cardChangeEvent;
 	[SerializeField] private UnityEvent championBaseCardEvent, championLevel2Event, championLevel3Event;
 	[SerializeField] private UnityEvent nonChampionBaseCardEvent;
-
-	[SerializeField] private UnityEvent spellCardEvent;
+	[SerializeField] private UnityEvent unitCardEvent, spellCardEvent;
 	[SerializeField] private UnityEvent slowSpellEvent;
 	[SerializeField] private UnityEvent fastSpellEvent;
 	[SerializeField] private UnityEvent burstSpellEvent;
@@ -33,20 +32,15 @@ public class CardTypeChanger : MonoBehaviour
 
 	[SerializeField] private UnityEvent showRarityEvent;
 	[SerializeField] private UnityEvent hideRarityEvent;
-
+	[SerializeField] private UnityEvent championRarityEvent;
 	[SerializeField] private UnityEvent skillEvent;
-
 	[SerializeField] private UnityEvent landmarkEvent;
 	[SerializeField] private UnityEvent nonLandmarkEvent;
 	private bool parsedThisFrame;
 
-	// List of card type categories
-	private List<int> unitsT = new List<int>(4) { 0, 1, 2, 8 };
-	private List<int> nonUnitsT = new List<int>(6) { 3, 4, 5, 6, 7, 9 };
-
 	private void Start()
 	{
-		previousCardType = defaultIndex;
+		prior_i = defaultIndex;
 		cardTypeIndex.value = defaultIndex;
 		ParseType();
 	}
@@ -60,59 +54,76 @@ public class CardTypeChanger : MonoBehaviour
 		if (parsedThisFrame) return;
 		parsedThisFrame = true;
 
+		int i = cardTypeIndex.value;
+
 		// clear keywords if going from unit > spell or vice versa
-		if (unitsT.Contains(previousCardType) != unitsT.Contains(cardTypeIndex.value))
+		if (CardType.IsUnit(prior_i) != CardType.IsUnit(i) || CardType.IsLandmark(prior_i) || CardType.IsLandmark(i))
 		{
 			clearKeywordsEvent.Raise();
 		}
 
 		// Switch depending on card type
-		if (cardTypeIndex.value == 0) 			// Follower
+		if ((CardTypes)i == CardTypes.Follower)
 		{
 			nonChampionBaseCardEvent.Invoke();
-			nonLandmarkEvent.Invoke();
 		}
-		else if (cardTypeIndex.value == 1)  	// Champion base
+		else if ((CardTypes)i == CardTypes.Champion)
 		{
 			championBaseCardEvent.Invoke();
-			nonLandmarkEvent.Invoke();
 		}
-		else if (cardTypeIndex.value == 2) 		// Champion 2
+		else if ((CardTypes)i == CardTypes.ChampionLVL2)
 		{
 			championBaseCardEvent.Invoke();
-			nonLandmarkEvent.Invoke();
 			championLevel2Event.Invoke();
 		}
-		else if (cardTypeIndex.value == 8) 		// Champion Level 3
+		else if ((CardTypes)i == CardTypes.ChampionLVL3)
 		{
 			nonChampionBaseCardEvent.Invoke();
-			nonLandmarkEvent.Invoke();
 			championLevel3Event.Invoke();
 		}
-		else if (cardTypeIndex.value == 7) 		// Landmark
+
+		// landmark
+		if (CardType.IsLandmark(i))
 		{
 			nonChampionBaseCardEvent.Invoke();
 			landmarkEvent.Invoke();
 		}
-		else 									// else is Spell Card
+		else
+		{
+			nonLandmarkEvent.Invoke();
+		}
+
+		// unit + landmark or spell
+		if (CardType.IsUnit(i) || CardType.IsLandmark(i))
+		{
+			unitCardEvent.Invoke();
+		}
+		else
 		{
 			spellCardEvent.Invoke();
 		}
 
 		// Show rarity dropdown
-		if (cardTypeIndex.value == 1 || cardTypeIndex.value == 2 || cardTypeIndex.value == 8)
+		if (CardType.HasRarity(i))
 		{
-			hideRarityEvent.Invoke();
+			if (CardType.IsChampion(i))
+			{
+				championRarityEvent.Invoke();
+			}
+			else
+			{
+				showRarityEvent.Invoke();
+			}
 		}
 		else
 		{
-			showRarityEvent.Invoke();
+			hideRarityEvent.Invoke();
 		}
 
 		// Set Tribe Sprite Type
-		if (cardTypeIndex.value <= 2 || cardTypeIndex.value == 8) // if non-spell card
+		if (CardType.IsUnit(i)) // if non-spell card
 		{
-			if (cardTypeIndex.value == 0)
+			if ((CardTypes)i == CardTypes.Follower)
 			{
 				currentTribeSprite.sprite = tribeSprites.values[0];
 			}
@@ -122,71 +133,83 @@ public class CardTypeChanger : MonoBehaviour
 			}
 		}
 
+		// Reset NullSpellSpeed flag
+		if (!CardType.IsSpell(i))
+		{
+			nullSpellSpeed.value = 0;
+		}
+
 		// Add some effect keywords on spells
-		if (cardTypeIndex.value == 3)
+		if ((CardTypes)i == CardTypes.Slow)
 		{
 			slowSpellEvent.Invoke();
 		}
-		else if (cardTypeIndex.value == 4)
+		else if ((CardTypes)i == CardTypes.Fast)
 		{
 			fastSpellEvent.Invoke();
 		}
-		else if (cardTypeIndex.value == 5)
+		else if ((CardTypes)i == CardTypes.Burst)
 		{
 			burstSpellEvent.Invoke();
 		}
-		else if (cardTypeIndex.value == 9)
+		else if ((CardTypes)i == CardTypes.Skill)
+		{
+			skillEvent.Invoke();
+		}
+		else if ((CardTypes)i == CardTypes.Focus)
 		{
 			focusSpellEvent.Invoke();
 		}
 
-		// Change Sprite
-		if (cardTypeIndex.value == 1 || cardTypeIndex.value == 2 || cardTypeIndex.value == 8) // champion sprite
+		// Change Card Frame Sprite && rarity
+		if (cardRarityIndex.value > 3 && cardTypeIndex.value != 1) // reset rarity index if previously was on noncollectable champ's index (4)
 		{
-			img.sprite = spritesPerCardType[cardTypeIndex.value].values[cardRarityIndex.value];
+			cardRarityIndex.value = 0;
+		}
+		if (CardType.IsChampion(i) && !CardType.HasRarity(i)) // champion sprites without rarity
+		{
+			img.sprite = spritesPerCardType[i].values[cardRarityIndex.value];
 			foreach (Image ri in rarityImages)
 			{
 				ri.enabled = false;
 			}
 		}
-		else if (cardTypeIndex.value != 6) // spells excl skill
+		else // rarity cards
 		{
-			img.sprite = spritesPerCardType[cardTypeIndex.value].values[0];
-			spellCardFrame.sprite = spritesPerCardType[cardTypeIndex.value].values[0];
+			img.sprite = spritesPerCardType[i].values[0];
+			spellCardFrame.sprite = spritesPerCardType[i].values[0];
 
 			foreach (Image ri in rarityImages)
 			{
-				if (cardRarityIndex.value > 0)
+				if (CardType.IsChampion(i))
 				{
-					ri.enabled = true;
-					ri.sprite = spritesPerCardType[cardTypeIndex.value].values[cardRarityIndex.value];
+					if (cardRarityIndex.value == 4)
+					{
+						ri.enabled = false;
+					}
+					else
+					{
+						ri.enabled = true;
+						ri.sprite = spritesPerCardType[i].values[1];
+					}
 				}
-				else
+				else // non champ rarity
 				{
-					ri.enabled = false;
+					if (cardRarityIndex.value > 0)
+					{
+						ri.enabled = true;
+						ri.sprite = spritesPerCardType[i].values[cardRarityIndex.value];
+					}
+					else
+					{
+						ri.enabled = false;
+					}
 				}
 			}
 		}
-		else if (cardTypeIndex.value == 6)// skill card type
-		{
-			spellCardFrame.sprite = spritesPerCardType[4].values[0];
-			if (cardRarityIndex.value > 0)
-			{
-				rarityImages[1].enabled = true;
-				rarityImages[1].sprite = spritesPerCardType[4].values[cardRarityIndex.value];
-			}
-			else
-			{
-				rarityImages[1].enabled = false;
-			}
-			skillEvent.Invoke();
-		}
-
-		// Focus Image
-		focusImage.enabled = cardTypeIndex.value == 9 ? true : false;
 
 		// Invoke Change card event
 		cardChangeEvent.Invoke();
-		previousCardType = cardTypeIndex.value;
+		prior_i = i;
 	}
 }

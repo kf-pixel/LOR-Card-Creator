@@ -1,27 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-public class InputRemoveCard : MonoBehaviour
+public class InputRemoveCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 	public UnityEvent onPointerUp;
 	private bool isActive;
 
-	public void SetActive(bool active)
+	public void OnPointerDown(PointerEventData eventData)
 	{
-		isActive = active;
-	}
-	public void PointerUp(InputAction.CallbackContext context)
-	{
-		if (context.performed && isActive) StartCoroutine(PointerUpIE());
-	}
-
-	private IEnumerator PointerUpIE()
-	{
-		yield return new WaitForEndOfFrame();
 		onPointerUp.Invoke();
 	}
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		isActive = true;
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		isActive = false;
+	}
+
+	public void OnPointerUp()
+	{
+		if (isActive)
+		{
+			onPointerUp.Invoke();
+		}
+	}
+
+	
 }

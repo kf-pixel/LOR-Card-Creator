@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Linq;
+using TMPro;
 
 public class KeywordBarController : MonoBehaviour
 {
@@ -29,26 +32,48 @@ public class KeywordBarController : MonoBehaviour
 	public GameObjectVariableList keywords;
 	private int maxNumberOfKeywords = 5;
 	[SerializeField] private IntVariable numberOfKeywords;
+	[SerializeField] private IntVariable cardTypeIndex;
+	[SerializeField] private IntVariable nullSpellSpeed;
 	[SerializeField] private HorizontalLayoutGroup horizontalLayoutGroup;
+	[Header("Custom Spell Speed Data")]
+	[SerializeField] private TextMeshProUGUI spellSpeedText;
+	[SerializeField] private CustomKeywordData[] customKeywordData;
 
 	[Header("Events")]
 	[SerializeField] private UnityEvent noKeywordsEvent;
 	[SerializeField] private UnityEvent someKeywordsEvent;
 	[SerializeField] private UnityEvent maxKeywordsEvent;
 	[SerializeField] private IntEvent keywordIntAddEvent, keywordIntRemoveEvent;
+	private string[] cardTypeNames = new string[] { "Burst", "Fast", "Slow", "Skill", "Focus", "Landmark" };
 
 	private void OnEnable()
 	{
 		CheckNumberOfKeywords();
 	}
 
-	private void OnDisable()
+	public void AddKeywordValue(string keyvalue)
 	{
-		foreach (GameObjectInt go in keywordInstances)
+		string[] keypair = keyvalue.Split(',');
+
+		for (int index = 0; index < keywords.value.Count; index++)
 		{
-			Destroy(go.obj);
+			if (keywords.value[index].name.StartsWith(keypair[0]))
+			{
+				GameObject newKeyword = Instantiate(keywords.value[index], this.transform);
+				keywordInstances.Add(new GameObjectInt(newKeyword, index));
+
+				KeywordFormat kwf = newKeyword.GetComponent<KeywordFormat>();
+				kwf.keywordName = keywords.value[index].name;
+				kwf.keywordIndex = index;
+
+				int.TryParse(keypair[1], out kwf.keywordValue);
+
+				SetCustomSpellSpeed();
+				CheckNumberOfKeywords();
+				FormatKeywords();
+				break;
+			}
 		}
-		keywordInstances.Clear();
 	}
 
 	public void AddKeyword(int index)
@@ -58,6 +83,11 @@ public class KeywordBarController : MonoBehaviour
 		GameObject newKeyword = Instantiate(keywords.value[index], this.transform);
 		keywordInstances.Add(new GameObjectInt(newKeyword, index));
 
+		KeywordFormat kwf = newKeyword.GetComponent<KeywordFormat>();
+		kwf.keywordName = keywords.value[index].name;
+		kwf.keywordIndex = index;
+
+		SetCustomSpellSpeed();
 		CheckNumberOfKeywords();
 		FormatKeywords();
 	}
@@ -73,13 +103,14 @@ public class KeywordBarController : MonoBehaviour
 
 				if (keywordInstances.Count == 1)
 				{
-					int ind = keywordInstances[0].index;
-					ClearKeywords();
-					AddKeyword(ind);
+					keywordInstances[0].obj.GetComponent<KeywordFormat>().SetToFull();
+					SetCustomSpellSpeed();
 					return;
 				}
 			}
 		}
+
+		SetCustomSpellSpeed();
 		CheckNumberOfKeywords();
 		FormatKeywords();
 	}
@@ -111,10 +142,78 @@ public class KeywordBarController : MonoBehaviour
 		}
 	}
 
+	public void AddSpellKeyword(string keywordName)
+	{
+		if (nullSpellSpeed.value == 1)
+		{
+			return;
+		}
+
+		AddKeyword(keywordName);
+	}
+
+	public void NullSpellSpeedCheck()
+	{
+		if (nullSpellSpeed.value == 1)
+		{
+			// remove spell keywords
+			RemoveKeyword(CardType.Name(cardTypeIndex.value));
+		}
+		else
+		{
+			spellSpeedText.enabled = false;
+
+			string cardTypeKeywordName = CardType.Name(cardTypeIndex.value);
+			foreach (GameObjectInt keyword in keywordInstances)
+			{
+				if (keyword.obj.name.StartsWith(cardTypeKeywordName))
+				{
+					return;
+				}
+			}
+			// add spell keyword if it doesnt have one
+			AddKeyword(CardType.Name(cardTypeIndex.value));
+		}
+	}
+
+	public void SetCustomSpellSpeed()
+	{
+		if (nullSpellSpeed.value == 0)
+		{
+			spellSpeedText.enabled = false;
+			return;
+		}
+
+		int customKWNumber = -1;
+		bool success = false;
+		foreach (GameObjectInt keyword in keywordInstances)
+		{
+			if (int.TryParse(keyword.obj.name.Replace("(Clone)", "").Replace("Custom", ""), out customKWNumber))
+			{
+				success = true;
+			}
+		}
+
+		if (success)
+		{
+			if (customKeywordData[customKWNumber].spriteIndex > 0)
+			{
+				string spellSpeedString = $"<color={customKeywordData[customKWNumber].hexColor}><sprite name=\"Custom_{customKeywordData[customKWNumber].spriteIndex}\" tint>";
+				if (customKeywordData[customKWNumber].spriteIndex > 68)
+				{
+					spellSpeedString = $"<color={customKeywordData[customKWNumber].hexColor}><sprite name=\"user{customKeywordData[customKWNumber].spriteIndex - 68}\" tint>";
+				}
+	
+				spellSpeedText.text = spellSpeedString;
+				spellSpeedText.enabled = true;
+				return;
+			}
+		}
+		spellSpeedText.enabled = false;
+	}
+
 	public void RemoveCardTypeKeywords()
 	{
-		string[] cardTypeNames = new string[6] { "Burst", "Fast", "Slow", "Skill", "Focus", "Landmark" };
-
 		foreach (string cn in cardTypeNames)
 		{
 			RemoveKeyword(cn);
@@ -123,12 +222,24 @@ public class KeywordBarController : MonoBehaviour
 
 	public void ClearKeywords()
 	{
-		foreach (GameObjectInt go in keywordInstances)
+		for (int i = keywordInstances.Count - 1; i >= 0 ; i--)
 		{
-			Destroy(go.obj);
+			Destroy(keywordInstances[i].obj);
+			keywordInstances.Remove(keywordInstances[i]);
 		}
-		keywordInstances.Clear();
+
 		CheckNumberOfKeywords();
+		FormatKeywords();
+	}
+
+	public void ClearKeywordsReaddSpell()
+	{
+		if (nullSpellSpeed.value == 0)
+		{
+			AddKeyword(CardType.Name(cardTypeIndex.value));
+		}
+		CheckNumberOfKeywords();
+		FormatKeywords();
 	}
 
 	private void CheckNumberOfKeywords()
@@ -146,24 +257,30 @@ public class KeywordBarController : MonoBehaviour
 			noKeywordsEvent.Invoke();
 		}
 		numberOfKeywords.value = keywordInstances.Count;
-
 	}
 
 	public void FormatKeywords()
 	{
-		int i = keywordInstances.Count;
+		GameObjectInt cardtypeKeyword = null;
 
-		// Rearrange spell speed & skill icons to the left
-		for (int inx = keywordInstances.Count - 1; inx >= 0; inx--)
+		// Rearrange alphabetical order, then place cardtype keywords at the end
+		keywordInstances = keywordInstances.OrderBy(k => k.index).ToList();
+		for (int kwi = 0; kwi < keywordInstances.Count; kwi++)
 		{
-			if (keywordInstances[inx].obj.name.StartsWith("Burst") || keywordInstances[inx].obj.name.StartsWith("Fast") || keywordInstances[inx].obj.name.StartsWith("Slow") 
-			|| keywordInstances[inx].obj.name.StartsWith("Skill") || keywordInstances[inx].obj.name.StartsWith("Focus"))
+			keywordInstances[kwi].obj.transform.SetSiblingIndex(kwi);
+			foreach (string ns in cardTypeNames)
 			{
-				GameObjectInt spellObject = keywordInstances[inx];
-				keywordInstances.Remove(spellObject);
-				keywordInstances.Add(spellObject);
-				spellObject.obj.transform.SetAsLastSibling();
+				if (keywordInstances[kwi].obj.name.StartsWith(ns))
+				{
+					cardtypeKeyword = keywordInstances[kwi];
+					break;
+				}
 			}
+		}
+
+		if (cardtypeKeyword != null)
+		{
+			cardtypeKeyword.obj.transform.SetAsLastSibling();
 		}
 
 		// Check total lengths of full sized keywords
@@ -178,7 +295,7 @@ public class KeywordBarController : MonoBehaviour
 		{
 			foreach (GameObjectInt kwi in keywordInstances)
 			{
-				kwi.obj.GetComponent<KeywordFormat>().SetToShort();
+				if (!kwi.obj.name.StartsWith("Trap")) kwi.obj.GetComponent<KeywordFormat>().SetToShort();
 			}
 		}
 		else foreach (GameObjectInt kwi in keywordInstances)

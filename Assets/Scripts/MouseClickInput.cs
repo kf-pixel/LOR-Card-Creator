@@ -38,6 +38,7 @@ public class MouseClickInput : MonoBehaviour, IPointerEnterHandler, IPointerExit
 			}
 			else
 			{
+				inputF.text = "1";
 				return;
 			}
 		}
@@ -54,6 +55,7 @@ public class MouseClickInput : MonoBehaviour, IPointerEnterHandler, IPointerExit
 			}
 			else
 			{
+				inputF.text = "1";
 				return;
 			}
 		}
