@@ -1,0 +1,3 @@
+rep "Legends of Runeterra Card Creator@Aqualize@cloud"
+  path "/"
+    smartbranch "/main"

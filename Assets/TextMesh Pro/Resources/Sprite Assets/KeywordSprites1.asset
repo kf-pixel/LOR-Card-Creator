@@ -387,9 +387,9 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 50
       m_Height: 50
-      m_HorizontalBearingX: 0
+      m_HorizontalBearingX: 3
       m_HorizontalBearingY: 45
-      m_HorizontalAdvance: 53
+      m_HorizontalAdvance: 55
     m_GlyphRect:
       m_X: 1100
       m_Y: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 50
       m_Height: 50
-      m_HorizontalBearingX: 0
+      m_HorizontalBearingX: -3
       m_HorizontalBearingY: 40
       m_HorizontalAdvance: 45
     m_GlyphRect:
@@ -563,15 +563,15 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 50
       m_Height: 50
-      m_HorizontalBearingX: 1
-      m_HorizontalBearingY: 41
+      m_HorizontalBearingX: 0
+      m_HorizontalBearingY: 43
       m_HorizontalAdvance: 55
     m_GlyphRect:
       m_X: 2202
       m_Y: 2
-      m_Width: 96
-      m_Height: 96
-    m_Scale: 1.15
+      m_Width: 100
+      m_Height: 100
+    m_Scale: 1.1
     m_AtlasIndex: 0
     sprite: {fileID: -6822656911057517952, guid: 24b3a090daf88bb44b895395fc0f2734,
       type: 3}
@@ -643,15 +643,15 @@ MonoBehaviour:
     m_Metrics:
       m_Width: 50
       m_Height: 50
-      m_HorizontalBearingX: 3
-      m_HorizontalBearingY: 41
+      m_HorizontalBearingX: -2
+      m_HorizontalBearingY: 42
       m_HorizontalAdvance: 48
     m_GlyphRect:
       m_X: 2700
       m_Y: 0
       m_Width: 100
       m_Height: 100
-    m_Scale: 1.15
+    m_Scale: 1.05
     m_AtlasIndex: 0
     sprite: {fileID: 2424901114373307061, guid: d27556580046de6419ee1aa58ab77faa,
       type: 3}
@@ -663,6 +663,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56fd8d9085dcc4b4285d63565c7bad5b, type: 2}
   - {fileID: 11400000, guid: bd2926703a7a1ee448af4dfb6af20589, type: 2}
   - {fileID: 11400000, guid: 85628a527f45183469c81429d88a311e, type: 2}
+  - {fileID: 11400000, guid: 5467c92a09f1d0b43ab9e71eefc1beb9, type: 2}
+  - {fileID: 11400000, guid: 68bcbe3456069234eacb91c6c5e74226, type: 2}
+  - {fileID: 11400000, guid: fd9bdcb639f59f140a21f22718f1adee, type: 2}
 --- !u!21 &7504456831921337396
 Material:
   serializedVersion: 6

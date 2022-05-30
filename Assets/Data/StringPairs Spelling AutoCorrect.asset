@@ -33,11 +33,7 @@ MonoBehaviour:
     replacedString: I'm
     matchCase: 0
     matchExactOnly: 0
-  - inputString: u
-    replacedString: you
-    matchCase: 0
-    matchExactOnly: 0
-  - inputString: ur
-    replacedString: your
+  - inputString: im
+    replacedString: I'm
     matchCase: 0
     matchExactOnly: 0

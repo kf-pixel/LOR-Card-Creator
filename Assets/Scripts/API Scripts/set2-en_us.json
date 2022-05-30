@@ -6,12 +6,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ001-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -39,7 +37,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -51,12 +48,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ010-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -80,7 +75,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -94,12 +88,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ006-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -127,7 +119,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -139,12 +130,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ004-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -172,7 +161,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -184,12 +172,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ007-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -213,7 +199,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -225,12 +210,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ002-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -254,7 +237,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -269,12 +251,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -304,7 +284,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -316,12 +295,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ009-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -349,7 +326,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -361,12 +337,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ003-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -394,7 +368,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -409,12 +382,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008T2-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -444,7 +415,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -459,12 +429,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ008T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ008T1-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -492,7 +460,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -504,12 +471,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02PZ005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02PZ005-full.png"
       }
     ],
-    "region": "Piltover & Zaun",
-    "regionRef": "PiltoverZaun",
     "regions": [
       "Piltover & Zaun"
     ],
@@ -533,7 +498,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -545,12 +509,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW040.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW040-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW040.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW040-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -578,7 +540,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -590,12 +551,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW057.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW057-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW057.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW057-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -625,7 +584,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -637,12 +595,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW041.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW041-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW041.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW041-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -670,7 +626,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -684,12 +639,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW013.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW013-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW013.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW013-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -719,7 +672,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -733,12 +685,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW034.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW034-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW034.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW034-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -766,7 +716,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -778,12 +727,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW034T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW034T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW034T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW034T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -813,7 +760,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -827,12 +773,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW056.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW056-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW056.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW056-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -860,7 +804,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -874,12 +817,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW056T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW056T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW056T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW056T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -907,7 +848,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -921,12 +861,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW060.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW060-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW060.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW060-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -935,7 +873,7 @@
     ],
     "attack": 1,
     "cost": 1,
-    "health": 2,
+    "health": 1,
     "description": "When allies attack, deal 1 to the enemy Nexus.",
     "descriptionRaw": "When allies attack, deal 1 to the enemy Nexus.",
     "levelupDescription": "",
@@ -950,7 +888,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -966,12 +903,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW011.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW011-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW011.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW011-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -995,7 +930,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -1014,12 +948,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1047,7 +979,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -1061,12 +992,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1094,7 +1023,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TREASURE",
     "subtypes": [
       "TREASURE"
     ],
@@ -1108,12 +1036,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1141,7 +1067,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TREASURE",
     "subtypes": [
       "TREASURE"
     ],
@@ -1155,12 +1080,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T4.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T4-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T4.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T4-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1190,7 +1113,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -1206,12 +1128,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW030T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW030T3-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1239,7 +1159,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "TREASURE",
     "subtypes": [
       "TREASURE"
     ],
@@ -1253,12 +1172,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW019.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW019-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW019.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW019-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1288,7 +1205,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1300,12 +1216,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW007-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1329,7 +1243,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1341,12 +1254,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW014.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW014-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW014.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW014-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1355,7 +1266,7 @@
     ],
     "attack": 1,
     "cost": 2,
-    "health": 2,
+    "health": 3,
     "description": "When I'm summoned, create in hand a random 1 cost spell from your regions.",
     "descriptionRaw": "When I'm summoned, create in hand a random 1 cost spell from your regions.",
     "levelupDescription": "",
@@ -1374,7 +1285,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1386,12 +1296,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW055.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW055-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW055.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW055-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1415,7 +1323,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1427,12 +1334,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW017.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW017-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW017.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW017-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1456,7 +1361,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1468,12 +1372,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW038.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW038-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW038.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW038-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1503,7 +1405,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1515,12 +1416,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW021.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW021-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW021.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW021-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1548,7 +1447,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1560,21 +1458,19 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW035.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW035-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW035.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW035-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
     "regionRefs": [
       "Bilgewater"
     ],
-    "attack": 6,
+    "attack": 7,
     "cost": 6,
-    "health": 5,
+    "health": 6,
     "description": "When I'm summoned, grant all enemies <link=keyword.Vulnerable><sprite name=Vulnerable><style=Keyword>Vulnerable</style></link>.",
     "descriptionRaw": "When I'm summoned, grant all enemies Vulnerable.",
     "levelupDescription": "",
@@ -1589,7 +1485,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1601,12 +1496,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW058.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW058-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW058.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW058-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1630,7 +1523,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1644,12 +1536,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW028.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW028-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW028.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW028-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1659,8 +1549,8 @@
     "attack": 6,
     "cost": 8,
     "health": 4,
-    "description": "<link=vocab.Plunder><style=Vocab>Plunder</style></link>: Cast <link=card.cast><style=AssociatedCard>Cannon Barrage</style></link> 6 times on randomly targeted enemies.",
-    "descriptionRaw": "Plunder: Cast Cannon Barrage 6 times on randomly targeted enemies.",
+    "description": "<link=vocab.Plunder><style=Vocab>Plunder</style></link>: Play <link=card.cast><style=AssociatedCard>Cannon Barrage</style></link> 6 times on randomly targeted enemies.",
+    "descriptionRaw": "Plunder: Play Cannon Barrage 6 times on randomly targeted enemies.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Sail past the sailors, sail past the wreck,\nThe battle's already over.\nThe smoke's cleared the water, their captain's met Rex,\nAnd their ship's ripped an' torn timber.\" - \"Home With You, Sally\"",
@@ -1673,7 +1563,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1685,12 +1574,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW028T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW028T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW028T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW028T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1718,7 +1605,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -1730,12 +1616,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW037.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW037-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW037.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW037-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1765,7 +1649,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -1781,12 +1664,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1810,7 +1691,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -1826,12 +1706,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008T02.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008T02-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008T02.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008T02-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1855,7 +1733,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -1871,12 +1748,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008T01.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW008T01-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008T01.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW008T01-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1900,7 +1775,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -1914,12 +1788,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW047.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW047-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW047.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW047-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1943,7 +1815,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -1957,12 +1828,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW004-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -1986,7 +1855,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2000,12 +1868,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW002-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2035,7 +1901,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2047,12 +1912,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW016.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW016-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW016.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW016-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2076,7 +1939,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2090,12 +1952,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW027.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW027-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW027.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW027-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2119,7 +1979,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2131,12 +1990,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW050.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW050-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW050.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW050-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2164,7 +2021,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2178,12 +2034,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW015.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW015-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW015.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW015-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2211,7 +2065,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2223,12 +2076,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW010-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2252,7 +2103,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "PORO",
     "subtypes": [
       "PORO"
     ],
@@ -2266,12 +2116,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW009-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2295,7 +2143,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2307,12 +2154,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW005-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2336,7 +2181,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2348,12 +2192,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW039.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW039-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW039.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW039-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2381,7 +2223,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2393,12 +2234,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW006-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2422,7 +2261,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2434,12 +2272,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW036.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW036-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW036.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW036-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2469,7 +2305,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2481,12 +2316,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW033.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW033-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW033.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW033-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2510,7 +2343,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2522,12 +2354,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW060T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW060T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW060T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW060T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2555,7 +2385,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -2572,12 +2401,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2586,7 +2413,7 @@
     ],
     "attack": 5,
     "cost": 5,
-    "health": 5,
+    "health": 4,
     "description": "When I'm summoned, summon a <link=card.summon><style=AssociatedCard>Powder Keg</style></link>.",
     "descriptionRaw": "When I'm summoned, summon a Powder Keg.",
     "levelupDescription": "You've damaged the enemy Nexus in 5 different rounds<style=Variable></style>.",
@@ -2605,7 +2432,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -2620,12 +2446,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2653,7 +2477,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -2670,12 +2493,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T3-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2684,7 +2505,7 @@
     ],
     "attack": 6,
     "cost": 5,
-    "health": 6,
+    "health": 5,
     "description": "When I'm summoned or <link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Summon a <link=card.summon><style=AssociatedCard>Powder Keg</style></link>.\r\n<link=keyword.AttackSkillMark><sprite name=SkillMark><style=Keyword>Attack</style></link>: Deal 1 to all enemies and the enemy Nexus.",
     "descriptionRaw": "When I'm summoned or Round Start: Summon a Powder Keg.\r\nAttack: Deal 1 to all enemies and the enemy Nexus.",
     "levelupDescription": "",
@@ -2703,7 +2524,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -2715,12 +2535,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2750,7 +2568,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -2764,12 +2581,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T4.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW032T4-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T4.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW032T4-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2797,7 +2612,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -2814,12 +2628,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2843,7 +2655,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -2858,12 +2669,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T3-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2873,8 +2682,8 @@
     "attack": 0,
     "cost": 2,
     "health": 0,
-    "description": "Deal 1 three times among different randomly targeted enemies and the enemy Nexus.\r\nCreate a <link=card.level1><style=AssociatedCard>Miss Fortune</style></link> in your deck.",
-    "descriptionRaw": "Deal 1 three times among different randomly targeted enemies and the enemy Nexus.\r\nCreate a Miss Fortune in your deck.",
+    "description": "Deal 1 to three different randomly targeted enemies or the enemy Nexus.\r\nCreate a <link=card.level1><style=AssociatedCard>Miss Fortune</style></link> in your deck.",
+    "descriptionRaw": "Deal 1 to three different randomly targeted enemies or the enemy Nexus.\r\nCreate a Miss Fortune in your deck.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Guns blazin'!\" - Miss Fortune",
@@ -2891,7 +2700,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -2907,12 +2715,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2940,7 +2746,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -2952,12 +2757,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T4.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T4-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T4.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T4-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -2985,7 +2788,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -2997,12 +2799,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW022T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW022T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3030,7 +2830,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3047,12 +2846,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater",
       "Bandle City"
@@ -3064,10 +2861,10 @@
     "attack": 2,
     "cost": 1,
     "health": 1,
-    "description": "When you cast a spell, stop all enemy spells and skills targeting me and give me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> this round.",
-    "descriptionRaw": "When you cast a spell, stop all enemy spells and skills targeting me and give me Elusive this round.",
-    "levelupDescription": "You've cast 6+ spells<style=Variable></style>.",
-    "levelupDescriptionRaw": "You've cast 6+ spells.",
+    "description": "When you play a spell, stop all enemy spells and skills targeting me and give me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> this round.",
+    "descriptionRaw": "When you play a spell, stop all enemy spells and skills targeting me and give me Elusive this round.",
+    "levelupDescription": "You've played 6+ spells<style=Variable></style>.",
+    "levelupDescriptionRaw": "You've played 6+ spells.",
     "flavorText": "Of all Bilgewater's legendary figures, Fizz is the most mercurial. Some sailors curse him for the countless brutal wrecks littering the coast...",
     "artistName": "SIXMOREVODKA",
     "name": "Fizz",
@@ -3082,7 +2879,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -3101,12 +2897,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T3-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater",
       "Bandle City"
@@ -3118,8 +2912,8 @@
     "attack": 3,
     "cost": 1,
     "health": 2,
-    "description": "When you cast a spell, stop all enemy spells and skills targeting me and give me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> this round.\r\n<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Create a <link=card.create><style=AssociatedCard>Chum the Waters</style></link> in hand.",
-    "descriptionRaw": "When you cast a spell, stop all enemy spells and skills targeting me and give me Elusive this round.\r\nNexus Strike: Create a Chum the Waters in hand.",
+    "description": "When you play a spell, stop all enemy spells and skills targeting me and give me <link=keyword.Elusive><sprite name=Elusive><style=Keyword>Elusive</style></link> this round.\r\n<link=vocab.NexusStrike><style=Vocab>Nexus Strike</style></link>: Create a <link=card.create><style=AssociatedCard>Chum the Waters</style></link> in hand.",
+    "descriptionRaw": "When you play a spell, stop all enemy spells and skills targeting me and give me Elusive this round.\r\nNexus Strike: Create a Chum the Waters in hand.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "...while others insist he's just a playful child who safeguards others on their journeys home.",
@@ -3136,7 +2930,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -3150,12 +2943,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3183,7 +2974,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -3198,12 +2988,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW046T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW046T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3231,7 +3019,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -3249,12 +3036,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3282,7 +3067,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3294,12 +3078,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T5.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T5-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T5.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T5-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3327,7 +3109,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3345,12 +3126,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T3-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3378,7 +3157,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3393,12 +3171,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3426,7 +3202,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -3438,12 +3213,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3471,7 +3244,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3483,12 +3255,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T4.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW026T4-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T4.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW026T4-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3516,7 +3286,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -3531,12 +3300,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3566,7 +3333,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3581,12 +3347,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053T2-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3614,7 +3378,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -3629,12 +3392,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW053T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW053T1-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3654,17 +3415,18 @@
     "cardCode": "02BW053T1",
     "keywords": [
       "Tough",
-      "Fearsome"
+      "Fearsome",
+      "Missing Translation"
     ],
     "keywordRefs": [
       "Tough",
-      "Fearsome"
+      "Fearsome",
+      "AuraVisualFakeKeyword"
     ],
     "spellSpeed": "",
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -3676,12 +3438,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW061.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW061-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW061.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW061-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3709,7 +3469,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3721,12 +3480,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW024.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW024-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW024.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW024-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3754,7 +3511,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3766,12 +3522,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW003-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3781,8 +3535,8 @@
     "attack": 0,
     "cost": 6,
     "health": 0,
-    "description": "<link=vocab.Plunder><style=Vocab>Plunder</style></link>: Place a follower in play into your hand.",
-    "descriptionRaw": "Plunder: Place a follower in play into your hand.",
+    "description": "<link=vocab.Plunder><style=Vocab>Plunder</style></link>: <link=keyword.Recall><style=Keyword>Recall</style></link> ANY follower into your hand.",
+    "descriptionRaw": "Plunder: Recall ANY follower into your hand.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Yer workin' fer us now!\" - Petty Officer",
@@ -3799,7 +3553,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3813,12 +3566,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW025.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW025-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW025.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW025-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3846,7 +3597,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3860,12 +3610,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW012.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW012-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW012.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW012-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3893,7 +3641,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3905,12 +3652,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW018.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW018-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW018.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW018-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3938,7 +3683,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3950,12 +3694,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW048.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW048-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW048.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW048-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -3983,7 +3725,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -3995,12 +3736,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW043.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW043-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW043.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW043-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4028,7 +3767,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4040,12 +3778,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW051.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW051-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW051.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW051-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4073,7 +3809,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4087,12 +3822,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW054.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW054-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW054.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW054-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4120,7 +3853,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4132,12 +3864,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW042.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW042-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW042.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW042-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4147,8 +3877,8 @@
     "attack": 0,
     "cost": 7,
     "health": 0,
-    "description": "This round, grow all allies' Power and Health to the number of spells you've cast this game. <style=Variable></style>",
-    "descriptionRaw": "This round, grow all allies' Power and Health to the number of spells you've cast this game. ",
+    "description": "This round, grow all allies' Power and Health to the number of other spells you've played this game. <style=Variable></style>",
+    "descriptionRaw": "This round, grow all allies' Power and Health to the number of other spells you've played this game. ",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "The currents and tides around Bilgewater are rightly feared for their strength and sudden turns. But no sailor knows the true power within those waters.",
@@ -4165,7 +3895,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4177,12 +3906,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW059.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW059-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW059.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW059-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4210,7 +3937,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4222,12 +3948,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW023.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW023-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW023.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW023-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4255,7 +3979,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4267,12 +3990,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW031.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW031-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW031.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW031-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4300,7 +4021,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4312,12 +4032,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW029.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW029-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW029.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW029-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4331,7 +4049,7 @@
     "descriptionRaw": "Toss 2.\r\nDraw 2.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
-    "flavorText": "Flotsam doesn't stay afloat for long. Any seafarer worth their salt has to be able to quickly discern valuable cargo from common junk before all's lost to the deep.",
+    "flavorText": "Flotsam doesn't stay afloat for long. Any seafarer worth their salt has to be able to quickly discern valuable cargo from common junk...",
     "artistName": "Kudos Productions",
     "name": "Salvage",
     "cardCode": "02BW029",
@@ -4345,7 +4063,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4357,12 +4074,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW049.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW049-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW049.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW049-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4390,7 +4105,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4402,12 +4116,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW001-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4435,7 +4147,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4447,12 +4158,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW063.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW063-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW063.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW063-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4480,7 +4189,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4492,12 +4200,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW045.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW045-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW045.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW045-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4507,8 +4213,8 @@
     "attack": 0,
     "cost": 2,
     "health": 0,
-    "description": "Deal 1 three times among different randomly targeted enemies and the enemy Nexus.",
-    "descriptionRaw": "Deal 1 three times among different randomly targeted enemies and the enemy Nexus.",
+    "description": "Deal 1 to three different randomly targeted enemies or the enemy Nexus.",
+    "descriptionRaw": "Deal 1 to three different randomly targeted enemies or the enemy Nexus.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"Guns blazin'!\" - Miss Fortune",
@@ -4525,7 +4231,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4537,12 +4242,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW020.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW020-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW020.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW020-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4570,7 +4273,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4582,12 +4284,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW044.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW044-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW044.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW044-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4615,7 +4315,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4627,12 +4326,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW062.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02BW062-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW062.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02BW062-full.png"
       }
     ],
-    "region": "Bilgewater",
-    "regionRef": "Bilgewater",
     "regions": [
       "Bilgewater"
     ],
@@ -4660,7 +4357,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4672,12 +4368,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR009-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4705,7 +4399,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4717,12 +4410,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR004-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4750,7 +4441,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4765,12 +4455,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4798,7 +4486,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -4810,12 +4497,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR001-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4839,7 +4524,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4853,12 +4537,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR005-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4882,7 +4564,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4896,12 +4577,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR005T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR005T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR005T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR005T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4931,7 +4610,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -4943,12 +4621,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR010-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -4976,7 +4652,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -4991,12 +4666,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR008-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5020,7 +4693,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5035,12 +4707,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002T1-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5068,7 +4738,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -5083,12 +4752,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR002T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR002T3-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5116,7 +4783,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -5128,12 +4794,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR007-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5161,7 +4825,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5173,12 +4836,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR006-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5208,7 +4869,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5222,12 +4882,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02FR003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02FR003-full.png"
       }
     ],
-    "region": "Freljord",
-    "regionRef": "Freljord",
     "regions": [
       "Freljord"
     ],
@@ -5255,7 +4913,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5269,12 +4926,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX001-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5302,7 +4957,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5317,12 +4971,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5350,7 +5002,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -5365,12 +5016,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007T2-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5398,7 +5047,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -5413,12 +5061,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX007T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX007T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5446,7 +5092,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -5458,12 +5103,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX006-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5487,7 +5130,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5499,12 +5141,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX002-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5528,7 +5168,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5540,12 +5179,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX009-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5573,7 +5210,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5587,12 +5223,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX004-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5601,7 +5235,7 @@
     ],
     "attack": 2,
     "cost": 2,
-    "health": 3,
+    "health": 2,
     "description": "<link=keyword.PlaySkillMark><sprite name=SkillMark><style=Keyword>Play</style></link>: Deal 1 to an ally to deal 2 to the enemy Nexus.",
     "descriptionRaw": "Play: Deal 1 to an ally to deal 2 to the enemy Nexus.",
     "levelupDescription": "",
@@ -5616,7 +5250,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5628,12 +5261,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX003-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5661,7 +5292,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5673,12 +5303,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX010-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5706,7 +5334,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5718,12 +5345,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX004T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX004T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX004T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX004T1-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5751,7 +5376,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -5763,12 +5387,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX008-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5796,7 +5418,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -5808,12 +5429,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02NX005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02NX005-full.png"
       }
     ],
-    "region": "Noxus",
-    "regionRef": "Noxus",
     "regions": [
       "Noxus"
     ],
@@ -5841,7 +5460,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5853,12 +5471,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE003-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -5882,7 +5498,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5894,12 +5509,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE008-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -5927,7 +5540,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -5939,12 +5551,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE004-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -5974,7 +5584,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "ELITE",
     "subtypes": [
       "ELITE"
     ],
@@ -5992,12 +5601,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6025,7 +5632,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6041,12 +5647,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T3-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6074,7 +5678,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -6086,12 +5689,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T2-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6121,7 +5722,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6137,12 +5737,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE006T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE006T1-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6170,7 +5768,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6184,12 +5781,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE009-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6219,7 +5814,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "YORDLE",
     "subtypes": [
       "YORDLE"
     ],
@@ -6233,12 +5827,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE005-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6266,7 +5858,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6280,12 +5871,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE002-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6313,7 +5902,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6325,12 +5913,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE010-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6360,7 +5946,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6372,12 +5957,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE007-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6405,7 +5988,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6417,12 +5999,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02DE001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02DE001-full.png"
       }
     ],
-    "region": "Demacia",
-    "regionRef": "Demacia",
     "regions": [
       "Demacia"
     ],
@@ -6450,7 +6030,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6462,12 +6041,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI005-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6495,7 +6072,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -6507,12 +6083,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI010-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6540,7 +6114,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6556,12 +6129,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6571,8 +6142,8 @@
     "attack": 1,
     "cost": 4,
     "health": 4,
-    "description": "Each round, the first time you play another ally, <link=vocab.Toss><style=Vocab>Toss</style></link> 2 and summon a <link=card.summon><style=AssociatedCard>Sapling</style></link>.",
-    "descriptionRaw": "Each round, the first time you play another ally, Toss 2 and summon a Sapling.",
+    "description": "Each round, the first time you summon another ally, <link=vocab.Toss><style=Vocab>Toss</style></link> 2 and summon a <link=card.summon><style=AssociatedCard>Sapling</style></link>.",
+    "descriptionRaw": "Each round, the first time you summon another ally, Toss 2 and summon a Sapling.",
     "levelupDescription": "Your units have died or your cards have been <link=vocab.Toss><style=Vocab>Tossed</style></link> 25 times.<style=Variable></style>",
     "levelupDescriptionRaw": "Your units have died or your cards have been Tossed 25 times.",
     "flavorText": "These cursed lands would not break Maokai. The treant's commitment ran too deep, and his fury burned too bright, for anything to stand in his way.",
@@ -6585,7 +6156,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6597,12 +6167,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T3-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6632,7 +6200,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6648,12 +6215,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T1-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6681,7 +6246,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -6697,12 +6261,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T2.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI008T2-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T2.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI008T2-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6730,7 +6292,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -6742,12 +6303,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI007-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6775,7 +6334,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6787,12 +6345,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI003-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6820,7 +6376,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "SEA MONSTER",
     "subtypes": [
       "SEA MONSTER"
     ],
@@ -6834,12 +6389,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI001-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6863,7 +6416,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6885,12 +6437,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI002-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6914,7 +6464,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6928,12 +6477,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI004-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6957,7 +6504,6 @@
     "spellSpeedRef": "",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -6969,12 +6515,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI006-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -6998,7 +6542,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7012,12 +6555,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02SI009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02SI009-full.png"
       }
     ],
-    "region": "Shadow Isles",
-    "regionRef": "ShadowIsles",
     "regions": [
       "Shadow Isles"
     ],
@@ -7045,7 +6586,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7059,12 +6599,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO008.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO008-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO008.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO008-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7092,7 +6630,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7104,12 +6641,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO008T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO008T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO008T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO008T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7139,7 +6674,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7153,12 +6687,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO005T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO005T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO005T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO005T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7182,7 +6714,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7196,12 +6727,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO002.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO002-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO002.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO002-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7225,7 +6754,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7239,12 +6767,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO002T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO002T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO002T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO002T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7263,16 +6789,15 @@
     "name": "Dragon's Protection",
     "cardCode": "02IO002T1",
     "keywords": [
-      "Slow"
+      "Focus"
     ],
     "keywordRefs": [
-      "Slow"
+      "Focus"
     ],
-    "spellSpeed": "Slow",
-    "spellSpeedRef": "Slow",
+    "spellSpeed": "Burst",
+    "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7289,12 +6814,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7304,10 +6827,10 @@
     "attack": 3,
     "cost": 5,
     "health": 5,
-    "description": "When you cast a spell, give me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link> this round.\r\nIf you cast another, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.",
-    "descriptionRaw": "When you cast a spell, give me Challenger this round.\r\nIf you cast another, give me Barrier this round.",
-    "levelupDescription": "You've cast 8+ spells<style=Variable></style>.",
-    "levelupDescriptionRaw": "You've cast 8+ spells.",
+    "description": "When you play a spell, give me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link> this round.\r\nIf you play another, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.",
+    "descriptionRaw": "When you play a spell, give me Challenger this round.\r\nIf you play another, give me Barrier this round.",
+    "levelupDescription": "You've played 8+ spells<style=Variable></style>.",
+    "levelupDescriptionRaw": "You've played 8+ spells.",
     "flavorText": "\"The Dragon aids the worthy. To the weary, it gives vigor. To the sick, comfort. To the lost, light. To the shaken, balance...\"",
     "artistName": "SIXMOREVODKA",
     "name": "Lee Sin",
@@ -7322,7 +6845,6 @@
     "spellSpeedRef": "",
     "rarity": "Champion",
     "rarityRef": "Champion",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -7338,12 +6860,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO011.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO011-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO011.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO011-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7371,7 +6891,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Spell",
@@ -7388,12 +6907,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7403,8 +6920,8 @@
     "attack": 4,
     "cost": 5,
     "health": 6,
-    "description": "When you cast a spell, give me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link> this round.\r\nIf you cast another, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.\r\nI <link=card.attackSpell><style=AssociatedCard>Dragon's Rage</style></link> enemies that I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link>.",
-    "descriptionRaw": "When you cast a spell, give me Challenger this round.\r\nIf you cast another, give me Barrier this round.\r\nI Dragon's Rage enemies that I Challenge.",
+    "description": "When you play a spell, give me <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenger</style></link> this round.\r\nIf you play another, give me <link=keyword.Barrier><sprite name=Barrier><style=Keyword>Barrier</style></link> this round.\r\nI <link=card.attackSpell><style=AssociatedCard>Dragon's Rage</style></link> enemies that I <link=keyword.Challenger><sprite name=Challenger><style=Keyword>Challenge</style></link>.",
+    "descriptionRaw": "When you play a spell, give me Challenger this round.\r\nIf you play another, give me Barrier this round.\r\nI Dragon's Rage enemies that I Challenge.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"...But for the tyrant, the Dragon breathes fire.\"",
@@ -7421,7 +6938,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "Champion",
     "type": "Unit",
@@ -7433,12 +6949,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006T3.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO006T3-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006T3.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO006T3-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7466,7 +6980,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Ability",
@@ -7478,12 +6991,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO004.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO004-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO004.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO004-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7511,7 +7022,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7525,12 +7035,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO003.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO003-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO003.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO003-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7540,8 +7048,8 @@
     "attack": 1,
     "cost": 2,
     "health": 3,
-    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Summon a <link=card.summon><style=AssociatedCard>Dragonling</style></link> if you cast 2+ spells last round<style=Variable></style>.",
-    "descriptionRaw": "Round Start: Summon a Dragonling if you cast 2+ spells last round.",
+    "description": "<link=vocab.RoundStart><style=Vocab>Round Start</style></link>: Summon a <link=card.summon><style=AssociatedCard>Dragonling</style></link> if you played 2+ spells last round<style=Variable></style>.",
+    "descriptionRaw": "Round Start: Summon a Dragonling if you played 2+ spells last round.",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "\"A student must think with clarity, for the Dragon draws the sun across our skies, and reveals the world around us.\"\n- Teachings of the Dragon",
@@ -7558,7 +7066,6 @@
     "spellSpeedRef": "",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7570,12 +7077,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO001.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO001-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO001.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO001-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7599,7 +7104,6 @@
     "spellSpeedRef": "",
     "rarity": "COMMON",
     "rarityRef": "Common",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Unit",
@@ -7611,12 +7115,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO003T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO003T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO003T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO003T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7646,7 +7148,6 @@
     "spellSpeedRef": "",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "DRAGON",
     "subtypes": [
       "DRAGON"
     ],
@@ -7662,12 +7163,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO005.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO005-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO005.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO005-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7695,7 +7194,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7709,12 +7207,10 @@
     ],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO010.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO010-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO010.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO010-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7742,7 +7238,6 @@
     "spellSpeedRef": "Fast",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7754,12 +7249,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO007.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO007-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO007.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO007-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7787,7 +7280,6 @@
     "spellSpeedRef": "Slow",
     "rarity": "EPIC",
     "rarityRef": "Epic",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7799,12 +7291,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO010T1.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO010T1-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO010T1.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO010T1-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7834,7 +7324,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "None",
     "rarityRef": "None",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",
@@ -7846,12 +7335,10 @@
     "associatedCardRefs": [],
     "assets": [
       {
-        "gameAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO009.png",
-        "fullAbsolutePath": "http://dd.b.pvp.net/2_18_0/set2/en_us/img/cards/02IO009-full.png"
+        "gameAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO009.png",
+        "fullAbsolutePath": "http://dd.b.pvp.net/3_8_0/set2/en_us/img/cards/02IO009-full.png"
       }
     ],
-    "region": "Ionia",
-    "regionRef": "Ionia",
     "regions": [
       "Ionia"
     ],
@@ -7861,8 +7348,8 @@
     "attack": 0,
     "cost": 5,
     "health": 0,
-    "description": "Costs 2 less if you cast 2+ spells last round.\r\nDraw 2 other spells.\r\n",
-    "descriptionRaw": "Costs 2 less if you cast 2+ spells last round.\r\nDraw 2 other spells.\r\n",
+    "description": "Costs 2 less if you played 2+ spells last round.\r\nDraw 2 other spells.\r\n",
+    "descriptionRaw": "Costs 2 less if you played 2+ spells last round.\r\nDraw 2 other spells.\r\n",
     "levelupDescription": "",
     "levelupDescriptionRaw": "",
     "flavorText": "Meditation is a journey with no destination--a path that can only be followed by getting lost along the way.",
@@ -7879,7 +7366,6 @@
     "spellSpeedRef": "Burst",
     "rarity": "RARE",
     "rarityRef": "Rare",
-    "subtype": "",
     "subtypes": [],
     "supertype": "",
     "type": "Spell",

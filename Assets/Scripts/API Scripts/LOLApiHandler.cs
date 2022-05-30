@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Text.RegularExpressions;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using TMPro;
@@ -11,18 +10,14 @@ using System.Globalization;
 
 [System.Serializable] public class UnityStringEvent : UnityEvent<string> { }
 
-public class LOLApiHandler : MonoBehaviour
+public class LOLAPIHandler : MonoBehaviour
 {
 	[SerializeField] private StringPairVariable championNameReplacer;
-	[SerializeField] private TextAsset championJSONAsset;
-	[SerializeField] string activeChampion;
+	private TextAsset championJSONAsset;
+	private string activeChampion;
 	public string p, q, w, e, r;
 	public List<string> skins;
 	public List<int> skinID;
-
-	[Header("Scene Input Modifying")]
-	[SerializeField] private string cardCodeDefaultText = "Untitled: 1 Mana Runeterra Follower";
-	[SerializeField] private TextMeshProUGUI cardCodeText;
 
 	[Header("Skin Dropdown Buttons")]
 	[SerializeField] private Transform skinContent;
@@ -60,10 +55,10 @@ public class LOLApiHandler : MonoBehaviour
 
 	public async Task<string> GetWebText(string url)
 	{
-		using (UnityWebRequest www = UnityWebRequest.Get(url))
+		using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
 		{
 			// Send URL Request
-			var asyncOp = www.SendWebRequest();
+			var asyncOp = webRequest.SendWebRequest();
 
 			// Await until it's done: 
 			while (asyncOp.isDone == false)
@@ -72,17 +67,16 @@ public class LOLApiHandler : MonoBehaviour
 			}
 
 			// Read Results:
-			if (www.isNetworkError || www.isHttpError)
+			if (webRequest.isNetworkError || webRequest.isHttpError)
 			{
-				// Log Error:
+				// Log Error && Exit:
 
-				// Exit
 				return null;
 			}
 			else
 			{
 				// Else Return if Valid:
-				return www.downloadHandler.text;
+				return webRequest.downloadHandler.text;
 			}
 		}
 	}

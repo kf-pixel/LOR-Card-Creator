@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RightClick",
+                    "name": "AltClick",
                     "type": "PassThrough",
                     "id": "21a0511d-1945-41ff-8d5b-c3af643aeb89",
                     "expectedControlType": "Button",
@@ -52,21 +52,21 @@
                 },
                 {
                     "name": "Shift",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "01a18593-0844-486a-8155-4168a3dfa588",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Ctrl",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "cc6369eb-cdf3-4a36-be78-581da4c5f4e3",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Enter",
@@ -210,7 +210,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "RightClick",
+                    "action": "AltClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -221,9 +221,75 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Touch",
-                    "action": "RightClick",
+                    "action": "AltClick",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Shift Left Click",
+                    "id": "b543b7e1-c72d-4920-88af-ebaaedd35dbf",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AltClick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "5ff6423a-3af3-4563-af16-5cc15faffa29",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AltClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "a06ce147-7e50-4391-940a-6db19119fc29",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AltClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Ctrl Left Click",
+                    "id": "41ef66f0-8602-4744-92f0-5bb7b1ae9835",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AltClick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "bf644fb0-6349-4800-aaca-88be618d5b41",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AltClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "7931171a-350a-4f85-bdfa-2518ce27ac39",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AltClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",

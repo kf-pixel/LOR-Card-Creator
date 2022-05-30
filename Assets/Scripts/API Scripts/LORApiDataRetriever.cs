@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace LORAPI
 {
-	public class LORApiDataRetriever : MonoBehaviour
+	public class LORAPIDataRetriever : MonoBehaviour
 	{
-		private LORApiHandler lor;
+		private LORAPIHandler lor;
 		public List<CardCondition> searchConditions;
 		public CardDataType resultData;
 		public CardResultType resultType;
@@ -163,7 +163,7 @@ namespace LORAPI
 
 		private void Awake()
 		{
-			lor = FindObjectOfType<LORApiHandler>();
+			lor = FindObjectOfType<LORAPIHandler>();
 		}
 
 		[ContextMenu("Get Data")]

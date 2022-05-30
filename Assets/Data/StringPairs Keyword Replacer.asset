@@ -73,8 +73,8 @@ MonoBehaviour:
     replacedString: Allegiance
     matchCase: 0
     matchExactOnly: 0
-  - inputString: Obliterate
-    replacedString: Obliterate
+  - inputString: Obliterat
+    replacedString: Obliterat
     matchCase: 0
     matchExactOnly: 0
   - inputString: Strongest
@@ -281,6 +281,10 @@ MonoBehaviour:
     replacedString: Countdown
     matchCase: 0
     matchExactOnly: 0
+  - inputString: advances
+    replacedString: advances
+    matchCase: 1
+    matchExactOnly: 0
   - inputString: advance
     replacedString: advance
     matchCase: 1
@@ -291,11 +295,7 @@ MonoBehaviour:
     matchExactOnly: 0
   - inputString: slay
     replacedString: slay
-    matchCase: 1
-    matchExactOnly: 0
-  - inputString: slays
-    replacedString: slays
-    matchCase: 1
+    matchCase: 0
     matchExactOnly: 0
   - inputString: slain
     replacedString: slain
@@ -355,5 +355,13 @@ MonoBehaviour:
     matchExactOnly: 0
   - inputString: fermiderber
     replacedString: <sprite name="fermiderber">Fermiderber
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: Spawn
+    replacedString: Spawn
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: 'Origin:'
+    replacedString: 'Origin:'
     matchCase: 0
     matchExactOnly: 0

@@ -8,9 +8,16 @@ using TMPro;
 using System.Text.RegularExpressions;
 using System.Linq;
 
-public class LORApiHandler : MonoBehaviour
+public class LORAPIHandler : MonoBehaviour
 {
+	[Header("Settings")]
 	[SerializeField] private TextAsset[] setsJSON;
+	[SerializeField] private bool webVersion;
+	[SerializeField] private bool getImage = true;
+	[SerializeField] private bool getText = true;
+	private bool apiEnabled;
+
+	[Header("Components")]
 	[SerializeField] private CardCode code;
 	[SerializeField] private FileUpload imageUploader;
 	[SerializeField] private ListManager listManager;
@@ -20,13 +27,6 @@ public class LORApiHandler : MonoBehaviour
 	[SerializeField] private GameObject loadSetWarningGameObject;
 	private UnityAction<string> submitAction;
 	[HideInInspector] public LORCardSet allCards = new LORCardSet();
-
-	[Header("Settings")]
-	[SerializeField] private bool webVersion;
-	[SerializeField] private bool getImage = true;
-	[SerializeField] private bool getText = true;
-	private bool apiEnabled;
-
 
 	[Header("Input Fields")]
 	[SerializeField] private TMP_InputField manaF;
@@ -39,12 +39,10 @@ public class LORApiHandler : MonoBehaviour
 	[SerializeField] private Slider artworkScaleSlider;
 	[SerializeField] private RectTransform[] artworkRectTransforms;
 
-
 	[Header("Scriptable Object Data")]
 	[SerializeField] private IntVariable cardType;
 	[SerializeField] private IntVariable region, region2;
 	[SerializeField] private IntVariable rarity;
-
 	[SerializeField] private StringVariable mana;
 	[SerializeField] private StringVariable attack;
 	[SerializeField] private StringVariable health;
@@ -301,17 +299,32 @@ public class LORApiHandler : MonoBehaviour
 		manaF.text = cardData.cost.ToString();
 		titleF.text = cardData.name;
 
-		// get blue colored text from description, add to rawdescription
-		MatchCollection blueMatches = Regex.Matches(cardData.description, bluePattern);
+		// get blue text from description, add to rawdescription
+		MatchCollection blueTexts = Regex.Matches(cardData.description, bluePattern);
 		string cardDesc = cardData.descriptionRaw;
-		if (blueMatches.Count > 0)
+		if (blueTexts.Count > 0)
 		{
-			foreach (Match m in blueMatches)
+			foreach (Match m in blueTexts)
 			{
 				cardDesc = cardDesc.Replace(m.Value, $"[{m.Value}]");
 			}
 		}
 		cardTextF.text = cardDesc;
+
+		// get blue level up text
+		if (!string.IsNullOrEmpty(cardData.levelupDescriptionRaw))
+		{
+			MatchCollection blueLevelUpTexts = Regex.Matches(cardData.levelupDescription, bluePattern);
+			string cardLevelUpDesc = cardData.levelupDescriptionRaw;
+			if (blueLevelUpTexts.Count > 0)
+			{
+				foreach (Match ml in blueLevelUpTexts)
+				{
+					cardLevelUpDesc = cardLevelUpDesc.Replace(ml.Value, $"[{ml.Value}]");
+				}
+			}
+			levelUpTextF.text = cardLevelUpDesc;
+		}
 
 		// subtype finding
 		if (string.IsNullOrEmpty(cardData.subtype))
@@ -326,10 +339,10 @@ public class LORApiHandler : MonoBehaviour
 		// region
 		if (cardData.regions.Count > 0)
 		{
-			string cardRegion1 = cardData.regions[0].Replace(" ", "");
+			string cardRegion1 = cardData.regionRefs[0];
 			for (int i = 0; i < regionsList.values.Count; i++)
 			{
-				if (regionsList.values[i].name.StartsWith(cardRegion1))
+				if (regionsList.values[i].name.EndsWith(cardRegion1))
 				{
 					region.value = i;
 					break;
@@ -339,10 +352,10 @@ public class LORApiHandler : MonoBehaviour
 			// dual region
 			if (cardData.regions.Count > 1)
 			{
-				string cardRegion2 = cardData.regions[1].Replace(" ", "");
+				string cardRegion2 = cardData.regionRefs[1];
 				for (int i2 = 0; i2 < regionsList.values.Count; i2++)
 				{
-					if (regionsList.values[i2].name.StartsWith(cardRegion2))
+					if (regionsList.values[i2].name.EndsWith(cardRegion2))
 					{
 						region2.value = i2;
 						break;
@@ -361,7 +374,7 @@ public class LORApiHandler : MonoBehaviour
 		{
 			if (cardRarity == "COMMON") rarity.value = 1;
 			else if (cardRarity == "RARE") rarity.value = 2;
-			else rarity.value = 2;
+			else rarity.value = 3;
 		}
 
 		// card type sorting
@@ -376,11 +389,6 @@ public class LORApiHandler : MonoBehaviour
 				if (championTokenNumber == 0) cardType.value = 1;
 				else if (championTokenNumber == 1) cardType.value = 2;
 				else cardType.value = 8;
-
-				if (!string.IsNullOrEmpty(cardData.levelupDescriptionRaw))
-				{
-					levelUpTextF.text = cardData.levelupDescriptionRaw;
-				}
 			}
 			else cardType.value = 0;
 		}
@@ -415,6 +423,12 @@ public class LORApiHandler : MonoBehaviour
 					break;
 				}
 			}
+		}
+
+		// Skill mark adding (on string start only)
+		if (cardData.description.StartsWith("<link=keyword.AttackSkillMark>") || cardData.description.StartsWith("<link=keyword.PlaySkillMark>"))
+		{
+			cardTextF.text = $"@{cardTextF.text}";
 		}
 
 		StartCoroutine(RefreshEvents());
