@@ -1,8 +1,8 @@
 ﻿using System.Collections;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Text.RegularExpressions;
 
 public class TextUpdater : MonoBehaviour
 {
@@ -68,17 +68,27 @@ public class TextUpdater : MonoBehaviour
 		inputTMP.text = inputTMP.text.Replace("`", "<br>");
 
 		// [] and {} tags
+		// alt [] text w/o formatting
+		if (inputTMP.text.Contains("[[") && inputTMP.text.Contains("]]"))
+		{
+			inputTMP.text = inputTMP.text.Replace("[[", "<color=#49a0f8>");
+			inputTMP.text = inputTMP.text.Replace("]]", "</color>");
+		}
+
 		if (inputTMP.text.Contains("[") && inputTMP.text.Contains("]"))
 		{
-			inputTMP.text = inputTMP.text.Replace("[", "<style=Card>");
-			inputTMP.text = inputTMP.text.Replace("]", "</STYLE>");
+			//inputTMP.text = inputTMP.text.Replace("[", "<style=Card>");
+			//inputTMP.text = inputTMP.text.Replace("]", "</STYLE>");
 		}
 
 		if (inputTMP.text.Contains("{") && inputTMP.text.Contains("}"))
 		{
 			inputTMP.text = inputTMP.text.Replace("{", "<style=Keyword>");
-			inputTMP.text = inputTMP.text.Replace("}", "</color>");
+			inputTMP.text = inputTMP.text.Replace("}", "</style>");
 		}
+
+
+
 
 		// double slash break
 		inputTMP.text = inputTMP.text.Replace("//", "<b></b>");
@@ -107,6 +117,12 @@ public class TextUpdater : MonoBehaviour
 		tmp.text = tmp.text.Replace("`", "<br>");
 
 		// [] and {} tags
+		// alt [] text w/o formatting
+		if (tmp.text.Contains("[[") && tmp.text.Contains("]]"))
+		{
+			tmp.text = tmp.text.Replace("[[", "<color=#49a0f8>");
+			tmp.text = tmp.text.Replace("]]", "</color>");
+		}
 		if (tmp.text.Contains("[") && tmp.text.Contains("]"))
 		{
 			tmp.text = tmp.text.Replace("[", "<style=Card>");
@@ -116,7 +132,7 @@ public class TextUpdater : MonoBehaviour
 		if (tmp.text.Contains("{") && tmp.text.Contains("}"))
 		{
 			tmp.text = tmp.text.Replace("{", "<style=Keyword>");
-			tmp.text = tmp.text.Replace("}", "</color>");
+			tmp.text = tmp.text.Replace("}", "</style>");
 		}
 
 		// double slash break

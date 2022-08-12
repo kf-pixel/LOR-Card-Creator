@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using LORAPI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using LORAPI;
-using TMPro;
-using System.Text.RegularExpressions;
-using System.Linq;
 
 public class LORAPIHandler : MonoBehaviour
 {
@@ -326,16 +326,6 @@ public class LORAPIHandler : MonoBehaviour
 			levelUpTextF.text = cardLevelUpDesc;
 		}
 
-		// subtype finding
-		if (string.IsNullOrEmpty(cardData.subtype))
-		{
-			groupF.text = cardData.subtype;
-		}
-		else if (cardData.subtypes.Count > 0)
-		{
-			groupF.text = cardData.subtypes[0];
-		}
-
 		// region
 		if (cardData.regions.Count > 0)
 		{
@@ -409,6 +399,12 @@ public class LORAPIHandler : MonoBehaviour
 		{
 			cardType.value = 7;
 			if (getImage && (apiEnabled || webVersion)) artworkScaleSlider.value = 1200;
+		}
+
+		// subtype finding
+		if (cardData.subtypes.Count > 0)
+		{
+			groupF.text = cardData.subtypes[0];
 		}
 
 		// Keywords adding

@@ -14,12 +14,12 @@ public class ControlSubtype : MonoBehaviour
 
 	public void HideOrShow()
 	{
-		if (tmp.text.Length == 0)
+		if (string.IsNullOrEmpty(tmp.text))
 		{
 			img.enabled = false;
 			tmp.enabled = false;
 		}
-		else if (tmp.text.Length > 0)
+		else
 		{
 			img.enabled = true;
 			tmp.enabled = true;

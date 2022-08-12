@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro;
 
 public class HoverUIElement : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -13,6 +13,7 @@ public class HoverUIElement : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	private Slider slider;
 	private Toggle toggle;
 	private TMP_Dropdown dropdown;
+	[SerializeField] private bool enablePressing = true; // for the upload button specifically
 
 	// Internal
 	private bool hovering;
@@ -192,10 +193,9 @@ public class HoverUIElement : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		if (!enablePressing) return;
 		PressedHighlights();
 		pressing = true;
-
-		
 	}
 
 	public void OnPointerUp(PointerEventData eventData)

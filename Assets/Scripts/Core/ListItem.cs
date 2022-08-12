@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using TMPro;
 
 public class ListItem : MonoBehaviour, IPointerDownHandler
 {
@@ -44,11 +44,11 @@ public class ListItem : MonoBehaviour, IPointerDownHandler
 		}
 		else if (cardTypeIndex == 2)
 		{
-			colorTypeAppend = "<color=#f4d853>";
+			colorTypeAppend = "<color=#e3c729>";
 		}
 		else if (cardTypeIndex == 8)
 		{
-			colorTypeAppend = "<color=#f9b50d>";
+			colorTypeAppend = "<color=#ebe309>";
 		}
 		else if (cardTypeIndex == 0)
 		{

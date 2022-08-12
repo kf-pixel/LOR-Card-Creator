@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &6547879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6142678855397118417, guid: 93655e7324ecadd42ad7c31bdd2c612c,
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &10368226
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &28519347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &51369008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,8 +4210,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287682033
-  m_fontColor: {r: 0.9433962, g: 0.83532524, b: 0.56514776, a: 1}
+    rgba: 4280928227
+  m_fontColor: {r: 0.8901961, g: 0.78039217, b: 0.16078432, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4514,6 +4518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &119614121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5222,6 +5227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &137180049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5571,6 +5577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &149368147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5792,6 +5799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &150144724
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,6 +7067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: d5fe6a396f9b1b74ba59a355cb8d5e46, type: 2}
+  enablePressing: 1
 --- !u!1 &173346898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7406,6 +7415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: d5fe6a396f9b1b74ba59a355cb8d5e46, type: 2}
+  enablePressing: 1
 --- !u!1 &177412268
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,6 +7637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &178997302
 GameObject:
   m_ObjectHideFlags: 0
@@ -8414,6 +8425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &207881757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9393,6 +9405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &231730423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9984,6 +9997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &240172662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10406,6 +10420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &249673620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10621,6 +10636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &254275384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12533,6 +12549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &269120778
 GameObject:
   m_ObjectHideFlags: 0
@@ -12646,6 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &269120784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13286,6 +13304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &289878687
 GameObject:
   m_ObjectHideFlags: 0
@@ -13418,6 +13437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &295865019
 GameObject:
   m_ObjectHideFlags: 0
@@ -14021,6 +14041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &312042526
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14989,6 +15010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &360006941
 GameObject:
   m_ObjectHideFlags: 0
@@ -15872,6 +15894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &403523030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16162,6 +16185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &420524232 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5014518741739385705, guid: d51a2ea5f9fc51d4dae27735a997167f,
@@ -16530,6 +16554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &440303336
 GameObject:
   m_ObjectHideFlags: 0
@@ -19089,6 +19114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &526449419 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8970138931214239695, guid: b01e498fb1c1f3649bc84ca07132c70b,
@@ -20167,6 +20193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &548534537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20674,6 +20701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &568961207
 GameObject:
   m_ObjectHideFlags: 0
@@ -21734,6 +21762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &610809574
 GameObject:
   m_ObjectHideFlags: 0
@@ -22256,6 +22285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &623925015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22619,6 +22649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1001 &632293705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24097,6 +24128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &640451589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24494,6 +24526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &651937919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29402,6 +29435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &760043931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29874,6 +29908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &788168473
 GameObject:
   m_ObjectHideFlags: 0
@@ -30153,6 +30188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &801172894
 GameObject:
   m_ObjectHideFlags: 0
@@ -32099,6 +32135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &853594510
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32423,6 +32460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &857130027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33312,6 +33350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &877702552
 GameObject:
   m_ObjectHideFlags: 0
@@ -33542,6 +33581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: d5fe6a396f9b1b74ba59a355cb8d5e46, type: 2}
+  enablePressing: 1
 --- !u!1 &879014028
 GameObject:
   m_ObjectHideFlags: 0
@@ -33902,6 +33942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &884534498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34847,6 +34888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &931428830
 GameObject:
   m_ObjectHideFlags: 0
@@ -35070,6 +35112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &933159115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35527,6 +35570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &956013687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35924,6 +35968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &966272520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37573,6 +37618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1020025156
 GameObject:
   m_ObjectHideFlags: 0
@@ -38072,6 +38118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &1047940736 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4492615927982398948, guid: b01e498fb1c1f3649bc84ca07132c70b,
@@ -38331,6 +38378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &1053640044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38614,6 +38662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &1063935769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38902,6 +38951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &1085602606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4766127507820005082, guid: 942953c8a04193b44870c8df8dd48042,
@@ -39723,6 +39773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1090029782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39799,140 +39850,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
---- !u!1 &1091434799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1091434800}
-  - component: {fileID: 1091434802}
-  - component: {fileID: 1091434801}
-  m_Layer: 5
-  m_Name: Upload and Drag Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1091434800
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091434799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1812927321}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1091434801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091434799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "<b>UPLOAD ART</b>\n or drag image inside window"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8cffec9222e799945961e6c69b769de6, type: 2}
-  m_sharedMaterial: {fileID: 3800437516680586232, guid: 8cffec9222e799945961e6c69b769de6,
-    type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4143972351
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.9647059}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
-  m_characterSpacing: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1091434802
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091434799}
-  m_CullTransparentMesh: 0
 --- !u!1 &1094530712
 GameObject:
   m_ObjectHideFlags: 0
@@ -40810,6 +40727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: d5fe6a396f9b1b74ba59a355cb8d5e46, type: 2}
+  enablePressing: 1
 --- !u!1 &1160415802
 GameObject:
   m_ObjectHideFlags: 0
@@ -41357,7 +41275,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 139108067}
+      - m_Target: {fileID: 1527939760}
         m_MethodName: set_isOn
         m_Mode: 6
         m_Arguments:
@@ -41412,6 +41330,17 @@ MonoBehaviour:
           m_StringArgument: Trap
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2052351542}
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1173016971}
@@ -41425,7 +41354,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 139108067}
+      - m_Target: {fileID: 1527939760}
         m_MethodName: set_isOn
         m_Mode: 6
         m_Arguments:
@@ -41478,6 +41407,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Boon
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2052351542}
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
   - m_PersistentCalls:
@@ -41659,6 +41599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &1175781122
 GameObject:
   m_ObjectHideFlags: 0
@@ -41833,6 +41774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1178153962
 GameObject:
   m_ObjectHideFlags: 0
@@ -42782,6 +42724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1181460972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43005,6 +42948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &1183818496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43297,6 +43241,7 @@ GameObject:
   - component: {fileID: 1192740733}
   - component: {fileID: 1192740732}
   - component: {fileID: 1192740731}
+  - component: {fileID: 1192740736}
   m_Layer: 5
   m_Name: SPELL Subtype
   m_TagString: Untagged
@@ -43435,6 +43380,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192740729}
   m_CullTransparentMesh: 0
+--- !u!114 &1192740736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192740729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6165a9395a1f2a4597a7d118a81dbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a00ddcdacf5f1b146951ff838c730657, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1192740732}
+        m_MethodName: HideOrShow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1193111108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45311,6 +45283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &1250481761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45461,6 +45434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1252537097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45768,6 +45742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1262998895
 GameObject:
   m_ObjectHideFlags: 0
@@ -46023,6 +45998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1264387963
 GameObject:
   m_ObjectHideFlags: 0
@@ -46626,6 +46602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1271649215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48011,6 +47988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1306294591
 GameObject:
   m_ObjectHideFlags: 0
@@ -48298,6 +48276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1328309557
 GameObject:
   m_ObjectHideFlags: 0
@@ -48704,6 +48683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1333141360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49465,6 +49445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1387044141
 GameObject:
   m_ObjectHideFlags: 0
@@ -49770,8 +49751,10 @@ MonoBehaviour:
   - Common
   - Rare
   - Epic
-  - Champion
+  - ChampionLVL2
+  - ChampionLVL3
   - NonCollectable
+  - Champion
   listItemInstances: []
   uiSaveNameDisplay: {fileID: 1986922569}
   inputFieldCardData: {fileID: 5615975564146348938}
@@ -50481,6 +50464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1404110525
 GameObject:
   m_ObjectHideFlags: 0
@@ -50847,6 +50831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1408582871
 GameObject:
   m_ObjectHideFlags: 0
@@ -51676,6 +51661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1437968052
 GameObject:
   m_ObjectHideFlags: 0
@@ -52134,6 +52120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1474167278
 GameObject:
   m_ObjectHideFlags: 0
@@ -52750,6 +52737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: d5fe6a396f9b1b74ba59a355cb8d5e46, type: 2}
+  enablePressing: 1
 --- !u!1 &1500117193
 GameObject:
   m_ObjectHideFlags: 0
@@ -53631,6 +53619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &1527939757
 GameObject:
   m_ObjectHideFlags: 0
@@ -53852,6 +53841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &1532700282
 GameObject:
   m_ObjectHideFlags: 0
@@ -54289,6 +54279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1552492119
 GameObject:
   m_ObjectHideFlags: 0
@@ -54402,6 +54393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1552492125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54747,6 +54739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &1581144407
 GameObject:
   m_ObjectHideFlags: 0
@@ -55604,6 +55597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1624605088
 GameObject:
   m_ObjectHideFlags: 0
@@ -56276,6 +56270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1642602517
 GameObject:
   m_ObjectHideFlags: 0
@@ -57053,6 +57048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &1672172096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57312,6 +57308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1673395034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57575,6 +57572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1678194513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59006,9 +59004,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 1
+  m_characterSpacing: -2
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -59554,6 +59552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!114 &1746219282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60645,7 +60644,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1737903741}
-  - {fileID: 1091434800}
   m_Father: {fileID: 1297019881}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60669,26 +60667,15 @@ MonoBehaviour:
   editorStandaloneEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1737903740}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1737903742}
+        m_MethodName: set_text
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1091434799}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: <b>UPLOAD ART<size=9><br>or drag image inside window
           m_BoolArgument: 1
         m_CallState: 2
   webGLEvent:
@@ -60775,6 +60762,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1812927328}
+          m_MethodName: ResetHighlights
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1812927328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60788,6 +60786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 0
 --- !u!1 &1817152199
 GameObject:
   m_ObjectHideFlags: 0
@@ -61344,6 +61343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1836320418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63199,6 +63199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!114 &1890570755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63714,6 +63715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!114 &1898266047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64146,6 +64148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &1905451102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -64367,6 +64370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!222 &1914962503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -66084,6 +66088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1981459312
 GameObject:
   m_ObjectHideFlags: 0
@@ -66216,6 +66221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &1986922567
 GameObject:
   m_ObjectHideFlags: 0
@@ -67149,6 +67155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &2045474644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6142678855397118417, guid: 93655e7324ecadd42ad7c31bdd2c612c,
@@ -67250,6 +67257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &2046500273
 GameObject:
   m_ObjectHideFlags: 0
@@ -67434,6 +67442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 4b38186ac5765274eb28b5bc6a426e31, type: 2}
+  enablePressing: 1
 --- !u!222 &2046500279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68136,8 +68145,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287682033
-  m_fontColor: {r: 0.9433962, g: 0.83532524, b: 0.56514776, a: 1}
+    rgba: 4278838251
+  m_fontColor: {r: 0.92156863, g: 0.8901961, b: 0.03529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -68361,6 +68370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1 &2077235758
 GameObject:
   m_ObjectHideFlags: 0
@@ -68652,6 +68662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!114 &2082251778 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 554938419166422300, guid: d51a2ea5f9fc51d4dae27735a997167f,
@@ -69222,6 +69233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 2b06ee25235075f458be63ab9ba4de48, type: 2}
+  enablePressing: 1
 --- !u!222 &2101964970
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -69735,6 +69747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!1 &2120118751
 GameObject:
   m_ObjectHideFlags: 0
@@ -71592,6 +71605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!224 &15713634689359786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74307,6 +74321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!222 &1075191918335140905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74566,6 +74581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!222 &4766127506784887283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74925,6 +74941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1
 --- !u!222 &4766127507292010235
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -75412,6 +75429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!222 &5615975563883993188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -76109,6 +76127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: 25ed257e534c5e14da253016b90d0718, type: 2}
+  enablePressing: 1
 --- !u!1001 &6778468435386995783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76792,8 +76811,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ' hide spellspeed'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 88f93eb83740846438fd696c9e7debdf, type: 2}
-  m_sharedMaterial: {fileID: -9101055750749113232, guid: 88f93eb83740846438fd696c9e7debdf,
+  m_fontAsset: {fileID: 11400000, guid: 8cffec9222e799945961e6c69b769de6, type: 2}
+  m_sharedMaterial: {fileID: 3800437516680586232, guid: 8cffec9222e799945961e6c69b769de6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -76818,8 +76837,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 7
@@ -76828,7 +76847,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -3
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -77063,3 +77082,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   style: {fileID: 11400000, guid: fec87468289a3254e8573ce278e05b54, type: 2}
+  enablePressing: 1

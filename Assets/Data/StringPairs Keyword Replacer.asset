@@ -365,3 +365,11 @@ MonoBehaviour:
     replacedString: 'Origin:'
     matchCase: 0
     matchExactOnly: 0
+  - inputString: Evolve
+    replacedString: <sprite name="evolve">Evolve
+    matchCase: 0
+    matchExactOnly: 0
+  - inputString: Hallowed
+    replacedString: <sprite name="hallowed">Hallowed
+    matchCase: 0
+    matchExactOnly: 0

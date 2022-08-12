@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a92b25f83d49b9bc132d206b370281, type: 3}
-  m_Name: RarityList
+  m_Name: List_Rarity
   m_EditorClassIdentifier: 
   hashCode: 10260542
   material: {fileID: 5449950559682880404}
@@ -75,6 +75,18 @@ MonoBehaviour:
     m_Scale: 1
     m_Name: NonCollectable
     m_HashCode: 510923003
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 5
+    m_Scale: 1
+    m_Name: ChampionLVL2
+    m_HashCode: -812068485
+  - m_ElementType: 2
+    m_Unicode: 65534
+    m_GlyphIndex: 5
+    m_Scale: 1
+    m_Name: ChampionLVL3
+    m_HashCode: -812068486
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:

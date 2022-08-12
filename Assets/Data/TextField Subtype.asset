@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134c2ddb79b620141837b4eb0a0c6909, type: 3}
-  m_Name: TextField Group
+  m_Name: TextField Subtype
   m_EditorClassIdentifier: 
+  value: MOON WEAPON
+  setEmptyValue: 0
+  emptyValue: 
   valueChangedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 9ef920cc829641946b92d57b38fe5ff0, type: 2}
+      - m_Target: {fileID: 11400000, guid: deab858442fa87f4d9c7efa45a7a21bc, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
@@ -26,7 +29,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: deab858442fa87f4d9c7efa45a7a21bc, type: 2}
+      - m_Target: {fileID: 11400000, guid: 9ef920cc829641946b92d57b38fe5ff0, type: 2}
         m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
